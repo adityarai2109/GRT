@@ -1,5 +1,6 @@
 import React from "react";
 import "./carousel.css";
+import "../images/image1.jpeg";
 
 export default function Carousel() {
   return (
@@ -18,12 +19,15 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "50vh" }}
+            style={{ height: "90vh" }}
           >
-            <div className="block h-full w-full bg-grey-100 text-white text-5xl text-center">
+            <div className="block h-full w-full bg-red-700 text-white text-5xl text-center">
               <img
-                src="https://source.unsplash.com/random/400x400"
-                style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
+                src=""
+                style={{
+                  marginLeft: "50% ",
+                  transform: "translate(-50%)",
+                }}
                 alt="img"
               />
             </div>
@@ -51,11 +55,11 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "50vh" }}
+            style={{ height: "90vh" }}
           >
-            <div className="block h-full w-full bg-purple-200 text-white text-5xl text-center">
+            <div className="block h-full w-full bg-blue-500 text-white text-5xl text-center">
               <img
-                src="https://source.unsplash.com/random/400x400"
+                src=""
                 style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
                 alt="img"
               />
@@ -84,11 +88,11 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "50vh" }}
+            style={{ height: "90vh" }}
           >
             <div className="block h-full w-full bg-green-500 text-white text-5xl text-center">
               <img
-                src="https://source.unsplash.com/random/400x400"
+                src=""
                 style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
                 alt="img"
               />
