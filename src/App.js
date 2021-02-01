@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Trending name="Trending" />
       <Trending name="All collections" />
       <Trending name="Featured Category" />

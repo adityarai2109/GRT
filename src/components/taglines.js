@@ -15,13 +15,13 @@ export default function Taglines() {
                 strokeWidth={2}
                 className="sm:w-16 sm:h-16 w-10 h-10"
                 viewBox="0 0 24 24"
-              >nn
+              >
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
               </svg>
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
-                Reason 1
+                Customer satisfaction is our top priorirty
               </h2>
               <p className="leading-relaxed text-base">Explanation</p>
               <a className="mt-3 text-indigo-500 inline-flex items-center">
@@ -113,9 +113,6 @@ export default function Taglines() {
               </a>
             </div>
           </div>
-          <button className="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Button
-          </button>
         </div>
       </section>
     </div>

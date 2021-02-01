@@ -10,7 +10,7 @@ function test() {
       <div>
         <img src={image1} className="cloth_image"></img>
         <div className="content">
-          <img
+          {/* <img
             style={{
               width: "60%",
               marginLeft: "42.5%",
@@ -18,9 +18,11 @@ function test() {
             }}
             src={Group2}
             alt="Photu"
-          />
-          <h4 className="image_title">Baby blue cotton suit</h4>
-          <p>Price : ₹1,286.25</p>
+          /> */}
+          <div className="price_tag">
+            <h4 className="image_title">Baby blue cotton suit</h4>
+            <p>Price : ₹1,286.25</p>
+          </div>
         </div>
       </div>
     </div>

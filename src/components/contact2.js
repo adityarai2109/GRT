@@ -50,7 +50,10 @@ export default function Contact() {
               Let us know where we can improve
             </p>
             <div className="relative mb-4">
-              <label htmlFor="name" className="leading-7 text-sm text-gray-400">
+              <label
+                htmlFor="name"
+                className="leading-7 text-sm text-gray-100 flex items-start"
+              >
                 Name
               </label>
               <input
@@ -63,7 +66,7 @@ export default function Contact() {
             <div className="relative mb-4">
               <label
                 htmlFor="email"
-                className="leading-7 text-sm text-gray-400"
+                className="leading-7 text-sm text-gray-100 flex items-start"
               >
                 Email
               </label>
@@ -77,7 +80,7 @@ export default function Contact() {
             <div className="relative mb-4">
               <label
                 htmlFor="message"
-                className="leading-7 text-sm text-gray-400"
+                className="leading-7 text-sm text-gray-100 flex items-start"
               >
                 Message
               </label>

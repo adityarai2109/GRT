@@ -10,10 +10,12 @@ export default function Testimonials() {
               <div className="h-full text-center">
                 <img
                   alt="testimonial"
-                  className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
-                  src="https://dummyimage.com/302x302"
+                  className="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
+                  src="https://randomuser.me/api/portraits/lego/5.jpg"
                 />
-                <p className="leading-relaxed">Majja aa gaya</p>
+                <p className="leading-relaxed">
+                  Supercalifragilisticexpialidocious{" "}
+                </p>
                 <span className="inline-block h-1 w-10 rounded bg-purple-500 mt-6 mb-4" />
                 <h2 className="text-white font-medium title-font tracking-wider text-sm">
                   Aditya Rai
@@ -25,8 +27,8 @@ export default function Testimonials() {
               <div className="h-full text-center">
                 <img
                   alt="testimonial"
-                  className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
-                  src="https://dummyimage.com/300x300"
+                  className="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
+                  src="https://randomuser.me/api/portraits/lego/2.jpg"
                 />
                 <p className="leading-relaxed">Majja aa gaya</p>
                 <span className="inline-block h-1 w-10 rounded bg-purple-500 mt-6 mb-4" />
@@ -40,8 +42,8 @@ export default function Testimonials() {
               <div className="h-full text-center">
                 <img
                   alt="testimonial"
-                  className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
-                  src="https://dummyimage.com/305x305"
+                  className="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
+                  src="https://randomuser.me/api/portraits/lego/3.jpg"
                 />
                 <p className="leading-relaxed">Majja aa gaya</p>
                 <span className="inline-block h-1 w-10 rounded bg-purple-500 mt-6 mb-4" />
