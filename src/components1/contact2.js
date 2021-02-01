@@ -9,7 +9,7 @@ export default function Contact() {
             <iframe
               title="map"
               className="absolute inset-0"
-              style={{ filter: "grayscale(1) contrast(1.2) opacity(0.16)" }}
+              style={{ filter: "grayscale(0) contrast(1) opacity(1)" }}
               marginHeight={0}
               marginWidth={0}
               scrolling="no"
@@ -18,7 +18,7 @@ export default function Contact() {
               height="100%"
               frameBorder={0}
             />
-            <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
+            <div className="bg-gray-900 relative flex flex-wrap content-center py-6 rounded shadow-md">
               <div className="lg:w-1/2 px-6">
                 <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                   ADDRESS
