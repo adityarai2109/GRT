@@ -1,6 +1,7 @@
 import React from "react";
 import "./trending.css";
 import Test from "./test";
+import Card from "./card";
 
 function trending(props) {
   return (
@@ -80,16 +81,13 @@ function trending(props) {
           />
         </svg>
       </div>
-      <div className="trending_images">
-        <div className="cards_wrapper">
-          <Test />
-          <Test />
-          <Test />
-          <Test />
-        </div>
-      </div>
+      {/* <Card /> */}
     </div>
   );
 }
+
+trending.defaultProps = {
+  name: "Products",
+};
 
 export default trending;

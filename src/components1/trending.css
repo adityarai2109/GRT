@@ -5,6 +5,7 @@
   margin-top: 2rem;
   display: flex;
   align-items: center;
+
   justify-content: space-around;
 }
 
@@ -22,7 +23,6 @@ svg {
   height: 2rem;
   width: 20vw;
   left: 0px;
-
   border-radius: 0px;
 }
 
@@ -43,6 +43,7 @@ svg {
   display: flex;
   justify-content: space-around;
   padding: 5rem;
+  flex-wrap: wrap;
   margin: 1rem 2rem 2rem 2rem;
   background-color: rgba(0, 0, 100, 0);
 }

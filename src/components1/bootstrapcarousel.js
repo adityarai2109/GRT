@@ -1,6 +1,11 @@
 import React from "react";
 import "./carousel.css";
-import "../images/image1.jpeg";
+import image1 from "../images/mimage1.jpeg";
+import image2 from "../images/mimage2.jpeg";
+import image3 from "../images/mimage3.jpeg";
+import image4 from "../images/mimage4.jpeg";
+import image5 from "../images/mimage5.jpeg";
+import image6 from "../images/mimage6.jpeg";
 
 export default function Carousel() {
   return (
@@ -23,7 +28,7 @@ export default function Carousel() {
           >
             <div className="block h-full w-full bg-red-700 text-white text-5xl text-center">
               <img
-                src=""
+                src={image1}
                 style={{
                   marginLeft: "50% ",
                   transform: "translate(-50%)",
@@ -59,7 +64,7 @@ export default function Carousel() {
           >
             <div className="block h-full w-full bg-blue-500 text-white text-5xl text-center">
               <img
-                src=""
+                src={image2}
                 style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
                 alt="img"
               />
@@ -92,7 +97,7 @@ export default function Carousel() {
           >
             <div className="block h-full w-full bg-green-500 text-white text-5xl text-center">
               <img
-                src=""
+                src={image3}
                 style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
                 alt="img"
               />
@@ -133,7 +138,7 @@ export default function Carousel() {
                 htmlFor="carousel-3"
                 className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
               >
-                •
+                
               </label>
             </li>
           </ol>

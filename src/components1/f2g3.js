@@ -1,4 +1,10 @@
 import React from "react";
+import image1 from "../images/mimage1.jpeg";
+import image2 from "../images/mimage2.jpeg";
+import image3 from "../images/mimage3.jpeg";
+import image4 from "../images/mimage4.jpeg";
+import image5 from "../images/mimage5.jpeg";
+import image6 from "../images/mimage6.jpeg";
 
 export default function Gallery() {
   return (
@@ -19,7 +25,7 @@ export default function Gallery() {
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  src="https://source.unsplash.com/random/606x366"
+                  src={image1}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
@@ -40,7 +46,7 @@ export default function Gallery() {
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  src="https://source.unsplash.com/random/606x366"
+                  src={image2}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
@@ -61,7 +67,7 @@ export default function Gallery() {
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  src="https://source.unsplash.com/random/606x366"
+                  src={image3}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
@@ -82,7 +88,7 @@ export default function Gallery() {
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  src="https://source.unsplash.com/random/606x366"
+                  src={image6}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
@@ -103,7 +109,7 @@ export default function Gallery() {
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  src="https://source.unsplash.com/random/606x366"
+                  src={image4}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
@@ -124,7 +130,7 @@ export default function Gallery() {
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  src="https://source.unsplash.com/random/606x366"
+                  src={image5}
                 />
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                   <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">

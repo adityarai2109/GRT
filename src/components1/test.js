@@ -4,11 +4,11 @@ import "./test.css";
 import image1 from "../images/image1.jpeg";
 import Group2 from "../images/Group 2.jpg";
 
-function test() {
+function Test(props) {
   return (
     <div className="images_row">
       <div>
-        <img src={image1} className="cloth_image" alt=""></img>
+        <img src={props.card.image} className="cloth_image"></img>
         <div className="content">
           {/* <img
             style={{
@@ -20,8 +20,8 @@ function test() {
             alt="Photu"
           /> */}
           <div className="price_tag">
-            <h4 className="image_title">Baby blue cotton suit</h4>
-            <p>Price : ₹1,286.25</p>
+            <h4 className="image_title">{props.card.title}</h4>
+            <p>{props.card.price}</p>
           </div>
         </div>
       </div>
@@ -29,4 +29,4 @@ function test() {
   );
 }
 
-export default test;
+export default Test;
