@@ -8,7 +8,7 @@ function test() {
   return (
     <div className="images_row">
       <div>
-        <img src={image1} className="cloth_image"></img>
+        <img src={image1} className="cloth_image" alt=""></img>
         <div className="content">
           {/* <img
             style={{

@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    margin-left: 160px;
+    margin-right: 160px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "dd dd ee ee ee ee"
+      "dd dd ee ee ee ee"
+      "ff ff ff gg gg gg"
+      "ff ff ff gg gg gg";
+  }
+  .dd { grid-area: dd; padding: 10px 10px 10px 10px;}
+  .ee { grid-area: ee; padding: 10px 10px 10px 10px;}
+  .ff { grid-area: ff; padding: 10px 10px 10px 10px;}
+  .gg { grid-area: gg; padding: 10px 10px 10px 10px;}
+
+
+.im {
+    object-fit: cover;
+    height: auto;
+}

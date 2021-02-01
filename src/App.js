@@ -9,6 +9,7 @@ import Footer from "./components/footer5";
 import Trending from "./components/trending";
 import Categories from "./components/categories";
 // import Test from "./components/test";
+import Grid from './components/grid'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Trending name="Trending" />
       <Trending name="All collections" />
       <Trending name="Featured Category" />
+      <Grid />
       <Carousel />
       <Gallery />
       <Taglines />
@@ -24,6 +26,7 @@ function App() {
       <Contact />
       <Footer />
       <Categories />
+
     </div>
   );
 }
