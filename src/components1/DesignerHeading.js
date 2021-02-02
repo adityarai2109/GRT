@@ -81,7 +81,6 @@ function trending(props) {
           />
         </svg>
       </div>
-      {/* <Card /> */}
     </div>
   );
 }

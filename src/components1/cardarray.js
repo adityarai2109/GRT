@@ -44,5 +44,17 @@ let Cardarray = [
     title: "title 7",
     price: "₹1,238",
   },
+  {
+    id: 8,
+    image: imageArray[5],
+    title: "title 7",
+    price: "₹1,238",
+  },
+  {
+    id: 9,
+    image: imageArray[5],
+    title: "title 7",
+    price: "₹1,238",
+  },
 ];
 export default Cardarray;

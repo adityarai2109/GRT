@@ -1,25 +1,22 @@
 import React from "react";
 import Test from "./test";
-import image1 from "../images/image1.jpeg";
+import Cardarray from "../components1/cardarray";
 
 export default function card() {
   return (
     <div>
       <div className="trending_images">
-        <div className="cards_wrapper">
-          <Test image= {image1} 
-                title= "Baby blue cotton suit" 
-                price= "₹1,286"/>
-          <Test image= "../images/image1" 
-                title= "Baby blue cotton suit" 
-                price= "₹1,286"/>
-          <Test image= "../images/image1" 
-                title= "Baby blue cotton suit" 
-                price= "₹1,286"/>
-          <Test image= "../images/image1" 
-                title= "Baby blue cotton suit" 
-                price= "₹1,286"/>
-        </div>
+        
+        <div className="product_card">
+        {Cardarray.slice(0, 4).map((card) => {
+          return (
+            <div>
+              <Test image={card.image} title={card.title} price={card.price} />
+            </div>
+          );
+        })}
+        
+      </div>
       </div>
     </div>
   );
