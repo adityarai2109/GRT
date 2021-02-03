@@ -28,7 +28,7 @@ export default function Carousel() {
           >
             <div className="block h-full w-full bg-red-700 text-white text-5xl text-center">
               <img
-                src={image1}
+                src={image5}
                 style={{
                   marginLeft: "50% ",
                   transform: "translate(-50%)",

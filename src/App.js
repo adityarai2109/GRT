@@ -1,4 +1,5 @@
 import "./App.css";
+import Navbar from './components1/navbar';
 import Header from "./components1/header2";
 import Carousel from "./components1/bootstrapcarousel";
 import Gallery from "./components1/f2g3";
@@ -36,6 +37,7 @@ function App() {
           {/* Page 2 */}
 
           <Route path="/page2">
+            <Navbar />  
             <Productlist />
             <Productdetail />
           </Route>
@@ -43,7 +45,8 @@ function App() {
           {/* Main Page */}
 
           <Route path="/">
-            <Header />
+            <Navbar />
+            {/* <Header /> */}
             <DesignerHeading name="Trending" />
             <Card />
             <DesignerHeading name="All collections" />
