@@ -1,25 +1,48 @@
 .grid-container {
-    display: grid;
-    margin-left: 160px;
-    margin-right: 160px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "dd dd ee ee ee ee"
-      "dd dd ee ee ee ee"
-      "ff ff ff gg gg gg"
-      "ff ff ff gg gg gg";
-  }
-  .dd { grid-area: dd; padding: 10px 10px 10px 10px;}
-  .ee { grid-area: ee; padding: 10px 10px 10px 10px;}
-  .ff { grid-area: ff; padding: 10px 10px 10px 10px;}
-  .gg { grid-area: gg; padding: 10px 10px 10px 10px;}
+  display: grid;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "dd dd ee ee hh hh"
+    "dd dd ee ee hh hh"
+    "ff ff ff gg gg gg"
+    "ff ff ff gg gg gg";
+  justify-content: center;
+}
 
+.dd {
+  grid-area: dd;
+  padding: 10px;
+}
+.ee {
+  grid-area: ee;
+  padding: 10px;
+}
+.ff {
+  grid-area: ff;
+  padding: 10px 10px 10px 10px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gg {
+  grid-area: gg;
+  padding: 10px 10px 10px 10px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hh {
+  grid-area: hh;
+  padding: 10px;
+}
 
 .im {
-    object-fit: cover;
-    height: auto;
+  object-fit: cover;
+  height: auto;
 }

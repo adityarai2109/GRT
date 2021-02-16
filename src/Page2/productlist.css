@@ -1,8 +1,7 @@
 .product_card {
-  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 5rem;
-  margin: 1rem 2rem 4rem 2rem;
+  padding: 1rem;
+  margin: 1rem 2rem 1rem 2rem;
 }

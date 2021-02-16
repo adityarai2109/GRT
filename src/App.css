@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.bootstrapcarousel {
+  padding: 1%;
+  display: flex;
+  justify-content: center ;
+}

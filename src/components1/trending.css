@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 .title_wrapper {
-  margin: 0rem 7rem 0 7rem;
+  margin: 0rem 7rem 0rem 7rem;
   margin-top: 2rem;
   display: flex;
   align-items: center;
-
   justify-content: space-around;
 }
 
@@ -42,8 +41,8 @@ svg {
 .cards_wrapper {
   display: flex;
   justify-content: space-around;
-  padding: 5rem;
+  padding: 0rem;
   flex-wrap: wrap;
-  margin: 1rem 2rem 2rem 2rem;
+  margin: 1rem 2rem 0rem 2rem;
   background-color: rgba(0, 0, 100, 0);
 }

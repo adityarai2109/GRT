@@ -1,21 +1,31 @@
-import React from 'react'
+import React from "react";
 import "./grid.css";
 import image1 from "../images/4x4.jpeg";
 import image2 from "../images/8x4.jpeg";
 import image3 from "../images/6x4.jpeg";
 
-
 function grid() {
-    return (
-        <div>
-            <div class="grid-container">
-                <div class="dd"><img class="im" src={image1} alt="image1"></img></div>
-                <div class="ee"><img class="im" src={image2} alt="image1"></img></div>
-                <div class="ff"><img class="im" src={image3} alt="image1"></img></div>
-                <div class="gg"><img class="im" src={image3} alt="image1"></img></div>
-            </div>
+  return (
+    <div>
+      <div class="grid-container">
+        <div class="dd">
+          <img class="im" src={image1} alt="image1"></img>
         </div>
-    )
+        <div class="ee">
+          <img class="im" src={image1} alt="image1"></img>
+        </div>
+        <div class="ff">
+          <img class="im" src={image1} alt="image1"></img>
+        </div>
+        <div class="gg">
+          <img class="im" src={image1} alt="image1"></img>
+        </div>
+        <div class="hh">
+          <img class="im" src={image1} alt="image1"></img>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default grid
+export default grid;

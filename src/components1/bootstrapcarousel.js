@@ -1,8 +1,8 @@
 import React from "react";
 import "./carousel.css";
 import image1 from "../images/mimage1.jpeg";
-import image2 from "../images/mimage2.jpeg";
-import image3 from "../images/mimage3.jpeg";
+import image7 from "../images/carouselA.jpeg";
+import image8 from "../images/CarouselB.jpeg";
 import image4 from "../images/mimage4.jpeg";
 import image5 from "../images/mimage5.jpeg";
 import image6 from "../images/mimage6.jpeg";
@@ -10,7 +10,10 @@ import image6 from "../images/mimage6.jpeg";
 export default function Carousel() {
   return (
     <div className="bootstrapcarousel">
-      <div className="carousel relative shadow-2xl bg-white">
+      <div
+        className="carousel relative shadow-2xl bg-white"
+        style={{ width: "60vw" }}
+      >
         <div className="carousel-inner relative overflow-hidden w-full">
           {/*Slide 1*/}
           <input
@@ -24,7 +27,7 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "90vh" }}
+            style={{ height: "70vh" }}
           >
             <div className="block h-full w-full bg-red-700 text-white text-5xl text-center">
               <img
@@ -32,6 +35,7 @@ export default function Carousel() {
                 style={{
                   marginLeft: "50% ",
                   transform: "translate(-50%)",
+                  objectFit: "contain",
                 }}
                 alt="img"
               />
@@ -60,12 +64,16 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "90vh" }}
+            style={{ height: "70vh" }}
           >
             <div className="block h-full w-full bg-blue-500 text-white text-5xl text-center">
               <img
-                src={image2}
-                style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
+                src={image7}
+                style={{
+                  marginLeft: "50% ",
+                  transform: "translate(-50%)",
+                  objectFit: "contain",
+                }}
                 alt="img"
               />
             </div>
@@ -93,12 +101,16 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "90vh" }}
+            style={{ height: "70vh" }}
           >
             <div className="block h-full w-full bg-green-500 text-white text-5xl text-center">
               <img
-                src={image3}
-                style={{ marginLeft: "50% ", transform: "translate(-50%)" }}
+                src={image8}
+                style={{
+                  marginLeft: "50% ",
+                  transform: "translate(-50%)",
+                  objectFit: "contain",
+                }}
                 alt="img"
               />
             </div>
@@ -137,9 +149,7 @@ export default function Carousel() {
               <label
                 htmlFor="carousel-3"
                 className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-              >
-                
-              </label>
+              ></label>
             </li>
           </ol>
         </div>

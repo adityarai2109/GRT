@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from './components1/navbar';
+import Navbar from "./components1/navbar";
 import Header from "./components1/header2";
 import Carousel from "./components1/bootstrapcarousel";
 import Gallery from "./components1/f2g3";
@@ -14,13 +14,11 @@ import Card from "./components1/card";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Productlist from "./Page2/productlist";
-import Productdetail from "./Page2/productdetails"
-
+import Productdetail from "./Page2/productdetails";
 
 function App() {
   return (
     <div className="App">
-     
       <Router>
         <Switch>
           <Route path="/checkout">
@@ -31,13 +29,13 @@ function App() {
           <Route path="/login">
             <Header />
             <h1>Login</h1>
-             <Link to="/about">About</Link>
+            <Link to="/about">About</Link>
           </Route>
 
           {/* Page 2 */}
 
           <Route path="/page2">
-            <Navbar />  
+            <Navbar />
             <Productlist />
             <Productdetail />
           </Route>
@@ -46,6 +44,7 @@ function App() {
 
           <Route path="/">
             <Navbar />
+            <Carousel />
             {/* <Header /> */}
             <DesignerHeading name="Trending" />
             <Card />
@@ -54,7 +53,7 @@ function App() {
             <DesignerHeading name="Featured Category" />
             {/* <Card /> */}
             <Grid />
-            <Carousel />
+
             <Gallery />
             <Taglines />
             <Testimonials />
