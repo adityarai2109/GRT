@@ -12,7 +12,6 @@ import DesignerHeading from "./components1/DesignerHeading";
 import Grid from "./components1/grid";
 import Card from "./components1/card";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 import Productlist from "./Page2/productlist";
 import Productdetail from "./Page2/productdetails";
 
@@ -53,9 +52,10 @@ function App() {
             <DesignerHeading name="Featured Category" />
             {/* <Card /> */}
             <Grid />
-
+            <DesignerHeading name="Latest Collection" />
             <Gallery />
             <Taglines />
+            <DesignerHeading name="Testimonials" />
             <Testimonials />
             <Contact />
             <Footer />

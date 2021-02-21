@@ -3,7 +3,7 @@ import React from "react";
 export default function Testimonials() {
   return (
     <div className="testimonial3">
-      <section className="text-gray-400 bg-gray-900 body-font">
+      <section className="text-black-400 bg-white-900 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
@@ -14,10 +14,10 @@ export default function Testimonials() {
                   src="https://randomuser.me/api/portraits/lego/5.jpg"
                 />
                 <p className="leading-relaxed">
-                  Supercalifragilisticexpialidocious{" "}
+                  Supercalifragilisticexpialidocious
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-purple-500 mt-6 mb-4" />
-                <h2 className="text-white font-medium title-font tracking-wider text-sm">
+                <h2 className="text-dark font-medium title-font tracking-wider text-sm">
                   Aditya Rai
                 </h2>
                 <p className="text-gray-500">Web Developer</p>
@@ -32,7 +32,7 @@ export default function Testimonials() {
                 />
                 <p className="leading-relaxed">Majja aa gaya</p>
                 <span className="inline-block h-1 w-10 rounded bg-purple-500 mt-6 mb-4" />
-                <h2 className="text-white font-medium title-font tracking-wider text-sm">
+                <h2 className="text-dark font-medium title-font tracking-wider text-sm">
                   Keshav Goyal
                 </h2>
                 <p className="text-gray-500">Web Developer</p>
@@ -47,7 +47,7 @@ export default function Testimonials() {
                 />
                 <p className="leading-relaxed">Majja aa gaya</p>
                 <span className="inline-block h-1 w-10 rounded bg-purple-500 mt-6 mb-4" />
-                <h2 className="text-white font-medium title-font tracking-wider text-sm">
+                <h2 className="text-dark font-medium title-font tracking-wider text-sm">
                   Ritik Raj Raman
                 </h2>
                 <p className="text-gray-500">Web Developer</p>

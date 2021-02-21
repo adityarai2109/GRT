@@ -2,7 +2,8 @@
   width: 220px;
   height: 220px;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 25%;
+  /* border-radius: 50%; */
   margin: 0rem 1.5rem 0rem 1.5rem;
 }
 
@@ -10,6 +11,7 @@
   display: flex;
   margin-bottom: 1rem;
   cursor: pointer;
+  justify-content: center;
 }
 .content {
   margin-top: 1rem;
@@ -25,7 +27,8 @@
   width: 220px;
   color: white;
   background-color: #6b2097;
-  border-radius: 25px;
+  border-radius: 15px;
+  /* border-radius: 25px; */
   box-shadow: 5px 5px 10px rgba(161, 75, 211, 0.8);
 }
 

@@ -1,4 +1,3 @@
-
 import imageArray from "../images/images";
 
 let Cardarray = [
@@ -47,14 +46,20 @@ let Cardarray = [
   {
     id: 8,
     image: imageArray[5],
-    title: "title 7",
+    title: "title 8",
     price: "₹1,238",
   },
   {
     id: 9,
     image: imageArray[5],
-    title: "title 7",
-    price: "₹1,238",
+    title: "title 9",
+    price: "₹1,538",
+  },
+  {
+    id: 10,
+    image: imageArray[5],
+    title: "title 10",
+    price: "₹1,248",
   },
 ];
 export default Cardarray;

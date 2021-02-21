@@ -1,7 +1,17 @@
-.product_card {
+/* .product_card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1rem;
   margin: 1rem 2rem 1rem 2rem;
+} */
+
+.product_card {
+  display: grid;
+  padding: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
 }

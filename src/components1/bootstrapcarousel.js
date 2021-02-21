@@ -149,7 +149,9 @@ export default function Carousel() {
               <label
                 htmlFor="carousel-3"
                 className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-              ></label>
+              >
+                •
+              </label>
             </li>
           </ol>
         </div>

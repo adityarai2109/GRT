@@ -13,7 +13,9 @@ export default function Navbar() {
       <div id="grt-navbar">
         <div className="row-1-wrapper">
           <div className="row-1">
-            <h1>Brand</h1>
+            <a href="/">
+              <h1>GRT</h1>
+            </a>
             <div className="search-bar">
               <input
                 className="search-field"

@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 function productdetails() {
   return (
     <div>
-      <div>abcd</div>
-      <Link to='/Suit'><span>Suit</span></Link>
+      <Link to="/Suit">
+        <span>productdetails</span>
+      </Link>
     </div>
   );
 }
