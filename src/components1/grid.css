@@ -4,42 +4,6 @@
   justify-content: center;
 }
 
-.grid-container1 {
-  display: grid;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  /* margin-top: 1vh;
-  margin-bottom: 1vh; */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "dd dd dd dd dd dd"
-    "dd dd dd dd dd dd"
-    "dd dd dd dd dd dd"
-    "ff ff ff ff ff ff"
-    "ff ff ff ff ff ff";
-  justify-content: center;
-}
-
-.grid-container2 {
-  display: grid;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  /* margin-top: 1vh;
-  margin-bottom: 1vh; */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "dd dd dd dd dd dd"
-    "dd dd dd dd dd dd"
-    "dd dd dd dd dd dd"
-    "ff ff ff ff ff ff"
-    "ff ff ff ff ff ff";
-  justify-content: center;
-}
-
 .dd {
   grid-area: dd;
   padding: 10px;
