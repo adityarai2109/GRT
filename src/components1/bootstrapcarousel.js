@@ -12,7 +12,7 @@ export default function Carousel() {
     <div className="bootstrapcarousel">
       <div
         className="carousel relative shadow-2xl bg-white"
-        style={{ width: "60vw" }}
+        style={{ width: "80vw" }}
       >
         <div className="carousel-inner relative overflow-hidden w-full">
           {/*Slide 1*/}
@@ -27,13 +27,13 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "70vh" }}
+            style={{ height: "auto" }}
           >
-            <div className="block h-full w-full bg-red-700 text-white text-5xl text-center">
+            <div className="block w-full bg-red-700 text-white text-5xl text-center">
               <img
                 src={image5}
                 style={{
-                  marginLeft: "50% ",
+                  marginLeft: "50%",
                   transform: "translate(-50%)",
                   objectFit: "contain",
                 }}
@@ -64,7 +64,7 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "70vh" }}
+            style={{ height: "auto" }}
           >
             <div className="block h-full w-full bg-blue-500 text-white text-5xl text-center">
               <img
@@ -101,7 +101,7 @@ export default function Carousel() {
           />
           <div
             className="carousel-item absolute opacity-0"
-            style={{ height: "70vh" }}
+            style={{ height: "auto" }}
           >
             <div className="block h-full w-full bg-green-500 text-white text-5xl text-center">
               <img
