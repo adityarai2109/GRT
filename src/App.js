@@ -14,65 +14,65 @@ import Card from "./components1/card";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Productlist from "./Page2/productlist";
 import Productdetail from "./Page2/productdetails";
-import MainProduct from "./Page3/MainProduct"
+import MainProduct from "./Page3/MainProduct";
 
 function App() {
-    return (
-        <div className="App">
-            <Router>
-                <Switch>
-                    <Route path="/checkout">
-                        <Carousel />
-                        <Header />
-                        <h1>Checkout</h1>
-                    </Route>
-                    <Route path="/login">
-                        <Header />
-                        <h1>Login</h1>
-                        <Link to="/about">About</Link>
-                    </Route>
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/checkout">
+            <Carousel />
+            <Header />
+            <h1>Checkout</h1>
+          </Route>
+          <Route path="/login">
+            <Header />
+            <h1>Login</h1>
+            <Link to="/about">About</Link>
+          </Route>
 
-                    {/* Page 2 */}
+          {/* Page 2 */}
 
-                    <Route path="/page2">
-                        <Navbar />
-                        <Productlist />
-                        <Productdetail />
-                    </Route>
+          <Route path="/page2">
+            <Navbar />
+            <Productlist />
+            <Productdetail />
+          </Route>
 
-                    {/* Page 3 */}
+          {/* Page 3 */}
 
-                    <Route path="/page3">
-                        <Navbar />
-                        <MainProduct />
-                        <Footer />
-                    </Route>
+          <Route path="/page3">
+            <Navbar />
+            <MainProduct />
+            <Footer />
+          </Route>
 
-                    {/* Main Page */}
+          {/* Main Page */}
 
-                    <Route path="/">
-                        <Navbar />
-                        <Carousel />
-                        {/* <Header /> */}
-                        <DesignerHeading name="Trending" />
-                        <Card />
-                        <DesignerHeading name="All collections" />
-                        <Card />
-                        <DesignerHeading name="Featured Category" />
-                        {/* <Card /> */}
-                        <Grid />
-                        <DesignerHeading name="Latest Collection" />
-                        <Gallery />
-                        <Taglines />
-                        <DesignerHeading name="Testimonials" />
-                        <Testimonials />
-                        <Contact />
-                        <Footer />
-                    </Route>
-                </Switch>
-            </Router>
-        </div>
-    );
+          <Route path="/">
+            <Navbar />
+            <Carousel />
+            {/* <Header /> */}
+            <DesignerHeading name="Trending" />
+            <Card />
+            <DesignerHeading name="All collections" />
+            <Card />
+            <DesignerHeading name="Featured Category" />
+            {/* <Card /> */}
+            <Grid />
+            <DesignerHeading name="Latest Collection" />
+            <Gallery />
+            <Taglines />
+            <DesignerHeading name="Testimonials" />
+            <Testimonials />
+            <Contact />
+            <Footer />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
