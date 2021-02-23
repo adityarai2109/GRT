@@ -1,0 +1,30 @@
+.wishlist {
+  display: flex;
+  background-color: rgb(88, 18, 153);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23),
+    inset 1px 1px 0 0 hsla(0, 0%, 100%, 0.2);
+  padding: 10px 20px;
+  align-items: center;
+}
+.wishlist > p {
+  margin-left: 0.34rem;
+  padding: 0 0.5rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  color: rgb(120, 12, 221);
+}
+.shoppingCart {
+  width: 1.2rem;
+  height: 2.2rem;
+  margin-right: 0.5rem;
+}
+.cardcount {
+  background-color: white;
+  color: black;
+  height: auto;
+  width: 1.5rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}

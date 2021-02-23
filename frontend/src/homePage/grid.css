@@ -1,0 +1,37 @@
+.dflex {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.dd {
+  grid-area: dd;
+  padding: 10px;
+}
+.ee {
+  grid-area: dd;
+  padding: 10px;
+}
+.ff {
+  grid-area: ff;
+  padding: 10px;
+  /* justify-content: center;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.gg {
+  grid-area: ff;
+  padding: 10px;
+  /* justify-content: center;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.hh {
+  grid-area: hh;
+  padding: 10px;
+}
+
+.im {
+  object-fit: cover;
+  height: auto;
+}
