@@ -17,7 +17,7 @@ function Test(props) {
     return (
         <div>
           
-            <Link to={"/"+props.id}>
+            <Link to={`/${props.id}`}>
                 <div
                     className="images_row"
                     onClick={() => {
@@ -30,6 +30,7 @@ function Test(props) {
                             className="cloth_image"
                             alt=""
                         ></img>
+                        <h1>hbhhhh</h1>
                         <PurpleButton line1={props.title} line2={props.price} />
                     </div>
                 </div>
