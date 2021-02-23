@@ -4,7 +4,10 @@
   /* margin-left: 80px;
   margin-right: 80px; */
 }
-
+.logo {
+  height: 3rem;
+  border-radius: 3px;
+}
 .row-1 {
   /* margin-top : 1rem; */
   padding-top: 0.8rem;
