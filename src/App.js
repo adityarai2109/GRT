@@ -11,11 +11,12 @@ import DesignerHeading from "./components1/DesignerHeading";
 // import Test from "./components/test";
 import Grid from "./components1/grid";
 import Card from "./components1/card";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 import Productlist from "./Page2/productlist";
 import Productdetail from "./Page2/productdetails";
 import MainProduct from "./Page3/MainProduct";
 
+let routeid;
 function App() {
   return (
     <div className="App">
@@ -42,9 +43,10 @@ function App() {
 
           {/* Page 3 */}
 
-          <Route path="/page3">
+          <Route path="/:ida">
+          
             <Navbar />
-            <MainProduct />
+            <MainProduct id={1}/>
             <Footer />
           </Route>
 
@@ -74,5 +76,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

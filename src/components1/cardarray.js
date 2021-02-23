@@ -7,23 +7,23 @@ let Cardarray = [
     title: "Baby blue cotton suit",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,286",
+    price: "₹ 1,286",
   },
   {
     id: 2,
     image: imageArray[1],
-    title: "title 2",
+    title: "title2",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,768",
+    price: "₹ 1,768",
   },
   {
     id: 3,
     image: imageArray[2],
-    title: "title 3",
+    title: "title3",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,435",
+    price: "₹ 1,435",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ let Cardarray = [
     title: "title 4",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,753",
+    price: "₹ 1,753",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ let Cardarray = [
     title: "title 5",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,438",
+    price: "₹ 1,438",
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ let Cardarray = [
     title: "title 6",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,745",
+    price: "₹ 1,745",
   },
   {
     id: 7,
@@ -55,7 +55,7 @@ let Cardarray = [
     title: "title 7",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,238",
+    price: "₹ 1,238",
   },
   {
     id: 8,
@@ -63,7 +63,7 @@ let Cardarray = [
     title: "title 8",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,238",
+    price: "₹ 1,238",
   },
   {
     id: 9,
@@ -71,7 +71,7 @@ let Cardarray = [
     title: "title 9",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,538",
+    price: "₹ 1,538",
   },
   {
     id: 10,
@@ -79,7 +79,7 @@ let Cardarray = [
     title: "title 10",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
-    price: "₹1,248",
+    price: "₹ 1,248",
   },
 ];
 export default Cardarray;

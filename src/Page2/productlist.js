@@ -14,7 +14,7 @@ export default function productlist() {
         {Cardarray.map((card) => {
           return (
             <div>
-              <Test image={card.image} title={card.title} price={card.price} />
+              <Test id={card.id} image={card.image} title={card.title} price={card.price} />
             </div>
           );
         })}
