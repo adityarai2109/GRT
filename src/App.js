@@ -43,8 +43,10 @@ function App() {
 
           {/* Page 3 */}
 
-          <Route path='/:ida' component = {MainProduct}>
-      
+          <Route path='/:ida'>
+              <Navbar />
+              <MainProduct id={1}/>
+              <Footer />
           </Route>
 
           {/* Main Page */}
