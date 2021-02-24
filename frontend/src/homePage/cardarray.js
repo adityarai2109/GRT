@@ -3,6 +3,7 @@ import imageArray from "../images/images";
 let Cardarray = [
   {
     id: 1,
+    category:"Suit",
     image: imageArray[0],
     title: "Baby blue cotton suit",
     description:
@@ -11,6 +12,7 @@ let Cardarray = [
   },
   {
     id: 2,
+    category:"Suit",
     image: imageArray[1],
     title: "title2",
     description:
@@ -19,6 +21,7 @@ let Cardarray = [
   },
   {
     id: 3,
+    category:"Suit",
     image: imageArray[2],
     title: "title3",
     description:
@@ -27,6 +30,7 @@ let Cardarray = [
   },
   {
     id: 4,
+    category:"Kurti",
     image: imageArray[3],
     title: "title 4",
     description:
@@ -35,6 +39,7 @@ let Cardarray = [
   },
   {
     id: 5,
+    category:"Kurti",
     image: imageArray[4],
     title: "title 5",
     description:
@@ -43,6 +48,7 @@ let Cardarray = [
   },
   {
     id: 6,
+    category:"Kurti",
     image: imageArray[5],
     title: "title 6",
     description:
@@ -51,6 +57,7 @@ let Cardarray = [
   },
   {
     id: 7,
+    category:"Suit",
     image: imageArray[5],
     title: "title 7",
     description:
@@ -59,6 +66,7 @@ let Cardarray = [
   },
   {
     id: 8,
+    category:"Suit",
     image: imageArray[5],
     title: "title 8",
     description:
@@ -67,6 +75,7 @@ let Cardarray = [
   },
   {
     id: 9,
+    category:"Kurti",
     image: imageArray[5],
     title: "title 9",
     description:
@@ -75,6 +84,7 @@ let Cardarray = [
   },
   {
     id: 10,
+    category:"Kurti",
     image: imageArray[5],
     title: "title 10",
     description:

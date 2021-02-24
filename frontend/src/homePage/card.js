@@ -15,6 +15,7 @@ export default function card() {
                   image={card.image}
                   title={card.title}
                   price={card.price}
+                  category={card.category}
                 />
               </div>
             );

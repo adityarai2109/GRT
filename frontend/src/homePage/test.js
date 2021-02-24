@@ -25,7 +25,7 @@ function Test(props) {
           >
             <div>
               <img src={props.image} className="cloth_image" alt=""></img>
-              <Link to={`/${props.id}`}>
+              <Link to={`/${props.category}/${props.id}`}>
                 <PurpleButton line1={props.title} line2={props.price} />
               </Link>
             </div>
