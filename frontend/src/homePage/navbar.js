@@ -3,6 +3,7 @@ import "./navbar.css";
 import { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import Cart from "../Cart/Cart";
+import logo from "../images/0001.jpg";
 // import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 export default function Navbar() {
@@ -14,7 +15,7 @@ export default function Navbar() {
         <div className="row-1-wrapper">
           <div className="row-1">
             <a href="/">
-              <h1>GRT</h1>
+              <img src={logo} className="logo" alt="GRT" />
             </a>
             <div className="search-bar">
               <input

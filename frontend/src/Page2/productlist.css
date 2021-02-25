@@ -1,10 +1,4 @@
-/* .product_card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 1rem;
-  margin: 1rem 2rem 1rem 2rem;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 .product_card {
   display: grid;
@@ -20,4 +14,10 @@
   display: flex;
   justify-content: space-around;
   padding: 1rem;
+  font-family: Poppins;
+}
+
+.sort {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
