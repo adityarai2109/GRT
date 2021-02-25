@@ -41,12 +41,18 @@ function App() {
 
           {/* Page 2 */}
 
-          <Route path="/:category" exact render={(props)  => <Productlist {...props} />} />
-            
+          <Route
+            path="/:category"
+            exact
+            render={(props) => <Productlist {...props} />}
+          />
 
           {/* Page 3 */}
 
-          <Route path="/:category/:ida" render={(props) => <MainProduct {...props} />} />
+          <Route
+            path="/:category/:ida"
+            render={(props) => <MainProduct {...props} />}
+          />
 
           {/* Main Page */}
 

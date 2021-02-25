@@ -19,5 +19,5 @@
 .orderby {
   display: flex;
   justify-content: space-around;
-  margin: 2rem;
+  padding: 1rem;
 }
