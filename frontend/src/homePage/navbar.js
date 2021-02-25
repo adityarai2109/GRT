@@ -27,7 +27,7 @@ export default function Navbar() {
             <Cart cartCount={cartCount} setCartCount={setCartCount} />
           </div>
         </div>
-        <div className="row-2">
+        {/* <div className="row-2">
           <ul>
             <li className="upper-links">
               <a className="links" href="/Category1">
@@ -61,7 +61,7 @@ export default function Navbar() {
             </li>
             <li className="upper-links"></li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

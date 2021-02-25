@@ -13,7 +13,16 @@ const productlist = ({match}) => {
   
   return (
     <div>
+      <Navbar />
       <DesignerHeading name={category}/>
+      <div className="orderby">
+        <div><b>Sort by:</b></div>
+        <div>Popularity</div>
+        <div>Price--high to low</div>
+        <div>Price--low to high</div>
+        <div>Newest first</div>
+      </div>
+      
       <div className="product_card">
       
         {Cardarray.filter(categCard => categCard.category === category).map((card) => {
