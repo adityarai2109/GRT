@@ -41,15 +41,18 @@ function App() {
 
           {/* Page 2 */}
 
-          <Route path="/page2">
-            <Navbar />
-            <Productlist />
-            <Productdetail />
-          </Route>
+          <Route
+            path="/:category"
+            exact
+            render={(props) => <Productlist {...props} />}
+          />
 
           {/* Page 3 */}
 
-          <Route path="/:ida" render={(props) => <MainProduct {...props} />} />
+          <Route
+            path="/:category/:ida"
+            render={(props) => <MainProduct {...props} />}
+          />
 
           {/* Main Page */}
 

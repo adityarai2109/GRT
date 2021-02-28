@@ -1,13 +1,17 @@
 #grt-navbar {
   background-color: blueviolet;
   color: #ffffff;
+
   /* margin-left: 80px;
   margin-right: 80px; */
 }
-
+.logo {
+  height: 6vh;
+}
 .row-1 {
   /* margin-top : 1rem; */
   padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -3,6 +3,7 @@ import "./navbar.css";
 import { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import Cart from "../Cart/Cart";
+import logo from "../images/0001.jpg";
 // import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 export default function Navbar() {
@@ -14,7 +15,7 @@ export default function Navbar() {
         <div className="row-1-wrapper">
           <div className="row-1">
             <a href="/">
-              <h1>GRT</h1>
+              <img src={logo} className="logo" alt="GRT" />
             </a>
             <div className="search-bar">
               <input
@@ -27,7 +28,7 @@ export default function Navbar() {
             <Cart cartCount={cartCount} setCartCount={setCartCount} />
           </div>
         </div>
-        <div className="row-2">
+        {/* <div className="row-2">
           <ul>
             <li className="upper-links">
               <a className="links" href="/Category1">
@@ -61,7 +62,7 @@ export default function Navbar() {
             </li>
             <li className="upper-links"></li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

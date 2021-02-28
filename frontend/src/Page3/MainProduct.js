@@ -6,12 +6,12 @@ import Cardarray from "../homePage/cardarray";
 import Navbar from "../homePage/navbar";
 import Footer from "../homePage/footer5";
 
-var { ida } = "title2";
-console.log(ida);
+
 // myId = this.props.match.params.ida
 
 const MainProduct = ({ match }) => {
   let id = parseInt(match.params.ida); // isko int me convert krna tha
+  let category = String(match.params.category)
   return (
     <>
       <div>
@@ -19,12 +19,11 @@ const MainProduct = ({ match }) => {
         <div className="page3_content">
           <div className="product_image">
             <img
-              src={Cardarray.find((x) => x.id === id).image}
+              src={Cardarray.find((x) => x.id === id && x.category === category).image}
               alt="ProductImage"
             ></img>
           </div>
           <div className="product_desc">
-            <h1>{ida}</h1>
             <h1 className="title">
               {Cardarray.find((x) => x.id === id).title}
             </h1>
