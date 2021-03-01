@@ -7,6 +7,7 @@ import Taglines from "./homePage/taglines";
 import Testimonials from "./homePage/testimonial3";
 import Contact from "./homePage/contact2";
 import Footer from "./homePage/footer5";
+import MyFooter from "./homePage/myFooter";
 import DesignerHeading from "./homePage/DesignerHeading";
 // import Test from "./components/test";
 import Grid from "./homePage/grid";
@@ -72,8 +73,9 @@ function App() {
             <Taglines />
             <DesignerHeading name="Testimonials" />
             <Testimonials />
-            <Contact />
+            {/* <Contact /> */}
             <Footer />
+            <MyFooter />
           </Route>
         </Switch>
       </Router>

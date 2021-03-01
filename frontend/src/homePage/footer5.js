@@ -9,19 +9,22 @@ import EmailIcon from "@material-ui/icons/Email";
 export default function Footer() {
   return (
     <div className="footer">
-      <div className="a">
-        <div className="f-address">
-          <p className="address">Address</p>
-          <p>B-56</p>
-          <p>Chandni Chowk</p>
-          <p>New Delhi</p>
-        </div>
+      <div className="f-details">
+      <div className="f-flex">
+          <div className="f-address">
+            <p className="address">Address</p>
+            <p>B-56</p>
+            <p>Chandni Chowk Chandni Chowk, Chandni Chowk</p>
+            <p>New Delhi</p>
+          </div>
 
-        <div className="f-contacts">
-          <p className="contacts">Contacts</p>
-          <p>Mr. XYZ</p>
-          <p>M : +46136560</p>
-        </div>
+          <div className="f-contacts">
+            <p className="contacts">Contacts</p>
+            <p>Mr. XYZ</p>
+            <p>M : +46136560</p>
+          </div>
+      </div>
+        
 
         <div className="f-feedback">
           <p className="feedback">Feedback</p>
@@ -64,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="b">
+      <div className="f-map">
         <div className="maps">
           <img
             src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_2560%2Cc_limit/GoogleMapTA.jpg"
@@ -73,14 +76,16 @@ export default function Footer() {
           />
         </div>
 
-        <div className="socials">
+        {/* <div className="socials">
           <TwitterIcon fontSize="large" />
           <InstagramIcon fontSize="large" />
           <YouTubeIcon fontSize="large" />
           <FacebookIcon fontSize="large" />
           <EmailIcon fontSize="large" />
-        </div>
+        </div> */}
       </div>
+
+      
     </div>
   );
 }

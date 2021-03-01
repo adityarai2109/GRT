@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
-.b {
+/* .b {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -20,24 +20,36 @@
     "msg msg";
   width: 60%;
   height: 10rem;
+} */
+.f-flex{
+  display: flex;
 }
 .data {
   display: flex;
   flex-direction: column;
 }
 
-.a > *,
+/* .a > *,
 .b > * {
   padding: 1.5rem;
-}
+} */
 .f-address,
 .f-links,
 .f-contacts,
 .f-feedback {
   text-align: left;
+  margin-right: auto;
+  padding: 1rem;
 }
-.f-feedback {
-  grid-area: "msg";
+
+.f-feedback{
+  
+  /* padding-top: 2rem; */
+}
+.f-details {
+  /* width: 50rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .input {
   border: 1px solid black;
@@ -49,9 +61,13 @@
   font-weight: bold;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  
 }
 .map {
-  width: 30vw;
+  width: 30rem;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .socials {
   width: 60%;
@@ -60,7 +76,7 @@
   display: flex;
 }
 
-@media only screen and (max-width: 780px) {
+/* @media only screen and (max-width: 780px) {
   .footer {
     display: flex;
     flex-direction: column;
@@ -99,5 +115,10 @@
     transform: translate(-50%);
     display: flex;
     justify-content: space-evenly;
+  }
+} */
+@media only screen and (max-width: 780px) {
+  .footer{
+    flex-direction: column;
   }
 }
