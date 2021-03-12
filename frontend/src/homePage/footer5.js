@@ -5,9 +5,11 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import EmailIcon from "@material-ui/icons/Email";
+import Map from '../CustomJS/Map';
 
 export default function Footer() {
   return (
+    <div className="footer-container">
     <div className="footer">
       <div className="f-details">
       <div className="f-flex">
@@ -68,24 +70,10 @@ export default function Footer() {
       </div>
 
       <div className="f-map">
-        <div className="maps">
-          <img
-            src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_2560%2Cc_limit/GoogleMapTA.jpg"
-            alt="Map"
-            className="map"
-          />
-        </div>
-
-        {/* <div className="socials">
-          <TwitterIcon fontSize="large" />
-          <InstagramIcon fontSize="large" />
-          <YouTubeIcon fontSize="large" />
-          <FacebookIcon fontSize="large" />
-          <EmailIcon fontSize="large" />
-        </div> */}
+        <Map />
       </div>
 
-      
+    </div>
     </div>
   );
 }

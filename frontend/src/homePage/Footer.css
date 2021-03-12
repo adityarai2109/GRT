@@ -1,26 +1,15 @@
+.footer-container{
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5rem;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-/* .b {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 40%;
-}
-.a {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  justify-content: space-around;
-  grid-template-areas:
-    ". ."
-    "msg msg";
-  width: 60%;
-  height: 10rem;
-} */
+
 .f-flex{
   display: flex;
 }
@@ -29,27 +18,21 @@
   flex-direction: column;
 }
 
-/* .a > *,
-.b > * {
-  padding: 1.5rem;
-} */
 .f-address,
 .f-links,
 .f-contacts,
 .f-feedback {
   text-align: left;
-  margin-right: auto;
   padding: 1rem;
 }
 
 .f-feedback{
   
-  /* padding-top: 2rem; */
 }
 .f-details {
-  /* width: 50rem; */
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 50%;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .input {
   border: 1px solid black;
@@ -63,11 +46,11 @@
   margin-bottom: 0.5rem;
   
 }
-.map {
-  width: 30rem;
-  padding: 2rem;
+.f-map {
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
+  
 }
 .socials {
   width: 60%;
@@ -76,49 +59,15 @@
   display: flex;
 }
 
-/* @media only screen and (max-width: 780px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-  }
-  .a {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "."
-      "."
-      "."
-      ".";
-    width: 100%;
-  }
-  .f-address,
-  .f-links,
-  .f-contacts,
-  .f-feedback {
-    text-align: left;
-    margin-left: 50%;
-    transform: translate(-50%);
-  }
-  .map {
-    width: 100vw;
-  }
-  .b {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .socials {
-    width: 100%;
-    margin-left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    justify-content: space-evenly;
-  }
-} */
+
 @media only screen and (max-width: 780px) {
   .footer{
     flex-direction: column;
+  }
+  .f-map{
+    width: 100%;
+  }
+  .f-details{
+    width: 100%;
   }
 }

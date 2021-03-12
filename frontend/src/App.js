@@ -12,6 +12,7 @@ import DesignerHeading from "./homePage/DesignerHeading";
 // import Test from "./components/test";
 import Grid from "./homePage/grid";
 import Card from "./homePage/card";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -68,14 +69,17 @@ function App() {
             <DesignerHeading name="Featured Category" />
             {/* <Card /> */}
             <Grid />
-            <DesignerHeading name="Latest Collection" />
-            <Gallery />
+            {/* <DesignerHeading name="Latest Collection" />
+            <Gallery /> */}
+            <DesignerHeading name="Taglines" />
             <Taglines />
             <DesignerHeading name="Testimonials" />
             <Testimonials />
             {/* <Contact /> */}
+            <DesignerHeading name="Contacts" />
             <Footer />
             <MyFooter />
+            
           </Route>
         </Switch>
       </Router>
