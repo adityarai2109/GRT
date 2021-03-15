@@ -3,12 +3,19 @@
 .product_card {
   display: grid;
   padding: 3rem;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, 25%);
+  grid-template-rows: repeat(1, 1fr);
+  /* grid-column-gap: 10px;
+  grid-row-gap: 10px; */
+  /* justify-content: center;
+  align-items: center; */
 }
+/* .product_card{
+  display: grid;  
+  grid-gap: 5px;  
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-rows: repeat(2, 100px);  
+} */
 
 .orderby {
   display: flex;
