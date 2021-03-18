@@ -1,4 +1,5 @@
-.footer-container{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+.footer-container {
   margin-left: 8%;
   margin-right: 8%;
   margin-top: 5rem;
@@ -8,9 +9,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  height: auto;
 }
-
-.f-flex{
+.f-details {
+  background-color: rgb(69, 0, 69);
+  height: 38rem;
+}
+.data {
+  margin-top: 12px;
+}
+.f-flex {
   display: flex;
 }
 .data {
@@ -24,33 +32,34 @@
 .f-feedback {
   text-align: left;
   padding: 1rem;
-}
-
-.f-feedback{
-  
+  font-family: Poppins;
 }
 .f-details {
   width: 50%;
   padding-left: 2rem;
   padding-right: 2rem;
+  background-color: #621ea1;
+  height: 38rem;
 }
 .input {
-  border: 1px solid black;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 5px;
 }
 .address,
 .links,
 .feedback,
 .contacts {
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  
+  text-decoration: underline;
 }
 .f-map {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  
+  height: 100%;
 }
 .socials {
   width: 60%;
@@ -59,15 +68,14 @@
   display: flex;
 }
 
-
 @media only screen and (max-width: 780px) {
-  .footer{
+  .footer {
     flex-direction: column;
   }
-  .f-map{
+  .f-map {
     width: 100%;
   }
-  .f-details{
+  .f-details {
     width: 100%;
   }
 }

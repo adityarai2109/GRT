@@ -14,18 +14,26 @@ export default function Navbar() {
       <div id="grt-navbar">
         <div className="row-1-wrapper">
           <div className="row-1">
-            <a href="/">
-              <img src={logo} className="logo" alt="GRT" />
+            <a className="heading_logo" href="/">
+              Ganga Ram Textiles
+              {/* <img src={logo} className="logo" alt="GRT" /> */}
             </a>
             <div className="search-bar">
-              <input
-                className="search-field"
-                type="text"
-                placeholder="   Search for Clothes, Brands and more"
-              />
-              <SearchIcon className="searchicon" />
+              <div className="nav_flex">
+                <input
+                  className="search-field"
+                  type="text"
+                  placeholder="Search for Clothes, Brands and more"
+                />
+                <div className="searchicon">
+                  <SearchIcon
+                    style={{ fontSize: "32px" }}
+                    className="searchsvg"
+                  />
+                </div>
+              </div>
             </div>
-            <Cart cartCount={cartCount} setCartCount={setCartCount} />
+            {/* <Cart cartCount={cartCount} setCartCount={setCartCount} /> */}
           </div>
         </div>
         {/* <div className="row-2">

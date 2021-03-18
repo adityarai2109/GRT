@@ -5,75 +5,74 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import EmailIcon from "@material-ui/icons/Email";
-import Map from '../CustomJS/Map';
+import Map from "../CustomJS/Map";
 
 export default function Footer() {
   return (
     <div className="footer-container">
-    <div className="footer">
-      <div className="f-details">
-      <div className="f-flex">
-          <div className="f-address">
-            <p className="address">Address</p>
-            <p>B-56</p>
-            <p>Chandni Chowk Chandni Chowk, Chandni Chowk</p>
-            <p>New Delhi</p>
+      <div className="footer">
+        <div className="f-details">
+          <div className="f-flex">
+            <div className="f-address text-white">
+              <p className="address ">Address</p>
+              <p>B-56</p>
+              <p>Chandni Chowk Chandni Chowk, Chandni Chowk</p>
+              <p>New Delhi</p>
+            </div>
+
+            <div className="f-contacts text-white">
+              <p className="contacts">Contacts</p>
+              <p>Mr. XYZ</p>
+              <p>M : +46136560</p>
+            </div>
           </div>
 
-          <div className="f-contacts">
-            <p className="contacts">Contacts</p>
-            <p>Mr. XYZ</p>
-            <p>M : +46136560</p>
+          <div className="f-feedback">
+            <p className="feedback text-white">Feedback</p>
+
+            <form action="">
+              <b className="text-white">
+                Your feedback is really valuable to us
+              </b>
+
+              <div className="data">
+                <label className="text-white">Name</label>
+                <input
+                  className="input"
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter here..."
+                />
+              </div>
+              <div className="data">
+                <label className="text-white">Email</label>
+                <input
+                  className="input"
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Enter here..."
+                />
+              </div>
+              <div className="data">
+                <label className="text-white">Message</label>
+                <input
+                  className="input"
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter here..."
+                />
+              </div>
+            </form>
           </div>
-      </div>
-        
+        </div>
 
-        <div className="f-feedback">
-          <p className="feedback">Feedback</p>
-
-          <form action="">
-            <b>Your feedback is really valuable to us</b>
-
-            <div className="data">
-              <label>Name</label>
-              <input
-                className="input"
-                type="text"
-                name=""
-                id=""
-                placeholder="Enter here..."
-              />
-            </div>
-            <div className="data">
-              <label>Email</label>
-              <input
-                className="input"
-                type="email"
-                name=""
-                id=""
-                placeholder="Enter here..."
-              />
-            </div>
-            <div className="data">
-              <label>Message</label>
-              <textarea
-                className="input"
-                name="message"
-                id=""
-                cols="50"
-                rows="5"
-                placeholder="Enter here..."
-              ></textarea>
-            </div>
-          </form>
+        <div className="f-map">
+          <Map />
         </div>
       </div>
-
-      <div className="f-map">
-        <Map />
-      </div>
-
-    </div>
     </div>
   );
 }

@@ -28,3 +28,7 @@
   font-weight: bold;
   font-size: 1.1rem;
 }
+.range {
+  display: flex;
+  flex-direction: row;
+}

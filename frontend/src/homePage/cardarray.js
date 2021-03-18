@@ -33,7 +33,7 @@ let Cardarray = [
   },
   {
     id: 4,
-    category: "Kurti",
+    category: "Suit",
     image: imageArray[3],
     title: "title 4",
     description:
@@ -43,7 +43,7 @@ let Cardarray = [
   },
   {
     id: 5,
-    category: "Kurti",
+    category: "Suit",
     image: imageArray[4],
     title: "title 5",
     description:
@@ -53,7 +53,7 @@ let Cardarray = [
   },
   {
     id: 6,
-    category: "Kurti",
+    category: "Suit",
     image: imageArray[5],
     title: "title 6",
     description:
@@ -83,7 +83,7 @@ let Cardarray = [
   },
   {
     id: 9,
-    category: "Kurti",
+    category: "Suit",
     image: imageArray[5],
     title: "title 9",
     description:
@@ -93,7 +93,7 @@ let Cardarray = [
   },
   {
     id: 10,
-    category: "Kurti",
+    category: "Suit",
     image: imageArray[5],
     title: "title 10",
     description:
