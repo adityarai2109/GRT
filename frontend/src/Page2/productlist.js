@@ -5,36 +5,11 @@ import "./productlist.css";
 import Navbar from "../homePage/navbar";
 import Cardarray from "../homePage/cardarray";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-
 import Range from "../CustomJS/Range";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: 250,
-  },
-  margin: {
-    height: theme.spacing(3),
-  },
-}));
-
-const marks = [
-  {
-    value: 0,
-    label: "0",
-  },
-  {
-    value: 100,
-    label: "10000",
-  },
-];
-function valuetext(value) {
-  return `${value}°C`;
-}
 
 const Productlist = ({ match }) => {
   let category = String(match.params.category);
-  // category = category.toString();
   const [sortedCategory, setSortedCategory] = useState("Latest");
   function newstate(newState) {
     let newSortedCategory = [...sortedCategory];
@@ -42,47 +17,64 @@ const Productlist = ({ match }) => {
     setSortedCategory(newSortedCategory);
   }
 
-  /*
-  a
-  b
-  arr[]
-  for(int i = 0;i < arr.length();i++)
-  {
-    if(arr[i].price >= a && arr[i].price <= b)
-      console.log(arr[i])
-  }
-  */
-  const [value, setValue] = useState([0, 1000]);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  // for(let i = 0;i < arr.length();i++)
+  // {
+  //   if(arr[i].price >= a && arr[i].price <= b)
+  //     console.log(arr[i])
+  // }
+
+  const [value, setValue] = useState([0, 100]);
   function Sortby() {
-    return Cardarray.filter((categCard) => categCard.category === category)
+    if (sortedCategory === "range") {
+      //console.log("state : range ", value[0] * 100);
+      return Cardarray.filter((categCard) => categCard.category === category)
       .sort(function (a, b) {
-        if (sortedCategory === "Latest") {
-          let d1 = parseInt(a.createdAt);
-          let d2 = parseInt(b.createdAt);
-          return d2 - d1;
-        } else if (sortedCategory === "lth") {
           return a.price - b.price;
-        } else if (sortedCategory === "htl") {
-          return b.price - a.price;
-        } else if (sortedCategory === "range") {
         }
-      })
-      .map((card) => {
-        return (
-          <div>
-            <Test
-              id={card.id}
-              image={card.image}
-              title={card.title}
-              price={card.price}
-              category={card.category}
-            />
-          </div>
-        );
-      });
+      )
+        .map((card) => {
+          if(card.price >= value[0]*100 && card.price <= value[1]*100){
+            return (
+              <div>
+                <Test
+                  id={card.id}
+                  image={card.image}
+                  title={card.title}
+                  price={card.price}
+                  category={card.category}
+                />
+              </div>
+            );
+          }
+          
+        });
+    } else {
+      return Cardarray.filter((categCard) => categCard.category === category)
+        .sort(function (a, b) {
+          if (sortedCategory === "Latest") {
+            let d1 = parseInt(a.createdAt);
+            let d2 = parseInt(b.createdAt);
+            return d2 - d1;
+          } else if (sortedCategory === "lth") {
+            return a.price - b.price;
+          } else if (sortedCategory === "htl") {
+            return b.price - a.price;
+          }
+        })
+        .map((card) => {
+          return (
+            <div>
+              <Test
+                id={card.id}
+                image={card.image}
+                title={card.title}
+                price={card.price}
+                category={card.category}
+              />
+            </div>
+          );
+        });
+    }
   }
 
   //setSortedCategory("htl")
@@ -102,9 +94,8 @@ const Productlist = ({ match }) => {
         <p className="latest" onClick={() => newstate("Latest")}>
           Latest
         </p>
-        <p className="range" onClick={() => console.log("Range")}>
-          <p>Range</p>
-          <Range />
+        <p className="range" onClick={() => newstate("range")}>
+          <Range value={value} setValue={setValue} />
         </p>
       </div>
       <hr />

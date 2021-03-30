@@ -1,19 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
-#grt-navbar {
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: #8d12d9;
+  height: 10vh;
+  align-items: center;
+}
+.logo {
+  font-family: Inconsolata;
+  color: white;
+  font-size: 2rem;
+}
+.input::placeholder {
+  color: purple;
+}
+.input {
+  padding: 2rem;
+  color: purple;
+  height: 3rem;
+  width: 30vw;
+}
+.search {
+  color: black;
+  background-color: rgb(238, 238, 67);
+  height: 1rem;
+  width: 1rem;
+}
+
+/* #grt-navbar {
   background-color: blueviolet;
   color: #ffffff;
 
   /* margin-left: 80px;
-  margin-right: 80px; */
-}
-.heading_logo {
+  margin-right: 80px; 
+}*/
+/* .heading_logo {
   font-family: Inconsolata;
 }
 .logo {
   height: 6vh;
 }
 .row-1 {
-  /* margin-top : 1rem; */
+  /* margin-top : 1rem; 
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
   display: flex;
@@ -33,7 +62,7 @@
 .search-field {
   width: 90%;
   margin-left: 0;
-  padding: 10px;
+  padding: 5px;
   text-decoration: none;
   color: black;
   outline-width: 0;
@@ -46,17 +75,14 @@
 .searchicon {
   background-color: #ffe11b;
   width: 3rem;
-  height: 2.5rem;
+  height: 3rem;
   padding: 3px;
-}
+}  */
 /* .searchsvg {
   font-size: x-large;
   margin-left: auto;
   margin-right: auto;
 } */
-h1 {
-  font-size: 2rem;
-}
 
 /* .wishlist {
   display: flex;
@@ -80,7 +106,7 @@ h1 {
   color: rgb(120, 12, 221);
 } */
 
-.row-2 > ul {
+/* .row-2 > ul {
   margin-left: 6rem;
   display: flex;
   justify-content: space-between;
@@ -94,4 +120,4 @@ h1 {
 .upper-links:hover {
   border-radius: 10px;
   background-color: #7724c5;
-}
+} */

@@ -79,7 +79,6 @@ function App() {
             <DesignerHeading name="Contacts" />
             <Footer />
             <MyFooter />
-            
           </Route>
         </Switch>
       </Router>
