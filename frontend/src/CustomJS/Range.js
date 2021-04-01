@@ -41,7 +41,7 @@ const marks = [
 export default function TrackInvertedSlider(props) {
   const handleSliderChange = (event, newValue) => {
     props.setValue(newValue);
-    console.log(parseInt(props.value[0]) * 100, parseInt(props.value[1]) * 100);
+    // console.log(parseInt(props.value[0]) * 100, parseInt(props.value[1]) * 100);
   };
 
   const classes = useStyles();

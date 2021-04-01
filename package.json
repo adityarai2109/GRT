@@ -1,0 +1,25 @@
+{
+  "name": "grt",
+  "version": "1.0.0",
+  "description": "GRT website",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+ 
+  "devDependencies": {},
+  "scripts": {
+    "start": "node  backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityarai2109/GRT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adityarai2109/GRT/issues"
+  },
+  "homepage": "https://github.com/adityarai2109/GRT#readme"
+}

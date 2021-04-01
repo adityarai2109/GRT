@@ -1,5 +1,6 @@
 {
   "name": "grt",
+  "proxy": "http://127.0.0.1:5000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +9,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",
     "google-maps-react": "^2.0.6",
