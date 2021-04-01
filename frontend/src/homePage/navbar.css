@@ -12,21 +12,33 @@
   color: white;
   font-size: 2rem;
 }
-.input::placeholder {
+.inputnav::placeholder {
   color: purple;
+  
 }
-.input {
-  padding: 2rem;
+.inputnav {
+  margin-left: 2rem;
+  /* padding: 2rem; */
   color: purple;
-  height: 3rem;
-  width: 30vw;
+  width: 35vw;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px 0 0 5px;
 }
 .search {
   color: black;
   background-color: rgb(238, 238, 67);
   height: 1rem;
   width: 1rem;
+  border-radius: 0 5px 5px 0;
 }
+.searchbar{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 /* #grt-navbar {
   background-color: blueviolet;

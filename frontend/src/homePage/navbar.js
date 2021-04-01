@@ -54,11 +54,11 @@ export default function navbar() {
       </div>
       <div className="searchbar">
         <input
-          className="input"
+          className="inputnav"
           type="text"
           placeholder="Search for Clothes, Brands and more..."
         />
-        <SearchIcon className="search" fontSize="large" />
+        <SearchIcon className="search" style={{ cursor:"pointer",fontSize: "36px" }} />
       </div>
     </div>
   );

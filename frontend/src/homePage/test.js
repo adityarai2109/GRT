@@ -15,8 +15,7 @@ function Test(props) {
   </Route>
   */
   return (
-    <div>
-      <div
+    <div
         className="images_row"
         onClick={() => {
           console.log(props.title);
@@ -29,8 +28,7 @@ function Test(props) {
             <PurpleButton line1={props.title} line2={`₹ ${props.price}`} />
           </Link>
         </div>
-      </div>
-    </div>
+      </div>  
   );
 }
 

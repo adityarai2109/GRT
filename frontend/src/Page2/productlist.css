@@ -16,12 +16,14 @@
   grid-template-columns: repeat(auto-fit, 100px);
   grid-template-rows: repeat(2, 100px);  
 } */
-
+.navRange{
+  margin: 4rem;NoobMaster#0637
+}
 .orderby {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
+  align-items: top;
+  padding: 1.5rem;
   font-family: Poppins;
 }
 .orderby > * {
@@ -34,4 +36,40 @@
 }
 .range {
   display: flex;
+  flex-direction:column;
+}
+.rangebar{
+  display:flex;
+  
+}
+.rangebar > button{
+  margin-left:2rem;
+}
+
+@media(max-width:768px){
+  .orderby {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .rangebar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .navRange{
+    width:40vw;
+  }
+  .rangebar > button{
+    margin-left:0rem;
+  }
+  
+}
+@media(min-width:768px){
+  .navRange{
+    width:20vw;
+  }
 }
