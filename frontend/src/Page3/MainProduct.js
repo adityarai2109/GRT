@@ -19,10 +19,12 @@ const MainProduct = ({ match }) => {
         <div className="page3_content">
           <div className="product_image">
             <img
+              className="pimage"
               src={Cardarray.find((x) => x.id === id && x.category === category).image}
               alt="ProductImage"
             ></img>
           </div>
+          <div className="partition"></div>
           <div className="product_desc">
             <h1 className="title">
               {Cardarray.find((x) => x.id === id).title}
@@ -32,8 +34,8 @@ const MainProduct = ({ match }) => {
             </p>
             <div className="buttons1">
               <PurpleButton
-                line1={Cardarray.find((x) => x.id === id).price}
-                line2="* * * * *"
+
+                line1={"₹ " + Cardarray.find((x) => x.id === id).price}
               />
               <PurpleButton line1="Add to Wishlist" />
             </div>

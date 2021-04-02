@@ -91,15 +91,15 @@ const Productlist = ({ match }) => {
             {/* <hr /> */}
             <div className="orderby">
                 {/* <p className="sort">Sort by:</p> */}
-                <button className="price_htl" onClick={() => newstate("htl")}>
+                <p className="price_htl" onClick={() => newstate("htl")}>
                     Price - high to low
-                </button>
-                <button className="price_lth" onClick={() => newstate("lth")}>
+                </p>
+                <p className="price_lth" onClick={() => newstate("lth")}>
                     Price - low to high
-                </button>
-                <button className="latest" onClick={() => newstate("Latest")}>
+                </p>
+                <p className="latest" onClick={() => newstate("Latest")}>
                     Latest
-                </button>
+                </p>
                 <p className="range" onClick={() => newstate("range")}>
                     {rangeToggle ? (
                         <div

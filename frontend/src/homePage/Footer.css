@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   height: auto;
 }
 .f-details {
@@ -20,6 +21,8 @@
 }
 .f-flex {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .data {
   display: flex;

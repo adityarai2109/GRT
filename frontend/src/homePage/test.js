@@ -22,7 +22,7 @@ function Test(props) {
         }}
       >
         <div>
-          <img src={props.image} className="cloth_image" alt=""></img>
+          <img src={props.image} className="cloth_image" alt="Kapda"></img>
           <Link to={`/${props.category}/${props.id}`}>
             {}
             <PurpleButton line1={props.title} line2={`₹ ${props.price}`} />
