@@ -24,8 +24,8 @@ export default function Map() {
         <WrappedMap
           googleMapURL={apiUrl}
           loadingElement={<div />}
-          containerElement={<div style={{ height: `38rem` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `38rem`, borderRadius: `5%` }} />}
+          mapElement={<div style={{ height: `100%`, borderRadius: `5%` }} />}
         />
       </div>
     </div>

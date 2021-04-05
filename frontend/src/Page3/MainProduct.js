@@ -5,7 +5,7 @@ import PurpleButton from "../CustomJS/PurpleButton.js";
 import Cardarray from "../homePage/cardarray";
 import Navbar from "../homePage/navbar";
 import Footer from "../homePage/footer5";
-
+import MyFooter from "../homePage/myFooter";
 
 // myId = this.props.match.params.ida
 
@@ -44,6 +44,7 @@ const MainProduct = ({ match }) => {
         </div>
       </div>
       <Footer />
+      <MyFooter />
     </>
   );
 };

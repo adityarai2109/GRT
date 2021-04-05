@@ -24,6 +24,8 @@ export default function Footer() {
               <p className="contacts">Contacts</p>
               <p>Mr. XYZ</p>
               <p>M : +46136560</p>
+              <p>Mrs. XYZ</p>
+              <p>M : +46136560</p>
             </div>
           </div>
 
@@ -76,6 +78,14 @@ export default function Footer() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
 
 // import React from "react";
 
