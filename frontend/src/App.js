@@ -13,7 +13,7 @@ import DesignerHeading from "./homePage/DesignerHeading";
 import Grid from "./homePage/grid";
 import Card from "./homePage/card";
 import React, { useState, useEffect } from "react";
-import axios from "axios"; 
+import axios from "axios";
 
 import {
   BrowserRouter as Router,
@@ -28,17 +28,15 @@ import MainProduct from "./Page3/MainProduct";
 
 let routeid;
 function App() {
+  const [products, setProducts] = useState([]);
 
-   const [products, setProducts] = useState([]);
-
-   useEffect(() => {
-     const fetchProducts = async () => {
-       const { data } = await axios.get("/api/products");
-       console.log(data);
-     };
-     fetchProducts();
-   }, []);
-        
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/products");
+      console.log(data);
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div className="App">
@@ -87,8 +85,8 @@ function App() {
             <Gallery /> */}
             <DesignerHeading name="Taglines" />
             <Taglines />
-            <DesignerHeading name="Testimonials" />
-            <Testimonials />
+            {/* <DesignerHeading name="Testimonials" /> */}
+            {/* <Testimonials /> */}
             {/* <Contact /> */}
             <DesignerHeading name="Contacts" />
             <Footer />
