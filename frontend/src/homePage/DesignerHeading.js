@@ -1,7 +1,5 @@
 import React from "react";
 import "./trending.css";
-import Test from "./test";
-import Card from "./card";
 
 function trending(props) {
   return (

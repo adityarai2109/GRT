@@ -1,13 +1,16 @@
 import React from "react";
 import "./MainProduct.css";
-import image from "../images/image2.jpeg";
 import PurpleButton from "../CustomJS/PurpleButton.js";
 import Cardarray from "../homePage/cardarray";
 import Navbar from "../homePage/navbar";
 import Footer from "../homePage/footer5";
 import MyFooter from "../homePage/myFooter";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 
+
+// Cardarray.find(
+//   (x) => x.id === id && x.category === category
+// ).image
 // myId = this.props.match.params.ida
 
 const MainProduct = ({ match }) => {
@@ -19,15 +22,16 @@ const MainProduct = ({ match }) => {
         <Navbar />
         <div className="page3_content">
           <div className="product_image">
-            {/* <img
+            <img
               className="pimage"
               src={
                 Cardarray.find((x) => x.id === id && x.category === category)
                   .image
               }
               alt="ProductImage"
-            ></img> */}
-            <ReactImageMagnify
+            ></img>
+            {/* <ReactImageMagnify className='pimage'
+            style={{padding:"3rem"}}
               {...{
                 smallImage: {
                   alt: "Wristwatch by Ted Baker London",
@@ -42,12 +46,12 @@ const MainProduct = ({ match }) => {
                   src: Cardarray.find(
                     (x) => x.id === id && x.category === category
                   ).image,
-                  enlargedImagePosition: "beside",
-                  width: 1000,
+                  enlargedImagePosition: "over",
+                  width: 600,
                   height: 1000,
                 },
               }}
-            />
+            /> */}
           </div>
           <div className="partition"></div>
           <div className="product_desc">

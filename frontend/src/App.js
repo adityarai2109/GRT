@@ -2,10 +2,10 @@ import "./App.css";
 import Navbar from "./homePage/navbar";
 import Header from "./homePage/header2";
 import Carousel from "./homePage/bootstrapcarousel";
-import Gallery from "./homePage/f2g3";
+// import Gallery from "./homePage/f2g3";
 import Taglines from "./homePage/taglines";
-import Testimonials from "./homePage/testimonial3";
-import Contact from "./homePage/contact2";
+// import Testimonials from "./homePage/testimonial3";
+// import Contact from "./homePage/contact2";
 import Footer from "./homePage/footer5";
 import MyFooter from "./homePage/myFooter";
 import DesignerHeading from "./homePage/DesignerHeading";
@@ -23,12 +23,11 @@ import {
   useParams,
 } from "react-router-dom";
 import Productlist from "./Page2/productlist";
-import Productdetail from "./Page2/productdetails";
 import MainProduct from "./Page3/MainProduct";
 
-let routeid;
 function App() {
   const [products, setProducts] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -58,7 +57,7 @@ function App() {
           <Route
             path="/:category"
             exact
-            render={(props) => <Productlist {...props} />}
+            render={(props) => <Productlist {...props} /> }
           />
 
           {/* Page 3 */}
@@ -71,7 +70,7 @@ function App() {
           {/* Main Page */}
 
           <Route path="/">
-            <Navbar />
+            <Navbar query={query} setQuery={setQuery} />
             <Carousel />
             {/* <Header /> */}
             <DesignerHeading name="Trending" />

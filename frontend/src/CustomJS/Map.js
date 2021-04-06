@@ -15,8 +15,13 @@ const WrappedMap = withScriptjs(withGoogleMap(myMap));
 
 export default function Map() {
 
-  console.log(process.env.REACT_APP_API_KEY);
+
   let apiUrl = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=` + process.env.REACT_APP_API_KEY
+
+  const mapStyle = {
+    height: `38rem`,
+    borderRadius: `0 5% 5% 0`
+  }
   
   return (
     <div>
@@ -24,8 +29,8 @@ export default function Map() {
         <WrappedMap
           googleMapURL={apiUrl}
           loadingElement={<div />}
-          containerElement={<div style={{ height: `38rem`, borderRadius: `5%` }} />}
-          mapElement={<div style={{ height: `100%`, borderRadius: `5%` }} />}
+          containerElement={<div className="mapContainer" />}
+          mapElement={<div className="mapContainer" />}
         />
       </div>
     </div>

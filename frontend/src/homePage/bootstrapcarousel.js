@@ -1,11 +1,10 @@
 import React from "react";
 import "./carousel.css";
-import image1 from "../images/mimage1.jpeg";
+
 import image7 from "../images/carouselA.jpeg";
 import image8 from "../images/CarouselB.jpeg";
-import image4 from "../images/mimage4.jpeg";
 import image5 from "../images/mimage5.jpeg";
-import image6 from "../images/mimage6.jpeg";
+
 
 export default function Carousel() {
   return (

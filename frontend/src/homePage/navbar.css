@@ -11,6 +11,8 @@
   font-family: Inconsolata;
   color: white;
   font-size: 2rem;
+  display: flex;
+  align-items:center;
 }
 .inputnav::placeholder {
   color: purple;

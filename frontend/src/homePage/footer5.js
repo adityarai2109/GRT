@@ -1,11 +1,10 @@
 import React from "react";
 import "./Footer.css";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import EmailIcon from "@material-ui/icons/Email";
 import Map from "../CustomJS/Map";
+
+import iconAddress from '../images/address.png'
+import iconPhone from '../images/phone.png'
+import iconFeedback from '../images/feedback.png'
 
 export default function Footer() {
   return (
@@ -14,14 +13,20 @@ export default function Footer() {
         <div className="f-details">
           <div className="f-flex">
             <div className="f-address text-white">
-              <p className="address ">Address</p>
+              <div className="DetailsHeading">
+              <p className="address">Address  </p>
+              <img style={{height:"2rem",marginLeft:'5px'}} src={iconAddress} alt="Address"/>
+              </div>
               <p>B-56</p>
-              <p>Chandni Chowk Chandni Chowk, Chandni Chowk</p>
+              <p>Chandni Chowk Chandni Chowk Chandni Chowk</p>
               <p>New Delhi</p>
             </div>
 
             <div className="f-contacts text-white">
+              <div className="DetailsHeading">
               <p className="contacts">Contacts</p>
+              <img  style={{height:"2rem",marginLeft:'5px'}} src={iconPhone} alt="Contacts"/>
+              </div>
               <p>Mr. XYZ</p>
               <p>M : +46136560</p>
               <p>Mrs. XYZ</p>
@@ -30,7 +35,10 @@ export default function Footer() {
           </div>
 
           <div className="f-feedback">
+            <div className="DetailsHeading">
             <p className="feedback text-white">Feedback</p>
+            <img  style={{height:"2rem",marginLeft:'5px'}} src={iconFeedback} alt="Feedback"/>
+            </div>
 
             <form action="">
               <b className="text-white">
@@ -90,7 +98,7 @@ export default function Footer() {
 // import React from "react";
 
 // export default function Footer() {
-//   return (
+//   return (0
 //     <div className="footer5">
 //       <footer className="text-gray-400 bg-gray-900 body-font">
 //         <div className="container px-5 py-24 mx-auto">

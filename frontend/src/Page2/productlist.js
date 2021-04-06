@@ -7,6 +7,7 @@ import Cardarray from "../homePage/cardarray";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import Range from "../CustomJS/Range";
+import MyFooter from "../homePage/myFooter";
 
 const Productlist = ({ match }) => {
     const [rangeToggle, setRangeToggle] = useState(true);
@@ -123,6 +124,7 @@ const Productlist = ({ match }) => {
             </div>
             {/* <hr /> */}
             <div className="product_card">{Sortby(Cardarray)}</div>
+            <MyFooter />
         </div>
     );
 };
