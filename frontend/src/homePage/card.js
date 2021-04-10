@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Test from "./test";
-import Cardarray from "../homePage/cardarray";
+//import Cardarray from "../homePage/cardarray";
 
-export default function card() {
+ function Card() {
+  const [Cardarray, setCardarray] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/products");
+      setCardarray(data);
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       <div className="trending_images">
@@ -25,3 +35,4 @@ export default function card() {
     </div>
   );
 }
+export default Card;

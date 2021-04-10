@@ -9,7 +9,8 @@ import Slider from "@material-ui/core/Slider";
 import Range from "../CustomJS/Range";
 import MyFooter from "../homePage/myFooter";
 
-const Productlist = ({ match }) => {
+const Productlist = (props,{ match }) => {
+       console.log(props.products)
     const [rangeToggle, setRangeToggle] = useState(true);
     let category = String(match.params.category);
     const [sortedCategory, setSortedCategory] = useState("Latest");
