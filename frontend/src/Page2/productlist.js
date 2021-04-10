@@ -9,28 +9,33 @@ import Slider from "@material-ui/core/Slider";
 import Range from "../CustomJS/Range";
 import MyFooter from "../homePage/myFooter";
 
-const Productlist = ({ match }) => {
+const Productlist = (props) => {
   //console.log(props.products);
   const [rangeToggle, setRangeToggle] = useState(true);
-  let category = String(match.params.category);
+  let category = String(props.match.params.category);
   const [sortedCategory, setSortedCategory] = useState("Latest");
   function newstate(newState) {
     let newSortedCategory = [...sortedCategory];
     newSortedCategory = newState;
     setSortedCategory(newSortedCategory);
-}
-
+  }
+  console.log(props.query);
   // for(let i = 0;i < arr.length();i++)
   // {
   //   if(arr[i].price >= a && arr[i].price <= b)
   //     console.log(arr[i])
   // }
+  const filteredCardArray = Cardarray.filter(
+    (i) => i.title.includes(props.query) || i.description.includes(props.query)
+  );
+  console.log(filteredCardArray);
 
-const [value, setValue] = useState([0, 100]);
-function Sortby() {
+  const [value, setValue] = useState([0, 100]);
+  function Sortby() {
     if (sortedCategory === "range") {
       //console.log("state : range ", value[0] * 100);
-      return Cardarray.filter((categCard) => categCard.category === category)
+      return filteredCardArray
+        .filter((categCard) => categCard.category === category)
         .sort(function (a, b) {
           return a.price - b.price;
         })
@@ -50,7 +55,8 @@ function Sortby() {
           }
         });
     } else {
-      return Cardarray.filter((categCard) => categCard.category === category)
+      return filteredCardArray
+        .filter((categCard) => categCard.category === category)
         .sort(function (a, b) {
           if (sortedCategory === "Latest") {
             let d1 = parseInt(a.createdAt);
@@ -76,16 +82,13 @@ function Sortby() {
           );
         });
     }
-}
+  }
 
   //setSortedCategory("htl")
   return (
     <div>
-      <Navbar />
       <DesignerHeading name={category} />
-      {/* <hr /> */}
       <div className="orderby">
-        {/* <p className="sort">Sort by:</p> */}
         <p className="price_htl" onClick={() => newstate("htl")}>
           Price - high to low
         </p>
@@ -113,8 +116,7 @@ function Sortby() {
           )}
         </p>
       </div>
-      {/* <hr /> */}
-      <div className="product_card">{Sortby(Cardarray)}</div>
+      <div className="product_card">{Sortby(filteredCardArray)}</div>
       <MyFooter />
     </div>
   );

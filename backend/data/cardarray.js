@@ -1,5 +1,5 @@
 const imageArray = [1, 2, 3, 4, 5];
-const img = "https://picsum.photos/5000";
+const img = `https://picsum.photos/5000?random=${Math.random() * 1000 + 1}`;
 let Cardarray = [
   {
     id: 1,
@@ -17,7 +17,7 @@ let Cardarray = [
     image: img,
     title: "Baby violet cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 1768,
     createdAt: "161455693134",
   },
@@ -37,7 +37,7 @@ let Cardarray = [
     image: img,
     title: "Baby green cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 1753,
     createdAt: "161155693134",
   },
@@ -57,7 +57,7 @@ let Cardarray = [
     image: img,
     title: "Baby orange cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 1745,
     createdAt: "171445613154",
   },
@@ -97,7 +97,7 @@ let Cardarray = [
     image: img,
     title: "Baby blue cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 1248,
     createdAt: "176425623174",
   },
@@ -127,7 +127,7 @@ let Cardarray = [
     image: img,
     title: "Baby orange cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 2435,
     createdAt: "161455694134",
   },
@@ -147,7 +147,7 @@ let Cardarray = [
     img,
     title: "Baby violet cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 2438,
     createdAt: "171455693134",
   },
@@ -167,7 +167,7 @@ let Cardarray = [
     image: img,
     title: "Baby blue cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 2238,
     createdAt: "171475613154",
   },
@@ -177,7 +177,7 @@ let Cardarray = [
     image: img,
     title: "Baby green cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 2038,
     createdAt: "176445613174",
   },
@@ -187,7 +187,7 @@ let Cardarray = [
     image: img,
     title: "Baby yellow cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 1538,
     createdAt: "176445413174",
   },
@@ -207,7 +207,7 @@ let Cardarray = [
     image: img,
     title: "Baby red cotton suit",
     description:
-      "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
+      "A Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 2448,
     createdAt: "176425623174",
   },

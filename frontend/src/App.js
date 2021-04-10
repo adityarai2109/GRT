@@ -36,6 +36,10 @@ function App() {
     };
     fetchProducts();
   }, []);
+  
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
 
   return (
     <div className="App">
@@ -58,11 +62,16 @@ function App() {
             path="/:category"
             exact
             render={(props) => (
-              <Productlist
-                {...props}
-                products={products}
-                setProducts={setProducts}
-              />
+              <>
+                <Navbar query={query} setQuery={setQuery} />
+                <Productlist
+                  {...props}
+                  products={products}
+                  setProducts={setProducts}
+                  query={query}
+                  setQuery={setQuery}
+                />
+              </>
             )}
           />
 
@@ -71,11 +80,16 @@ function App() {
           <Route
             path="/:category/:ida"
             render={(props) => (
-              <MainProduct
-                {...props}
-                products={products}
-                setProducts={setProducts}
-              />
+              <>
+                <Navbar query={query} setQuery={setQuery} />
+                <MainProduct
+                  {...props}
+                  products={products}
+                  setProducts={setProducts}
+                  query={query}
+                  setQuery={setQuery}
+                />
+              </>
             )}
           />
 

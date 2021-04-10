@@ -1,14 +1,23 @@
 import React from "react";
-import iFacebook from '../images/facebook.png'
-import iInstagram from '../images/instagram.png'
-import iTwitter from '../images/twitter.png'
-import iYoutube from '../images/youtube.png'
-import "./myFooter.css"
-import iconLogo from '../images/group1.svg'
+import iFacebook from "../images/facebook.png";
+import iInstagram from "../images/instagram.png";
+import iTwitter from "../images/twitter.png";
+import iYoutube from "../images/youtube.png";
+import "./myFooter.css";
+import iconLogo from "../images/group1.svg";
+// position : absolute;
+//     bottom : 0;
+//     height : 40px;
 
 function MyFooter() {
   return (
-    <div style={{paddingTop: "10px"}}>
+    <div
+      style={{
+        paddingTop: "10px",
+        width: "100%",
+        marginTop: "auto",
+      }}
+    >
       <footer
         class="text-gray-600 body-font p-0"
         style={{ backgroundColor: "#520061" }}
@@ -16,11 +25,11 @@ function MyFooter() {
         <div class="px-2 py-3 mx-auto flex items-center sm:flex-row flex-col">
           <a
             class="flex title-font font-medium items-center md:justify-start justify-center text-white-100"
-            href="https://github.com/adityarai2109/GRT" 
+            href="https://github.com/adityarai2109/GRT"
             target="_blank"
-            rel="noreferrer"  
+            rel="noreferrer"
           >
-            <img style={{height:"6vh"}} src={iconLogo} alt="GRT"/>
+            <img style={{ height: "6vh" }} src={iconLogo} alt="GRT" />
             <span class="ml-3 text-xl" style={{ color: "#ffffff" }}>
               Ganga Ram Textiles
             </span>
@@ -30,19 +39,38 @@ function MyFooter() {
           </p>
 
           <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <a class="ml-5 text-gray-100" href="https://www.facebook.com/" target="_blank"  rel="noreferrer">
-              <img className="icons" src={iFacebook} alt="Facebook"/>
+            <a
+              class="ml-5 text-gray-100"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img className="icons" src={iFacebook} alt="Facebook" />
             </a>
-            <a class="ml-5 text-gray-100" href="https://twitter.com/" target="_blank" rel="noreferrer">
-            <img className="icons" src={iTwitter} alt="Twitter"/>
+            <a
+              class="ml-5 text-gray-100"
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img className="icons" src={iTwitter} alt="Twitter" />
             </a>
-            <a class="ml-5 text-gray-100" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-            <img className="icons" src={iInstagram} alt="Instagram"/>
+            <a
+              class="ml-5 text-gray-100"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img className="icons" src={iInstagram} alt="Instagram" />
             </a>
-            <a class="ml-5 text-gray-100" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-            <img className="icons" src={iYoutube} alt="Youtube"/>
+            <a
+              class="ml-5 text-gray-100"
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img className="icons" src={iYoutube} alt="Youtube" />
             </a>
-           
           </span>
         </div>
       </footer>

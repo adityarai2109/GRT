@@ -7,20 +7,21 @@
   height: 10vh;
   align-items: center;
 }
+.grt {
+  margin-left: 2rem;
+}
 .logo {
   font-family: Inconsolata;
   color: white;
   font-size: 2rem;
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 .inputnav::placeholder {
   color: purple;
-  
 }
 .inputnav {
   margin-left: 2rem;
-  /* padding: 2rem; */
   color: purple;
   width: 35vw;
   border: none;
@@ -34,14 +35,19 @@
   width: 1rem;
   border-radius: 0 5px 5px 0;
 }
-.searchbar{
-  display:flex;
+.searchbar {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
-
+@media (max-width: 750px) {
+  .grt {
+    display: none;
+  }
+  .inputnav {
+    width: 50vw;
+  }
+}
 /* #grt-navbar {
   background-color: blueviolet;
   color: #ffffff;

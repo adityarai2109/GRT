@@ -7,19 +7,17 @@ import Footer from "../homePage/footer5";
 import MyFooter from "../homePage/myFooter";
 // import ReactImageMagnify from "react-image-magnify";
 
-
 // Cardarray.find(
 //   (x) => x.id === id && x.category === category
 // ).image
 // myId = this.props.match.params.ida
 
-const MainProduct = ({ match }) => {
-  let id = parseInt(match.params.ida); // isko int me convert krna tha
-  let category = String(match.params.category);
+const MainProduct = (props) => {
+  let id = parseInt(props.match.params.ida); // isko int me convert krna tha
+  let category = String(props.match.params.category);
   return (
     <>
       <div>
-        <Navbar />
         <div className="page3_content">
           <div className="product_image">
             <img
