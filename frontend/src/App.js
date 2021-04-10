@@ -26,8 +26,8 @@ import Productlist from "./Page2/productlist";
 import MainProduct from "./Page3/MainProduct";
 
 function App() {
-    const [products, setProducts] = useState([]);
-   const [query, setQuery] = useState("");
+  const [products, setProducts] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -57,14 +57,26 @@ function App() {
           <Route
             path="/:category"
             exact
-            render={(props) => <Productlist {...props} products = {products} /> }
+            render={(props) => (
+              <Productlist
+                {...props}
+                products={products}
+                setProducts={setProducts}
+              />
+            )}
           />
 
           {/* Page 3 */}
 
           <Route
             path="/:category/:ida"
-            render={(props) => <MainProduct {...props} />}
+            render={(props) => (
+              <MainProduct
+                {...props}
+                products={products}
+                setProducts={setProducts}
+              />
+            )}
           />
 
           {/* Main Page */}

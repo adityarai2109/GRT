@@ -3,7 +3,7 @@ import axios from "axios";
 import Test from "./test";
 //import Cardarray from "../homePage/cardarray";
 
- function Card() {
+function Card() {
   const [Cardarray, setCardarray] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
