@@ -28,7 +28,7 @@ const Productlist = (props) => {
   const filteredCardArray = Cardarray.filter(
     (i) => i.title.includes(props.query) || i.description.includes(props.query)
   );
-  console.log(filteredCardArray);
+ 
 
   const [value, setValue] = useState([0, 100]);
   function Sortby() {
@@ -86,7 +86,7 @@ const Productlist = (props) => {
 
   //setSortedCategory("htl")
   return (
-    <div>
+    <div className="productlist">
       <DesignerHeading name={category} />
       <div className="orderby">
         <p className="price_htl" onClick={() => newstate("htl")}>
@@ -103,13 +103,13 @@ const Productlist = (props) => {
             <div
               id="input-slider"
               onClick={() => setRangeToggle(false)}
-              style={{ width: "360px" }}
+              style={{ width: "300px" }}
               gutterBottom
             >
               Range
             </div>
           ) : (
-            <div className="rangebar">
+            <div className="rangebar" style={{height:'64px'}}>
               <Range value={value} setValue={setValue} className="navRange" />
               <button onClick={() => setRangeToggle(true)}>Done</button>
             </div>

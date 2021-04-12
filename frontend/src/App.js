@@ -12,6 +12,7 @@ import DesignerHeading from "./homePage/DesignerHeading";
 // import Test from "./components/test";
 import Grid from "./homePage/grid";
 import Card from "./homePage/card";
+// import Loader from './CustomJS/Loader'
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -116,6 +117,7 @@ function App() {
             <DesignerHeading name="Contacts" />
             <Footer />
             <MyFooter />
+            {/* <Loader /> */}
           </Route>
         </Switch>
       </Router>

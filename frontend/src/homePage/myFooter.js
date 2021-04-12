@@ -13,10 +13,10 @@ function MyFooter() {
   return (
     <div
       style={{
-        paddingTop: "10px",
         width: "100%",
         marginTop: "auto",
       }}
+      className="myFooter"
     >
       <footer
         class="text-gray-600 body-font p-0"

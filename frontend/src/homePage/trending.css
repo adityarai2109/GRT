@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 .title_wrapper {
-  margin: 0rem 5% 0rem 5%;
-  margin-top: 2rem;
+  margin: 2rem 5% 0rem 5%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-
-
 
 svg {
   height: 4rem;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -26,14 +26,7 @@
   width: 35vw;
   border: none;
   padding: 6px 20px;
-  border-radius: 5px 0 0 5px;
-}
-.search {
-  color: black;
-  background-color: rgb(238, 238, 67);
-  height: 1rem;
-  width: 1rem;
-  border-radius: 0 5px 5px 0;
+  border-radius: 2px;
 }
 .searchbar {
   display: flex;

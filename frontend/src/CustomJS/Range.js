@@ -5,7 +5,7 @@ import "./range.css";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: 360,
+        width: 300,
     },
     margin: {
         height: theme.spacing(1),
@@ -51,6 +51,7 @@ export default function TrackInvertedSlider(props) {
         <div className={classes.root}>
             <Slider
                 aria-labelledby="range-slider"
+                // getAriaValueText={"value"}
                 defaultValue={[0, 100]}
                 marks={marks}
                 onChange={handleSliderChange}

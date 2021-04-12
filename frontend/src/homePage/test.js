@@ -23,12 +23,11 @@ function Test(props) {
     >
       <div>
         <img
-          src="https://picsum.photos/5000"
+          src="https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg"
           className="cloth_image"
           alt="Suit"
         ></img>
         <Link to={`/${props.category}/${props.id}`}>
-          {}
           <PurpleButton line1={props.title} line2={`₹ ${props.price}`} />
         </Link>
       </div>
@@ -37,7 +36,7 @@ function Test(props) {
 }
 
 export default Test;
-
+/*
 class MyComponent extends React.Component {
   state = {
     redirect: false,
@@ -61,3 +60,4 @@ class MyComponent extends React.Component {
     );
   }
 }
+*/

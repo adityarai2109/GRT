@@ -16,7 +16,8 @@ const MainProduct = (props) => {
   let id = parseInt(props.match.params.ida); // isko int me convert krna tha
   let category = String(props.match.params.category);
   return (
-    <>
+    /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
+    <div >
       <div>
         <div className="page3_content">
           <div className="product_image">
@@ -28,28 +29,7 @@ const MainProduct = (props) => {
               }
               alt="ProductImage"
             ></img>
-            {/* <ReactImageMagnify className='pimage'
-            style={{padding:"3rem"}}
-              {...{
-                smallImage: {
-                  alt: "Wristwatch by Ted Baker London",
-                  isFluidWidth: true,
-                  src: Cardarray.find(
-                    (x) => x.id === id && x.category === category
-                  ).image,
-                  width: 200,
-                  height: 200,
-                },
-                largeImage: {
-                  src: Cardarray.find(
-                    (x) => x.id === id && x.category === category
-                  ).image,
-                  enlargedImagePosition: "over",
-                  width: 600,
-                  height: 1000,
-                },
-              }}
-            /> */}
+            
           </div>
           <div className="partition"></div>
           <div className="product_desc">
@@ -71,7 +51,7 @@ const MainProduct = (props) => {
       </div>
       <Footer />
       <MyFooter />
-    </>
+    </div>
   );
 };
 

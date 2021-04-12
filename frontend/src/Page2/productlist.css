@@ -5,10 +5,7 @@
   padding: 3rem;
   grid-template-columns: repeat(auto-fit, 25%);
   grid-template-rows: repeat(1, 1fr);
-  /* grid-column-gap: 10px;
-  grid-row-gap: 10px; */
-  /* justify-content: center;
-  align-items: center; */
+  min-height:calc(100vh - 10vh - 14rem - 69px );
 }
 /* .product_card{
   display: grid;  
@@ -22,9 +19,10 @@
 .orderby {
   display: flex;
   justify-content: space-around;
-  align-items: top;
-  padding: 1.5rem;
+  align-items: center;
+  padding: 2rem;
   font-family: Poppins;
+  height: 128px;
 }
 .orderby > * {
   cursor: pointer;

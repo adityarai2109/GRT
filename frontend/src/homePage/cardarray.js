@@ -1,5 +1,5 @@
 import imageArray from "../images/images";
-const img = `https://picsum.photos/5000?random=${Math.random() * 1000 + 1}`;
+const img = `https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg`;
 let Cardarray = [
   {
     id: 1,
