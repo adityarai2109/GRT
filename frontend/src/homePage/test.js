@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./test.css";
 import PurpleButton from "../CustomJS/PurpleButton.js";
 import Group2 from "../images/Group 2.jpg";
-
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import logo_dark from "./GRT_dark.svg"
 function Test(props) {
   const [initialData, setinitialData] = useState();
 
@@ -23,7 +22,7 @@ function Test(props) {
     >
       <div>
         <img
-          src="https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg"
+          src={logo_dark}
           className="cloth_image"
           alt="Suit"
         ></img>

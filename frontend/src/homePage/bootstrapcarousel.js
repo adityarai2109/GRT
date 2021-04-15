@@ -1,14 +1,14 @@
 import React from "react";
 import "./carousel.css";
 
-import image7 from "../images/carouselA.jpeg";
-import image8 from "../images/CarouselB.jpeg";
-import image5 from "../images/mimage5.jpeg";
+import image7 from "../images/carousel_collage1.jpeg";
+import image8 from "../images/carousel_collage1.jpeg";
+import image5 from "../images/carousel_collage1.jpeg";
 
 
 export default function Carousel() {
   return (
-    <div className="bootstrapcarousel">
+    <div className="bootstrapcarousel mt-5">
       <div
         className="carousel relative shadow-2xl bg-white"
         style={{ width: "80vw" }}

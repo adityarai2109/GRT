@@ -45,7 +45,7 @@ const MainProduct = (props) => {
               />
               <PurpleButton line1="Add to Wishlist" />
             </div>
-            <PurpleButton line1="Enquiry" />
+            <PurpleButton line1="Whatsapp us on:" line2="+91 9876543210" />
           </div>
         </div>
       </div>
