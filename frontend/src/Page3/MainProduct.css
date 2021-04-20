@@ -15,8 +15,8 @@
 .product_image {
   width: 50%;
 }
-..product_desc{
-  position:relative;
+.product_desc {
+  position: relative;
 }
 
 .product_image {
@@ -30,7 +30,7 @@
   max-height: 650px;
   transition: transform 0.1s;
 }
-.pimage:hover{
+.pimage:hover {
   transform: scale(1.15);
 }
 
@@ -93,12 +93,11 @@
     display: flex;
     flex-direction: column;
   }
-  
 }
-@media only screen and (min-width: 1150px){
-  .partition{
-    height:70vh;
-    width:1px;
+@media only screen and (min-width: 1150px) {
+  .partition {
+    height: 70vh;
+    width: 1px;
     background: rgb(61, 61, 61);
   }
 }

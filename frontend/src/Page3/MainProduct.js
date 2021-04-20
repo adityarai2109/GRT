@@ -5,6 +5,8 @@ import Cardarray from "../homePage/cardarray";
 import Navbar from "../homePage/navbar";
 import Footer from "../homePage/footer5";
 import MyFooter from "../homePage/myFooter";
+import { useEffect } from "react";
+
 // import ReactImageMagnify from "react-image-magnify";
 
 // Cardarray.find(
@@ -15,9 +17,12 @@ import MyFooter from "../homePage/myFooter";
 const MainProduct = (props) => {
   let id = parseInt(props.match.params.ida); // isko int me convert krna tha
   let category = String(props.match.params.category);
+  useEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, []);
   return (
     /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
-    <div >
+    <div>
       <div>
         <div className="page3_content">
           <div className="product_image">
@@ -29,7 +34,6 @@ const MainProduct = (props) => {
               }
               alt="ProductImage"
             ></img>
-            
           </div>
           <div className="partition"></div>
           <div className="product_desc">
