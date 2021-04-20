@@ -4,7 +4,7 @@ import Header from "./homePage/header2";
 import Carousel from "./homePage/bootstrapcarousel";
 // import Gallery from "./homePage/f2g3";
 import Taglines from "./homePage/taglines";
-// import Testimonials from "./homePage/testimonial3";
+import Testimonials from "./homePage/testimonial3";
 // import Contact from "./homePage/contact2";
 import Footer from "./homePage/footer5";
 import MyFooter from "./homePage/myFooter";
@@ -37,7 +37,7 @@ function App() {
     };
     fetchProducts();
   }, []);
-  
+
   useEffect(() => {
     console.log(query);
   }, [query]);
@@ -98,10 +98,21 @@ function App() {
 
           <Route path="/">
             <Navbar query={query} setQuery={setQuery} />
-            <Carousel />
+            <div
+              style={{
+                width: "100%",
+                zIndex: "-1",
+                marginBottom: "-100px",
+                maskImage:
+                  "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))",
+              }}
+            >
+              <Carousel />
+            </div>
             {/* <Header /> */}
             <DesignerHeading name="Trending" />
             <Card />
+
             <DesignerHeading name="All collections" />
             <Card />
             <DesignerHeading name="Featured Category" />

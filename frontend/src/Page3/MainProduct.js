@@ -7,6 +7,10 @@ import Footer from "../homePage/footer5";
 import MyFooter from "../homePage/myFooter";
 import { useEffect } from "react";
 
+import { Button } from "@material-ui/core";
+import SearchIcon from "@material-ui/icons/Search";
+import viewMore from "../images/file-search.svg";
+import { Link } from "react-router-dom";
 // import ReactImageMagnify from "react-image-magnify";
 
 // Cardarray.find(
@@ -52,6 +56,14 @@ const MainProduct = (props) => {
             <PurpleButton line1="Whatsapp us on:" line2="+91 9876543210" />
           </div>
         </div>
+
+        <Link to="/Suit">
+          <Button variant="outlined" color="default" style={{ margin: "2rem" }}>
+            {/* <SearchIcon /> */}
+            <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
+            View more products
+          </Button>
+        </Link>
       </div>
       <Footer />
       <MyFooter />

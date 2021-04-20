@@ -30,10 +30,12 @@ export default function Navbar(props) {
   return (
     /* \bs*t*a*r*k*\b */
     <div className="navbar">
-      <a className="logo" href="/">
-        <img style={{ height: "8vh" }} src={iconLogo} alt="GRT" />
-        <h4 className="grt">Ganga Ram Textiles</h4>
-      </a>
+      <Link to="/">
+        <a className="logo">
+          <img style={{ height: "8vh" }} src={iconLogo} alt="GRT" />
+          <h4 className="grt">Ganga Ram Textiles</h4>
+        </a>
+      </Link>
 
       <div className="searchbar">
         <input

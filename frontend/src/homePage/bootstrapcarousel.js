@@ -1,17 +1,28 @@
 import React from "react";
 import "./carousel.css";
-
 import image7 from "../images/carousel_collage1.jpeg";
 import image8 from "../images/carousel_collage1.jpeg";
 import image5 from "../images/carousel_collage1.jpeg";
-
-
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 export default function Carousel() {
+  /*
+
+  width:100%;
+  z-inedx:-1;
+  margin-bottom : -150px;
+  mask-image : linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
+
+*/
+
   return (
-    <div className="bootstrapcarousel mt-5">
+    <div
+      className="bootstrapcarousel"
+      style={{ marginLeft: "0", marginRight: "0" }}
+    >
       <div
         className="carousel relative shadow-2xl bg-white"
-        style={{ width: "80vw" }}
+        style={{ width: "100vw" }}
       >
         <div className="carousel-inner relative overflow-hidden w-full">
           {/*Slide 1*/}
@@ -35,6 +46,7 @@ export default function Carousel() {
                   marginLeft: "50%",
                   transform: "translate(-50%)",
                   objectFit: "contain",
+                  width: "100vw",
                 }}
                 alt="img"
               />
@@ -42,15 +54,15 @@ export default function Carousel() {
           </div>
           <label
             htmlFor="carousel-3"
-            className="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+            className="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black rounded-full bg-white hover:bg-blue-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
           >
-            ‹
+            <NavigateBeforeIcon />
           </label>
           <label
             htmlFor="carousel-2"
-            className="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+            className="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black rounded-full bg-white hover:bg-blue-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
           >
-            ›
+            <NavigateNextIcon />
           </label>
           {/*Slide 2*/}
           <input
@@ -71,6 +83,7 @@ export default function Carousel() {
                 style={{
                   marginLeft: "50% ",
                   transform: "translate(-50%)",
+                  width: "100vw",
                   objectFit: "contain",
                 }}
                 alt="img"
@@ -79,13 +92,13 @@ export default function Carousel() {
           </div>
           <label
             htmlFor="carousel-1"
-            className="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+            className="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
           >
             ‹
           </label>
           <label
             htmlFor="carousel-3"
-            className="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+            className="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
           >
             ›
           </label>
@@ -108,6 +121,7 @@ export default function Carousel() {
                 style={{
                   marginLeft: "50% ",
                   transform: "translate(-50%)",
+                  width: "100vw",
                   objectFit: "contain",
                 }}
                 alt="img"
@@ -116,13 +130,13 @@ export default function Carousel() {
           </div>
           <label
             htmlFor="carousel-2"
-            className="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+            className="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
           >
             ‹
           </label>
           <label
             htmlFor="carousel-1"
-            className="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+            className="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
           >
             ›
           </label>

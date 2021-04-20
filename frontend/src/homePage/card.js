@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Test from "./test";
+import { Button } from "@material-ui/core";
+import SearchIcon from "@material-ui/icons/Search";
+import viewMore from "../images/file-search.svg";
+import { Link } from "react-router-dom";
+
 //import Cardarray from "../homePage/cardarray";
 
 function Card() {
@@ -31,6 +36,13 @@ function Card() {
             );
           })}
         </div>
+        <Link to="/Suit">
+          <Button variant="outlined" color="default" style={{ margin: "1rem" }}>
+            {/* <SearchIcon /> */}
+            <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
+            View more
+          </Button>
+        </Link>
       </div>
     </div>
   );
