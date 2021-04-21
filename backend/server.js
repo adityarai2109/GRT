@@ -1,9 +1,11 @@
 import  express from 'express'
 import Cardarray from './data/cardarray.js'
 import dotenv from 'dotenv'
+import connectDB from './config/db.js'
 
 const app = express();
 dotenv.config();
+connectDB();
 
 const PORT = process.env.PORT || 5000
 
