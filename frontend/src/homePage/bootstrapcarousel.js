@@ -54,15 +54,15 @@ export default function Carousel() {
           </div>
           <label
             htmlFor="carousel-3"
-            className="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black rounded-full bg-white hover:bg-blue-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
+            className="prev control-1 w-20 h-100 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bolder text-black rounded-full bg-white leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
           >
-            <NavigateBeforeIcon />
+            <NavigateBeforeIcon style={{"height":"100%", "fontSize":"xx-large", "fontWeight":"bolder"}}/>
           </label>
           <label
             htmlFor="carousel-2"
-            className="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black rounded-full bg-white hover:bg-blue-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
+            className="next control-1 w-20 h-100 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bolder text-black rounded-full bg-white leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
           >
-            <NavigateNextIcon />
+            <NavigateNextIcon style={{"height":"100%", "fontSize":"xx-large", "fontWeight":"bolder"}}/>
           </label>
           {/*Slide 2*/}
           <input
@@ -92,15 +92,15 @@ export default function Carousel() {
           </div>
           <label
             htmlFor="carousel-1"
-            className="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
+            className="prev control-2 w-20 h-100 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black rounded-full bg-white leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
           >
-            ‹
+            <NavigateBeforeIcon style={{"height":"100%", "fontSize":"xx-large", "fontWeight":"bolder"}}/>
           </label>
           <label
             htmlFor="carousel-3"
-            className="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
+            className="next control-2 w-20 h-100 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bolder text-black rounded-full bg-white leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
           >
-            ›
+            <NavigateNextIcon style={{"height":"100%", "fontSize":"xx-large", "fontWeight":"bolder"}}/>
           </label>
           {/*Slide 3*/}
           <input
@@ -130,15 +130,15 @@ export default function Carousel() {
           </div>
           <label
             htmlFor="carousel-2"
-            className="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
+            className="prev control-3 w-20 h-100 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black rounded-full bg-white leading-tight text-center z-10 inset-y-0 left-0 my-auto bg-opacity-0"
           >
-            ‹
+            <NavigateBeforeIcon style={{"height":"100%", "fontSize":"xx-large", "fontWeight":"bolder"}}/>
           </label>
           <label
             htmlFor="carousel-1"
-            className="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
+            className="next control-3 w-20 h-100 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bolder text-black rounded-full bg-white leading-tight text-center z-10 inset-y-0 right-0 my-auto bg-opacity-0"
           >
-            ›
+            <NavigateNextIcon style={{"height":"100%", "fontSize":"xx-large", "fontWeight":"bolder"}}/>
           </label>
           {/* Add additional indicators for each slide*/}
           <ol className="carousel-indicators">

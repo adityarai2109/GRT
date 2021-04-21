@@ -115,6 +115,10 @@ function App() {
 
             <DesignerHeading name="All collections" />
             <Card />
+
+            <DesignerHeading name="Latest collections" />
+            <Card />
+
             <DesignerHeading name="Featured Category" />
             {/* <Card /> */}
             <Grid />

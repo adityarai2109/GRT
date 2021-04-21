@@ -20,16 +20,22 @@ const Productlist = (props) => {
     newSortedCategory = newState;
     setSortedCategory(newSortedCategory);
   }
-  console.log(props.query);
+  // console.log(props.query);
   // for(let i = 0;i < arr.length();i++)
   // {
   //   if(arr[i].price >= a && arr[i].price <= b)
   //     console.log(arr[i])
   // }
+  // conditions.some(el => str2.includes(el))
+
+  var words = props.query.toLowerCase().split(" ");
+  console.log(words)
   const filteredCardArray = Cardarray.filter(
-    (i) => i.title.includes(props.query) || i.description.includes(props.query)
+    (i) => words.some(word => i.title.toLowerCase().includes(word) || i.description.toLowerCase().includes(word)) 
   );
  
+// var words = str.split(" ");
+
 
   const [value, setValue] = useState([0, 100]);
   function Sortby() {

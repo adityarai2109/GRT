@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node  backend/server"
+    "start": "node --experimental-modules backend/server"
   },
   "repository": {
     "type": "git",
