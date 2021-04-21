@@ -213,4 +213,4 @@ let Cardarray = [
     createdAt: "176425623174",
   },
 ];
-module.exports = Cardarray;
+export default  Cardarray;

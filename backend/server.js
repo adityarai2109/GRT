@@ -1,6 +1,8 @@
-const express = require("express");
-const Cardarray = require("./data/cardarray");
+import  express from 'express'
+import Cardarray from './data/cardarray.js'
 const app = express();
+
+const PORT = process.env.PORT || 5000
 
 app.get("/", (req, res) => {
   res.send("API running");
@@ -15,4 +17,8 @@ app.get("/api/products/:id", (req, res) => {
   res.json(product);
 });
 
-app.listen(5000, console.log("server started at 5k :)"));
+  const MODE = process.env.NODE_ENV;
+  const a = process.env.MONGO_URI;
+  console.log(a)
+
+app.listen(PORT, console.log(`Server running in ${MODE} mode on ${PORT}`));
