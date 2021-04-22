@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
 
-const eeviewSchema = mongoose.Schema({
+
+const reviewSchema = mongoose.Schema({
   name: { type: String, required: true },
-  rating: { type: String, required: true },
+  rating: { type: Number, required: true },
   comment: { type: String, required: true },
-});
+}, {
+  timestamps : true,
+})
+
+
 const productSchema = mongoose.Schema({
   name: {
     type: String,
@@ -12,10 +17,6 @@ const productSchema = mongoose.Schema({
   },
 
   image: {
-    type: String,
-    required: true,
-  },
-  brand: {
     type: String,
     required: true,
   },
@@ -48,8 +49,10 @@ const productSchema = mongoose.Schema({
     required: true,
     default: 0,
   },
-});
+},{
+    timestamps : true,  
+})
 
-const Product = mongoose.model("product", productSchema);
+const Product = mongoose.model('product', productSchema);
 
 export default Product;
