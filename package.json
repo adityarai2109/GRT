@@ -9,11 +9,15 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.5",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "seeder": "^0.2.4"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node --experimental-modules backend/server"
+    "start": "node --experimental-modules backend/server",
+    "server": "nodemon backend/server",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
   },
   "repository": {
     "type": "git",
