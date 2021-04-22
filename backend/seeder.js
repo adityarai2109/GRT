@@ -37,7 +37,7 @@ import connectDB from './config/db.js'
      await User.deleteMany();
 
 
-     console.log("data dataDestroyed!");
+     console.log("data Destroyed!");
      process.exit();
    } catch (error) {
      console.log(`${error}`);
