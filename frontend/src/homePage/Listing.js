@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./test.css";
+import "./Listing.css";
 import PurpleButton from "../CustomJS/PurpleButton.js";
 import Group2 from "../images/Group 2.jpg";
 import { Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo_dark from "./GRT_dark.svg";
-function Test(props) {
+function Listing(props) {
   return (
     <div
       className="images_row"
@@ -24,7 +24,7 @@ function Test(props) {
   );
 }
 
-export default Test;
+export default Listing;
 /*
 class MyComponent extends React.Component {
   state = {

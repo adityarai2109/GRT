@@ -1,21 +1,23 @@
 import "./App.css";
-import Navbar from "./homePage/navbar";
-import Header from "./homePage/header2";
-import Carousel from "./homePage/bootstrapcarousel";
-// import Gallery from "./homePage/f2g3";
-import Taglines from "./homePage/taglines";
-import Testimonials from "./homePage/testimonial3";
-// import Contact from "./homePage/contact2";
-import Footer from "./homePage/footer5";
-import MyFooter from "./homePage/myFooter";
+
+import Card from "./homePage/Card";
+import Carousel from "./homePage/Carousel";
 import DesignerHeading from "./homePage/DesignerHeading";
-// import Test from "./components/test";
-import Grid from "./homePage/grid";
-import Card from "./homePage/card";
+import Footer from "./homePage/Footer";
+import Grid from "./homePage/Grid";
+import Info from "./homePage/Info";
+import Navbar from "./homePage/Navbar";
+import Taglines from "./homePage/Taglines";
+
+// import Gallery from "./homePage/Unused Files/f2g3";
+// import Testimonials from "./homePage/Unused Files/testimonial3";
 // import Loader from './CustomJS/Loader'
+
+import Productlist from "./Page2/ProductList";
+import MainProduct from "./Page3/MainProduct";
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,8 +25,9 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import Productlist from "./Page2/productlist";
-import MainProduct from "./Page3/MainProduct";
+
+
+
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -48,11 +51,9 @@ function App() {
         <Switch>
           <Route path="/checkout">
             <Carousel />
-            <Header />
             <h1>Checkout</h1>
           </Route>
           <Route path="/login">
-            <Header />
             <h1>Login</h1>
             <Link to="/about">About</Link>
           </Route>
@@ -130,8 +131,8 @@ function App() {
             {/* <Testimonials /> */}
             {/* <Contact /> */}
             <DesignerHeading name="Contacts" />
+            <Info />
             <Footer />
-            <MyFooter />
             {/* <Loader /> */}
           </Route>
         </Switch>

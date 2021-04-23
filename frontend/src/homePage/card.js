@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Test from "./test";
+import Listing from "./Listing";
 import { Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import viewMore from "../images/file-search.svg";
@@ -25,7 +25,7 @@ function Card() {
           {Cardarray.slice(0, 4).map((card) => {
             return (
               <div>
-                <Test
+                <Listing
                   id={card.id}
                   image={card.image}
                   title={card.title}

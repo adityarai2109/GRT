@@ -1,5 +1,5 @@
 import React from "react";
-import "./trending.css";
+import "./DesignerHeading.css";
 
 function trending(props) {
   return (

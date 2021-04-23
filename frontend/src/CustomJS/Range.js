@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
-import "./range.css";
+import "./Range.css";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +52,7 @@ export default function TrackInvertedSlider(props) {
             <Slider
                 aria-labelledby="range-slider"
                 // getAriaValueText={"value"}
-                defaultValue={[0, 100]}
+                defaultValue={[props.value[0], props.value[1]]}
                 marks={marks}
                 onChange={handleSliderChange}
             />

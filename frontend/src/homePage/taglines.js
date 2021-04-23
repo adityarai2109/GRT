@@ -2,7 +2,7 @@ import React from "react";
 import imageHeart from "../images/heart.png";
 import imageDelivery from "../images/delivery-truck.png";
 import imageQuality from "../images/quality.png";
-import "./myFooter.css";
+import "./Footer.css";
 export default function Taglines() {
   return (
     <div>

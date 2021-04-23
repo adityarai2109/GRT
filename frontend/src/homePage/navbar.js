@@ -2,7 +2,7 @@ import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import iconLogo from "../images/group1.svg";
-import "./navbar.css";
+import "./Navbar.css";
 import iSearch from "../images/search.svg";
 import {
   BrowserRouter as Router,
@@ -47,14 +47,15 @@ export default function Navbar(props) {
         />
         <div onClick={search}>
           <Button
+            // style={{"height":"5vh"}}
             component={Link}
-            to={`/Suit/`}
+            to={`/Suit`}
             style={{ backgroundColor: "#630c99" }}
           >
             <img
               src={iSearch}
               className="search"
-              style={{ cursor: "pointer", height: "3.5vh" }}
+              style={{ cursor: "pointer", height: "4vh" }}
               alt="Search"
             />
           </Button>

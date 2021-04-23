@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import DesignerHeading from "../homePage/DesignerHeading";
-import Test from "../homePage/test";
-import "./productlist.css";
-import Navbar from "../homePage/navbar";
-import Cardarray from "../homePage/cardarray";
-import { makeStyles } from "@material-ui/core/styles";
-import Slider from "@material-ui/core/Slider";
+import Listing from "../homePage/Listing";
+import "./ProductList.css";
+import Cardarray from "../homePage/CardArray";
+
 import Range from "../CustomJS/Range";
-import MyFooter from "../homePage/myFooter";
+import Footer from "../homePage/Footer";
 import { useEffect } from "react";
 
 const Productlist = (props) => {
@@ -50,7 +48,7 @@ const Productlist = (props) => {
           if (card.price >= value[0] * 100 && card.price <= value[1] * 100) {
             return (
               <div>
-                <Test
+                <Listing
                   id={card.id}
                   image={card.image}
                   title={card.title}
@@ -78,7 +76,7 @@ const Productlist = (props) => {
         .map((card) => {
           return (
             <div>
-              <Test
+              <Listing
                 id={card.id}
                 image={card.image}
                 title={card.title}
@@ -127,7 +125,7 @@ const Productlist = (props) => {
         </p>
       </div>
       <div className="product_card">{Sortby(filteredCardArray)}</div>
-      <MyFooter />
+      <Footer />
     </div>
   );
 };

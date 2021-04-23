@@ -79,5 +79,6 @@
 @media (max-width: 628px) {
   .product_card {
     grid-template-columns: repeat(auto-fit, 100%);
+    margin-top: 1rem;
   }
 }

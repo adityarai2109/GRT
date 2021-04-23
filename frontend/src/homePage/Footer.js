@@ -3,13 +3,13 @@ import iFacebook from "../images/facebook.png";
 import iInstagram from "../images/instagram.png";
 import iTwitter from "../images/twitter.png";
 import iYoutube from "../images/youtube.png";
-import "./myFooter.css";
+import "./Footer.css";
 import iconLogo from "../images/group1.svg";
 // position : absolute;
 //     bottom : 0;
 //     height : 40px;
 
-function MyFooter() {
+function Footer() {
   return (
     <div
       style={{
@@ -78,4 +78,4 @@ function MyFooter() {
   );
 }
 
-export default MyFooter;
+export default Footer;

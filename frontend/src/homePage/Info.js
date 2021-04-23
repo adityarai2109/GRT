@@ -1,12 +1,12 @@
 import React from "react";
-import "./Footer.css";
+import "./Info.css";
 import Map from "../CustomJS/Map";
 
 import iconAddress from '../images/address.png'
 import iconPhone from '../images/phone.png'
 import iconFeedback from '../images/feedback.png'
 
-export default function Footer() {
+export default function Info() {
   return (
     <div className="footer-container">
       <div className="footer">

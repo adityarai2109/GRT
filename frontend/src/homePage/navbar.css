@@ -27,12 +27,15 @@
   border: none;
   padding: 6px 20px;
   border-radius: 2px;
+  height: 5vh;
 }
 .searchbar {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
+
 @media (max-width: 750px) {
   .grt {
     display: none;

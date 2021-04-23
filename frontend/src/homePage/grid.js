@@ -1,11 +1,11 @@
 import React from "react";
-import "./grid.css";
+import "./Grid.css";
 import image1 from "../images/fc1.jpg";
 import image2 from "../images/fc2.png";
 import image3 from "../images/fc3.png";
 import image4 from "../images/fc4.png";
 
-function grid() {
+function Grid() {
     return (
         <div>
             <div class="dflex">
@@ -30,4 +30,4 @@ function grid() {
     );
 }
 
-export default grid;
+export default Grid;

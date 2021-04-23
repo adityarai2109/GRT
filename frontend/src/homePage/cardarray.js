@@ -1,10 +1,10 @@
 import imageArray from "../images/images";
-const img = `https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg`;
+const img = imageArray[5];
 let Cardarray = [
   {
     id: 1,
     category: "Suit",
-    image: img,
+    image: imageArray[1],
     title: "Baby blue cotton suit",
     description:
       "A Beautiful Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
