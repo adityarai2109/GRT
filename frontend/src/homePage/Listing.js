@@ -11,7 +11,7 @@ function Listing(props) {
     <div
       className="images_row"
       onClick={() => {
-        console.log(props.title);
+        // console.log(props.title);
       }}
     >
       <div>

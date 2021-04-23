@@ -16,6 +16,11 @@
 .navRange {
   margin: 4rem;
 }
+.results{
+  font-size: 2rem;
+  font-family: Poppins;
+}
+
 .orderby {
   display: flex;
   justify-content: space-around;

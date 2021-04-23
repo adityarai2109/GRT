@@ -13,7 +13,7 @@ import Taglines from "./homePage/Taglines";
 // import Testimonials from "./homePage/Unused Files/testimonial3";
 // import Loader from './CustomJS/Loader'
 
-import Productlist from "./Page2/ProductList";
+import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
 
 import React, { useState, useEffect } from "react";
@@ -23,7 +23,6 @@ import {
   Switch,
   Route,
   Link,
-  useParams,
 } from "react-router-dom";
 
 
@@ -66,7 +65,7 @@ function App() {
             render={(props) => (
               <>
                 <Navbar query={query} setQuery={setQuery} />
-                <Productlist
+                <ProductList
                   {...props}
                   products={products}
                   setProducts={setProducts}
@@ -104,8 +103,8 @@ function App() {
                 width: "100%",
                 zIndex: "-1",
                 marginBottom: "-100px",
-                maskImage:
-                  "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))",
+                // maskImage:
+                //   "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1))",
               }}
             >
               <Carousel />

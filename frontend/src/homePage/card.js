@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Listing from "./Listing";
 import { Button } from "@material-ui/core";
-import SearchIcon from "@material-ui/icons/Search";
 import viewMore from "../images/file-search.svg";
 import { Link } from "react-router-dom";
 
@@ -22,7 +21,7 @@ function Card() {
     <div>
       <div className="trending_images">
         <div className="product_card">
-          {Cardarray.slice(0, 4).map((card) => {
+          {Cardarray.slice(0, 8).map((card) => {
             return (
               <div>
                 <Listing
@@ -37,10 +36,10 @@ function Card() {
           })}
         </div>
         <Link to="/Suit">
-          <Button variant="outlined" color="default" style={{ margin: "1rem" }}>
+          <Button variant="outlined" color="default" style={{ margin: "1rem" ,color:"#6B2097" ,border:"2px solid #6B2097"}}>
             {/* <SearchIcon /> */}
             <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
-            View more
+            <p style={{color:"#6B2097",fontFamily:"Poppins",fontWeight:"bold"}}>View more</p>
           </Button>
         </Link>
       </div>
