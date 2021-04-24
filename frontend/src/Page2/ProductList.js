@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DesignerHeading from "../homePage/DesignerHeading";
 import Listing from "../homePage/Listing";
-import "./productlist.css";
+import "./ProductList.css";
 import Cardarray from "../homePage/CardArray";
 import Pagination from '../CustomJS/Pagination';
 import Range from "../CustomJS/Range";
