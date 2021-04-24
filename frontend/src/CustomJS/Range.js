@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
-import "./Range.css";
+//import "./Range.css";
 
 const useStyles = makeStyles((theme) => ({
     root: {
