@@ -15,6 +15,11 @@ function Footer() {
       style={{
         width: "100%",
         marginTop: "auto",
+        // position: "fixed",
+        // bottom: "0px",
+        // left: "0px",
+        // right: "0px",
+        // marginBottom: "0px",
       }}
       className="myFooter"
     >

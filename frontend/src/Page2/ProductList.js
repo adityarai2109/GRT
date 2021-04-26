@@ -141,7 +141,7 @@ const ProductList = (props) => {
           )}
         </p>
       </div>
-      <h1 className="results">Showing results for : {props.query}</h1>
+      <div className="results">Showing results for : {props.query}</div>
       <div className="product_card">{Sortby(filteredCardArray)}</div>
       
       <Button variant="outlined" color="default" style={{ margin: "1rem" ,color:"#6B2097" ,border:"2px solid #6B2097"}} onClick={() => setPageArray(pageArray+4)}>

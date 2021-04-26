@@ -43,3 +43,18 @@
   filter: drop-shadow(1px 4px 4px rgba(176, 68, 243, 0.7));
   text-align: center;
 }
+
+@media only screen and (max-width: 500px) {
+  .cloth_image{
+    width: 120px;
+    height: 80px;
+    padding: 10px;
+    margin: 0 15px;
+  }
+  .listing{
+    display: flex;
+  }
+  .listButton{
+    width: 10px;
+  }
+}
