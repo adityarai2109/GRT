@@ -17,7 +17,7 @@
   margin: 4rem;
 }
 .results{
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-family: Poppins;
 }
 
@@ -85,9 +85,5 @@
   .product_card {
     grid-template-columns: repeat(auto-fit, 100%);
     margin-top: 1rem;
-    padding: 0 1.5rem;
-  }
-  .orderby{
-    height: 170px;
   }
 }

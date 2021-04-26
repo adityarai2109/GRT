@@ -33,7 +33,7 @@ function Cta() {
                         transform: "translate(-50%, -50%)",
                     }}
                 >
-                    <div>Latest Collections at reasonable prices.</div>Buy now
+                    <div>Latest Collections at reasonable prices.</div> Buy now
                 </div>
             </div>
         </div>

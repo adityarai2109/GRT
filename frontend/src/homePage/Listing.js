@@ -14,10 +14,10 @@ function Listing(props) {
         // console.log(props.title);
       }}
     >
-      <div className="listing">
+      <div>
         <img src={logo_dark} className="cloth_image" alt="Suit"></img>
         <Link to={`/${props.category}/${props.id}`}>
-          <PurpleButton className="listBitton" line1={props.title} line2={`₹ ${props.price}`} />
+          <PurpleButton line1={props.title} line2={`₹ ${props.price}`} />
         </Link>
       </div>
     </div>
