@@ -6,7 +6,7 @@ import connectDB from './config/db.js'
 const app = express();
 dotenv.config();
 connectDB();
-
+ const route = "kuch bhi ";
 const PORT = process.env.PORT || 5000
 
 app.get("/", (req, res) => {
