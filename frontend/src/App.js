@@ -2,6 +2,7 @@ import "./App.css";
 
 import Card from "./homePage/Card";
 import Carousel from "./homePage/Carousel";
+import Cta from "./homePage/Cta"
 import DesignerHeading from "./homePage/DesignerHeading";
 import Footer from "./homePage/Footer";
 import Grid from "./homePage/Grid";
@@ -49,7 +50,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/checkout">
-            <Carousel />
+            <Navbar />
+            <Cta />
             <h1>Checkout</h1>
           </Route>
           <Route path="/login">
@@ -102,12 +104,13 @@ function App() {
               style={{
                 width: "100%",
                 zIndex: "-1",
-                marginBottom: "-100px",
+                // marginBottom: "-100px",
                 // maskImage:
                 //   "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1))",
               }}
             >
-              <Carousel />
+              <Cta />
+              {/* <Carousel /> */}
             </div>
             {/* <Header /> */}
             <DesignerHeading name="Trending" />

@@ -60,7 +60,7 @@ const ProductList = (props) => {
                 <Listing
                   id={card.id}
                   image={card.image}
-                  title={card.id}  
+                  title={card.title}  
                   price={card.price}
                   category={card.category}
                 />
@@ -93,7 +93,7 @@ const ProductList = (props) => {
               <Listing
                 id={card.id}
                 image={card.image}
-                title={card.id}
+                title={card.title}
                 price={card.price}
                 category={card.category}
               />
