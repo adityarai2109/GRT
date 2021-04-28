@@ -3,7 +3,7 @@ import "./DesignerHeading.css";
 
 function trending(props) {
   return (
-    <div className="heading">
+    <div id="hscroll" className="heading">
       <div className="title_wrapper">
         <svg
           width="100"

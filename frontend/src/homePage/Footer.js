@@ -20,7 +20,6 @@ function Footer() {
     >
       <footer
         class="text-gray-600 body-font p-0"
-        style={{ backgroundColor: "#520061" }}
       >
         <div class="px-2 py-3 mx-auto flex items-center sm:flex-row flex-col">
           <a

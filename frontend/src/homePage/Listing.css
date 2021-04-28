@@ -8,11 +8,11 @@
 }
 
 .images_row {
+  margin-top: 2rem;
   display: flex;
   margin-bottom: 1rem;
   cursor: pointer;
   justify-content: center;
-  
 }
 /* .content {
   margin-top: 1rem;
@@ -29,8 +29,8 @@
   color: white;
   background-color: #6b2097;
   border-radius: 15px; */
-  /* border-radius: 25px; */
-  /* box-shadow: 5px 5px 10px rgba(161, 75, 211, 0.8);
+/* border-radius: 25px; */
+/* box-shadow: 5px 5px 10px rgba(161, 75, 211, 0.8);
 } */
 
 .img_description {

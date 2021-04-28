@@ -2,9 +2,9 @@ import React from "react";
 import "./Info.css";
 import Map from "../CustomJS/Map";
 
-import iconAddress from '../images/address.png'
-import iconPhone from '../images/phone.png'
-import iconFeedback from '../images/feedback.png'
+import iconAddress from "../images/address.png";
+import iconPhone from "../images/phone.png";
+import iconFeedback from "../images/feedback.png";
 
 export default function Info() {
   return (
@@ -14,8 +14,12 @@ export default function Info() {
           <div className="f-flex">
             <div className="f-address text-white">
               <div className="DetailsHeading">
-              <p className="address">Address  </p>
-              <img style={{height:"2rem",marginLeft:'5px'}} src={iconAddress} alt="Address"/>
+                <p className="address">Address </p>
+                <img
+                  style={{ height: "2rem", marginLeft: "5px" }}
+                  src={iconAddress}
+                  alt="Address"
+                />
               </div>
               <p>B-56</p>
               <p>Chandni Chowk Chandni Chowk Chandni Chowk</p>
@@ -24,8 +28,12 @@ export default function Info() {
 
             <div className="f-contacts text-white">
               <div className="DetailsHeading">
-              <p className="contacts">Contacts</p>
-              <img  style={{height:"2rem",marginLeft:'5px'}} src={iconPhone} alt="Contacts"/>
+                <p className="contacts">Contacts</p>
+                <img
+                  style={{ height: "2rem", marginLeft: "5px" }}
+                  src={iconPhone}
+                  alt="Contacts"
+                />
               </div>
               <p>Mr. XYZ</p>
               <p>M : +46136560</p>
@@ -36,8 +44,12 @@ export default function Info() {
 
           <div className="f-feedback">
             <div className="DetailsHeading">
-            <p className="feedback text-white">Feedback</p>
-            <img  style={{height:"2rem",marginLeft:'5px'}} src={iconFeedback} alt="Feedback"/>
+              <p className="feedback text-white">Feedback</p>
+              <img
+                style={{ height: "2rem", marginLeft: "5px" }}
+                src={iconFeedback}
+                alt="Feedback"
+              />
             </div>
 
             <form action="">
@@ -86,14 +98,6 @@ export default function Info() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
 
 // import React from "react";
 

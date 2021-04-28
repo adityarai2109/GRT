@@ -11,3 +11,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.cta {
+  background-color: #f9c5d1;
+  background-image: linear-gradient(135deg, #f9c5d1 0%, #9795ef 74%);
+}
+
+/* Dark Mode CSS */
+
+.dark {
+  background-color: #393e46;
+}
+.dark .cta {
+  background-color: #ff006e;
+  background-image: linear-gradient(135deg, #ff006e 0%, #80ffdb 74%);
+}
+.dark .btn-search {
+  background-color: #33383f;
+}
+.dark .tagline-heading {
+  color: #80ffdb;
+}
+.dark .tagline-text {
+  color: #eeeeee;
+}
+.dark rect {
+  stroke: #80ffdb;
+}
+.dark .line {
+  background-color: #ff006e;
+}
+.dark .text1 {
+  color: #80ffdb;
+}
+.dark .navbar {
+  background-color: #232931;
+}
+.dark .f-details {
+  /* background-image: linear-gradient(45deg, #393e46 0%, #80ffdb 100%); */
+  background: #ef476f;
+  /* background: linear-gradient(45deg, 25%, #ff006fe3 100%); */
+}
+.dark .myFooter {
+  background-color: #232931;
+}
+.dark .price_tag {
+  background-color: #ef476f;
+  box-shadow: 3px 3px 5px #80ffdb;
+}
+.dark .image_title {
+  color: #eeeeee;
+}
+.dark .line2 {
+  color: #eeeeee;
+}
+.dark .orderby {
+  color: #eeeeee;
+}
+.dark .results {
+  color: #eeeeee;
+}
+.dark .title {
+  color: #eeeeee;
+}
+
+.dark .desc {
+  color: #eeeeee;
+}

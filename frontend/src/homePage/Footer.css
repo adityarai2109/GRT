@@ -1,7 +1,8 @@
-.icons{
-  height:4.5vh;
+.icons {
+  height: 4.5vh;
 }
 
-.myFooter{
+.myFooter {
   /* min-height: calc(100vh - 30px); */
+  background-color: #520061;
 }

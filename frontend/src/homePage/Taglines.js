@@ -13,10 +13,10 @@ export default function Taglines() {
               <img src={imageHeart} alt="Heart" />
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-              <h2 className="text-gray-900 text-2xl title-font text-center font-medium mb-2">
+              <h2 className="tagline-heading text-gray-900 text-2xl title-font text-center font-medium mb-2">
                 Customer satisfaction is our top priority
               </h2>
-              <p className="leading-relaxed text-justify text-center text-base">
+              <p className="tagline-text leading-relaxed text-justify text-center text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
                 maxime inventore minima quam officia expedita, tempora non
                 repellendus quod rem aspernatur est deserunt cumque ea ut et
@@ -29,10 +29,10 @@ export default function Taglines() {
               <img src={imageDelivery} alt="Delivery" />
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-              <h2 className="text-gray-900 text-2xl text-center title-font font-medium mb-2">
+              <h2 className="tagline-heading text-gray-900 text-2xl text-center title-font font-medium mb-2">
                 Fast delivery ensured
               </h2>
-              <p className="leading-relaxed text-justify text-center text-base pr-6">
+              <p className="tagline-text leading-relaxed text-justify text-center text-base pr-6">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
                 molestiae expedita ullam iste inventore, placeat, incidunt ea id
                 itaque repudiandae accusantium asperiores molestias aspernatur
@@ -45,10 +45,10 @@ export default function Taglines() {
               <img src={imageQuality} alt="Quality" />
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-              <h2 className="text-gray-900 text-center text-2xl title-font font-medium mb-2">
+              <h2 className="tagline-heading text-gray-900 text-center text-2xl title-font font-medium mb-2">
                 No compromise with the Quality of our Product
               </h2>
-              <p className="leading-relaxed text-justify text-center text-base">
+              <p className=" tagline-text leading-relaxed text-justify text-center text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quaerat, quidem quo. Odit officia, quae rerum tenetur provident
                 iusto dicta expedita deleniti, tempore atque fugit illo. Saepe

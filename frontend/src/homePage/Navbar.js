@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import iconLogo from "../images/group1.svg";
 import "./Navbar.css";
 import iSearch from "../images/search.svg";
+import Toggle from "../CustomJS/Toggle";
 import {
   BrowserRouter as Router,
   Link,
@@ -47,10 +48,11 @@ export default function Navbar(props) {
         />
         <div onClick={search}>
           <Button
+            className="btn-search"
             // style={{"height":"5vh"}}
             component={Link}
             to={`/Suit`}
-            style={{ backgroundColor: "#630c99" }}
+            // style={{ backgroundColor: "#33383f" }}
           >
             <img
               src={iSearch}
@@ -61,6 +63,10 @@ export default function Navbar(props) {
           </Button>
         </div>
       </div>
+      <Toggle
+        isDarkMode={props.isDarkMode}
+        setIsDarkMode={props.setIsDarkMode}
+      />
     </div>
   );
 }

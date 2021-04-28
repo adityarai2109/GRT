@@ -36,10 +36,26 @@ function Card() {
           })}
         </div>
         <Link to="/Suit">
-          <Button variant="outlined" color="default" style={{ margin: "1rem" ,color:"#6B2097" ,border:"2px solid #6B2097"}}>
+          <Button
+            variant="outlined"
+            color="default"
+            style={{
+              margin: "1rem",
+              color: "#eeee",
+              border: "2px solid #eeee",
+            }}
+          >
             {/* <SearchIcon /> */}
             <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
-            <p style={{color:"#6B2097",fontFamily:"Poppins",fontWeight:"bold"}}>View more</p>
+            <p
+              style={{
+                color: "#eeee",
+                fontFamily: "Poppins",
+                fontWeight: "bold",
+              }}
+            >
+              View more
+            </p>
           </Button>
         </Link>
       </div>

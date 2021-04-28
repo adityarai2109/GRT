@@ -37,7 +37,7 @@ svg {
 }
 
 @media only screen and (max-width: 500px) {
-  .text1{
+  .text1 {
     font-size: 1.2rem;
     /* width: 60%; */
   }

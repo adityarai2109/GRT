@@ -1,14 +1,14 @@
 import "./App.css";
-
 import Card from "./homePage/Card";
 import Carousel from "./homePage/Carousel";
-import Cta from "./homePage/Cta"
+import Cta from "./homePage/Cta";
 import DesignerHeading from "./homePage/DesignerHeading";
 import Footer from "./homePage/Footer";
 import Grid from "./homePage/Grid";
 import Info from "./homePage/Info";
 import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
+import Zoom from "react-reveal/Zoom";
 
 // import Gallery from "./homePage/Unused Files/f2g3";
 // import Testimonials from "./homePage/Unused Files/testimonial3";
@@ -19,19 +19,12 @@ import MainProduct from "./Page3/MainProduct";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom";
-
-
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -46,11 +39,11 @@ function App() {
   }, [query]);
 
   return (
-    <div className="App">
+    <div className={`App ${isDarkMode ? `dark` : null}`}>
       <Router>
         <Switch>
           <Route path="/checkout">
-            <Navbar />
+            <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
             <Cta />
             <h1>Checkout</h1>
           </Route>
@@ -66,7 +59,12 @@ function App() {
             exact
             render={(props) => (
               <>
-                <Navbar query={query} setQuery={setQuery} />
+                <Navbar
+                  isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
+                  query={query}
+                  setQuery={setQuery}
+                />
                 <ProductList
                   {...props}
                   products={products}
@@ -84,7 +82,12 @@ function App() {
             path="/:category/:ida"
             render={(props) => (
               <>
-                <Navbar query={query} setQuery={setQuery} />
+                <Navbar
+                  isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
+                  query={query}
+                  setQuery={setQuery}
+                />
                 <MainProduct
                   {...props}
                   products={products}
@@ -99,7 +102,12 @@ function App() {
           {/* Main Page */}
 
           <Route path="/">
-            <Navbar query={query} setQuery={setQuery} />
+            <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
             <div
               style={{
                 width: "100%",
@@ -133,7 +141,9 @@ function App() {
             {/* <Testimonials /> */}
             {/* <Contact /> */}
             <DesignerHeading name="Contacts" />
-            <Info />
+            <Zoom>
+              <Info />
+            </Zoom>
             <Footer />
             {/* <Loader /> */}
           </Route>
