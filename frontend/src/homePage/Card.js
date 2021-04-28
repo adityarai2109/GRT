@@ -41,15 +41,16 @@ function Card() {
             color="default"
             style={{
               margin: "1rem",
-              color: "#eeee",
-              border: "2px solid #eeee",
+              background: "white",
+              color: "#6B2097",
+              border: "4px solid #e0e0e0",
             }}
           >
             {/* <SearchIcon /> */}
             <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
             <p
               style={{
-                color: "#eeee",
+                color: "#6b2097",
                 fontFamily: "Poppins",
                 fontWeight: "bold",
               }}

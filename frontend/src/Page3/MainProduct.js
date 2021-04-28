@@ -84,7 +84,12 @@ const MainProduct = (props) => {
                     <Button
                         variant="outlined"
                         color="default"
-                        style={{ margin: "2rem" }}
+                        style={{
+                            margin: "1rem",
+                            background: "white",
+                            color: "#6B2097",
+                            border: "4px solid #e0e0e0",
+                        }}
                     >
                         {/* <SearchIcon /> */}
                         <img

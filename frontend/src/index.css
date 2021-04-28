@@ -65,9 +65,6 @@ code {
 .dark .line2 {
   color: #eeeeee;
 }
-.dark .orderby {
-  color: #eeeeee;
-}
 .dark .results {
   color: #eeeeee;
 }
@@ -77,4 +74,10 @@ code {
 
 .dark .desc {
   color: #eeeeee;
+}
+
+.dark .pg-3-btn
+{
+  color:#6B2097;
+  background-color: #eeeeee;
 }
