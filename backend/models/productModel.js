@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { User } from "./userModel.js";
 
 
 const reviewSchema = mongoose.Schema({
@@ -12,22 +13,11 @@ const reviewSchema = mongoose.Schema({
 
 const productSchema = mongoose.Schema(
   {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
-
     title: {
       type: String,
       required: true,
     },
 
-    // image: {
-    //   type: String,
-    //   required: true,
-    // },
-    productimages: [{ img: { type: String } }],
     category: {
       type: String,
       required: true,
@@ -36,6 +26,27 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    price: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+
+    countInStock: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    // admin name login se pta kr lenge
+    adminName: {
+      type: String,
+      required: true,
+     // ref: "User",
+    },
     rating: {
       type: Number,
       required: true,
@@ -43,16 +54,6 @@ const productSchema = mongoose.Schema(
     },
     reviews: [reviewSchema],
     numReviews: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    price: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    countInStock: {
       type: Number,
       required: true,
       default: 0,

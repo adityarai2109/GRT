@@ -1,4 +1,5 @@
 import express from "express";
+import axios from "axios"
 import { signup, signin, signout } from '../controllers/auth.js'
 
 import {
@@ -11,7 +12,7 @@ import {
 const router = express.Router();
   console.log(name)
 router.post("/admin/signup", validateSignupRequest, isRequestValidated, signup);
-router.post("/admin/signin", validateSigninRequest, isRequestValidated, signin);
+router.post("/admin/signin", validateSigninRequest, isRequestValidated, signin);  
 router.post("/admin/signout", signout);
 
 router.post("/signup", validateSignupRequest, isRequestValidated, signup);

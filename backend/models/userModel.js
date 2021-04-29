@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema(
     isAdmin: {
       type: Boolean,
       required: true,
-      default : false,  
+      default: false,
     },
   },
   {
@@ -34,4 +34,3 @@ userSchema.methods = {
 };
 
 export const User = mongoose.model("user", userSchema);
-

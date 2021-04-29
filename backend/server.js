@@ -8,17 +8,18 @@ const app = express();
 // config
 dotenv.config();
 connectDB();
+const __dirname = path.resolve();
 
 // routes
 import  authRoutes from './routes/auth.js'
-//import productRoutes from  './routes/product.js'
+import productRoutes from  './routes/product.js'
 
 
 // middlewares
 app.use(express.json());
-//app.use("/public", express.static(path.join(__dirname, "uploads")));
+app.use("/upload", express.static(path.join(__dirname, "uploads")));
  app.use("/api", authRoutes);
-// app.use("/api", productRoutes);
+ app.use("/api", productRoutes);
 
 const homepage = ("/", (req, res, next) => {
       console.log("homepage middleware working ")
@@ -43,6 +44,7 @@ app.get("/api/products/:id", (req, res) => {
   const product = Cardarray.find((p) => p.id == req.params.id);
   res.json(product);
 });
+
 
   const MODE = process.env.NODE_ENV;
   const PORT = process.env.PORT || 5000;

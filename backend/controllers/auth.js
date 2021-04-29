@@ -15,7 +15,6 @@ export const  signup = (req, res) => {
     }
     else{
       const { name, email, password, isAdmin } = req.body;
-  
       const hash_password = await bcrypt.hash(password, 10);
       const _user = new User({
           name,

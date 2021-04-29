@@ -40,6 +40,7 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? `dark` : null}`}>
+      <img src = "localhost"></img>
       <Router>
         <Switch>
           <Route path="/checkout">
