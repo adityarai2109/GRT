@@ -1,4 +1,4 @@
-  @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -10,6 +10,7 @@
 .grt {
   margin-left: 2rem;
 }
+
 .logo {
   font-family: Inconsolata;
   color: white;
@@ -33,7 +34,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+.btn-search {
+  background-color: #630f96;
 }
 
 @media (max-width: 750px) {

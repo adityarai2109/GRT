@@ -52,7 +52,6 @@ export default function Navbar(props) {
             // style={{"height":"5vh"}}
             component={Link}
             to={`/Suit`}
-            // style={{ backgroundColor: "#33383f" }}
           >
             <img
               src={iSearch}

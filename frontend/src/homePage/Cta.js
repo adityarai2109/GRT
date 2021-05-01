@@ -34,6 +34,7 @@ function Cta() {
           </div>
           <a>
             <ArrowDropDownIcon
+              fontSize="large"
               onClick={() => {
                 document.getElementById("hscroll").scrollIntoView(true);
               }}

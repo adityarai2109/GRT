@@ -25,6 +25,9 @@ code {
 .dark .cta {
   background-color: #ff006e;
   background-image: linear-gradient(135deg, #ff006e 0%, #80ffdb 74%);
+
+  background-color: #f9c1b1;
+  background-image: linear-gradient(315deg, #ef476f 0%, #fb8085 74%);
 }
 .dark .btn-search {
   background-color: #33383f;
@@ -36,13 +39,13 @@ code {
   color: #eeeeee;
 }
 .dark rect {
-  stroke: #80ffdb;
+  stroke: #ffffff;
 }
 .dark .line {
   background-color: #ff006e;
 }
 .dark .text1 {
-  color: #80ffdb;
+  color: #ffffff;
 }
 .dark .navbar {
   background-color: #232931;
@@ -51,13 +54,16 @@ code {
   /* background-image: linear-gradient(45deg, #393e46 0%, #80ffdb 100%); */
   background: #ef476f;
   /* background: linear-gradient(45deg, 25%, #ff006fe3 100%); */
+
+  background-color: #f9c1b1;
+  background-image: linear-gradient(315deg, #ef476f 0%, #d16a6e 74%);
 }
 .dark .myFooter {
   background-color: #232931;
 }
 .dark .price_tag {
   background-color: #ef476f;
-  box-shadow: 3px 3px 5px #80ffdb;
+  box-shadow: 2px 2px 4px #00ca91;
 }
 .dark .image_title {
   color: #eeeeee;
@@ -71,13 +77,31 @@ code {
 .dark .title {
   color: #eeeeee;
 }
-
+.dark .MuiSlider-markLabel {
+  color: #eeeeee;
+}
+.dark .MuiSlider-track {
+  color: #ef476f;
+}
+.dark .MuiSlider-thumb {
+  color: #ef476f;
+}
+.MuiSlider-track {
+  color: #8d12d9;
+}
+.MuiSlider-thumb {
+  color: #8d12d9;
+}
+.dark .inputnav::placeholder {
+  color: #232931;
+}
 .dark .desc {
   color: #eeeeee;
 }
-
-.dark .pg-3-btn
-{
-  color:#6B2097;
+.dark .orderby > p {
+  color: #eeeeee;
+}
+.dark .pg-3-btn {
+  color: #6b2097;
   background-color: #eeeeee;
 }

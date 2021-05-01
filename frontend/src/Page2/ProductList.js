@@ -162,7 +162,6 @@ const ProductList = (props) => {
           margin: "1rem",
           background: "white",
           color: "#6B2097",
-          border: "4px solid #e0e0e0",
         }}
         onClick={() => setPageArray(pageArray + 4)}
       >
