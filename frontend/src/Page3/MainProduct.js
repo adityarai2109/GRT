@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import viewMore from "../images/file-search.svg";
+import viewMoreDark from "../images/file-search-dark.svg";
 import { Link } from "react-router-dom";
 
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
@@ -22,29 +23,32 @@ import InnerImageZoom from "react-inner-image-zoom";
 // myId = this.props.match.params.ida
 
 const MainProduct = (props) => {
-  let id = parseInt(props.match.params.ida); // isko int me convert krna tha
-  let category = String(props.match.params.category);
-  useEffect(() => {
-    document.documentElement.scrollTo(0, 0);
-  }, []);
-  return (
-    /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
-    <div>
-      <div>
-        <div className="page3_content">
-          <div className="product_image">
-            <div className="pimage">
-              <InnerImageZoom
-                className=""
-                src={
-                  Cardarray.find((x) => x.id === id && x.category === category)
-                    .image
-                }
-                // alt="ProductImage"
-              />
-            </div>
+    let id = parseInt(props.match.params.ida); // isko int me convert krna tha
+    let category = String(props.match.params.category);
+    useEffect(() => {
+        document.documentElement.scrollTo(0, 0);
+    }, []);
+    return (
+        /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
+        <div>
+            <div>
+                <div className="page3_content">
+                    <div className="product_image">
+                        <div className="pimage">
+                            <InnerImageZoom
+                                className=""
+                                src={
+                                    Cardarray.find(
+                                        (x) =>
+                                            x.id === id &&
+                                            x.category === category
+                                    ).image
+                                }
+                                // alt="ProductImage"
+                            />
+                        </div>
 
-            {/* <img
+                        {/* <img
               className="pimage"
               src={
                 Cardarray.find((x) => x.id === id && x.category === category)
@@ -52,45 +56,57 @@ const MainProduct = (props) => {
               }
               alt="ProductImage"
             ></img> */}
-          </div>
-          <div className="partition"></div>
-          <div className="product_desc">
-            <h1 className="title">
-              {Cardarray.find((x) => x.id === id).title}
-            </h1>
-            <p className="desc">
-              {Cardarray.find((x) => x.id === id).description}
-            </p>
-            <div className="buttons1">
-              <PurpleButton
-                line1={"₹ " + Cardarray.find((x) => x.id === id).price}
-              />
-              <PurpleButton line1="Add to Wishlist" />
-            </div>
-            <PurpleButton line1="Whatsapp us on:" line2="+91 9876543210" />
-          </div>
-        </div>
+                    </div>
+                    <div className="partition"></div>
+                    <div className="product_desc">
+                        <h1 className="title">
+                            {Cardarray.find((x) => x.id === id).title}
+                        </h1>
+                        <p className="desc">
+                            {Cardarray.find((x) => x.id === id).description}
+                        </p>
+                        <div className="buttons1">
+                            <PurpleButton
+                                line1={
+                                    "₹ " +
+                                    Cardarray.find((x) => x.id === id).price
+                                }
+                            />
+                            <PurpleButton line1="Add to Wishlist" />
+                        </div>
+                        <PurpleButton
+                            line1="Whatsapp us on:"
+                            line2="+91 9876543210"
+                        />
+                    </div>
+                </div>
 
-        <Link to="/Suit">
-          <Button
-            variant="outlined"
-            color="default"
-            style={{
-              margin: "1rem",
-              background: "white",
-              color: "#6B2097",
-            }}
-          >
-            {/* <SearchIcon /> */}
-            <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
-            View more products
-          </Button>
-        </Link>
-      </div>
-      <Info />
-      <Footer />
-    </div>
-  );
+                <Link to="/Suit">
+                    <Button
+                        variant="outlined"
+                        style={{
+                            background: "white",
+                            fontFamily: "Poppins",
+                            fontWeight: "bold",
+                            border: "1px solid #393E46",
+                        }}
+                    >
+                        {/* <SearchIcon /> */}
+                        <img
+                            className="hpvmi"
+                            src={props.isDarkMode ? viewMoreDark : viewMore}
+                            style={{ height: "2rem" }}
+                            alt=""
+                        />
+
+                        <p className="hpvmp">View more products</p>
+                    </Button>
+                </Link>
+            </div>
+            <Info />
+            <Footer />
+        </div>
+    );
 };
 
 export default MainProduct;

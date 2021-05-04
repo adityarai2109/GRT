@@ -10,6 +10,7 @@ import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
+import "tailwindcss/tailwind.css"
 
 // import Gallery from "./homePage/Unused Files/f2g3";
 // import Testimonials from "./homePage/Unused Files/testimonial3";
@@ -82,6 +83,7 @@ function App() {
                   setProducts={setProducts}
                   query={query}
                   setQuery={setQuery}
+                  isDarkMode={isDarkMode}
                 />
               </>
             )}
@@ -101,6 +103,7 @@ function App() {
                 />
                 <MainProduct
                   {...props}
+                  isDarkMode={isDarkMode}
                   products={products}
                   setProducts={setProducts}
                   query={query}
@@ -133,13 +136,13 @@ function App() {
             </div>
             {/* <Header /> */}
             <DesignerHeading name="Trending" />
-            <Card />
+            <Card isDarkMode= {isDarkMode}/>
 
             <DesignerHeading name="All collections" />
-            <Card />
+            <Card isDarkMode= {isDarkMode}/>
 
             <DesignerHeading name="Latest collections" />
-            <Card />
+            <Card isDarkMode= {isDarkMode}/>
 
             {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}

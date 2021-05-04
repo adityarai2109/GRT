@@ -1,5 +1,6 @@
 
 import "./AddProduct.css"
+import "tailwindcss/tailwind.css"
 
 export default function Example() {
     return (
