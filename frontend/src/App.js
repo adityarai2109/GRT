@@ -9,6 +9,7 @@ import Info from "./homePage/Info";
 import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
+import AddProduct from "./Page4/AddProduct";
 
 // import Gallery from "./homePage/Unused Files/f2g3";
 // import Testimonials from "./homePage/Unused Files/testimonial3";
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? `dark` : null}`}>
-      <img src = "localhost"></img>
+      {/* <img src="localhost"></img> */}
       <Router>
         <Switch>
           <Route path="/checkout">
@@ -51,6 +52,15 @@ function App() {
           <Route path="/login">
             <h1>Login</h1>
             <Link to="/about">About</Link>
+          </Route>
+          <Route path="/addProduct">
+            <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
+            <AddProduct />
           </Route>
 
           {/* Page 2 */}
@@ -131,9 +141,10 @@ function App() {
             <DesignerHeading name="Latest collections" />
             <Card />
 
-            <DesignerHeading name="Featured Category" />
+            {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}
-            <Grid />
+            {/* <Grid /> */}
+            
             {/* <DesignerHeading name="Latest Collection" />
             <Gallery /> */}
             <DesignerHeading name="Taglines" />

@@ -4,7 +4,7 @@ import Listing from "./Listing";
 import { Button } from "@material-ui/core";
 import viewMore from "../images/file-search.svg";
 import { Link } from "react-router-dom";
-
+import "./Card.css";
 //import Cardarray from "../homePage/cardarray";
 
 function Card() {
@@ -21,7 +21,7 @@ function Card() {
     <div>
       <div className="trending_images">
         <div className="product_card">
-          {Cardarray.slice(0, 8).map((card) => {
+          {Cardarray.slice(0, 4).map((card) => {
             return (
               <div>
                 <Listing
@@ -36,26 +36,9 @@ function Card() {
           })}
         </div>
         <Link to="/Suit">
-          <Button
-            variant="outlined"
-            color="default"
-            style={{
-              margin: "1rem",
-              background: "white",
-              color: "#6B2097",
-            }}
-          >
-            {/* <SearchIcon /> */}
-            <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
-            <p
-              style={{
-                color: "#6b2097",
-                fontFamily: "Poppins",
-                fontWeight: "bold",
-              }}
-            >
-              View more
-            </p>
+          <Button variant="outlined" className="hpvm">
+            <img src={viewMore} style={{ height: "2rem" }} alt="" />
+            <p>View more</p>
           </Button>
         </Link>
       </div>
