@@ -109,3 +109,15 @@ code {
 .dark .hpvmp{
   color: #393e46;
 }
+.dark .back{
+  background: #ef476f;
+  /* background: linear-gradient(45deg, 25%, #ff006fe3 100%); */
+  font-weight: 900;
+  background-color: #995a49;
+  background-image: linear-gradient(315deg, #ef476f 0%, #d16a6e 74%);
+}
+
+.dark .login_button {
+  background: white;
+  color: #d16a6e;
+}

@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+.back{
+    background: rgb(166, 0, 129);
+    background: linear-gradient(
+        45deg,
+        rgba(166, 0, 129, 1) 0%,
+        rgba(106, 0, 204, 1) 100%
+    );
+    font-family: Poppins;
+    font-weight: 900;
+    
+}
+
+::placeholder{
+    color: black !important;
+}
+
+.login_button {
+    background: white;
+    color: #6b2097;
+    
+}

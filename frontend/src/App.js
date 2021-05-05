@@ -11,6 +11,7 @@ import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
 import "tailwindcss/tailwind.css"
+import Login from "./Page4/Login"
 
 // import Gallery from "./homePage/Unused Files/f2g3";
 // import Testimonials from "./homePage/Unused Files/testimonial3";
@@ -51,8 +52,14 @@ function App() {
             <h1>Checkout</h1>
           </Route>
           <Route path="/login">
-            <h1>Login</h1>
-            <Link to="/about">About</Link>
+          <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
+          <Login />
+          <Footer />
           </Route>
           <Route path="/addProduct">
             <Navbar
@@ -62,7 +69,9 @@ function App() {
               setQuery={setQuery}
             />
             <AddProduct />
+            <Footer />
           </Route>
+          
 
           {/* Page 2 */}
 
