@@ -21,7 +21,7 @@ function Footer() {
       <footer
         class="text-gray-600 body-font p-0"
       >
-        <div class="px-2 py-3 mx-auto flex items-center sm:flex-row flex-col">
+        <div style={{marginTop : "1rem",}} class="px-2 py-3 mx-auto flex items-center sm:flex-row flex-col">
           <a
             class="flex title-font font-medium items-center md:justify-start justify-center text-white-100"
             href="https://github.com/adityarai2109/GRT"

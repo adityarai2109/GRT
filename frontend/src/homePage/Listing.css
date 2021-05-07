@@ -14,24 +14,6 @@
   cursor: pointer;
   justify-content: center;
 }
-/* .content {
-  margin-top: 1rem;
-  color: rgb(63, 0, 63);
-  font-weight: normal;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.price_tag {
-  padding: 0.5rem;
-  width: 220px;
-  color: white;
-  background-color: #6b2097;
-  border-radius: 15px; */
-/* border-radius: 25px; */
-/* box-shadow: 5px 5px 10px rgba(161, 75, 211, 0.8);
-} */
 
 .img_description {
   position: absolute;
@@ -42,4 +24,11 @@
   background-color: rgba(83, 5, 132, 0.81);
   filter: drop-shadow(1px 4px 4px rgba(176, 68, 243, 0.7));
   text-align: center;
+}
+
+@media (max-width : 640px) {
+  .cloth_image {
+    width: 160px;
+    height: 160px;
+  }
 }

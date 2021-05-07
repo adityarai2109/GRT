@@ -8,46 +8,19 @@ import { Link } from "react-router-dom";
 import logo from "./GRT.svg";
 import image7 from "../images/image7.jpeg";
 function Listing(props) {
-  return (
-    <div
-      className="images_row"
-      onClick={() => {
-        // console.log(props.title);
-      }}
-    >
-      <div>
-        <img src={image7} className="cloth_image" alt="Suit"></img>
-        <Link to={`/${props.category}/${props.id}`}>
-          <PurpleButton line1={props.title} line2={`₹ ${props.price}`} />
-        </Link>
-      </div>
-    </div>
-  );
+    return (
+        <div className="images_row">
+            <div>
+                <Link to={`/${props.category}/${props.id}`}>
+                    <img src={image7} className="cloth_image" alt="Suit"></img>
+                    <PurpleButton
+                        line1={props.title}
+                        line2={`₹ ${props.price}`}
+                    />
+                </Link>
+            </div>
+        </div>
+    );
 }
 
 export default Listing;
-/*
-class MyComponent extends React.Component {
-  state = {
-    redirect: false,
-  };
-  setRedirect = () => {
-    this.setState({
-      redirect: true,
-    });
-  };
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to="/target" />;
-    }
-  };                          
-  render() {                          
-    return (                          
-      <div>                          
-        {this.renderRedirect()}
-        <button onClick={this.setRedirect}>Redirect</button>
-      </div>
-    );
-  }
-}
-*/

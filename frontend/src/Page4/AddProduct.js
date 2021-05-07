@@ -5,7 +5,7 @@ import React from "react";
 export default function Example() {
     return (
         <>
-            <div className="container mx-auto" style={{ width: "60%" }}>
+            <div className="addproduct container mx-auto">
                 <div className="hidden sm:block" aria-hidden="true">
                     <div className="py-5">
                         <div className="" />
@@ -19,7 +19,7 @@ export default function Example() {
                                     <div className="grid grid-cols-3 gap-6">
                                         <div className="col-span-3">
                                             <label
-                                                htmlFor="company_website"
+                                                htmlFor="product_name"
                                                 className="block text-lg text-white"
                                             >
                                                 Name
@@ -32,8 +32,8 @@ export default function Example() {
                                                         paddingLeft: "1rem",
                                                     }}
                                                     type="text"
-                                                    name="company_website"
-                                                    id="company_website"
+                                                    name="product_name"
+                                                    id="product_name"
                                                     className="focus:ring-indigo-800 focus:border-indigo-800 text-gray-600  flex-1 block w-full rounded-none rounded-md  sm:text-sm border-gray-700"
                                                     placeholder="Product Name"
                                                 />
@@ -43,7 +43,7 @@ export default function Example() {
                                     <div className="grid grid-cols-3 gap-6">
                                         <div className="col-span-3">
                                             <label
-                                                htmlFor="company_website"
+                                                htmlFor="product_quantity"
                                                 className="block text-lg text-white"
                                             >
                                                 Quantity
@@ -56,8 +56,8 @@ export default function Example() {
                                                             "white",
                                                         paddingLeft: "1rem",
                                                     }}
-                                                    name="company_website"
-                                                    id="company_website"
+                                                    name="product_quantity"
+                                                    id="product_quantity"
                                                     className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
                                                     placeholder="Product quantity"
                                                 />
@@ -67,7 +67,7 @@ export default function Example() {
                                     <div className="grid grid-cols-3 gap-6">
                                         <div className="col-span-3">
                                             <label
-                                                htmlFor="company_website"
+                                                htmlFor="product_price"
                                                 className="block text-lg text-white"
                                             >
                                                 Price
@@ -81,8 +81,8 @@ export default function Example() {
                                                         color: "black",
                                                         paddingLeft: "1rem",
                                                     }}
-                                                    name="company_website"
-                                                    id="company_website"
+                                                    name="product_price"
+                                                    id="product_price"
                                                     className="border-black flex-1 block w-full rounded-none rounded-md"
                                                     placeholder="Product price"
                                                 />
@@ -92,15 +92,15 @@ export default function Example() {
 
                                     <div>
                                         <label
-                                            htmlFor="about"
+                                            htmlFor="product_description"
                                             className="block text-lg text-white"
                                         >
                                             Description
                                         </label>
                                         <div className="ml-10 mr-10 mt-2">
                                             <textarea
-                                                id="about"
-                                                name="about"
+                                                id="product_description"
+                                                name="product_description"
                                                 rows={7}
                                                 style={{
                                                     background: "white",

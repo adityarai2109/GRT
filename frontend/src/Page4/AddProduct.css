@@ -21,3 +21,18 @@
     color: #6b2097;
     
 }
+
+.addproduct {
+    width: 60%;
+}
+
+@media (max-width: 750px) {
+    .addproduct {
+        width: 80%;
+    }
+}
+@media (max-width: 550px) {
+    .addproduct {
+        width: 90%;
+    }
+}

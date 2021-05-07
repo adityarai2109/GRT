@@ -40,7 +40,7 @@
 }
 
 .title {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 3.2rem;
   font-family: Poppins;
 }
@@ -58,6 +58,38 @@
   justify-content: space-evenly;
   margin-bottom: 1.5rem;
 }
+
+.p_price {
+  color: blueviolet;
+  font-family: Poppins;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: left;
+}
+
+.org_price {
+  font-size: large;
+  text-decoration: line-through;
+  margin-left: 1rem;
+}
+.whatsappicon {
+  width: 1.7rem;
+  margin-right: 1rem;
+}
+.whatsappus {
+  margin-top: 1rem;
+  display: flex;
+  font-family: Poppins;
+  font-size: larger;
+  color: rgb(36, 190, 131);
+  font-weight: bold;
+}
+
+.rate {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 
 @media only screen and (max-width: 900px) {
   .page3_content {

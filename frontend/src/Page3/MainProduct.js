@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "./Rating";
 import "./MainProduct.css";
 import PurpleButton from "../CustomJS/PurpleButton.js";
 import Cardarray from "../homePage/CardArray";
@@ -6,6 +7,7 @@ import Navbar from "../homePage/Navbar";
 import Info from "../homePage/Info";
 import Footer from "../homePage/Footer";
 import { useEffect } from "react";
+import whatsappicon from "../images/whatsapp.svg"
 
 import { Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
@@ -59,25 +61,30 @@ const MainProduct = (props) => {
                     </div>
                     <div className="partition"></div>
                     <div className="product_desc">
-                        <h1 className="title">
+                        <h1 style={{textAlign : "left",}} className="title">
                             {Cardarray.find((x) => x.id === id).title}
                         </h1>
+                        <div className="rate"><Rating name="size-large" defaultValue={2} size="large" rating={4}/></div>
                         <p className="desc">
                             {Cardarray.find((x) => x.id === id).description}
                         </p>
-                        <div className="buttons1">
-                            <PurpleButton
-                                line1={
-                                    "₹ " +
-                                    Cardarray.find((x) => x.id === id).price
-                                }
-                            />
+                        <div className="p_price">
+                            <span className="dis_price">{"₹ " +
+                                    Cardarray.find((x) => x.id === id).price}</span>
+                            <span className="org_price">{"₹ " +
+                                    parseInt(1.1 * Cardarray.find((x) => x.id === id).price)}</span>
+                        </div>
+                        <div className="whatsappus">
+                            <img className="whatsappicon" src={whatsappicon} alt=""></img>
+                            <span className="whatsappnum">Whatsapp us on: +91 9876543210</span>
+                        </div>
+                        {/* <div className="buttons1">
                             <PurpleButton line1="Add to Wishlist" />
                         </div>
                         <PurpleButton
                             line1="Whatsapp us on:"
                             line2="+91 9876543210"
-                        />
+                        /> */}
                     </div>
                 </div>
 

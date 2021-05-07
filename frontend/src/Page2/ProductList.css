@@ -81,10 +81,17 @@
     width: 20vw;
   }
 }
-@media (max-width: 628px) {
+@media (max-width: 648px) {
+  .product_card {
+    grid-template-columns: repeat(auto-fit, 50%);
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 340px) {
   .product_card {
     grid-template-columns: repeat(auto-fit, 100%);
     margin-top: 1rem;
+    padding: 0 1rem;
   }
 }
-
