@@ -28,7 +28,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get("/api/products");
@@ -147,7 +147,7 @@ function App() {
             <DesignerHeading name="Trending" />
             <Card isDarkMode= {isDarkMode}/>
 
-            <DesignerHeading name="All collections" />
+            <DesignerHeading name="All Collections" />
             <Card isDarkMode= {isDarkMode}/>
 
             <DesignerHeading name="Latest collections" />

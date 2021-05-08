@@ -28,6 +28,7 @@
   padding: 2rem;
   font-family: Poppins;
   height: 128px;
+  font-weight: bolder;
 }
 .orderby > * {
   cursor: pointer;

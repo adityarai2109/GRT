@@ -20,7 +20,7 @@
 }
 
 .logo {
-  font-family: Inconsolata;
+  font-family: Poppins;
   color: white;
   font-size: 2rem;
   display: flex;
@@ -40,6 +40,7 @@
   position: fixed;
   top: 0;
 } */
+
 .searchbar {
   display: flex;
   justify-content: center;
@@ -58,7 +59,7 @@
     display: none;
   } */
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
   .inputnav {
     width: 60vw;
@@ -87,5 +88,11 @@
   }
   .main_nav {
     height: 10vh;
+  }
+}
+
+@media (max-width : 475px){
+  .logo {
+    font-size: 1.4rem;
   }
 }

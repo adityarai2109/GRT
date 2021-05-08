@@ -23,28 +23,31 @@ function Card(props) {
         <div>
             <div className="trending_images">
                 <div className="product_card">
-                    {Cardarray.slice(0, 4).map((card) => {
-                        return (
-                            <div>
-                                <Listing
-                                    id={card.id}
-                                    image={card.image}
-                                    title={card.title}
-                                    price={card.price}
-                                    category={card.category}
-                                />
-                            </div>
-                        );
-                    })}
+                    {Cardarray.slice(0, 4)
+                        .sort(() => 0.5 - Math.random())
+                        .map((card) => {
+                            return (
+                                <div>
+                                    <Listing
+                                        id={card.id}
+                                        image={card.image}
+                                        title={card.title}
+                                        price={card.price}
+                                        category={card.category}
+                                    />
+                                </div>
+                            );
+                        })}
                 </div>
                 <Link to="/Suit">
                     <Button
                         variant="outlined"
                         style={{
                             background: "white",
-                        fontFamily: "Poppins",
-                          fontWeight:"bold",
+                            fontFamily: "Poppins",
+                            fontWeight: "bold",
                             border: "1px solid #393E46",
+                            marginTop: "1rem",
                         }}
                     >
                         <img
@@ -53,8 +56,7 @@ function Card(props) {
                             style={{ height: "2rem" }}
                             alt=""
                         />
-                        <p className="hpvmp"
-                        >View more</p>
+                        <p className="hpvmp">View more</p>
                     </Button>
                 </Link>
             </div>

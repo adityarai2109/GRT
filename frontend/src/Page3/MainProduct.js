@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import InnerImageZoom from "react-inner-image-zoom";
+import DesignerHeading from "../homePage/DesignerHeading"
 // import ReactImageMagnify from "react-image-magnify";
 
 // Cardarray.find(
@@ -110,6 +111,7 @@ const MainProduct = (props) => {
                     </Button>
                 </Link>
             </div>
+            <DesignerHeading name="Contacts" />
             <Info />
             <Footer />
         </div>

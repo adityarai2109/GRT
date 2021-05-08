@@ -13,17 +13,12 @@ import viewMoreDark from "../images/file-search-dark.svg";
 import '../homePage/Card.css'
 
 const ProductList = (props) => {
-    //   var i,j,temparray,chunk = 5;
-    // for (i=0,j=array.length; i<j; i+=chunk) {
-    //     temparray = array.slice(i,i+chunk);
-    //     // do whatever
-    // }
-    //console.log(props.products);
+
     const [rangeToggle, setRangeToggle] = useState(true);
     let category = String(props.match.params.category);
     const [sortedCategory, setSortedCategory] = useState("Latest");
 
-    const [pageArray, setPageArray] = useState(4);
+    const [pageArray, setPageArray] = useState(8);
     console.log(pageArray);
 
     function newstate(newState) {
@@ -31,13 +26,6 @@ const ProductList = (props) => {
         newSortedCategory = newState;
         setSortedCategory(newSortedCategory);
     }
-    // console.log(props.query);
-    // for(let i = 0;i < arr.length();i++)
-    // {
-    //   if(arr[i].price >= a && arr[i].price <= b)
-    //     console.log(arr[i])
-    // }
-    // conditions.some(el => str2.includes(el))
 
     var words = props.query.toLowerCase().split(" ");
 
@@ -48,6 +36,11 @@ const ProductList = (props) => {
                 i.description.toLowerCase().includes(word)
         )
     );
+
+    function resetSearch(){
+        props.setQuery("");
+        document.getElementById("inputnavid").value = "";
+    }
 
     const [value, setValue] = useState([0, 100]);
     function Sortby() {
@@ -66,8 +59,9 @@ const ProductList = (props) => {
                 .slice(0, pageArray)
                 .map((card) => {
                     return (
-                        <div>
+                        <div onClick={() => resetSearch()}>
                             <Listing
+                                
                                 id={card.id}
                                 image={card.image}
                                 title={card.title}
@@ -80,6 +74,7 @@ const ProductList = (props) => {
             props.setQuery("");
             console.log(props.query);
         } else {
+            
             return filteredCardArray
                 .filter(
                     (categCard) =>
@@ -103,7 +98,7 @@ const ProductList = (props) => {
                     // console.log(card)
                     // if(card.price >= value[0] * 100 && card.price <= value[1] * 100)
                     return (
-                        <div>
+                        <div onClick={() => resetSearch()}>
                             <Listing
                                 id={card.id}
                                 image={card.image}
@@ -114,8 +109,7 @@ const ProductList = (props) => {
                         </div>
                     );
                 });
-            props.setQuery("");
-            console.log(props.query);
+            
         }
     }
 
@@ -141,7 +135,7 @@ const ProductList = (props) => {
                         <div
                             id="input-slider"
                             onClick={() => setRangeToggle(false)}
-                            style={{ width: "300px" }}
+                            style={{ width: "300px", }}
                             gutterBottom
                         >
                             Range
@@ -153,7 +147,7 @@ const ProductList = (props) => {
                                 setValue={setValue}
                                 className="navRange"
                             />
-                            <button onClick={() => setRangeToggle(true)}>
+                            <button style={{ fontWeight: "bolder",}} onClick={() => setRangeToggle(true)}>
                                 Done
                             </button>
                         </div>
