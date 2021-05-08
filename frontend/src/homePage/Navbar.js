@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import iconLogo from "../images/group1.svg";
@@ -19,6 +19,11 @@ export default function Navbar(props) {
   //   props.setQuery(e.target.value);
   //   console.log(props.query);
   // }
+  // const [stick, setStick] = useState(false);
+
+  window.onscroll = function(){
+    doStick();
+  }
   function search(e) {
     e.preventDefault();
     const newItem = document.getElementById("inputnavid");
@@ -28,17 +33,31 @@ export default function Navbar(props) {
     }
     //Router.replace(`/Suit/${props.query}`);
   }
+
+  function doStick(){
+    const searchbar = document.getElementById("searchbar") ;
+    const stick = searchbar.offsetTop;
+    const navbar = document.getElementById("navbar").offsetHeight;
+    // console.log(stick)
+    if(window.pageYOffset >= navbar)
+      searchbar.classList.add("sticky");
+    else
+      searchbar.classList.remove("sticky");
+  }
   return (
     /* \bs*t*a*r*k*\b */
+    <div className="main_nav">
     <div className="navbar">
-      <Link to="/">
-        <a className="logo">
+      <div id="navbar">
+        <Link to="/">
+        <div className="logo">
           <img style={{ height: "8vh" }} src={iconLogo} alt="GRT" />
           <h4 className="grt">Ganga Ram Textiles</h4>
-        </a>
+        </div>
       </Link>
-
-      <div className="searchbar">
+      </div>
+      
+      <div id="searchbar" className="searchbar">
         <input
           className="inputnav"
           id="inputnavid"
@@ -62,12 +81,16 @@ export default function Navbar(props) {
           </Button>
         </div>
       </div>
-      <Toggle
+      
+      <Toggle className="nav_toggle"
         isDarkMode={props.isDarkMode}
         setIsDarkMode={props.setIsDarkMode}
       />
     </div>
+    
+      </div>
   );
+  
 }
 /*
 <SearchIcon

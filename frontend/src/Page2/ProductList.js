@@ -160,31 +160,8 @@ const ProductList = (props) => {
                     )}
                 </p>
             </div>
-            <h1 className="results">Showing results for : {props.query}</h1>
+            {/* <h1 className="results">Showing results for : {props.query}</h1> */}
             <div className="product_card">{Sortby(filteredCardArray)}</div>
-
-            {/* <Button
-                variant="outlined"
-                color="default"
-                style={{
-                    margin: "1rem",
-                    background: "white",
-                    color: "#6B2097",
-                }}
-                onClick={() => setPageArray(pageArray + 4)}
-            >
-                <img style={{ height: "4vh" }} src={viewMore} alt="View More" />
-                <p
-                    style={{
-                        color: "#6B2097",
-                        fontFamily: "Poppins",
-                        fontWeight: "bold",
-                        
-                    }}
-                >
-                    View more
-                </p>
-            </Button> */}
             <Button
                 variant="outlined"
                 style={{
