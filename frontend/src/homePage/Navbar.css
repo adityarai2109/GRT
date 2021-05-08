@@ -26,12 +26,9 @@
   display: flex;
   align-items: center;
 }
-.inputnav::placeholder {
-  color: purple;
-}
+
 .inputnav {
   margin-left: 2rem;
-  color: purple;
   width: 35vw;
   border: none;
   padding: 6px 20px;
@@ -47,14 +44,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  background-color: #8d12d9;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   z-index: 10000;
+  background-color: #8d12d9;
 }
 .btn-search {
-  background-color: #630f96;
+  background-color: #6e10a8;
 }
 
 @media (max-width: 860px) {
@@ -65,7 +61,7 @@
     font-size: 1.2rem;
   }
   .inputnav {
-    width: 50vw;
+    width: 60vw;
   }
   .sticky {
     position: fixed;

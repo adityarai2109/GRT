@@ -50,6 +50,9 @@ code {
 .dark .navbar {
   background-color: #232931;
 }
+.dark .searchbar{
+  background-color: #232931;
+}
 .dark .f-details {
   /* background-image: linear-gradient(45deg, #393e46 0%, #80ffdb 100%); */
   background: #ef476f;

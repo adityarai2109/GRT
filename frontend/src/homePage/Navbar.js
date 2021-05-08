@@ -65,9 +65,9 @@ export default function Navbar(props) {
           placeholder="Search for Clothes, Brands and more..."
           // onChange={(e) => handleSearch(e)}
         />
-        <div onClick={search}>
+        <div onClick={search} className="btn-search">
           <Button
-            className="btn-search"
+            
             // style={{"height":"5vh"}}
             component={Link}
             to={`/Suit`}
