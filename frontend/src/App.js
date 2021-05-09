@@ -2,6 +2,8 @@ import "./App.css";
 import Card from "./homePage/Card";
 import Carousel from "./homePage/Carousel";
 import Cta from "./homePage/Cta";
+import Cta2 from "./homePage/Cta2";
+import CtaDecide from "./homePage/CtaDecide"
 import DesignerHeading from "./homePage/DesignerHeading";
 import Footer from "./homePage/Footer";
 import Grid from "./homePage/Grid";
@@ -48,7 +50,7 @@ function App() {
         <Switch>
           <Route path="/checkout">
             <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-            <Cta />
+            <CtaDecide />
             <h1>Checkout</h1>
           </Route>
           <Route path="/login">
@@ -135,12 +137,9 @@ function App() {
               style={{
                 width: "100%",
                 zIndex: "-1",
-                // marginBottom: "-100px",
-                // maskImage:
-                //   "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1))",
               }}
             >
-              <Cta />
+              <CtaDecide />
               {/* <Carousel /> */}
             </div>
             {/* <Header /> */}
