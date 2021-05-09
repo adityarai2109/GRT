@@ -2,7 +2,7 @@ import React from "react";
 import cimage from "../images/mb.png";
 function Cta2() {
     return (
-        <div className="cta2" style={{ position: "relative", border:"10px solid rgb(141 20 215)" }}>
+        <div className="cta2" style={{ position: "relative" }}>
             <div style={{display : "flex"}}>
                 <div
                     style={{
