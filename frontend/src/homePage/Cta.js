@@ -22,6 +22,7 @@ function Cta() {
             color: "white",
             width: "25%",
             fontSize: "3.5vw",
+            fontWeight: "900",
             position: "absolute",
             top: "50%",
             left: "50%",
