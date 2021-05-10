@@ -3,7 +3,7 @@ import Card from "./homePage/Card";
 import Carousel from "./homePage/Carousel";
 import Cta from "./homePage/Cta";
 import Cta2 from "./homePage/Cta2";
-import CtaDecide from "./homePage/CtaDecide"
+import CtaDecide from "./homePage/CtaDecide";
 import DesignerHeading from "./homePage/DesignerHeading";
 import Footer from "./homePage/Footer";
 import Grid from "./homePage/Grid";
@@ -12,8 +12,8 @@ import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
-import "tailwindcss/tailwind.css"
-import Login from "./Page4/Login"
+import "tailwindcss/tailwind.css";
+import Login from "./Page4/Login";
 
 // import Gallery from "./homePage/Unused Files/f2g3";
 // import Testimonials from "./homePage/Unused Files/testimonial3";
@@ -30,7 +30,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(true);
-  
+
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get("/api/products");
@@ -54,14 +54,14 @@ function App() {
             <h1>Checkout</h1>
           </Route>
           <Route path="/login">
-          <Navbar
+            <Navbar
               isDarkMode={isDarkMode}
               setIsDarkMode={setIsDarkMode}
               query={query}
               setQuery={setQuery}
             />
-          <Login />
-          <Footer />
+            <Login />
+            <Footer />
           </Route>
           <Route path="/addProduct">
             <Navbar
@@ -73,10 +73,7 @@ function App() {
             <AddProduct />
             <Footer />
           </Route>
-          
-
           {/* Page 2 */}
-
           <Route
             path="/:category"
             exact
@@ -99,9 +96,7 @@ function App() {
               </>
             )}
           />
-
           {/* Page 3 */}
-
           <Route
             path="/:category/:ida"
             render={(props) => (
@@ -123,9 +118,7 @@ function App() {
               </>
             )}
           />
-
           {/* Main Page */}
-
           <Route path="/">
             <Navbar
               isDarkMode={isDarkMode}
@@ -144,21 +137,17 @@ function App() {
             </div>
             {/* <Header /> */}
             <DesignerHeading name="Trending" />
-            <Card isDarkMode= {isDarkMode}/>
-
+            <Card isDarkMode={isDarkMode} />
             <DesignerHeading name="All Collections" />
-            <Card isDarkMode= {isDarkMode}/>
-
+            <Card isDarkMode={isDarkMode} />
             <DesignerHeading name="Latest collections" />
-            <Card isDarkMode= {isDarkMode}/>
-
+            <Card isDarkMode={isDarkMode} />
             {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}
             {/* <Grid /> */}
-            
             {/* <DesignerHeading name="Latest Collection" />
             <Gallery /> */}
-            <DesignerHeading name="Taglines" />
+            <DesignerHeading name="Commitments" />
             <Taglines />
             {/* <DesignerHeading name="Testimonials" /> */}
             {/* <Testimonials /> */}

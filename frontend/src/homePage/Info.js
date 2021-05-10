@@ -52,18 +52,21 @@ export default function Info() {
               />
             </div>
 
-            <form action="">
+            <form
+              target="_blank"
+              action="mailto:keshav2682@gmail.com"
+              method="post"
+              target="_blank"
+            >
               <b className="text-white">
                 Your feedback is really valuable to us
               </b>
-
               <div className="data">
                 <label className="text-white">Name</label>
                 <input
                   className="input"
                   type="text"
-                  name=""
-                  id=""
+                  name="name"
                   placeholder="Enter here..."
                 />
               </div>
@@ -72,8 +75,7 @@ export default function Info() {
                 <input
                   className="input"
                   type="email"
-                  name=""
-                  id=""
+                  name="mail"
                   placeholder="Enter here..."
                 />
               </div>
@@ -82,11 +84,16 @@ export default function Info() {
                 <input
                   className="input"
                   type="text"
-                  name=""
-                  id=""
+                  name="feedback"
                   placeholder="Enter here..."
                 />
               </div>
+              <input
+                type="submit"
+                value="Send"
+                formtarget="_blank"
+                className="send"
+              />
             </form>
           </div>
         </div>

@@ -14,15 +14,15 @@ function myMap() {
 const WrappedMap = withScriptjs(withGoogleMap(myMap));
 
 export default function Map() {
-
-
-  let apiUrl = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=` + process.env.REACT_APP_API_KEY
+  let apiUrl =
+    `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=` +
+    process.env.REACT_APP_API_KEY;
 
   const mapStyle = {
     height: `38rem`,
-    borderRadius: `0 5% 5% 0`
-  }
-  
+    borderRadius: `0 5% 5% 0`,
+  };
+
   return (
     <div>
       <div className="mapcss">

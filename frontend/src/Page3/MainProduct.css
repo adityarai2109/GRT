@@ -4,7 +4,9 @@
     width: 60rem;
     margin: 8% 10%;
 } */
-
+.whatsappnum {
+  display: flex;
+}
 .page3_content {
   display: flex;
   justify-content: space-around;
@@ -63,7 +65,7 @@
   color: blueviolet;
   font-family: Poppins;
   font-size: xx-large;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: left;
 }
 
@@ -89,7 +91,6 @@
   text-align: left;
   margin-bottom: 1rem;
 }
-
 
 @media only screen and (max-width: 900px) {
   .page3_content {
@@ -135,8 +136,12 @@
   }
 }
 
-@media screen and (max-width: 600px){
-  .pimage{
+@media screen and (max-width: 600px) {
+  .pimage {
     padding: 1rem 2rem 1rem 2rem;
+  }
+  .whatsappnum {
+    display: flex;
+    flex-direction: column;
   }
 }
