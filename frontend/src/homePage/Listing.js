@@ -10,15 +10,14 @@ import image7 from "../images/image7.jpeg";
 function Listing(props) {
     return (
         <div className="images_row">
-            <div>
-                <Link to={`/${props.category}/${props.id}`}>
-                    <img src={image7} className="cloth_image" alt="Suit"></img>
-                    <PurpleButton
-                        line1={props.title}
-                        line2={`₹ ${props.price}`}
-                    />
-                </Link>
-            </div>
+            <Link to={`/${props.category}/${props.id}`}>
+                <img src={image7} className="cloth_image" alt="Suit"></img>
+                <PurpleButton
+                    line1= {props.title}
+                    // line1={(props.title.length>20)?`${props.title.split(" ")[0]} ${props.title.split(" ")[1]} ${props.title.split(" ")[2]} ...`:props.title}
+                    line2={`₹ ${props.price}`}
+                />
+            </Link>
         </div>
     );
 }

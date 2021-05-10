@@ -29,7 +29,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   
   useEffect(() => {
     const fetchProducts = async () => {

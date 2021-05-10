@@ -15,6 +15,7 @@ function Footer() {
       style={{
         width: "100%",
         marginTop: "auto",
+        fontFamily: "Poppins",
       }}
       className="myFooter"
     >
@@ -29,11 +30,11 @@ function Footer() {
             rel="noreferrer"
           >
             <img style={{ height: "6vh" }} src={iconLogo} alt="GRT" />
-            <span class="ml-3 text-xl" style={{ color: "#ffffff" }}>
+            <span class="ml-3 text-xl" style={{ color: "#ffffff", fontSize:"1.5rem",  }}>
               Ganga Ram Textiles
             </span>
           </a>
-          <p class="text-sm text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-100 sm:py-2 sm:mt-0 mt-4">
+          <p style={{ color: "#ffffff" , fontSize:"1.1rem" }} class="text-sm text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-100 sm:py-2 sm:mt-0 mt-4">
             © 2021 Ganga Ram Textiles
           </p>
 

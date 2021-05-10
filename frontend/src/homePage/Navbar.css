@@ -28,12 +28,12 @@
 }
 
 .inputnav {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   width: 35vw;
   border: none;
   padding: 6px 20px;
-  border-radius: 2px;
-  height: 5vh;
+  border-radius: 2px 0px 0px 2px;
+  height: 5.5vh;
 }
 
 /* .sticky {
@@ -54,6 +54,7 @@
   background-color: #6e10a8;
 }
 
+
 @media (max-width: 860px) {
   /* .grt {
     display: none;
@@ -62,7 +63,7 @@
     font-size: 1.8rem;
   }
   .inputnav {
-    width: 60vw;
+    width: 68vw;
   }
   .sticky {
     position: fixed;

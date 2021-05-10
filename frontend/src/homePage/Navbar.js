@@ -20,7 +20,7 @@ export default function Navbar(props) {
     //   console.log(props.query);
     // }
     // const [stick, setStick] = useState(false);
-
+    
     window.onscroll = function () {
         doStick();
     };
@@ -68,9 +68,8 @@ export default function Navbar(props) {
                         id="inputnavid"
                         type="text"
                         placeholder="Search for Clothes, Brands and more..."
-                        // onChange={(e) => handleSearch(e)}
                     />
-                    <div onClick={search} className="btn-search">
+                    <div onClick={search} className="btn-search" style={{borderRadius:"0px 3px 3px 0px",}}>
                         <Button
                             // style={{"height":"5vh"}}
                             component={Link}

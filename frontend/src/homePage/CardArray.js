@@ -205,7 +205,7 @@ let Cardarray = [
     id: 21,
     category: "Suit",
     image: img,
-    title: "Baby red cotton suit",
+    title: "mmmmmmmmmmm",
     description:
       "A Pure Designer Muslin Cream color Un-Stitched Suit with gotta Patti work Senton Bottom and Banarasi Print work Dupatta. this suit crafted with heavy work. Wear matching jewelry and silhouette heels that compliment your all Suits really well and complete.",
     price: 2448,
