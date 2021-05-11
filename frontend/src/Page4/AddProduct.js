@@ -1,10 +1,9 @@
 import "./AddProduct.css";
 import "tailwindcss/tailwind.css";
-import React, {useState}from "react";
-import axios from 'axios'
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function Example() {
-
   const baseUrl = "http://localhost:5000/api";
 
   const [name, setName] = useState("");
@@ -13,39 +12,43 @@ export default function Example() {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState({});
   const [quantity, setQuantity] = useState("");
+  const [preview, setPreview] = useState(false);
 
-  const handleImage =  (e) => {
-    console.log(e.target.files);
-    setImage(e.target.files[0])
+  const handleImage = (e) => {
+    console.log(e.target.files[0]);
+    setImage(e.target.files[0]);
+    setPreview(true)
+  };
+
+  const clearImage = () => {
+       setPreview(false)
+       setImage({})
   }
-
 
   const submitProductForm = async (e) => {
-     e.preventDefault();
-    const productForm = new FormData() 
-      productForm.append("name", name)
-      productForm.append("category", category)
-      productForm.append("description", description)
-      productForm.append("price", price)
-      productForm.append("image", image)
-      productForm.append("quantity", quantity)
+    e.preventDefault();
+    const productForm = new FormData();
+    productForm.append("name", name);
+    productForm.append("category", category);
+    productForm.append("description", description);
+    productForm.append("price", price);
+    productForm.append("image", image);
+    productForm.append("quantity", quantity);
 
-      const config = {
-        headers:{
-          'Content-Type' : 'multipart/form-data' 
-        }
+    // const config = {
+    //   headers:{
+    //     'Content-Type' : 'multipart/form-data'
+    //   }
+    // }
+
+    try {
+      const res = await axios.post(`${baseUrl}/product/create`, productForm);
+      if (res.status === 200) {
+        console.log("added via :) frontend ");
       }
-
-    try{
-    const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
-    if (res.status === 200) {
-      console.log("added via :) frontend ");
-      
+    } catch (error) {
+      console.log(error.response);
     }
-  }catch(error){
-      console.log(error.response) 
-  }
-
   };
 
   return (
@@ -63,7 +66,7 @@ export default function Example() {
           className="grid bg-white rounded grid-cols-1 gap-5 back"
         >
           <div className="mt-5 col-span-2">
-            <form onSubmit = {submitProductForm} >
+            <form onSubmit={submitProductForm}>
               <div className=" rounded overflow-hidden ">
                 <div className="px-2 py-2 space-y-6 sm:p-6">
                   <div className="grid grid-cols-3 gap-6">
@@ -189,49 +192,60 @@ export default function Example() {
                       />
                     </div>
                   </div>
-
-                  <div>
-                    <label className="block text-lg text-white">
-                      Cover photo
-                    </label>
-                    <div className="mt-1 ml-10 mr-10 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                      <div className="space-y-1 text-center">
-                        <svg
-                          className="mx-auto h-12 w-12 text-white"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 48 48"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <div className="flex text-white">
-                          <label
-                            htmlFor="file-upload"
-                            className="p-0 relative cursor-pointer rounded-md font-medium text-indigo-100 hover:text-indigo-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                  {preview ? (
+                    <div className="preview-img">
+                      <label className="block text-lg text-white">
+                         Preview
+                      </label>
+                      <img src="URL.createObjectURL(image)" />
+                      <button onClick={clearImage}>X</button>
+                      <h1>{image.name}</h1>
+                    </div>
+                  ) : (
+                    <div>
+                      <label className="block text-lg text-white">
+                        Cover photo
+                      </label>
+                      <div className="mt-1 ml-10 mr-10 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                        <div className="space-y-1 text-center">
+                          <svg
+                            className="mx-auto h-12 w-12 text-white"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 48 48"
+                            aria-hidden="true"
                           >
-                            <span>Upload a file</span>
-                            <input
-                              id="file-upload"
-                              name="file-upload"
-                              type="file"
-                              className="sr-only"
-                              onChange={handleImage}
+                            <path
+                              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                              strokeWidth={2}
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             />
-                          </label>
-                          <p className="pl-1">or drag and drop</p>
+                          </svg>
+                          <div className="flex text-white">
+                            <label
+                              htmlFor="file-upload"
+                              className="p-0 relative cursor-pointer rounded-md font-medium text-indigo-100 hover:text-indigo-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                            >
+                              <span>Upload a file</span>
+                              <input
+                                id="file-upload"
+                                name="file-upload"
+                                type="file"
+                                className="sr-only"
+                                onChange={handleImage}
+                                accept="png jpg jpeg"
+                              />
+                            </label>
+                            <p className="pl-1">or drag and drop</p>
+                          </div>
+                          <p className="text-xs text-white">
+                            PNG, JPG, GIF up to 10MB
+                          </p>
                         </div>
-                        <p className="text-xs text-white">
-                          PNG, JPG, GIF up to 10MB
-                        </p>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 <div className="w-full px-4 py-3">
                   <button
