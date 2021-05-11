@@ -7,17 +7,17 @@ import viewMore from "../images/file-search.svg";
 import viewMoreDark from "../images/file-search-dark.svg";
 import { Link } from "react-router-dom";
 import "./Card.css";
-//import Cardarray from "../homePage/cardarray";
+import Cardarray from "../homePage/CardArray";
 
 function Card(props) {
-  const [Cardarray, setCardarray] = useState([]);
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
-      setCardarray(data);
-    };
-    fetchProducts();
-  }, []);
+  // const [Cardarray, setCardarray] = useState([]);
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const { data } = await axios.get("/api/products");
+  //     setCardarray(data);
+  //   };
+  //   fetchProducts();
+  // }, []);
 
   return (
     <div>
@@ -34,7 +34,9 @@ function Card(props) {
                     title={card.title}
                     price={card.price}
                     category={card.category}
-                  />
+                  />{
+                    console.log(card.image)
+                  }
                 </div>
               );
             })}

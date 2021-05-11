@@ -9,9 +9,11 @@ export default function Example() {
   }
 
   return (
-    <>
-      <img src= "http://localhost:5000/upload/9ziCqYEOD-Capture.PNG" />
-      <h1>fgg</h1>
+    <> 
+      <div className = "img">
+        <img src="http://localhost:5000/upload/minions.jpg" />
+        <h1 style = {{color : "#fff"}}>backend se photo finally aa gyi :) </h1>
+      </div>
       <div className="addproduct container mx-auto">
         <div className="hidden sm:block" aria-hidden="true">
           <div className="py-5"></div>
@@ -150,7 +152,7 @@ export default function Example() {
                               name="file-upload"
                               type="file"
                               className="sr-only"
-                              onChange = {handleChangeImg}
+                              onChange={handleChangeImg}
                             />
                           </label>
                           <p className="pl-1">or drag and drop</p>
