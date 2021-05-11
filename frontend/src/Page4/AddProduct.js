@@ -1,18 +1,53 @@
 import "./AddProduct.css";
 import "tailwindcss/tailwind.css";
-import React from "react";
+import React, {useState}from "react";
+import axios from 'axios'
 
 export default function Example() {
 
-  const handleChangeImg = (e) =>{
-    console.log(e.target.files[0])
+  const baseUrl = "http://localhost:5000/api";
+
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [quantity, setQuantity] = useState("");
+
+  const handleImage =  (e) => {
+    console.log(e.target.files);
+    setImage(e.target.files[0])
   }
 
+
+  const submitProductForm = async (e) => {
+     e.preventDefault();
+    const productDetails = {
+      name,
+      category,
+      description,
+      price,
+      image,
+      quantity,
+    };
+   //console.log(image)
+  //   try{
+  //   const res = await axios.post(`${baseUrl}/product/create`, productDetails);
+  //   if (res.status === 200) {
+  //     console.log("added via :) frontend ");
+      
+  //   }
+  // }catch(error){
+  //     console.log(error.response) 
+  // }
+
+  };
+
   return (
-    <> 
-      <div className = "img">
+    <>
+      <div className="img">
         <img src="http://localhost:5000/upload/minions.jpg" />
-        <h1 style = {{color : "#fff"}}>backend se photo finally aa gyi :) </h1>
+        <h1 style={{ color: "#fff" }}>backend se photo finally aa gyi :) </h1>
       </div>
       <div className="addproduct container mx-auto">
         <div className="hidden sm:block" aria-hidden="true">
@@ -23,7 +58,7 @@ export default function Example() {
           className="grid bg-white rounded grid-cols-1 gap-5 back"
         >
           <div className="mt-5 col-span-2">
-            <form method="POST">
+            <form onSubmit = {submitProductForm} >
               <div className=" rounded overflow-hidden ">
                 <div className="px-2 py-2 space-y-6 sm:p-6">
                   <div className="grid grid-cols-3 gap-6">
@@ -41,10 +76,11 @@ export default function Example() {
                             paddingLeft: "1rem",
                           }}
                           type="text"
-                          name="product_name"
+                          value={name}
                           id="product_name"
                           className="focus:ring-indigo-800 focus:border-indigo-800 text-gray-600  flex-1 block w-full rounded-none rounded-md  sm:text-sm border-gray-700"
                           placeholder="Product Name"
+                          onChange={(e) => setName(e.target.value)}
                         />
                       </div>
                     </div>
@@ -55,7 +91,7 @@ export default function Example() {
                         htmlFor="product_quantity"
                         className="block text-lg text-white"
                       >
-                        Quantity
+                        Category
                       </label>
                       <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
                         <input
@@ -64,10 +100,36 @@ export default function Example() {
                             background: "white",
                             paddingLeft: "1rem",
                           }}
-                          name="product_quantity"
+                          value={category}
+                          id="product_quantity"
+                          className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
+                          placeholder="Category"
+                          onChange={(e) => setCategory(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-6">
+                    <div className="col-span-3">
+                      <label
+                        htmlFor="product_quantity"
+                        className="block text-lg text-white"
+                      >
+                        Quantity
+                      </label>
+                      <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
+                        <input
+                          type="number"
+                          style={{
+                            background: "white",
+                            paddingLeft: "1rem",
+                          }}
+                          value={quantity}
                           id="product_quantity"
                           className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
                           placeholder="Product quantity"
+                          onChange={(e) => setQuantity(e.target.value)}
                         />
                       </div>
                     </div>
@@ -82,16 +144,17 @@ export default function Example() {
                       </label>
                       <div className="h-10 ml-10 mr-10 mt-2 flex rounded ">
                         <input
-                          type="text"
+                          type="number"
                           style={{
                             background: "white",
                             color: "black",
                             paddingLeft: "1rem",
                           }}
-                          name="product_price"
+                          value={price}
                           id="product_price"
                           className="border-black flex-1 block w-full rounded-none rounded-md"
                           placeholder="Product price"
+                          onChange={(e) => setPrice(e.target.value)}
                         />
                       </div>
                     </div>
@@ -107,7 +170,7 @@ export default function Example() {
                     <div className="ml-10 mr-10 mt-2">
                       <textarea
                         id="product_description"
-                        name="product_description"
+                        value={description}
                         rows={7}
                         style={{
                           background: "white",
@@ -117,6 +180,7 @@ export default function Example() {
                         className="text-justify shadow-sm pt-3 pr-3 focus:ring-indigo-500 focus:border-indigo-800 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                         placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi pariatur quae quibusdam porro laudantium esse? A perferendis ad nulla eveniet. Officiis provident maxime porro id, perferendis minus earum eligendi illo. Aliquam dolorem alias quidem debitis repellendus mollitia pariatur doloremque consequatur quam sequi quos provident ab culpa sit iure rem odit aut corporis, illo minima, doloribus maiores! Tempora ipsam reiciendis inventore."
                         defaultValue={""}
+                        onChange={(e) => setDescription(e.target.value)}
                       />
                     </div>
                   </div>
@@ -152,7 +216,7 @@ export default function Example() {
                               name="file-upload"
                               type="file"
                               className="sr-only"
-                              onChange={handleChangeImg}
+                              onChange={handleImage}
                             />
                           </label>
                           <p className="pl-1">or drag and drop</p>

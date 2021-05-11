@@ -13,7 +13,7 @@ const reviewSchema = mongoose.Schema({
 
 const productSchema = mongoose.Schema(
   {
-    title: {
+    name: {
       type: String,
       required: true,
     },
@@ -36,28 +36,28 @@ const productSchema = mongoose.Schema(
       required: true,
     },
 
-    countInStock: {
+     quantity: {
       type: Number,
       required: true,
       default: 0,
     },
     // admin name login se pta kr lenge
-    adminName: {
-      type: String,
-      required: true,
-     // ref: "User",
-    },
-    rating: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    reviews: [reviewSchema],
-    numReviews: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
+    // adminName: {
+    //   type: String,
+    //   required: true,
+    //  // ref: "User",
+    // },
+    // rating: {
+    //   type: Number,
+    //   required: true,
+    //   default: 0,
+    // },
+    // reviews: [reviewSchema],
+    // numReviews: {
+    //   type: Number,
+    //   required: true,
+    //   default: 0,
+    // },
   },
   {
     timestamps: true,
