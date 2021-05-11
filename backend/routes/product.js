@@ -5,7 +5,7 @@ import shortid from 'shortid'
 import path from "path";
 import { fileURLToPath } from "url";
 
-import  { createProduct } from '../controllers/product.js'
+import  { createProduct, getProducts } from '../controllers/product.js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,4 +29,5 @@ export const upload = multer({ storage });
 router.post( "/product/create", upload.single('image'),createProduct);
 //router.post("/product/create",  createProduct);
 
+router.get("/allproducts", getProducts)
 export default router

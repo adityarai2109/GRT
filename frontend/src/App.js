@@ -15,10 +15,6 @@ import AddProduct from "./Page4/AddProduct";
 import "tailwindcss/tailwind.css";
 import Login from "./Page4/Login";
 
-// import Gallery from "./homePage/Unused Files/f2g3";
-// import Testimonials from "./homePage/Unused Files/testimonial3";
-// import Loader from './CustomJS/Loader'
-
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
 
@@ -27,21 +23,35 @@ import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
+
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
-      console.log(data);
-    };
-    fetchProducts();
-  }, []);
+ const baseUrl = "http://localhost:5000/api";
+ const imgUrl = "http://localhost:5000";
+
+     useEffect ( () => {
+        console.log("ddd")
+        const fetchProducts = async () => {
+              const res = await axios.get(`${baseUrl}/allproducts`)
+              if(res.status === 200){
+                 setProducts(res.data)
+                 console.log(res.data)
+                 console.log(products)
+              }
+        }
+         fetchProducts();
+     },[])
 
   useEffect(() => {
     console.log(query);
   }, [query]);
+
+    useEffect(() => {
+    console.log("dark");
+    console.log(products)
+  }, [isDarkMode]);
 
   return (
     <div className={`App ${isDarkMode ? `dark` : null}`}>
@@ -136,6 +146,31 @@ function App() {
               {/* <Carousel /> */}
             </div>
             {/* <Header /> */}
+            {/* {
+              products.map((product) => {
+              <div>
+                 <img src={`${baseUrl}/upload/product.name`} key={product._id} /> 
+                <h1>gggg</h1>
+              </div>
+            })
+             } */}
+
+            {products.length > 0 ? (
+                products.map((product) => {
+                  return (
+                    <div>
+                      <img
+                        src={`${imgUrl}/upload/${product.image}`}
+                        key={product._id}
+                        style={{ width: "200px", height: "200px", margin:"auto" }}
+                      />
+                      <h1>{product.name}</h1>
+                    </div>
+                  );
+               })
+            )
+              : null}
+
             <DesignerHeading name="Trending" />
             <Card isDarkMode={isDarkMode} />
             <DesignerHeading name="All Collections" />

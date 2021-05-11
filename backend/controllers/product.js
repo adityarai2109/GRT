@@ -26,4 +26,10 @@ export const createProduct = (req, res) => {
  //  res.status(200).json({message: "sss"})
 }
 
+
+export const getProducts  = async (req, res) => {
+const products = await Product.find({}).exec();
+res.status(200).json(products)
+
+}   
  
