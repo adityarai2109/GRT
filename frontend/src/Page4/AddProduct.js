@@ -2,6 +2,7 @@ import "./AddProduct.css";
 import "tailwindcss/tailwind.css";
 import React, { useState } from "react";
 import axios from "axios";
+import Alert from "@material-ui/lab/Alert";
 
 export default function Example() {
   const baseUrl = "http://localhost:5000/api";
@@ -13,6 +14,7 @@ export default function Example() {
   const [image, setImage] = useState({});
   const [quantity, setQuantity] = useState("");
   const [preview, setPreview] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleImage = (e) => {
     console.log(e.target.files[0]);
@@ -45,6 +47,16 @@ export default function Example() {
       const res = await axios.post(`${baseUrl}/product/create`, productForm);
       if (res.status === 200) {
         console.log("added via :) frontend ");
+         setPreview(false)
+         setImage({})
+         setName("")
+         setCategory("")
+         setDescription("")
+         setPrice("")
+         setQuantity("")
+         setSuccess(true)
+          window.scrollTo(0, 0);
+        
       }
     } catch (error) {
       console.log(error.response);
@@ -53,6 +65,12 @@ export default function Example() {
 
   return (
     <>
+     {success ? 
+     <>
+     <Alert severity="success">New product added successfully </Alert>
+       
+     </>:
+     null}
       <div className="img">
         <img src="http://localhost:5000/upload/minions.jpg" />
         <h1 style={{ color: "#fff" }}>backend se photo finally aa gyi :) </h1>
@@ -184,6 +202,7 @@ export default function Example() {
                           background: "white",
                           paddingLeft: "1rem",
                           color: "black",
+                          outlineWidth: "0",
                         }}
                         className="text-justify shadow-sm pt-3 pr-3 focus:ring-indigo-500 focus:border-indigo-800 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                         placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi pariatur quae quibusdam porro laudantium esse? A perferendis ad nulla eveniet. Officiis provident maxime porro id, perferendis minus earum eligendi illo. Aliquam dolorem alias quidem debitis repellendus mollitia pariatur doloremque consequatur quam sequi quos provident ab culpa sit iure rem odit aut corporis, illo minima, doloribus maiores! Tempora ipsam reiciendis inventore."
@@ -193,13 +212,16 @@ export default function Example() {
                     </div>
                   </div>
                   {preview ? (
-                    <div className="preview-img">
-                      <label className="block text-lg text-white">
-                         Preview
-                      </label>
-                      <img src="URL.createObjectURL(image)" />
-                      <button onClick={clearImage}>X</button>
-                      <h1>{image.name}</h1>
+                    <div className="preview">
+                      <div className="preview-clear">
+                        <label className="block text-lg text-white">
+                          Preview
+                        </label>
+                        <button className = "clear-btn" onClick={clearImage}>X</button>
+                      </div>
+                      <img src={URL.createObjectURL(image)} style={{}} />
+
+                      <h4 className="block text-xs text-white">{image.name}</h4>
                     </div>
                   ) : (
                     <div>
@@ -253,9 +275,10 @@ export default function Example() {
                       width: "85%",
                       color: "black",
                       background: "white",
+                      outlineWidth: "0",
                     }}
                     type="submit"
-                    className="block w-100 inline-flex justify-center py-2 px-4 border border-white rounded-md text-white"
+                    className="save-btn"
                   >
                     Save
                   </button>

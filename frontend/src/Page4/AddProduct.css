@@ -9,6 +9,10 @@
     );
     font-family: Poppins;
     font-weight: 900;
+    /* background-color: #f046c5; */
+  box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -4px -4px 12px 0 rgba(255, 255, 255, 0.178);
     
 }
 
@@ -20,6 +24,10 @@
     background: white;
     color: #6b2097;
     
+}
+
+input {
+    outline-width : 0;
 }
 
 .addproduct {
@@ -42,4 +50,40 @@
    margin:  auto;
    margin-top : 2rem;
 
+}
+
+ .preview-clear{
+     display : flex;
+     justify-content : space-between;
+
+}
+
+.clear-btn {
+    border: 0;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight:900;
+    background: #fff;
+    color: rgb(241, 19, 130);
+    border-radius: 50%;
+    box-shadow: 5px 5px 25px 1px rgba(0, 0, 0, 0.103);
+    cursor: pointer;
+    outline: 0;
+    transition: 0.5s linear;
+}
+ .save-btn{
+    border: 0;
+    padding: 12px 40px;
+    font-size: 18px;
+    background: #fff;
+    color: rgb(241, 19, 130);
+    border-radius: 5px;
+    box-shadow: 5px 5px 25px 1px rgba(0, 0, 0, 0.103);
+    cursor: pointer;
+    outline: 0;
+    transition: 0.3s linear;
+}
+.save-btn:active , .clear-btn:active {
+    transform: scale(0.85);
+    box-shadow: 3px 2px 25px 1px rgba(0,0,0,0.25);
 }
