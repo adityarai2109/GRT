@@ -3,8 +3,15 @@ import "tailwindcss/tailwind.css";
 import React from "react";
 
 export default function Example() {
+
+  const handleChangeImg = (e) =>{
+    console.log(e.target.files[0])
+  }
+
   return (
     <>
+      <img src= "http://localhost:5000/upload/9ziCqYEOD-Capture.PNG" />
+      <h1>fgg</h1>
       <div className="addproduct container mx-auto">
         <div className="hidden sm:block" aria-hidden="true">
           <div className="py-5"></div>
@@ -143,6 +150,7 @@ export default function Example() {
                               name="file-upload"
                               type="file"
                               className="sr-only"
+                              onChange = {handleChangeImg}
                             />
                           </label>
                           <p className="pl-1">or drag and drop</p>
