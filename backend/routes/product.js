@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
 
 export const upload = multer({ storage });
 
-router.post( "/product/create", upload.single('productPicture'),createProduct);
+router.post( "/product/create", upload.single('image'),createProduct);
 //router.post("/product/create",  createProduct);
 
 export default router

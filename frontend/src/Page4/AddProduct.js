@@ -11,7 +11,7 @@ export default function Example() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState({});
   const [quantity, setQuantity] = useState("");
 
   const handleImage =  (e) => {
@@ -22,24 +22,29 @@ export default function Example() {
 
   const submitProductForm = async (e) => {
      e.preventDefault();
-    const productDetails = {
-      name,
-      category,
-      description,
-      price,
-      image,
-      quantity,
-    };
-   //console.log(image)
-  //   try{
-  //   const res = await axios.post(`${baseUrl}/product/create`, productDetails);
-  //   if (res.status === 200) {
-  //     console.log("added via :) frontend ");
+    const productForm = new FormData() 
+      productForm.append("name", name)
+      productForm.append("category", category)
+      productForm.append("description", description)
+      productForm.append("price", price)
+      productForm.append("image", image)
+      productForm.append("quantity", quantity)
+
+      const config = {
+        headers:{
+          'Content-Type' : 'multipart/form-data' 
+        }
+      }
+
+    try{
+    const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
+    if (res.status === 200) {
+      console.log("added via :) frontend ");
       
-  //   }
-  // }catch(error){
-  //     console.log(error.response) 
-  // }
+    }
+  }catch(error){
+      console.log(error.response) 
+  }
 
   };
 
