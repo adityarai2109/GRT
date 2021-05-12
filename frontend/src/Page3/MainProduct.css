@@ -77,6 +77,10 @@
 .whatsappicon {
   width: 1.7rem;
   margin-right: 1rem;
+ 
+}
+.whatsapp-anchor-tag{
+  display : flex
 }
 .whatsappus {
   margin-top: 1rem;
@@ -85,6 +89,7 @@
   font-size: larger;
   color: rgb(36, 190, 131);
   font-weight: bold;
+ 
 }
 
 .rate {

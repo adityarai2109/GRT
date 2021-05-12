@@ -38,6 +38,7 @@ function Cta() {
               fontSize="large"
               onClick={() => {
                 document.getElementById("hscroll").scrollIntoView(true);
+                
               }}
             />
           </div>

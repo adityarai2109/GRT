@@ -25,7 +25,7 @@ const MainProduct = (props) => {
     document.documentElement.scrollTo(0, 0);
   }, []);
 
-    return (
+  return (
     /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
     <div>
       <div>
@@ -82,13 +82,21 @@ const MainProduct = (props) => {
                     1)}
               </span>
             </div>
+
             <div className="whatsappus">
-              <img className="whatsappicon" src={whatsappicon} alt=""></img>
-              <span className="whatsappnum">
-                <p>Whatsapp us on :&nbsp;</p>
-                <p>&nbsp;+91 9876543210</p>
-              </span>
+              <a
+                href="https://wa.me/918076609847"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp-anchor-tag"
+              >
+                <img className="whatsappicon" src={whatsappicon} alt=""></img>
+                <span className="whatsappnum">
+                  <p>Whatsapp us </p>
+                </span>
+              </a>
             </div>
+
             {/* <div className="buttons1">
                             <PurpleButton line1="Add to Wishlist" />
                         </div>
