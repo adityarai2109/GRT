@@ -97,11 +97,10 @@ function App() {
                 />
                 <ProductList
                   {...props}
-                  products={products}
-                  setProducts={setProducts}
                   query={query}
                   setQuery={setQuery}
                   isDarkMode={isDarkMode}
+                  products={products}
                 />
               </>
             )}
@@ -124,6 +123,7 @@ function App() {
                   setProducts={setProducts}
                   query={query}
                   setQuery={setQuery}
+                  products={products}
                 />
               </>
             )}
@@ -155,28 +155,31 @@ function App() {
             })
              } */}
 
-            {products.length > 0 ? (
-                products.map((product) => {
+            {products.length > 0
+              ? products.map((product) => {
                   return (
                     <div>
                       <img
                         src={`${imgUrl}/upload/${product.image}`}
                         key={product._id}
-                        style={{ width: "200px", height: "200px", margin:"auto" }}
+                        style={{
+                          width: "200px",
+                          height: "200px",
+                          margin: "auto",
+                        }}
                       />
                       <h1>{product.name}</h1>
                     </div>
                   );
-               })
-            )
+                })
               : null}
 
             <DesignerHeading name="Trending" />
-            <Card isDarkMode={isDarkMode} />
+            <Card isDarkMode={isDarkMode} products={products} />
             <DesignerHeading name="All Collections" />
-            <Card isDarkMode={isDarkMode} />
+            <Card isDarkMode={isDarkMode} products={products} />
             <DesignerHeading name="Latest collections" />
-            <Card isDarkMode={isDarkMode} />
+            <Card isDarkMode={isDarkMode} products={products} />
             {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}
             {/* <Grid /> */}

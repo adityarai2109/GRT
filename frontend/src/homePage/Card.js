@@ -7,7 +7,7 @@ import viewMore from "../images/file-search.svg";
 import viewMoreDark from "../images/file-search-dark.svg";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import Cardarray from "../homePage/CardArray";
+//import Cardarray from "../homePage/CardArray";
 
 function Card(props) {
   // const [Cardarray, setCardarray] = useState([]);
@@ -18,28 +18,33 @@ function Card(props) {
   //   };
   //   fetchProducts();
   // }, []);
+  console.log(props)
+    const imgUrl = "http://localhost:5000";
+    const Cardarray = props.products
 
   return (
     <div>
       <div className="trending_images">
         <div className="product_card">
-          {Cardarray.slice(0, 8)
+          { Cardarray != undefined ?
+          (Cardarray.slice(0, 4)
             .sort(() => 0.5 - Math.random())
             .map((card) => {
               return (
                 <div>
                   <Listing
-                    id={card.id}
-                    image={card.image}
-                    title={card.title}
+                    id={card._id}
+                    image={`${imgUrl}/upload/${card.image}`}
+                    title={card.name}
                     price={card.price}
                     category={card.category}
-                  />{
-                    console.log(card.image)
-                  }
+                  />
+                  {console.log(card.image)}
                 </div>
               );
-            })}
+            })):
+            null
+          }
         </div>
         <Link to="/Suit">
           <Button

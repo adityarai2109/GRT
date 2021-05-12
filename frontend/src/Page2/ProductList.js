@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DesignerHeading from "../homePage/DesignerHeading";
 import Listing from "../homePage/Listing";
 import "./ProductList.css";
-import Cardarray from "../homePage/CardArray";
+//import Cardarray from "../homePage/CardArray";
 import Pagination from "../CustomJS/Pagination";
 import Range from "../CustomJS/Range";
 import Footer from "../homePage/Footer";
@@ -14,11 +14,16 @@ import '../homePage/Card.css'
 
 const ProductList = (props) => {
 
+ const Cardarray = props.products;
+ console.log("main")
+ console.log(Cardarray)
+ const imgUrl = "http://localhost:5000";
+
     const [rangeToggle, setRangeToggle] = useState(true);
     let category = String(props.match.params.category);
     const [sortedCategory, setSortedCategory] = useState("Latest");
 
-    const [pageArray, setPageArray] = useState(8);
+    const [pageArray, setPageArray] = useState(4);
     console.log(pageArray);
 
     function newstate(newState) {
@@ -32,7 +37,7 @@ const ProductList = (props) => {
     const filteredCardArray = Cardarray.filter((i) =>
         words.some(
             (word) =>
-                i.title.toLowerCase().includes(word) ||
+                i.name.toLowerCase().includes(word) ||
                 i.description.toLowerCase().includes(word)
         )
     );
@@ -60,11 +65,10 @@ const ProductList = (props) => {
                 .map((card) => {
                     return (
                         <div onClick={() => resetSearch()}>
-                            <Listing
-                                
-                                id={card.id}
-                                image={card.image}
-                                title={card.title}
+                            <Listing       
+                                id={card._id}
+                                image={`${imgUrl}/upload/${card.image}`}
+                                title={card.name}
                                 price={card.price}
                                 category={card.category}
                             />
@@ -100,9 +104,9 @@ const ProductList = (props) => {
                     return (
                         <div onClick={() => resetSearch()}>
                             <Listing
-                                id={card.id}
-                                image={card.image}
-                                title={card.title}
+                                id={card._id}
+                                image={`${imgUrl}/upload/${card.image}`}
+                                title={card.name}
                                 price={card.price}
                                 category={card.category}
                             />

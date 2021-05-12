@@ -2,7 +2,7 @@ import React from "react";
 import Rating from "./Rating";
 import "./MainProduct.css";
 import PurpleButton from "../CustomJS/PurpleButton.js";
-import Cardarray from "../homePage/CardArray";
+//import Cardarray from "../homePage/CardArray";
 import Navbar from "../homePage/Navbar";
 import Info from "../homePage/Info";
 import Footer from "../homePage/Footer";
@@ -26,18 +26,17 @@ import DesignerHeading from "../homePage/DesignerHeading";
 // myId = this.props.match.params.ida
 
 const MainProduct = (props) => {
-  let id = parseInt(props.match.params.ida); // isko int me convert krna tha
+//  console.log(props)
+ const Cardarray = props.products
+ const imgUrl = "http://localhost:5000";
+  let id = props.match.params.ida // isko int me convert krna tha
+  console.log(id)
   let category = String(props.match.params.category);
   useEffect(() => {
     document.documentElement.scrollTo(0, 0);
   }, []);
-  function disableScroll() {
-    document.body.classList.add("stop-scrolling");
-  }
-
-  function enableScroll() {
-    document.body.classList.remove("stop-scrolling");
-  }
+ 
+  let card;
 
   return (
     /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
@@ -47,13 +46,10 @@ const MainProduct = (props) => {
           <div className="product_image">
             <div className="pimage">
               <InnerImageZoom
-                ontouchend={enableScroll()}
-                ontouchstart={disableScroll()}
+                
                 className=""
-                src={
-                  Cardarray.find((x) => x.id === id && x.category === category)
-                    .image
-                }
+                src= {`${imgUrl}/upload/${Cardarray.find((x) => x._id === id && x.category === category).image}`}
+                    
                 // alt="ProductImage"
               />
             </div>
@@ -70,7 +66,7 @@ const MainProduct = (props) => {
           <div className="partition"></div>
           <div className="product_desc">
             <h1 style={{ textAlign: "left" }} className="title">
-              {Cardarray.find((x) => x.id === id).title}
+              {Cardarray.find((x) => x._id === id).name}
             </h1>
             <div className="rate">
               <Rating
@@ -81,16 +77,16 @@ const MainProduct = (props) => {
               />
             </div>
             <p className="desc">
-              {Cardarray.find((x) => x.id === id).description}
+              {Cardarray.find((x) => x._id === id).description}
             </p>
             <div className="p_price">
               <span className="dis_price">
-                {"₹ " + Cardarray.find((x) => x.id === id).price}
+                {"₹ " + Cardarray.find((x) => x._id === id).price}
               </span>
               <span className="org_price">
                 {"₹ " +
                   (Math.round(
-                    parseInt(1.2 * Cardarray.find((x) => x.id === id).price) /
+                    parseInt(1.2 * Cardarray.find((x) => x._id === id).price) /
                       100
                   ) *
                     100 -
