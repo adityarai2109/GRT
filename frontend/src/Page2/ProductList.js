@@ -47,6 +47,32 @@ const ProductList = (props) => {
   }
 
   const [value, setValue] = useState([0, 100]);
+  function getCardlen() {
+    if (sortedCategory === "range") {
+      //console.log("state : range ", value[0] * 100);
+      return filteredCardArray
+        .filter(
+          (categCard) =>
+            categCard.category.toLowerCase() === category.toLowerCase() &&
+            categCard.price >= value[0] * 100 &&
+            categCard.price <= value[1] * 100
+        ).length;
+    } else {
+      return filteredCardArray
+        .filter(
+          (categCard) =>
+            categCard.category.toLowerCase() === category.toLowerCase() &&
+            categCard.price >= value[0] * 100 &&
+            categCard.price <= value[1] * 100
+        ).length;
+    }
+  }
+
+  useEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, []);
+  //setSortedCategory("htl")
+
   function Sortby() {
     if (sortedCategory === "range") {
       //console.log("state : range ", value[0] * 100);
@@ -110,11 +136,6 @@ const ProductList = (props) => {
         });
     }
   }
-
-  useEffect(() => {
-    document.documentElement.scrollTo(0, 0);
-  }, []);
-  //setSortedCategory("htl")
   return (
     <div className="productlist">
       <DesignerHeading name={category} />
@@ -153,7 +174,8 @@ const ProductList = (props) => {
       </div>
       {/* <h1 className="results">Showing results for : {props.query}</h1> */}
       <div className="product_card">{Sortby(filteredCardArray)}</div>
-      {pageArray < filteredCardArray.length ? (
+      {console.log(Sortby(filteredCardArray).length)}
+      {pageArray < getCardlen(filteredCardArray) ? (
         <Button
           variant="outlined"
           style={{
