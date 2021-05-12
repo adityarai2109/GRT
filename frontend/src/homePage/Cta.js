@@ -3,6 +3,10 @@ import cimage from "../images/carousel_collage1.png";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 function Cta() {
+  function scrollToJustAbove(element, margin) {
+    let dims = element.offsetTop;
+    window.scrollTo(window.scrollX, dims - 1.9 * margin);
+  }
   return (
     <div className="cta" style={{ position: "relative" }}>
       <div>
@@ -38,6 +42,7 @@ function Cta() {
               fontSize="large"
               onClick={() => {
                 document.getElementById("hscroll").scrollIntoView(true);
+                scrollToJustAbove(document.getElementById("hscroll"), document.getElementById("searchbar").offsetHeight)
                 
               }}
             />

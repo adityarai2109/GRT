@@ -3,6 +3,10 @@ import cimage from "../images/mb.png";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 function Cta2() {
+  function scrollToJustAbove(element, margin) {
+    let dims = element.offsetTop;
+    window.scrollTo(window.scrollX, dims - 1.5 * margin);
+  }
   return (
     <div className="cta2" style={{ position: "relative" }}>
       <div style={{ display: "flex" }}>
@@ -32,8 +36,10 @@ function Cta2() {
           <ArrowDropDownIcon
             fontSize="large"
             onClick={() => {
-              document.getElementById("hscroll").scrollIntoView(true);
-            }}
+                document.getElementById("hscroll").scrollIntoView(true);
+                scrollToJustAbove(document.getElementById("hscroll"), document.getElementById("searchbar").offsetHeight)
+                
+              }}
           />
         </div>
         <img
