@@ -54,7 +54,7 @@ const ProductList = (props) => {
             return filteredCardArray
                 .filter(
                     (categCard) =>
-                        categCard.category === category &&
+                        categCard.category.toLowerCase() === category.toLowerCase() &&
                         categCard.price >= value[0] * 100 &&
                         categCard.price <= value[1] * 100
                 )
@@ -78,11 +78,10 @@ const ProductList = (props) => {
             props.setQuery("");
             console.log(props.query);
         } else {
-            
             return filteredCardArray
                 .filter(
                     (categCard) =>
-                        categCard.category === category &&
+                        categCard.category.toLowerCase() === category.toLowerCase() &&
                         categCard.price >= value[0] * 100 &&
                         categCard.price <= value[1] * 100
                 )

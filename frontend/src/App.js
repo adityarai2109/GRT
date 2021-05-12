@@ -155,7 +155,7 @@ function App() {
             })
              } */}
 
-            {products.length > 0
+            {/* {products.length > 0
               ? products.map((product) => {
                   return (
                     <div>
@@ -172,7 +172,7 @@ function App() {
                     </div>
                   );
                 })
-              : null}
+              : null} */}
 
             <DesignerHeading name="Trending" />
             <Card isDarkMode={isDarkMode} products={products} />

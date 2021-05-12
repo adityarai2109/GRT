@@ -26,7 +26,7 @@ function Card(props) {
     <div>
       <div className="trending_images">
         <div className="product_card">
-          { Cardarray != undefined ?
+          { Cardarray !== undefined ?
           (Cardarray.slice(0, 4)
             .sort(() => 0.5 - Math.random())
             .map((card) => {
