@@ -11,7 +11,7 @@
 }
 
 .price_tag {
-  padding: 0.5rem;
+  padding: 0.2rem;
   height: 60px;
   width: 220px;
   color: white;
@@ -25,12 +25,24 @@
   justify-content: center;
 }
 
+.image_title{
+  vertical-align: text-top;
+  white-space: nowrap; 
+  width: 200px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
 @media (max-width : 640px) {
   .price_tag {
     width: 160px;
     height: 50px;
   }
+  .image_title{
+    width: 150px;
+  }
   .content{
     font-size: 0.8rem;
+    /* font-weight: 600; */
   }
 }
