@@ -5,9 +5,6 @@ import iTwitter from "../images/twitter.png";
 import iYoutube from "../images/youtube.png";
 import "./Footer.css";
 import iconLogo from "../images/group1.svg";
-// position : absolute;
-//     bottom : 0;
-//     height : 40px;
 
 function Footer() {
   return (

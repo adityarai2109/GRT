@@ -1,16 +1,12 @@
 import React from "react";
 import Rating from "./Rating";
 import "./MainProduct.css";
-import PurpleButton from "../CustomJS/PurpleButton.js";
-//import Cardarray from "../homePage/CardArray";
-import Navbar from "../homePage/Navbar";
 import Info from "../homePage/Info";
 import Footer from "../homePage/Footer";
 import { useEffect } from "react";
 import whatsappicon from "../images/whatsapp.svg";
 
 import { Button } from "@material-ui/core";
-import SearchIcon from "@material-ui/icons/Search";
 import viewMore from "../images/file-search.svg";
 import viewMoreDark from "../images/file-search-dark.svg";
 import { Link } from "react-router-dom";
@@ -18,27 +14,18 @@ import { Link } from "react-router-dom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import InnerImageZoom from "react-inner-image-zoom";
 import DesignerHeading from "../homePage/DesignerHeading";
-// import ReactImageMagnify from "react-image-magnify";
-
-// Cardarray.find(
-//   (x) => x.id === id && x.category === category
-// ).image
-// myId = this.props.match.params.ida
 
 const MainProduct = (props) => {
-//  console.log(props)
- const Cardarray = props.products
- const imgUrl = "http://localhost:5000";
-  let id = props.match.params.ida // isko int me convert krna tha
-  console.log(id)
+  const Cardarray = props.products;
+  const imgUrl = "http://localhost:5000";
+  let id = props.match.params.ida; // isko int me convert krna tha
+  console.log(id);
   let category = String(props.match.params.category);
   useEffect(() => {
     document.documentElement.scrollTo(0, 0);
   }, []);
- 
-  let card;
 
-  return (
+    return (
     /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
     <div>
       <div>
@@ -46,10 +33,12 @@ const MainProduct = (props) => {
           <div className="product_image">
             <div className="pimage">
               <InnerImageZoom
-                
                 className=""
-                src= {`${imgUrl}/upload/${Cardarray.find((x) => x._id === id && x.category === category).image}`}
-                    
+                src={`${imgUrl}/upload/${
+                  Cardarray.find((x) => x._id === id && x.category === category)
+                    .image
+                }`}
+
                 // alt="ProductImage"
               />
             </div>

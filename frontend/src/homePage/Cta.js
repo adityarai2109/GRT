@@ -33,14 +33,14 @@ function Cta() {
             Latest Collections at reasonable prices.
             <br /> Buy now
           </div>
-          <a>
+          <div>
             <ArrowDropDownIcon
               fontSize="large"
               onClick={() => {
                 document.getElementById("hscroll").scrollIntoView(true);
               }}
             />
-          </a>
+          </div>
         </div>
       </div>
     </div>

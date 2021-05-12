@@ -1,6 +1,4 @@
 import React from "react";
-import grtDark from "../images/GRT_dark.svg";
-
 function Login() {
   return (
     <div>
@@ -76,14 +74,6 @@ function Login() {
                 </div>
               </div>
             </div>
-            {/* <img
-                            src={grtDark}
-                            className="hidden md:block w-1/3 m-auto"
-                            style={{
-                                
-                            }}
-                            alt=""
-                        /> */}
           </div>
         </div>
       </div>

@@ -1,56 +1,51 @@
 import "./App.css";
+import "tailwindcss/tailwind.css";
 import Card from "./homePage/Card";
-import Carousel from "./homePage/Carousel";
-import Cta from "./homePage/Cta";
-import Cta2 from "./homePage/Cta2";
 import CtaDecide from "./homePage/CtaDecide";
 import DesignerHeading from "./homePage/DesignerHeading";
 import Footer from "./homePage/Footer";
-import Grid from "./homePage/Grid";
 import Info from "./homePage/Info";
 import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
-import "tailwindcss/tailwind.css";
 import Login from "./Page4/Login";
-
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(true);
 
- const baseUrl = "http://localhost:5000/api";
- const imgUrl = "http://localhost:5000";
+  const baseUrl = "http://localhost:5000/api";
+  // const imgUrl = "http://localhost:5000";
 
-     useEffect ( () => {
-        console.log("ddd")
-        const fetchProducts = async () => {
-              const res = await axios.get(`${baseUrl}/allproducts`)
-              if(res.status === 200){
-                 setProducts(res.data)
-                 console.log(res.data)
-                 console.log(products)
-              }
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await axios.get(`${baseUrl}/allproducts`);
+      try {
+        if (res.status === 200) {
+          setProducts(res.data);
+          console.log(products);
         }
-         fetchProducts();
-     },[])
+      } catch (error) {
+        console.log("error : ", error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
     console.log(query);
   }, [query]);
 
-    useEffect(() => {
+  useEffect(() => {
     console.log("dark");
-    console.log(products)
+    console.log(products);
   }, [isDarkMode]);
 
   return (
@@ -123,7 +118,6 @@ function App() {
                   setProducts={setProducts}
                   query={query}
                   setQuery={setQuery}
-                  products={products}
                 />
               </>
             )}

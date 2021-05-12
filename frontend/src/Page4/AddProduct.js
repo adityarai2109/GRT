@@ -19,13 +19,13 @@ export default function Example() {
   const handleImage = (e) => {
     console.log(e.target.files[0]);
     setImage(e.target.files[0]);
-    setPreview(true)
+    setPreview(true);
   };
 
   const clearImage = () => {
-       setPreview(false)
-       setImage({})
-  }
+    setPreview(false);
+    setImage({});
+  };
 
   const submitProductForm = async (e) => {
     e.preventDefault();
@@ -47,16 +47,15 @@ export default function Example() {
       const res = await axios.post(`${baseUrl}/product/create`, productForm);
       if (res.status === 200) {
         console.log("added via :) frontend ");
-         setPreview(false)
-         setImage({})
-         setName("")
-         setCategory("")
-         setDescription("")
-         setPrice("")
-         setQuantity("")
-         setSuccess(true)
-          window.scrollTo(0, 0);
-        
+        setPreview(false);
+        setImage({});
+        setName("");
+        setCategory("");
+        setDescription("");
+        setPrice("");
+        setQuantity("");
+        setSuccess(true);
+        window.scrollTo(0, 0);
       }
     } catch (error) {
       console.log(error.response);
@@ -65,15 +64,14 @@ export default function Example() {
 
   return (
     <>
-     {success ? 
-     <>
-     <Alert severity="success">New product added successfully </Alert>
-       
-     </>:
-     null}
+      {success ? (
+        <>
+          <Alert severity="success">New product added successfully </Alert>
+        </>
+      ) : null}
       <div className="img">
-        <img src="http://localhost:5000/upload/minions.jpg" />
-        <h1 style={{ color: "#fff" }}>backend se photo finally aa gyi :) </h1>
+        <img src="http://localhost:5000/upload/minions.jpg" alt="" />
+        <h1 style={{ color: "#fff" }}>backend se photo finally aa gyi 😄 </h1>
       </div>
       <div className="addproduct container mx-auto">
         <div className="hidden sm:block" aria-hidden="true">
@@ -217,9 +215,11 @@ export default function Example() {
                         <label className="block text-lg text-white">
                           Preview
                         </label>
-                        <button className = "clear-btn" onClick={clearImage}>X</button>
+                        <button className="clear-btn" onClick={clearImage}>
+                          &#9747;
+                        </button>
                       </div>
-                      <img src={URL.createObjectURL(image)} style={{}} />
+                      <img src={URL.createObjectURL(image)} alt="" />
 
                       <h4 className="block text-xs text-white">{image.name}</h4>
                     </div>
@@ -249,7 +249,15 @@ export default function Example() {
                               htmlFor="file-upload"
                               className="p-0 relative cursor-pointer rounded-md font-medium text-indigo-100 hover:text-indigo-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                             >
-                              <span>Upload a file</span>
+                              <span
+                                style={{
+                                  color: "rgb(15,182,144)",
+                                  fontWeight: "bolder",
+                                  fontSize: "1rem",
+                                }}
+                              >
+                                Upload a file
+                              </span>
                               <input
                                 id="file-upload"
                                 name="file-upload"

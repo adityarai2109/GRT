@@ -1,7 +1,6 @@
 import React from "react";
 import "./Info.css";
 import Map from "../CustomJS/Map";
-
 import iconAddress from "../images/address.png";
 import iconPhone from "../images/phone.png";
 import iconFeedback from "../images/feedback.png";
@@ -56,7 +55,6 @@ export default function Info() {
               target="_blank"
               action="mailto:keshav2682@gmail.com"
               method="post"
-              target="_blank"
             >
               <b className="text-white">
                 Your feedback is really valuable to us
