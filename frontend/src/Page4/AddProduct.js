@@ -3,6 +3,8 @@ import "tailwindcss/tailwind.css";
 import React, { useState } from "react";
 import axios from "axios";
 import Alert from "@material-ui/lab/Alert";
+import CloseIcon from "@material-ui/icons/Close";
+import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 
 export default function Example() {
   const baseUrl = "http://localhost:5000/api";
@@ -20,6 +22,14 @@ export default function Example() {
     console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setPreview(true);
+  };
+
+  const handleDrop = (e) => {
+    var dropImg = fileDrop(e);
+    if (dropImg != null) {
+      setImage(dropImg);
+      setPreview(true);
+    }
   };
 
   const clearImage = () => {
@@ -215,9 +225,10 @@ export default function Example() {
                         <label className="block text-lg text-white">
                           Preview
                         </label>
-                        <button className="clear-btn" onClick={clearImage}>
-                          &#9747;
-                        </button>
+                        <CloseIcon
+                          onClick={clearImage}
+                          style={{ background: "none", color: "white" }}
+                        />
                       </div>
                       <img src={URL.createObjectURL(image)} alt="" />
 
@@ -228,7 +239,13 @@ export default function Example() {
                       <label className="block text-lg text-white">
                         Cover photo
                       </label>
-                      <div className="mt-1 ml-10 mr-10 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                      <div
+                        className="mt-1 ml-10 mr-10 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+                        onDragOver={dragOver}
+                        onDragEnter={dragEnter}
+                        onDragLeave={dragLeave}
+                        onDrop={handleDrop}
+                      >
                         <div className="space-y-1 text-center">
                           <svg
                             className="mx-auto h-12 w-12 text-white"
@@ -247,13 +264,13 @@ export default function Example() {
                           <div className="flex text-white">
                             <label
                               htmlFor="file-upload"
-                              className="p-0 relative cursor-pointer rounded-md font-medium text-indigo-100 hover:text-indigo-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                              className="p-0 relative cursor-pointer "
                             >
                               <span
                                 style={{
-                                  color: "rgb(15,182,144)",
+                                  color: "aliceblue",
                                   fontWeight: "bolder",
-                                  fontSize: "1rem",
+                                  textDecoration: "underline",
                                 }}
                               >
                                 Upload a file

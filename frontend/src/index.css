@@ -235,3 +235,7 @@ code {
 .dark .p_price {
   color: white;
 }
+
+.nav_toggle {
+  outline : none !important;
+}

@@ -7,6 +7,7 @@ export default function toggle(props) {
       onChange={props.setIsDarkMode}
       checked={props.isDarkMode}
       size={60}
+       className = "nav_toggle"
     />
   );
 };
