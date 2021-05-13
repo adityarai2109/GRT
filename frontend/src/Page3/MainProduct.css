@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
-
-/* .product_image {
-    width: 60rem;
-    margin: 8% 10%;
-} */
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
 .whatsappnum {
   display: flex;
 }
