@@ -1,54 +1,90 @@
-/* @import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700,300);
 
-*,html{margin:0;padding:0}
-
-$baseColor : #e74c3c;
-$fontColor : #fff;
-
-body{
-  background: $baseColor;
-  text-align: center;
-  font-family: 'Comfortaa', cursive;
+.wrapper{
+  width:200px;
+  height:60px;
+  position: relative;
+  left:50%;
+  top:45%;
+  transform: translate(-50%, -50%);
 }
-svg{
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  display:inline-block;
+.circle{
+  width:20px;
+  height:20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left:15%;
+  transform-origin: 50%;
+  animation: circle .5s alternate infinite ease;
 }
-h1{
-  text-align: center;
-  color: $fontColor;
-  margin: 0 0 100px;
-  font-size: 34px;
-  font-weight: 100;
-  text-transform: uppercase;
-  background-color: darken($baseColor, 5);
-  padding: 20px 0;
-  b{
-    font-weight: 700;
+
+@keyframes circle{
+  0%{
+      top:60px;
+      height:5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+  }
+  40%{
+      height:20px;
+      border-radius: 50%;
+      transform: scaleX(1);
+  }
+  100%{
+      top:0%;
   }
 }
+.circle:nth-child(2){
+  left:45%;
+  animation-delay: .2s;
+}
+.circle:nth-child(3){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.shadow{
+  width:20px;
+  height:4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top:62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left:15%;
+  filter: blur(1px);
+  animation: shadow .5s alternate infinite ease;
+}
 
-//follow me template
-.made-with-love{
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 10px;
-  font-family: arial;
+@keyframes shadow{
+  0%{
+      transform: scaleX(1.5);
+  }
+  40%{
+      transform: scaleX(1);
+      opacity: .7;
+  }
+  100%{
+      transform: scaleX(.2);
+      opacity: .4;
+  }
+}
+.shadow:nth-child(4){
+  left: 45%;
+  animation-delay: .2s
+}
+.shadow:nth-child(5){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.wrapper span{
+  position: absolute;
+  top:75px;
+  font-family: 'Poppins';
+  font-size: 20px;
+  letter-spacing: 8px;
   color: #fff;
-  i{
-    font-style: normal;
-    color: #F50057;
-    font-size: 14px;
-    position: relative;
-    top: 2px;
-  }
-  a{
-    color: #fff;
-    text-decoration: none;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-} */
+  left:20%;
+}

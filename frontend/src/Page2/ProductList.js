@@ -11,6 +11,7 @@ import { Button } from "@material-ui/core";
 import viewMore from "../images/file-search.svg";
 import viewMoreDark from "../images/file-search-dark.svg";
 import "../homePage/Card.css";
+import Loader from "../CustomJS/Loader";
 
 const ProductList = (props) => {
   const Cardarray = props.products;
@@ -136,6 +137,7 @@ const ProductList = (props) => {
         });
     }
   }
+
   return (
     <div className="productlist">
       <DesignerHeading name={category} />
@@ -173,7 +175,7 @@ const ProductList = (props) => {
         </p>
       </div>
       {/* <h1 className="results">Showing results for : {props.query}</h1> */}
-      <div className="product_card">{Sortby(filteredCardArray)}</div>
+      {(Cardarray.length !== 0) ? <div className="product_card">{Sortby(filteredCardArray)}</div> : <Loader isDarkMode = {props.isDarkMode}/>}
       {console.log(Sortby(filteredCardArray).length)}
       {pageArray < getCardlen(filteredCardArray) ? (
         <Button

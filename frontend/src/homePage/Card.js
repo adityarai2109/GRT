@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import viewMore from "../images/file-search.svg";
 import viewMoreDark from "../images/file-search-dark.svg";
 import { Link } from "react-router-dom";
+import Loader from "../CustomJS/Loader";
 import "./Card.css";
 
 function Card(props) {
@@ -33,7 +34,7 @@ function Card(props) {
                     </div>
                   );
                 })
-            : null}
+            : <Loader />}
         </div>
         <Link to="/Suit">
           <Button

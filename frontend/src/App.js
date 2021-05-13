@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
 import "./App.css";
 import "tailwindcss/tailwind.css";
 import Card from "./homePage/Card";
@@ -5,6 +8,7 @@ import CtaDecide from "./homePage/CtaDecide";
 import DesignerHeading from "./homePage/DesignerHeading";
 import Footer from "./homePage/Footer";
 import Info from "./homePage/Info";
+import Loader from "./CustomJS/Loader"
 import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
@@ -12,9 +16,6 @@ import AddProduct from "./Page4/AddProduct";
 import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -57,6 +58,9 @@ function App() {
             <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
             <CtaDecide />
             <h1>Checkout</h1>
+          </Route>
+          <Route path="/loader">
+            <Loader />
           </Route>
           <Route path="/login">
             <Navbar
@@ -169,11 +173,12 @@ function App() {
               : null} */}
 
             <DesignerHeading name="Trending" />
-            <Card isDarkMode={isDarkMode} products={products} />
+            {(products.length !== 0) ? <Card isDarkMode={isDarkMode} products={products} /> : <Loader isDarkMode={isDarkMode} />}
+            
             <DesignerHeading name="All Collections" />
-            <Card isDarkMode={isDarkMode} products={products} />
+            {(products.length !== 0) ? <Card isDarkMode={isDarkMode} products={products} /> : <Loader isDarkMode={isDarkMode} />}
             <DesignerHeading name="Latest collections" />
-            <Card isDarkMode={isDarkMode} products={products} />
+            {(products.length !== 0) ? <Card isDarkMode={isDarkMode} products={products} /> : <Loader isDarkMode={isDarkMode} />}
             {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}
             {/* <Grid /> */}
