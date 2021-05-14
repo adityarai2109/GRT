@@ -227,7 +227,7 @@ export default function Example() {
                         </label>
                         <CloseIcon
                           onClick={clearImage}
-                          style={{ background: "none", color: "white" }}
+                          className = "close-icon"
                         />
                       </div>
                       <img src={URL.createObjectURL(image)} alt="" />

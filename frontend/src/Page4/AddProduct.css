@@ -71,3 +71,14 @@ input {
   box-shadow: 3px 2px 25px 1px rgba(0, 0, 0, 0.25);
 }
 
+.close-icon{
+background: none;
+ color: white;
+}
+
+
+.close-icon:hover{
+     background-color: rgb(20 20 20 / 72%);
+     cursor : pointer;
+     border-radius: 50%;
+}
