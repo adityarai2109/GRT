@@ -1,6 +1,7 @@
 import {User} from '../models/userModel.js'
 import axios from 'axios'
 
+
 import bcrypt from 'bcryptjs'
 
 
@@ -45,11 +46,11 @@ export const  signup = (req, res) => {
 }
 
 export const  signin = (req, res) => {
-  User.findOne({ email: req.body.email }).exec(async (error, user) => {
-    if (error) return res.status(400).json({ message : "not exist"});
+  User.findOne({ email: req.body.email }).exec(  async (error, user) => {
+        if(error)  return res.status(400).json({ message: "  Unauthorized access" });
     if (user) {
       const isPassword = await user.authenticate(req.body.password);
-   
+            
          if ( isPassword )
       {    
        var role = ""
@@ -60,9 +61,12 @@ export const  signin = (req, res) => {
 
       }
       else{
-        return res.status(400).json({ message: " password not correct " });
+        return res.status(400).json({ message: " Password not correct " });
       }
     }
+      else{
+         return res.status(400).json({ message: "  Unauthorized access " });
+      }
   });
 };
 

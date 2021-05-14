@@ -12,7 +12,7 @@ import Loader from "./CustomJS/Loader"
 import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
-import AddProduct from "./Page4/AddProduct";
+import  AddProduct  from "./Page4/AddProduct";
 import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
@@ -62,6 +62,7 @@ function App() {
           <Route path="/loader">
             <Loader />
           </Route>
+          {/* page 4 */}
           <Route path="/login">
             <Navbar
               isDarkMode={isDarkMode}
@@ -72,15 +73,10 @@ function App() {
             <Login />
             <Footer />
           </Route>
-          <Route path="/addProduct">
-            <Navbar
-              isDarkMode={isDarkMode}
-              setIsDarkMode={setIsDarkMode}
-              query={query}
-              setQuery={setQuery}
-            />
-            <AddProduct />
-            <Footer />
+          <Route
+            path="/addProduct"
+           component = {AddProduct}
+          >
           </Route>
           {/* Page 2 */}
           <Route
@@ -173,12 +169,24 @@ function App() {
               : null} */}
 
             <DesignerHeading name="Trending" />
-            {(products.length !== 0) ? <Card isDarkMode={isDarkMode} products={products} /> : <Loader isDarkMode={isDarkMode} />}
-            
+            {products.length !== 0 ? (
+              <Card isDarkMode={isDarkMode} products={products} />
+            ) : (
+              <Loader isDarkMode={isDarkMode} />
+            )}
+
             <DesignerHeading name="All Collections" />
-            {(products.length !== 0) ? <Card isDarkMode={isDarkMode} products={products} /> : <Loader isDarkMode={isDarkMode} />}
+            {products.length !== 0 ? (
+              <Card isDarkMode={isDarkMode} products={products} />
+            ) : (
+              <Loader isDarkMode={isDarkMode} />
+            )}
             <DesignerHeading name="Latest collections" />
-            {(products.length !== 0) ? <Card isDarkMode={isDarkMode} products={products} /> : <Loader isDarkMode={isDarkMode} />}
+            {products.length !== 0 ? (
+              <Card isDarkMode={isDarkMode} products={products} />
+            ) : (
+              <Loader isDarkMode={isDarkMode} />
+            )}
             {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}
             {/* <Grid /> */}
