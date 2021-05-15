@@ -26,9 +26,15 @@
   text-align: center;
 }
 
-@media (max-width : 640px) {
+@media (max-width : 540px) {
   .cloth_image {
     width: 160px;
     height: 160px;
+  }
+}
+@media (max-width : 380px) {
+  .cloth_image {
+    width: 150px;
+    height: 150px;
   }
 }

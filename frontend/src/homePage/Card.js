@@ -14,8 +14,8 @@ function Card(props) {
 
   return (
     <div>
-      <div className="trending_images">
-        <div className="product_card">
+      <div>
+        <div className="product_card"> {/*styles in productList.css*/}
           {Cardarray !== undefined
             ? Cardarray.sort(() => 0.5 - Math.random())
                 .slice(0, 4)
