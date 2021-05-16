@@ -1,6 +1,5 @@
 .dashboard {
-  min-height: 78.625vh;
-  font-family: Poppins;
+    font-family: Poppins;
 }
 .addContainer {
   width: 75vw;
@@ -18,6 +17,7 @@
   background-color: white;
   padding: 0.8rem 1.6rem 0.8rem 1.6rem;
   border-radius: 30px;
+  border: 1px solid #393e46;
   margin: 0.4rem;
 }
 @media (max-width: 768px) {

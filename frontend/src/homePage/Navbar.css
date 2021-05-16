@@ -54,7 +54,6 @@
   background-color: #6e10a8;
 }
 
-
 @media (max-width: 860px) {
   /* .grt {
     display: none;
@@ -80,7 +79,7 @@
     order: 2;
   }
 }
-@media (min-width: 860px){
+@media (min-width: 860px) {
   .navbar {
     width: 100%;
     position: fixed;
@@ -92,8 +91,13 @@
   }
 }
 
-@media (max-width : 475px){
+@media (max-width: 475px) {
   .logo {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 340px) {
+  .logo img {
+    display: none;
   }
 }
