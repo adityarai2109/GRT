@@ -109,8 +109,9 @@ const ProductList = (props) => {
         )
         .sort(function (a, b) {
           if (sortedCategory === "Latest") {
-            let d1 = parseInt(a.createdAt);
-            let d2 = parseInt(b.createdAt);
+            let d1 = new Date(a.createdAt).getTime();
+            let d2 = new Date(b.createdAt).getTime();
+            // console.log(new Date(a.createdAt).getTime());
             return d2 - d1;
           } else if (sortedCategory === "lth") {
             return a.price - b.price;
