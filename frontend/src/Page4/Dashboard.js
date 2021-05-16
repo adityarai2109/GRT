@@ -15,15 +15,17 @@ function Dashboard(props) {
           <div className="addContainer">
             <Link to="/addProduct">
               <button className="add">
-                Add Product{" "}
-                <AddCircleOutlineOutlinedIcon
-                  fontSize="small"
-                />
+                Add Product <AddCircleOutlineOutlinedIcon fontSize="small" />
               </button>
             </Link>
           </div>
-          {props.products.map((i, index) => (
-            <div>
+          {props.products
+            .sort(function (a, b) {
+              let d1 = new Date(a.createdAt).getTime();
+              let d2 = new Date(b.createdAt).getTime();
+              return d2 - d1;
+            })
+            .map((i, index) => (
               <AdminCard
                 isDarkMode={props.isDarkMode}
                 bg={index}
@@ -35,8 +37,7 @@ function Dashboard(props) {
                 quantity={i.quantity}
                 createdAt={i.createdAt}
               />
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </>
