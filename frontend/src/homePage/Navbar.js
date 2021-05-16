@@ -7,7 +7,6 @@ import Toggle from "../CustomJS/Toggle";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
-
   window.onscroll = function () {
     doStick();
   };

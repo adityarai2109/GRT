@@ -1,0 +1,64 @@
+.AdminCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75vw;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  font-weight: 800;
+  word-wrap: break-word;
+}
+.image {
+  width: 128px;
+  height: 128px;
+  border-radius: 10%;
+}
+/* .imageDiv {
+  width: 200px;
+} */
+.suitData {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0rem 0 1rem;
+  /* text-align: left; */
+  /* justify-content: space-between; */
+  /* width: 35%; */
+}
+/* .createdAt {
+  width: 30%;
+} */
+.leftAdminCard,
+.rightAdminCard {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+}
+.rightAdminCard {
+  width: 25%;
+}
+@media (max-width: 768px) {
+  .AdminCard {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftAdminCard,
+  .rightAdminCard {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem;
+  }
+  .AdminCard {
+    width: 90vw;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    font-weight: 800;
+    word-wrap: break-word;
+  }
+}

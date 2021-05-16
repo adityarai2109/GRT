@@ -16,146 +16,156 @@ import AddProduct from "./Page4/AddProduct";
 import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
+import Dashboard from "./Page4/Dashboard";
 
 function App() {
-    const [products, setProducts] = useState([]);
-    const [query, setQuery] = useState("");
-    const [isDarkMode, setIsDarkMode] = useState(true);
+  const [products, setProducts] = useState([]);
+  const [query, setQuery] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-    const baseUrl = "http://localhost:5000/api";
-    // const imgUrl = "http://localhost:5000";
+  const baseUrl = "http://localhost:5000/api";
+  // const imgUrl = "http://localhost:5000";
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const res = await axios.get(`${baseUrl}/allproducts`);
-            try {
-                if (res.status === 200) {
-                    setProducts(res.data);
-                    console.log(products);
-                }
-            } catch (error) {
-                console.log("error : ", error);
-            }
-        };
-        fetchProducts();
-    }, []);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await axios.get(`${baseUrl}/allproducts`);
+      try {
+        if (res.status === 200) {
+          setProducts(res.data);
+          console.log(products);
+        }
+      } catch (error) {
+        console.log("error : ", error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
-    useEffect(() => {
-        console.log(query);
-    }, [query]);
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
 
-    useEffect(() => {
-        console.log("dark");
-        console.log(products);
-    }, [isDarkMode]);
+  useEffect(() => {
+    console.log("dark");
+    console.log(products);
+  }, [isDarkMode]);
 
-    return (
-        <div className={`App ${isDarkMode ? `dark` : null}`}>
-            {/* <img src="localhost"></img> */}
-            <Router>
-                <Switch>
-                    <Route path="/checkout">
-                        <Navbar
-                            isDarkMode={isDarkMode}
-                            setIsDarkMode={setIsDarkMode}
-                        />
-                        <CtaDecide />
-                        <h1>Checkout</h1>
-                    </Route>
-                    <Route path="/loader">
-                        <Loader />
-                    </Route>
-                    {/* page 4 */}
-                    <Route path="/login">
-                        <Navbar
-                            isDarkMode={isDarkMode}
-                            setIsDarkMode={setIsDarkMode}
-                            query={query}
-                            setQuery={setQuery}
-                        />
-                        <Login />
-                        <Footer />
-                    </Route>
-                    <Route
-                        path="/addProduct"
-                        render={(props) => (
-                            <>
-                                <Navbar
-                                    isDarkMode={isDarkMode}
-                                    setIsDarkMode={setIsDarkMode}
-                                    query={query}
-                                    setQuery={setQuery}
-                                />
-                                <AddProduct {...props} />
-                                <Footer />
-                            </>
-                        )}
-                    />
+  return (
+    <div className={`App ${isDarkMode ? `dark` : null}`}>
+      {/* <img src="localhost"></img> */}
+      <Router>
+        <Switch>
+          <Route path="/checkout">
+            <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
+            <CtaDecide />
+            <h1>Checkout</h1>
+          </Route>
+          <Route path="/dashboard">
+            <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
+            <Dashboard isDarkMode={isDarkMode} products={products} />
+            <Footer />
+          </Route>
+          {/* page 4 */}
+          <Route path="/login">
+            <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
+            <Login />
+            <Footer />
+          </Route>
+          <Route
+            path="/addProduct"
+            render={(props) => (
+              <>
+                <Navbar
+                  isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
+                  query={query}
+                  setQuery={setQuery}
+                />
+                <AddProduct {...props} />
+                <Footer />
+              </>
+            )}
+          />
 
-                    {/* </Route> */}
-                    {/* Page 2 */}
-                    <Route
-                        path="/:category"
-                        exact
-                        render={(props) => (
-                            <>
-                                <Navbar
-                                    isDarkMode={isDarkMode}
-                                    setIsDarkMode={setIsDarkMode}
-                                    query={query}
-                                    setQuery={setQuery}
-                                />
-                                <ProductList
-                                    {...props}
-                                    query={query}
-                                    setQuery={setQuery}
-                                    isDarkMode={isDarkMode}
-                                    products={products}
-                                />
-                            </>
-                        )}
-                    />
-                    {/* Page 3 */}
-                    <Route
-                        path="/:category/:ida"
-                        render={(props) => (
-                            <>
-                                <Navbar
-                                    isDarkMode={isDarkMode}
-                                    setIsDarkMode={setIsDarkMode}
-                                    query={query}
-                                    setQuery={setQuery}
-                                />
-                                <MainProduct
-                                    {...props}
-                                    isDarkMode={isDarkMode}
-                                    products={products}
-                                    setProducts={setProducts}
-                                    query={query}
-                                    setQuery={setQuery}
-                                />
-                            </>
-                        )}
-                    />
-                    {/* Main Page */}
-                    <Route path="/">
-                        <Navbar
-                            isDarkMode={isDarkMode}
-                            setIsDarkMode={setIsDarkMode}
-                            query={query}
-                            setQuery={setQuery}
-                        />
-                        <div
-                            style={{
-                                width: "100%",
-                                zIndex: "-1",
-                            }}
-                        >
-                            <CtaDecide />
-                            {/* <Carousel /> */}
-                        </div>
-                        {/* <Header /> */}
-                        {/* {
+          {/* </Route> */}
+          {/* Page 2 */}
+          <Route
+            path="/:category"
+            exact
+            render={(props) => (
+              <>
+                <Navbar
+                  isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
+                  query={query}
+                  setQuery={setQuery}
+                />
+                <ProductList
+                  {...props}
+                  query={query}
+                  setQuery={setQuery}
+                  isDarkMode={isDarkMode}
+                  products={products}
+                />
+              </>
+            )}
+          />
+          {/* Page 3 */}
+          <Route
+            path="/:category/:ida"
+            render={(props) => (
+              <>
+                <Navbar
+                  isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
+                  query={query}
+                  setQuery={setQuery}
+                />
+                <MainProduct
+                  {...props}
+                  isDarkMode={isDarkMode}
+                  products={products}
+                  setProducts={setProducts}
+                  query={query}
+                  setQuery={setQuery}
+                />
+              </>
+            )}
+          />
+          {/* Main Page */}
+          <Route path="/">
+            <Navbar
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              query={query}
+              setQuery={setQuery}
+            />
+            <div
+              style={{
+                width: "100%",
+                zIndex: "-1",
+              }}
+            >
+              <CtaDecide />
+              {/* <Carousel /> */}
+            </div>
+            {/* <Header /> */}
+            {/* {
               products.map((product) => {
               <div>
                  <img src={`${baseUrl}/upload/product.name`} key={product._id} /> 
@@ -164,7 +174,7 @@ function App() {
             })
              } */}
 
-                        {/* {products.length > 0
+            {/* {products.length > 0
               ? products.map((product) => {
                   return (
                     <div>
@@ -183,46 +193,46 @@ function App() {
                 })
               : null} */}
 
-                        <DesignerHeading name="Trending" />
-                        {products.length !== 0 ? (
-                            <Card isDarkMode={isDarkMode} products={products} />
-                        ) : (
-                            <Loader isDarkMode={isDarkMode} />
-                        )}
+            <DesignerHeading name="Trending" />
+            {products.length !== 0 ? (
+              <Card isDarkMode={isDarkMode} products={products} />
+            ) : (
+              <Loader isDarkMode={isDarkMode} />
+            )}
 
-                        <DesignerHeading name="All Collections" />
-                        {products.length !== 0 ? (
-                            <Card isDarkMode={isDarkMode} products={products} />
-                        ) : (
-                            <Loader isDarkMode={isDarkMode} />
-                        )}
-                        <DesignerHeading name="Latest collections" />
-                        {products.length !== 0 ? (
-                            <Card isDarkMode={isDarkMode} products={products} />
-                        ) : (
-                            <Loader isDarkMode={isDarkMode} />
-                        )}
-                        {/* <DesignerHeading name="Featured Category" /> */}
-                        {/* <Card /> */}
-                        {/* <Grid /> */}
-                        {/* <DesignerHeading name="Latest Collection" />
+            <DesignerHeading name="All Collections" />
+            {products.length !== 0 ? (
+              <Card isDarkMode={isDarkMode} products={products} />
+            ) : (
+              <Loader isDarkMode={isDarkMode} />
+            )}
+            <DesignerHeading name="Latest collections" />
+            {products.length !== 0 ? (
+              <Card isDarkMode={isDarkMode} products={products} />
+            ) : (
+              <Loader isDarkMode={isDarkMode} />
+            )}
+            {/* <DesignerHeading name="Featured Category" /> */}
+            {/* <Card /> */}
+            {/* <Grid /> */}
+            {/* <DesignerHeading name="Latest Collection" />
             <Gallery /> */}
-                        <DesignerHeading name="Commitments" />
-                        <Taglines />
-                        {/* <DesignerHeading name="Testimonials" /> */}
-                        {/* <Testimonials /> */}
-                        {/* <Contact /> */}
-                        <DesignerHeading name="Contacts" />
-                        <Zoom>
-                            <Info />
-                        </Zoom>
-                        <Footer />
-                        {/* <Loader /> */}
-                    </Route>
-                </Switch>
-            </Router>
-        </div>
-    );
+            <DesignerHeading name="Commitments" />
+            <Taglines />
+            {/* <DesignerHeading name="Testimonials" /> */}
+            {/* <Testimonials /> */}
+            {/* <Contact /> */}
+            <DesignerHeading name="Contacts" />
+            <Zoom>
+              <Info />
+            </Zoom>
+            <Footer />
+            {/* <Loader /> */}
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

@@ -23,7 +23,7 @@ const ProductList = (props) => {
   let category = String(props.match.params.category);
   const [sortedCategory, setSortedCategory] = useState("Latest");
 
-  const [pageArray, setPageArray] = useState(4);
+  const [pageArray, setPageArray] = useState(8);
   console.log(pageArray);
 
   function newstate(newState) {
@@ -51,21 +51,19 @@ const ProductList = (props) => {
   function getCardlen() {
     if (sortedCategory === "range") {
       //console.log("state : range ", value[0] * 100);
-      return filteredCardArray
-        .filter(
-          (categCard) =>
-            categCard.category.toLowerCase() === category.toLowerCase() &&
-            categCard.price >= value[0] * 100 &&
-            categCard.price <= value[1] * 100
-        ).length;
+      return filteredCardArray.filter(
+        (categCard) =>
+          categCard.category.toLowerCase() === category.toLowerCase() &&
+          categCard.price >= value[0] * 100 &&
+          categCard.price <= value[1] * 100
+      ).length;
     } else {
-      return filteredCardArray
-        .filter(
-          (categCard) =>
-            categCard.category.toLowerCase() === category.toLowerCase() &&
-            categCard.price >= value[0] * 100 &&
-            categCard.price <= value[1] * 100
-        ).length;
+      return filteredCardArray.filter(
+        (categCard) =>
+          categCard.category.toLowerCase() === category.toLowerCase() &&
+          categCard.price >= value[0] * 100 &&
+          categCard.price <= value[1] * 100
+      ).length;
     }
   }
 
@@ -175,7 +173,11 @@ const ProductList = (props) => {
         </p>
       </div>
       {/* <h1 className="results">Showing results for : {props.query}</h1> */}
-      {(Cardarray.length !== 0) ? <div className="product_card">{Sortby(filteredCardArray)}</div> : <Loader isDarkMode = {props.isDarkMode}/>}
+      {Cardarray.length !== 0 ? (
+        <div className="product_card">{Sortby(filteredCardArray)}</div>
+      ) : (
+        <Loader isDarkMode={props.isDarkMode} />
+      )}
       {console.log(Sortby(filteredCardArray).length)}
       {pageArray < getCardlen(filteredCardArray) ? (
         <Button

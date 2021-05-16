@@ -1,0 +1,29 @@
+.dashboard {
+  min-height: 78.625vh;
+  font-family: Poppins;
+}
+.addContainer {
+  width: 75vw;
+  margin: 0.4rem 0 0.4rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 50%;
+  transform: translate(-50%);
+  font-size: 1.2rem;
+  bottom: 1px solid #3c4149;
+}
+
+.add {
+  background-color: white;
+  padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+  border-radius: 30px;
+  margin: 0.4rem;
+}
+@media (max-width: 768px) {
+  .add {
+    font-size: 1rem;
+
+    padding: 0.6rem 1rem 0.6rem 1rem;
+  }
+}
