@@ -40,17 +40,6 @@ app.get("/", homepage, (req, res) => {
         
 });
 
-
-app.get("/api/products", (req, res) => {
-  res.json(Cardarray);
-});
-
-app.get("/api/products/:id", (req, res) => {
-  const product = Cardarray.find((p) => p.id == req.params.id);
-  res.json(product);
-});
-
-
   const MODE = process.env.NODE_ENV;
   const PORT = process.env.PORT || 5000;
 
