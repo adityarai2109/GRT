@@ -89,7 +89,7 @@ export default function Info() {
               <input
                 type="submit"
                 value="Send"
-                formtarget="_blank"
+                formTarget="_blank"
                 className="send"
               />
             </form>

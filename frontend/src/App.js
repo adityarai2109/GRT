@@ -23,7 +23,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const baseUrl = "http://localhost:5000/api";
+  const baseUrl = process.env.REACT_APP_API_URL + "/api";
   // const imgUrl = "http://localhost:5000";
 
   useEffect(() => {

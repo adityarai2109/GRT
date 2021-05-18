@@ -17,7 +17,7 @@ const ProductList = (props) => {
   const Cardarray = props.products;
   console.log("main");
   console.log(Cardarray);
-  const imgUrl = "http://localhost:5000";
+  const imgUrl = process.env.REACT_APP_API_URL;
 
   const [rangeToggle, setRangeToggle] = useState(true);
   let category = String(props.match.params.category);

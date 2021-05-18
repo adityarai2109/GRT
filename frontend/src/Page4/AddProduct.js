@@ -11,7 +11,7 @@ const AddProduct = (props) => {
   const { admin } = (props.location && props.location.authenticate) || {};
   console.log(props);
   // console.log(props.location.authenticate);
-  const baseUrl = "http://localhost:5000/api";
+  const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
 
   const [name, setName] = useState("");

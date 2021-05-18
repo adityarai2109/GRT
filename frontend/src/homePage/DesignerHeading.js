@@ -19,7 +19,7 @@ function trending(props) {
             height="84.4655"
             transform="matrix(0.680171 0.733053 -0.637231 0.770673 57.1937 0.470052)"
             stroke="#8D12D9"
-            stroke-width="9"
+            strokeWidth="9"
           />
           <rect
             x="0.0644101"
@@ -28,7 +28,7 @@ function trending(props) {
             height="84.4655"
             transform="matrix(0.680171 0.733053 -0.637231 0.770673 173.194 3.47005)"
             stroke="#8D12D9"
-            stroke-width="9"
+            strokeWidth="9"
           />
           <rect
             x="0.0644101"
@@ -37,7 +37,7 @@ function trending(props) {
             height="84.4655"
             transform="matrix(0.680171 0.733053 -0.637231 0.770673 117.528 1.47005)"
             stroke="#8D12D9"
-            stroke-width="9"
+            strokeWidth="9"
           />
         </svg>
         <div className="line"></div>
@@ -57,7 +57,7 @@ function trending(props) {
             height="84.4655"
             transform="matrix(0.680171 0.733053 -0.637231 0.770673 57.1937 0.470052)"
             stroke="#8D12D9"
-            stroke-width="9"
+            strokeWidth="9"
           />
           <rect
             x="0.0644101"
@@ -66,7 +66,7 @@ function trending(props) {
             height="84.4655"
             transform="matrix(0.680171 0.733053 -0.637231 0.770673 173.194 3.47005)"
             stroke="#8D12D9"
-            stroke-width="9"
+            strokeWidth="9"
           />
           <rect
             x="0.0644101"
@@ -75,7 +75,7 @@ function trending(props) {
             height="84.4655"
             transform="matrix(0.680171 0.733053 -0.637231 0.770673 117.528 1.47005)"
             stroke="#8D12D9"
-            stroke-width="9"
+            strokeWidth="9"
           />
         </svg>
       </div>

@@ -5,7 +5,7 @@ import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOut
 import { Link } from "react-router-dom";
 
 function Dashboard(props) {
-  const imgUrl = "http://localhost:5000";
+  const imgUrl = process.env.REACT_APP_API_URL;
   props.products.map((i) => console.log(i._id));
   console.log(props.products[0]);
   return (

@@ -9,7 +9,7 @@ import "./Card.css";
 
 function Card(props) {
   console.log(props);
-  const imgUrl = "http://localhost:5000";
+  const imgUrl = process.env.REACT_APP_API_URL;
   const Cardarray = props.products;
 
   return (

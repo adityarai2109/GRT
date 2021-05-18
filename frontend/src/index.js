@@ -4,19 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-// $(function () {
-//   $(".intro").addClass("go");
-//   $(".reload").click(function () {
-//     $(".intro")
-//       .removeClass("go")
-//       .delay(200)
-//       .queue(function (next) {
-//         $(".intro").addClass("go");
-//         next();
-//       });
-//   });
-// });
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -10,7 +10,7 @@ import {
 import AddProduct from "./AddProduct";
 
 function Login(props) {
-    const baseUrl = "http://localhost:5000/api";
+    const baseUrl = process.env.REACT_APP_API_URL + "/api";
     let history = useHistory();
 
     const [email, setEmail] = useState("");

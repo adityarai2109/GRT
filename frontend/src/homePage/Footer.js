@@ -17,27 +17,27 @@ function Footer() {
       className="myFooter"
     >
       <footer
-        class="text-gray-600 body-font p-0"
+        className="text-gray-600 body-font p-0"
       >
-        <div style={{marginTop : "1rem",}} class="px-2 py-3 mx-auto flex items-center sm:flex-row flex-col">
+        <div style={{marginTop : "1rem",}} className="px-2 py-3 mx-auto flex items-center sm:flex-row flex-col">
           <a
-            class="flex title-font font-medium items-center md:justify-start justify-center text-white-100"
+            className="flex title-font font-medium items-center md:justify-start justify-center text-white-100"
             href="https://github.com/adityarai2109/GRT"
             target="_blank"
             rel="noreferrer"
           >
             <img style={{ height: "6vh" }} src={iconLogo} alt="GRT" />
-            <span class="ml-3 text-xl" style={{ color: "#ffffff", fontSize:"1.5rem",  }}>
+            <span className="ml-3 text-xl" style={{ color: "#ffffff", fontSize:"1.5rem",  }}>
               Ganga Ram Textiles
             </span>
           </a>
-          <p style={{ color: "#ffffff" , fontSize:"1.1rem" }} class="text-sm text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-100 sm:py-2 sm:mt-0 mt-4">
+          <p style={{ color: "#ffffff" , fontSize:"1.1rem" }} className="text-sm text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-100 sm:py-2 sm:mt-0 mt-4">
             © 2021 Ganga Ram Textiles
           </p>
 
-          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
-              class="ml-5 text-gray-100"
+              className="ml-5 text-gray-100"
               href="https://www.facebook.com/"
               target="_blank"
               rel="noreferrer"
@@ -45,7 +45,7 @@ function Footer() {
               <img className="icons" src={iFacebook} alt="Facebook" />
             </a>
             <a
-              class="ml-5 text-gray-100"
+              className="ml-5 text-gray-100"
               href="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
@@ -53,7 +53,7 @@ function Footer() {
               <img className="icons" src={iTwitter} alt="Twitter" />
             </a>
             <a
-              class="ml-5 text-gray-100"
+              className="ml-5 text-gray-100"
               href="https://www.instagram.com/"
               target="_blank"
               rel="noreferrer"
@@ -61,7 +61,7 @@ function Footer() {
               <img className="icons" src={iInstagram} alt="Instagram" />
             </a>
             <a
-              class="ml-5 text-gray-100"
+              className="ml-5 text-gray-100"
               href="https://www.youtube.com/"
               target="_blank"
               rel="noreferrer"

@@ -15,7 +15,7 @@ import DesignerHeading from "../homePage/DesignerHeading";
 
 const MainProduct = (props) => {
   const Cardarray = props.products;
-  const imgUrl = "http://localhost:5000";
+  const imgUrl = process.env.REACT_APP_API_URL;
   let id = props.match.params.ida; // isko int me convert krna tha
   // console.log(id);
   let category = String(props.match.params.category);
@@ -77,7 +77,7 @@ const MainProduct = (props) => {
                   href="https://wa.me/918076609847"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="whatsapp-anchor-tag"
+                  className="whatsapp-anchor-tag"
                 >
                   <img className="whatsappicon" src={whatsappicon} alt=""></img>
                   <span className="whatsappnum">

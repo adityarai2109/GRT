@@ -56,19 +56,19 @@ function Cta() {
 export default Cta;
 
 // <div>
-// <svg class="intro" viewbox="0 0 200 86">
-//   <text text-anchor="start" x="10" y="30" class="text text-stroke" clip-path="url(#text1)">Vahin</text>
-//   <text text-anchor="start" x="10" y="60" class="text text-stroke" clip-path="url(#text2)">Printers</text>
-//   <text text-anchor="start" x="10" y="30" class="text text-stroke text-stroke-2"
+// <svg className="intro" viewbox="0 0 200 86">
+//   <text text-anchor="start" x="10" y="30" className="text text-stroke" clip-path="url(#text1)">Vahin</text>
+//   <text text-anchor="start" x="10" y="60" className="text text-stroke" clip-path="url(#text2)">Printers</text>
+//   <text text-anchor="start" x="10" y="30" className="text text-stroke text-stroke-2"
 //     clip-path="url(#text1)">Vahin</text>
-//   <text text-anchor="start" x="10" y="60" class="text text-stroke text-stroke-2"
+//   <text text-anchor="start" x="10" y="60" className="text text-stroke text-stroke-2"
 //     clip-path="url(#text2)">Printers</text>
 //   <defs>
 //     <clipPath id="text1">
-//       <text text-anchor="start" x="10" y="30" class="text">Vahin</text>
+//       <text text-anchor="start" x="10" y="30" className="text">Vahin</text>
 //     </clipPath>
 //     <clipPath id="text2">
-//       <text text-anchor="start" x="10" y="60" class="text">Printers</text>
+//       <text text-anchor="start" x="10" y="60" className="text">Printers</text>
 //     </clipPath>
 //   </defs>
 // </svg>
