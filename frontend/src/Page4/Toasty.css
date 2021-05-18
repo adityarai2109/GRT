@@ -1,0 +1,10 @@
+.Toastify__toast {
+  font-family: "Poppins";
+}
+
+.Toastify__toast--success {
+  background-color: rgba(29, 207, 83, 0.781);
+}
+.Toastify__toast--error {
+    background-color: rgba(237, 67, 55, 0.904);
+}
