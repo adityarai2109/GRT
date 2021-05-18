@@ -17,6 +17,7 @@ import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
 import Dashboard from "./Page4/Dashboard";
+import FOF from "./fof/fof";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -43,7 +44,6 @@ function App() {
 
   useEffect(() => {
     console.log(query);
-   
   }, [query]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ function App() {
       {/* <img src="localhost"></img> */}
       <Router>
         <Switch>
-          <Route path="/checkout">
+          <Route exact path="/checkout">
             <Navbar
               isDarkMode={isDarkMode}
               setIsDarkMode={setIsDarkMode}
@@ -66,7 +66,8 @@ function App() {
             <CtaDecide />
             <h1>Checkout</h1>
           </Route>
-          <Route path="/dashboard">
+
+          <Route exact path="/dashboard">
             <Navbar
               isDarkMode={isDarkMode}
               setIsDarkMode={setIsDarkMode}
@@ -77,7 +78,7 @@ function App() {
             <Footer />
           </Route>
           {/* page 4 */}
-          <Route path="/login">
+          <Route exact path="/login">
             <Navbar
               isDarkMode={isDarkMode}
               setIsDarkMode={setIsDarkMode}
@@ -88,6 +89,7 @@ function App() {
             <Footer />
           </Route>
           <Route
+            exact
             path="/addProduct"
             render={(props) => (
               <>
@@ -129,6 +131,7 @@ function App() {
           {/* Page 3 */}
           <Route
             path="/:category/:ida"
+            exact
             render={(props) => (
               <>
                 <Navbar
@@ -149,7 +152,7 @@ function App() {
             )}
           />
           {/* Main Page */}
-          <Route path="/">
+          <Route path="/" exact>
             <Navbar
               isDarkMode={isDarkMode}
               setIsDarkMode={setIsDarkMode}
@@ -163,33 +166,24 @@ function App() {
               }}
             >
               <CtaDecide />
-              {/* <Carousel /> */}
             </div>
             {/* <Header /> */}
-            {/* {
-              products.map((product) => {
-              <div>
-                 <img src={`${baseUrl}/upload/product.name`} key={product._id} /> 
-                <h1>gggg</h1>
-              </div>
-            })
-             } */}
 
             {/* {products.length > 0
               ? products.map((product) => {
-                  return (
-                    <div>
-                      <img
-                        src={`${imgUrl}/upload/${product.image}`}
-                        key={product._id}
-                        style={{
-                          width: "200px",
-                          height: "200px",
-                          margin: "auto",
-                        }}
-                      />
-                      <h1>{product.name}</h1>
-                    </div>
+                return (
+                  <div>
+                  <img
+                  src={`${imgUrl}/upload/${product.image}`}
+                  key={product._id}
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    margin: "auto",
+                  }}
+                  />
+                  <h1>{product.name}</h1>
+                  </div>
                   );
                 })
               : null} */}
@@ -216,8 +210,8 @@ function App() {
             {/* <DesignerHeading name="Featured Category" /> */}
             {/* <Card /> */}
             {/* <Grid /> */}
-            {/* <DesignerHeading name="Latest Collection" />
-            <Gallery /> */}
+            {/* <DesignerHeading name="Latest Collection" /> */}
+            {/* <Gallery /> */}
             <DesignerHeading name="Commitments" />
             <Taglines />
             {/* <DesignerHeading name="Testimonials" /> */}
@@ -230,6 +224,7 @@ function App() {
             <Footer />
             {/* <Loader /> */}
           </Route>
+          <Route path="*" component={FOF} />
         </Switch>
       </Router>
     </div>
