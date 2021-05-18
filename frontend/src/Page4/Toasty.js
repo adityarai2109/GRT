@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import './Toasty.css'
 
 const properties = {
-  position: "top-right",
+  position: "top-center",
   autoClose: 3000,
   hideProgressBar: false,
   closeOnClick: true,

@@ -43,6 +43,7 @@ function App() {
 
   useEffect(() => {
     console.log(query);
+   
   }, [query]);
 
   useEffect(() => {

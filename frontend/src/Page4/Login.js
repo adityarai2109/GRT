@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {Toast, Toasty} from './Toasty'
 import {
     BrowserRouter as Router,
     Switch,
@@ -47,8 +48,8 @@ function Login(props) {
         } catch (error) {
             //console.log(error.response);
             if (typeof error.response != "undefined")
-                alert(error.response.data.message);
-            else alert("server timeout");
+                 Toast("error", `${error.response.data.message}`)
+            else Toast("error","server timeout")
         }
     };
 
@@ -115,6 +116,7 @@ function Login(props) {
                                             >
                                                 Login
                                             </button>
+                                            {Toasty()}
                                         </div>
                                     </form>
                                     <div className="text-center mt-4">
