@@ -57,12 +57,6 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/checkout">
-            <Navbar
-              isDarkMode={isDarkMode}
-              setIsDarkMode={setIsDarkMode}
-              query={query}
-              setQuery={setQuery}
-            />
             <CtaDecide />
             <h1>Checkout</h1>
           </Route>
@@ -112,17 +106,13 @@ function App() {
             exact
             render={(props) => (
               <>
-                <Navbar
-                  isDarkMode={isDarkMode}
-                  setIsDarkMode={setIsDarkMode}
-                  query={query}
-                  setQuery={setQuery}
-                />
+
                 <ProductList
                   {...props}
                   query={query}
                   setQuery={setQuery}
-                  isDarkMode={isDarkMode}
+                  isDarkMode={isDarkMode} 
+                  setIsDarkMode={setIsDarkMode}
                   products={products}
                 />
               </>
@@ -134,15 +124,10 @@ function App() {
             exact
             render={(props) => (
               <>
-                <Navbar
-                  isDarkMode={isDarkMode}
-                  setIsDarkMode={setIsDarkMode}
-                  query={query}
-                  setQuery={setQuery}
-                />
                 <MainProduct
                   {...props}
                   isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
                   products={products}
                   setProducts={setProducts}
                   query={query}
@@ -224,7 +209,7 @@ function App() {
             <Footer />
             {/* <Loader /> */}
           </Route>
-          <Route path="*" component={FOF} />
+          <Route component={FOF} />
         </Switch>
       </Router>
     </div>
