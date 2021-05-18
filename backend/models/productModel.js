@@ -36,7 +36,27 @@ const productSchema = mongoose.Schema(
       required: true,
     },
 
-     quantity: {
+    material: {
+      type: String,
+      required: true,
+      default: 0,
+    },
+    design: {
+      type: String,
+      required: true,
+      default: 0,
+    },
+    bottomLength: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    duppataLength: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    topLength: {
       type: Number,
       required: true,
       default: 0,

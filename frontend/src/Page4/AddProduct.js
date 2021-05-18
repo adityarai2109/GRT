@@ -6,20 +6,24 @@ import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { Redirect, useHistory } from "react-router-dom";
+import { Toast, Toasty } from "./Toasty";
 
 const AddProduct = (props) => {
   const { admin } = (props.location && props.location.authenticate) || {};
-  console.log(props);
+ // console.log(props);
   // console.log(props.location.authenticate);
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
 
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("");
+  const [material, setMaterial] = useState("");
+  const [design, setDesign] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState();
   const [image, setImage] = useState({});
-  const [quantity, setQuantity] = useState("");
+  const [bottomLength, setBottomLength] = useState();
+  const [duppataLength, setDuppataLength] = useState();
+  const [topLength, setTopLength] = useState();
   const [preview, setPreview] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -46,17 +50,14 @@ const AddProduct = (props) => {
     e.preventDefault();
     const productForm = new FormData();
     productForm.append("name", name);
-    productForm.append("category", category);
+    productForm.append("material", material);
+    productForm.append("design", design);
     productForm.append("description", description);
     productForm.append("price", price);
     productForm.append("image", image);
-    productForm.append("quantity", quantity);
-
-    // const config = {
-    //   headers:{
-    //     'Content-Type' : 'multipart/form-data'
-    //   }
-    // }
+    productForm.append("topLength", topLength);
+    productForm.append("bottomLength", bottomLength);
+    productForm.append("duppataLength", duppataLength);
 
     try {
       const res = await axios.post(`${baseUrl}/product/create`, productForm);
@@ -65,16 +66,21 @@ const AddProduct = (props) => {
         setPreview(false);
         setImage({});
         setName("");
-        setCategory("");
+        setMaterial("");
         setDescription("");
-        setPrice("");
-        setQuantity("");
-        setSuccess(true);
+        setPrice();
+        setDesign("");
+        setBottomLength();
+        setTopLength();
+        setDuppataLength();
+        
+        setSuccess(false);
         window.scrollTo(0, 0);
+        Toast("success", "Product added successfully!! ");
       }
     } catch (error) {
-      console.log(error.response);
-    }
+      Toast("error", `${error.response}`);
+    }  
   };
 
   return (
@@ -127,7 +133,7 @@ const AddProduct = (props) => {
                               value={name}
                               id="product_name"
                               className="focus:ring-indigo-800 focus:border-indigo-800 text-gray-600  flex-1 block w-full rounded-none rounded-md  sm:text-sm border-gray-700"
-                              placeholder="Product Name"
+                              placeholder=" Name"
                               onChange={(e) => setName(e.target.value)}
                             />
                           </div>
@@ -136,10 +142,34 @@ const AddProduct = (props) => {
                       <div className="grid grid-cols-3 gap-6">
                         <div className="col-span-3">
                           <label
+                            htmlFor="product_name"
+                            className="block text-lg text-white"
+                          >
+                            Material
+                          </label>
+                          <div className="h-10 ml-10 mr-10 mt-2 flex rounded shadow-sm">
+                            <input
+                              style={{
+                                background: "white",
+                                paddingLeft: "1rem",
+                              }}
+                              type="text"
+                              value={material}
+                              id="product_name"
+                              className="focus:ring-indigo-800 focus:border-indigo-800 text-gray-600  flex-1 block w-full rounded-none rounded-md  sm:text-sm border-gray-700"
+                              placeholder="Material"
+                              onChange={(e) => setMaterial(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-3 gap-6">
+                        <div className="col-span-3">
+                          <label
                             htmlFor="product_quantity"
                             className="block text-lg text-white"
                           >
-                            Category
+                            Design
                           </label>
                           <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
                             <input
@@ -148,37 +178,98 @@ const AddProduct = (props) => {
                                 background: "white",
                                 paddingLeft: "1rem",
                               }}
-                              value={category}
+                              value={design}
                               id="product_quantity"
                               className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
-                              placeholder="Category"
-                              onChange={(e) => setCategory(e.target.value)}
+                              placeholder="Design"
+                              onChange={(e) => setDesign(e.target.value)}
                             />
                           </div>
                         </div>
                       </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div className="grid grid-cols-3 gap-6">
+                          <div className="col-span-3">
+                            <label
+                              htmlFor="product_quantity"
+                              className="block text-m text-white"
+                            >
+                              Top-Length
+                            </label>
+                            <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
+                              <input
+                                type="number"
+                                style={{
+                                  background: "white",
+                                  paddingLeft: "1rem",
+                                }}
+                                value={topLength}
+                                id="product_quantity"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
+                                placeholder="Top length"
+                                onChange={(e) => setTopLength(e.target.value)}
+                              />
+                            </div>
+                          </div>
+                        </div>
 
-                      <div className="grid grid-cols-3 gap-6">
-                        <div className="col-span-3">
-                          <label
-                            htmlFor="product_quantity"
-                            className="block text-lg text-white"
-                          >
-                            Quantity
-                          </label>
-                          <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
-                            <input
-                              type="number"
-                              style={{
-                                background: "white",
-                                paddingLeft: "1rem",
-                              }}
-                              value={quantity}
-                              id="product_quantity"
-                              className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
-                              placeholder="Product quantity"
-                              onChange={(e) => setQuantity(e.target.value)}
-                            />
+                        <div className="grid grid-cols-3 gap-6">
+                          <div className="col-span-3">
+                            <label
+                              htmlFor="product_quantity"
+                              className="block text-m text-white"
+                            >
+                              Duppata-Length
+                            </label>
+                            <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
+                              <input
+                                type="number"
+                                style={{
+                                  background: "white",
+                                  paddingLeft: "1rem",
+                                }}
+                                value={duppataLength}
+                                id="product_quantity"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
+                                placeholder="Duppata length"
+                                onChange={(e) =>
+                                  setDuppataLength(e.target.value)
+                                }
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-6">
+                          <div className="col-span-3">
+                            <label
+                              htmlFor="product_quantity"
+                              className="block text-m text-white"
+                            >
+                              Bottom-Length
+                            </label>
+                            <div className="h-10 ml-10 mr-10 mt-2 flex border-solid">
+                              <input
+                                type="number"
+                                style={{
+                                  background: "white",
+                                  paddingLeft: "1rem",
+                                }}
+                                value={bottomLength}
+                                id="product_quantity"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-md sm:text-sm border-gray-300"
+                                placeholder="Bottom length"
+                                onChange={(e) =>
+                                  setBottomLength(e.target.value)
+                                }
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -323,6 +414,7 @@ const AddProduct = (props) => {
                       >
                         Save
                       </button>
+                      {Toasty()}
                     </div>
                   </div>
                 </form>

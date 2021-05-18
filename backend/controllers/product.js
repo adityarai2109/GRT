@@ -3,18 +3,31 @@ import  Product from '../models/productModel.js'
 
 export const createProduct = (req, res) => {
 
-  const { name, category,description, price, quantity } = req.body;
+  const {
+    name,
+    material,
+    design,
+    bottomLength,
+    duppataLength,
+    topLength,
+    description,
+    price,
+  } = req.body;   
   
   const image  = req.file.filename
  //console.log(req.file)
   const product = new Product({
     name,
-    category,
+    category: "Suit",
+    material,
+    design,
+    bottomLength,
+    duppataLength,
+    topLength,
     description,
-    price, 
+    price,
     image,
-    quantity,  
-   });   
+  });   
    
   product.save((error, product) => {
     if (error) return res.status(400).json({ error });
