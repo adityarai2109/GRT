@@ -2,8 +2,28 @@ import React from "react";
 import "./AdminCard.css";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { Link } from "react-router-dom";
 
 function AdminCard(props) {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const deleteItem = () => {
+    //delete item code
+    console.log("delete :", props.name);
+  };
   return (
     <>
       <div
@@ -35,15 +55,50 @@ function AdminCard(props) {
             <div className="suitData">
               <h4 className="name">{props.name}</h4>
               <h6 className="price">{"₹ " + props.price}</h6>
-              {/* <p className="id">ID : {props.id.slice(props.id.length - 10)}</p> */}
               <h6 className="createdAt">
                 Created at : {props.createdAt.substr(0, 10)}
               </h6>
             </div>
           </div>
           <div className="rightAdminCard">
-            <EditIcon style={{ width: "10vh" }} />
-            <DeleteIcon style={{ width: "10vh" }} />
+            <Link to={`/editProduct/${props.id}`}>
+              <EditIcon style={{ width: "10vh" }} />
+            </Link>
+            <DeleteIcon style={{ width: "10vh" }} onClick={handleClickOpen} />
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Delete product"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Are you sure you want to delete this product?
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button
+                  style={{ outline: "none" }}
+                  onClick={() => {
+                    handleClose();
+                    deleteItem();
+                  }}
+                  color="secondary"
+                >
+                  YES
+                </Button>
+                <Button
+                  style={{ outline: "none" }}
+                  onClick={handleClose}
+                  color="secondary"
+                >
+                  NO
+                </Button>
+              </DialogActions>
+            </Dialog>
           </div>
         </div>
       </div>

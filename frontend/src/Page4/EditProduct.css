@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+.back {
+  background: rgb(166, 0, 129);
+  background: linear-gradient(
+    45deg,
+    rgba(166, 0, 129, 1) 0%,
+    rgba(106, 0, 204, 1) 100%
+  );
+  font-family: Poppins;
+  font-weight: 900;
+  /* background-color: #f046c5; */
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -4px -4px 12px 0 rgba(255, 255, 255, 0.178);
+}
+
+::placeholder {
+  color: black !important;
+}
+
+.login_button {
+  background: white;
+  color: #6b2097;
+}
+
+input {
+  outline-width: 0;
+}
+
+.addproduct {
+  width: 60%;
+}
+
+@media (max-width: 750px) {
+  .addproduct {
+    width: 80%;
+  }
+}
+@media (max-width: 550px) {
+  .addproduct {
+    width: 90%;
+  }
+}
+
+.img {
+  width: 400px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.preview-clear {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn {
+  border: 0;
+  padding: 12px 40px;
+  font-size: 18px;
+  background: #fff;
+  color: rgb(241, 19, 130);
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px 1px rgba(0, 0, 0, 0.103);
+  cursor: pointer;
+  outline: 0;
+  transition: 0.3s linear;
+}
+.save-btn:active {
+  transform: scale(0.85);
+  box-shadow: 3px 2px 25px 1px rgba(0, 0, 0, 0.25);
+}
+
+.close-icon {
+  background: none;
+  color: white;
+}
+
+.close-icon:hover {
+  background-color: rgb(20 20 20 / 72%);
+  cursor: pointer;
+  border-radius: 50%;
+}

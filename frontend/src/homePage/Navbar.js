@@ -49,7 +49,11 @@ export default function Navbar(props) {
             className="inputnav"
             id="inputnavid"
             type="text"
-            placeholder="Search for Clothes, Brands and more..."
+            placeholder={
+              window.innerWidth > 768
+                ? `Search for Clothes, Brands and more...`
+                : `Search ...`
+            }
           />
           <div
             onClick={search}

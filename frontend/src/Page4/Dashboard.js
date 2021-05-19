@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 function Dashboard(props) {
   const imgUrl = process.env.REACT_APP_API_URL;
-  props.products.map((i) => console.log(i._id));
-  console.log(props.products[0]);
+  console.log(imgUrl);
   return (
     <>
       <div className="dashboard">

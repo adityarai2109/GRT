@@ -1,140 +1,126 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {Toast, Toasty} from './Toasty'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Redirect,
-    useHistory,
-    Route,
-} from "react-router-dom";
-import AddProduct from "./AddProduct";
+import { Toast, Toasty } from "./Toasty";
+import { useHistory } from "react-router-dom";
+// import AddProduct from "./AddProduct";
 
 function Login(props) {
-    const baseUrl = process.env.REACT_APP_API_URL + "/api";
-    let history = useHistory();
+  const baseUrl = process.env.REACT_APP_API_URL + "/api";
+  let history = useHistory();
+  console.log(history);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [authenticate, setAuthenticate] = useState({
+    admin: true,
+  });
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [authenticate, setAuthenticate] = useState({
-        admin: true,
-    });
+  const submitLoginForm = async (e) => {
+    e.preventDefault();
+    const loginData = { email, password };
+    console.log(loginData);
+    try {
+      const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
+      if (res.status === 200) {
+        console.log("admin logged in");
 
-    const submitLoginForm = async (e) => {
-        e.preventDefault();
+        setAuthenticate((prevState) => ({
+          ...prevState,
+          admin: true,
+        }));
 
-        const loginData = { email, password };
+        console.log(authenticate);
 
-        console.log(loginData);
-        try {
-            const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
-            if (res.status === 200) {
-                console.log(" admin logged in");
+        history.push({
+          pathname: "/addProduct",
+          authenticate,
+        });
 
-                setAuthenticate((prevState) => ({
-                    ...prevState,
-                    admin: true,
-                }));
+        // window.scrollTo(0, 0);
+      }
+    } catch (error) {
+      //console.log(error.response);
+      if (typeof error.response != "undefined")
+        Toast("error", `${error.response.data.message}`);
+      else Toast("error", "server timeout");
+    }
+  };
 
-                console.log(authenticate);
-
-                history.push({
-                    pathname: "/addProduct",
-                    authenticate,
-                });
-
-                // window.scrollTo(0, 0);
-            }
-        } catch (error) {
-            //console.log(error.response);
-            if (typeof error.response != "undefined")
-                 Toast("error", `${error.response.data.message}`)
-            else Toast("error","server timeout")
-        }
-    };
-
-    return (
-        <div>
-            {/* component */}
-            <div className="h-screen w-screen">
-                <div className="flex flex-col items-center flex-1 h-full justify-center">
-                    <div
+  return (
+    <div>
+      {/* component */}
+      <div className="h-screen w-screen">
+        <div className="flex flex-col items-center flex-1 h-full justify-center">
+          <div
+            style={{
+              color: "white",
+              height: "500px",
+            }}
+            className="back flex rounded-lg shadow-lg w-5/6 sm:w-3/4 lg:w-1/2 bg-white sm:mx-0"
+          >
+            <div className="flex flex-col w-full p-4">
+              <div className="flex flex-col flex-1 justify-center mb-8">
+                <h1 className="text-4xl text-center font-thin">Welcome Back</h1>
+                <div className="w-full mt-4">
+                  <form
+                    className="form-horizontal w-11/12 mx-auto"
+                    onSubmit={submitLoginForm}
+                  >
+                    <div className="flex flex-col mt-4">
+                      <input
+                        type="text"
                         style={{
-                            color: "white",
-                            height: "500px",
+                          background: "white",
+                          color: "black",
+                          paddingLeft: "1rem",
                         }}
-                        className="back flex rounded-lg shadow-lg w-5/6 sm:w-3/4 lg:w-1/2 bg-white sm:mx-0"
-                    >
-                        <div className="flex flex-col w-full p-4">
-                            <div className="flex flex-col flex-1 justify-center mb-8">
-                                <h1 className="text-4xl text-center font-thin">
-                                    Welcome Back
-                                </h1>
-                                <div className="w-full mt-4">
-                                    <form
-                                        className="form-horizontal w-11/12 mx-auto"
-                                        onSubmit={submitLoginForm}
-                                    >
-                                        <div className="flex flex-col mt-4">
-                                            <input
-                                                type="text"
-                                                style={{
-                                                    background: "white",
-                                                    color: "black",
-                                                    paddingLeft: "1rem",
-                                                }}
-                                                value={email}
-                                                id="email"
-                                                className="flex-grow h-10 px-4 border rounded border-grey-400"
-                                                placeholder="Email"
-                                                onChange={(e) =>
-                                                    setEmail(e.target.value)
-                                                }
-                                            />
-                                        </div>
-                                        <div className="flex flex-col mt-4">
-                                            <input
-                                                type="password"
-                                                style={{
-                                                    background: "white",
-                                                    color: "black",
-                                                    paddingLeft: "1rem",
-                                                }}
-                                                value={password}
-                                                id="password"
-                                                className="flex-grow h-10 px-4 rounded border border-grey-400"
-                                                placeholder="Password"
-                                                onChange={(e) =>
-                                                    setPassword(e.target.value)
-                                                }
-                                            />
-                                        </div>
-                                        <div className="flex flex-col mt-8">
-                                            <button
-                                                type="submit"
-                                                className="login_button bg-blue-500 text-white text-m font-semibold py-2 px-4 rounded"
-                                            >
-                                                Login
-                                            </button>
-                                            {Toasty()}
-                                        </div>
-                                    </form>
-                                    <div className="text-center mt-4">
-                                        <a
-                                            className="no-underline hover:underline text-blue-dark text-s"
-                                            href="mailto:keshav2682@gmail.com"
-                                        >
-                                            Forgot Your Password?
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        value={email}
+                        id="email"
+                        className="flex-grow h-10 px-4 border rounded border-grey-400"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
                     </div>
+                    <div className="flex flex-col mt-4">
+                      <input
+                        type="password"
+                        style={{
+                          background: "white",
+                          color: "black",
+                          paddingLeft: "1rem",
+                        }}
+                        value={password}
+                        id="password"
+                        className="flex-grow h-10 px-4 rounded border border-grey-400"
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </div>
+                    <div className="flex flex-col mt-8">
+                      <button
+                        type="submit"
+                        className="login_button bg-blue-500 text-white text-m font-semibold py-2 px-4 rounded"
+                      >
+                        Login
+                      </button>
+                      {Toasty()}
+                    </div>
+                  </form>
+                  <div className="text-center mt-4">
+                    <a
+                      className="no-underline hover:underline text-blue-dark text-s"
+                      href="mailto:keshav2682@gmail.com"
+                    >
+                      Forgot Your Password?
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Login;

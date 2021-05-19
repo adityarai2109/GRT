@@ -13,6 +13,8 @@ import Navbar from "./homePage/Navbar";
 import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
+import EditProduct from "./Page4/EditProduct";
+// import AddProduct2 from "./Page4/AddProduct2";
 import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
@@ -33,7 +35,7 @@ function App() {
       try {
         if (res.status === 200) {
           setProducts(res.data);
-          console.log(products);
+          console.log(res.data);
         }
       } catch (error) {
         console.log("error : ", error);
@@ -43,7 +45,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(query);
+    // console.log(query);
   }, [query]);
 
   useEffect(() => {
@@ -94,6 +96,28 @@ function App() {
                   setQuery={setQuery}
                 />
                 <AddProduct {...props} />
+                {/* <AddProduct2 {...props} /> */}
+                <Footer />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/editProduct/:id"
+            render={(props) => (
+              <>
+                <Navbar
+                  isDarkMode={isDarkMode}
+                  setIsDarkMode={setIsDarkMode}
+                  query={query}
+                  setQuery={setQuery}
+                />
+                <EditProduct
+                  {...props}
+                  isDarkMode={isDarkMode}
+                  products={products}
+                  setProducts={setProducts}
+                />
                 <Footer />
               </>
             )}
@@ -106,12 +130,11 @@ function App() {
             exact
             render={(props) => (
               <>
-
                 <ProductList
                   {...props}
                   query={query}
                   setQuery={setQuery}
-                  isDarkMode={isDarkMode} 
+                  isDarkMode={isDarkMode}
                   setIsDarkMode={setIsDarkMode}
                   products={products}
                 />

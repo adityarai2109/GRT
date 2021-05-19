@@ -5,12 +5,12 @@ import axios from "axios";
 import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Toast, Toasty } from "./Toasty";
 
 const AddProduct = (props) => {
   const { admin } = (props.location && props.location.authenticate) || {};
- // console.log(props);
+  // console.log(props);
   // console.log(props.location.authenticate);
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
@@ -73,14 +73,14 @@ const AddProduct = (props) => {
         setBottomLength();
         setTopLength();
         setDuppataLength();
-        
+
         setSuccess(false);
         window.scrollTo(0, 0);
         Toast("success", "Product added successfully!! ");
       }
     } catch (error) {
       Toast("error", `${error.response}`);
-    }  
+    }
   };
 
   return (
@@ -94,12 +94,12 @@ const AddProduct = (props) => {
               <Alert severity="success">New product added successfully </Alert>
             </>
           ) : null}
-          <div className="img">
+          {/* <div className="img">
             <img src="http://localhost:5000/upload/minions.jpg" alt="" />
             <h1 style={{ color: "#fff" }}>
               backend se photo finally aa gyi 😄{" "}
             </h1>
-          </div>
+          </div> */}
           <div className="addproduct container mx-auto">
             <div className="hidden sm:block" aria-hidden="true">
               <div className="py-5"></div>
@@ -108,6 +108,7 @@ const AddProduct = (props) => {
               style={{
                 paddingBottom: "1.5rem",
                 marginTop: "1rem",
+                marginBottom: "3rem",
               }}
               className="grid bg-white rounded grid-cols-1 gap-5 back"
             >
@@ -133,7 +134,7 @@ const AddProduct = (props) => {
                               value={name}
                               id="product_name"
                               className="focus:ring-indigo-800 focus:border-indigo-800 text-gray-600  flex-1 block w-full rounded-none rounded-md  sm:text-sm border-gray-700"
-                              placeholder=" Name"
+                              placeholder="Name"
                               onChange={(e) => setName(e.target.value)}
                             />
                           </div>
