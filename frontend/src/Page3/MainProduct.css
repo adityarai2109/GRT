@@ -1,151 +1,154 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+.iiz {
+    /* height: 70vh; */
+    width: 30vw;
+    height: auto;
+    margin: 2rem;
+}
+
 .stop-scrolling {
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 .whatsappnum {
-  display: flex;
+    display: flex;
 }
 .page3_content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .product_desc,
 .product_image {
-  width: 50%;
-  height: 50%;
+    width: 45%;
+    height: 50%;
 }
 .product_desc {
-  position: relative;
+    position: relative;
 }
 
 .product_image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: auto;
+    margin: 2rem;
+    object-fit: contain;
 }
-
-.pimage {
-  padding: 3rem 4rem 3rem 4rem;
-  /* max-height: 650px; */
-  /* transition: transform 0.1s; */
-}
-/* .pimage:hover {
-  transform: scale(1.15);
-} */
 
 .product_desc {
-  padding: 3rem;
+    padding: 3rem;
 }
 
 .title {
-  margin-bottom: 1rem;
-  font-size: 3.2rem;
-  font-family: Poppins;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    font-family: Poppins;
 }
 
 .desc {
-  text-align: justify;
-  font-size: 1.2rem;
-  line-height: 33px;
-  margin-bottom: 2rem;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 33px;
+    margin-bottom: 0.8rem;
 }
 
 .buttons1 {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
 }
 
 .p_price {
-  color: blueviolet;
-  font-family: Poppins;
-  font-size: xx-large;
-  font-weight: bolder;
-  text-align: left;
+    color: blueviolet;
+    font-family: Poppins;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: left;
 }
 
 .org_price {
-  font-size: large;
-  text-decoration: line-through;
-  margin-left: 1rem;
+    font-size: large;
+    text-decoration: line-through;
+    margin-left: 1rem;
 }
 .whatsappicon {
-  width: 1.7rem;
-  margin-right: 1rem;
- 
+    width: 1.7rem;
+    margin-right: 1rem;
 }
-.whatsapp-anchor-tag{
-  display : flex
+.whatsapp-anchor-tag {
+    display: flex;
 }
 .whatsappus {
-  margin-top: 1rem;
-  display: flex;
-  font-family: Poppins;
-  font-size: larger;
-  color: rgb(36, 190, 131);
-  font-weight: bold;
- 
+    margin-top: 1rem;
+    display: flex;
+    font-family: Poppins;
+    font-size: larger;
+    color: rgb(36, 190, 131);
+    font-weight: bold;
 }
-
 .rate {
-  text-align: left;
-  margin-bottom: 1rem;
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 900px) {
-  .page3_content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product_desc,
-  .product_image {
-    width: 100%;
-  }
-  .buttons1 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media only screen and (max-width: 1150px) {
-  .page3_content {
-    display: flex;
-    flex-direction: column;
-  }
-  .title {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-  }
-
-  .product_desc,
-  .product_image {
-    width: 100%;
-  }
-  .buttons1 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media only screen and (min-width: 1150px) {
-  .partition {
-    height: 70vh;
-    width: 1px;
-    background: rgb(61, 61, 61);
+    .page3_content {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .rate {
+        text-align: center;
+    }
+    .product_desc {
+        width: 90%;
+    }
+    .product_image {
+        width: 80%;
+    }
+    .buttons1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .desc {
+        font-size: 1.1rem;
+    }
+    .product_desc {
+      padding: 1rem;
   }
 }
 
+@media only screen and (min-width: 900px) {
+    .partition {
+        height: 70vh;
+        width: 1px;
+        background: rgb(61, 61, 61);
+    }
+}
+
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .iiz {
+        width: 40vw;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1149px)  {
+  .iiz {
+      width: 60vw;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .iiz {
+      width: 70vw;
+  }
+}
 @media screen and (max-width: 600px) {
-  .pimage {
-    padding: 1rem 2rem 1rem 2rem;
-  }
-  .whatsappnum {
-    display: flex;
-    flex-direction: column;
+  .iiz {
+      width: 80vw;
   }
 }

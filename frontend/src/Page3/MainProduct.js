@@ -17,6 +17,7 @@ import FOF from "../fof/fof";
 
 const MainProduct = (props) => {
     const Cardarray = props.products;
+    console.log(Cardarray[Cardarray.length - 1]);
     const imgUrl = process.env.REACT_APP_API_URL;
     let id = props.match.params.ida; // isko int me convert krna tha
     // console.log(id);
@@ -28,8 +29,8 @@ const MainProduct = (props) => {
     if (
         Cardarray.filter(
             (categCard) =>
-                categCard.category.toLowerCase() === category.toLowerCase()
-                && categCard._id === id
+                categCard.category.toLowerCase() === category.toLowerCase() &&
+                categCard._id === id
         ).length === 0 &&
         Cardarray.length !== 0
     )
@@ -40,7 +41,6 @@ const MainProduct = (props) => {
         );
     else
         return (
-            /*style={{height:"calc(100% - 20vh - 12rem)"}}  */
             <div>
                 <Navbar
                     isDarkMode={props.isDarkMode}
@@ -52,24 +52,26 @@ const MainProduct = (props) => {
                     {Cardarray.length !== 0 ? (
                         <div className="page3_content">
                             <div className="product_image">
-                                <div className="pimage">
-                                    <ZoomDecide
-                                        image={`${imgUrl}/upload/${
-                                            Cardarray.find(
-                                                (x) =>
-                                                    x._id === id &&
-                                                    x.category === category
-                                            ).image
-                                        }`}
-                                    />
-                                </div>
+                                <ZoomDecide
+                                    image={`${imgUrl}/upload/${
+                                        Cardarray.find(
+                                            (x) =>
+                                                x._id === id &&
+                                                x.category === category
+                                        ).image
+                                    }`}
+                                />
                             </div>
-                            <div className="partition"></div>
+                            <div
+                                style={{
+                                    background: props.isDarkMode
+                                        ? "white"
+                                        : "black",
+                                }}
+                                className="partition"
+                            ></div>
                             <div className="product_desc">
-                                <h1
-                                    style={{ textAlign: "left" }}
-                                    className="title"
-                                >
+                                <h1 className="title">
                                     {Cardarray.find((x) => x._id === id).name}
                                 </h1>
                                 <div className="rate">
@@ -77,10 +79,43 @@ const MainProduct = (props) => {
                                         name="size-large"
                                         defaultValue={2}
                                         size="large"
-                                        rating={4}
+                                        rating={5}
                                     />
                                 </div>
                                 <p className="desc">
+                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Design : </span>
+                                    {Cardarray.find((x) => x._id === id).design}
+                                </p>
+                                <p className="desc">
+                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Material : </span>
+                                    {
+                                        Cardarray.find((x) => x._id === id)
+                                            .material
+                                    }
+                                </p>
+                                <p className="desc">
+                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Top Length : </span>
+                                    {
+                                        Cardarray.find((x) => x._id === id)
+                                            .topLength
+                                    }
+                                </p>
+                                <p className="desc">
+                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Duppata Length : </span>
+                                    {
+                                        Cardarray.find((x) => x._id === id)
+                                            .duppataLength
+                                    }
+                                </p>
+                                <p className="desc">
+                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Bottom Length : </span>
+                                    {
+                                        Cardarray.find((x) => x._id === id)
+                                            .bottomLength
+                                    }
+                                </p>
+                                <p className="desc">
+                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Description : </span>
                                     {
                                         Cardarray.find((x) => x._id === id)
                                             .description

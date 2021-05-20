@@ -51,8 +51,8 @@ export default function Navbar(props) {
             type="text"
             placeholder={
               window.innerWidth > 768
-                ? `Search for Clothes, Brands and more...`
-                : `Search ...`
+                ? `Search for clothes, brands and more ...`
+                : `Search for products ...`
             }
           />
           <div

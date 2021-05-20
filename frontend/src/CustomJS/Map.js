@@ -5,8 +5,8 @@ import "../CustomJS/Map.css";
 function myMap() {
   return (
     <GoogleMap
-      defaultZoom={20}
-      defaultCenter={{ lat: 28.6505, lng: 77.2303 }}
+      defaultZoom={19}
+      defaultCenter={{ lat: 28.6582875, lng: 77.1562953 }}
     />
   );
 }

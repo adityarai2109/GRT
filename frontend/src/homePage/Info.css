@@ -35,7 +35,7 @@
 .f-contacts,
 .f-feedback {
   text-align: left;
-  padding: 1rem;
+  /* padding: 0.5rem; */
   font-family: Poppins;
 }
 .f-address {
@@ -114,7 +114,7 @@
   }
   .f-details {
     width: 100%;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
   }
 }
 @media only screen and (max-width: 480px) {

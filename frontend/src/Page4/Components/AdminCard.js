@@ -64,7 +64,7 @@ function AdminCard(props) {
           }}
         >
           <div className="leftAdminCard">
-            <img className="image" src={props.image} alt="Image" />
+            <img className="image" src={props.image} alt="" />
             <div className="suitData">
               <h4 className="name">{props.name}</h4>
               <h6 className="price">{"₹ " + props.price}</h6>

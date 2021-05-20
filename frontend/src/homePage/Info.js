@@ -20,9 +20,10 @@ export default function Info() {
                   alt="Address"
                 />
               </div>
-              <p>B-56</p>
-              <p>Chandni Chowk Chandni Chowk Chandni Chowk</p>
-              <p>New Delhi</p>
+              <p>Gangaram Textiles</p>
+              <p>Bagh Deewar, Mahajani Kucha,</p>
+              <p>Katra Neel, Chandni Chowk</p>
+              <p>Delhi - 110006</p>
             </div>
 
             <div className="f-contacts text-white">
@@ -34,10 +35,10 @@ export default function Info() {
                   alt="Contacts"
                 />
               </div>
-              <p>Mr. XYZ</p>
-              <p>M : +46136560</p>
-              <p>Mrs. XYZ</p>
-              <p>M : +46136560</p>
+              <p>Mr. Sanjay Aggarwal</p>
+              <p>M : <span>9811612899</span></p>
+              <p>Mrs. Neelam Aggarwal</p>
+              <p>M : <span>9811612899</span></p>
             </div>
           </div>
 

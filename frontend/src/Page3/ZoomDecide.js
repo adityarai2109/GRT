@@ -18,7 +18,7 @@ function ZoomDecide(props) {
         <div>
             {(width < 550 ) ? (
                                     <InnerImageZoom
-                                        className=""
+                                        style={{width:"100%", height:"30rem", objectFit: "cover",}}
                                         src={props.image}
                                         afterZoomIn={() =>
                                             document.body.classList.add(
@@ -35,7 +35,7 @@ function ZoomDecide(props) {
                                     />
                                 ) : (
                                     <InnerImageZoom
-                                        className=""
+                                        style={{width:"100%", height:"25rem", objectFit: "cover",}}
                                         src={props.image}
                                         fullscreenOnMobile={true}
                                         // alt="ProductImage"
