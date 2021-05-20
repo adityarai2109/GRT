@@ -9,9 +9,14 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Link } from "react-router-dom";
+import { Toast, Toasty } from "../Toasty";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function AdminCard(props) {
   const [open, setOpen] = React.useState(false);
+  const deleteUrl = process.env.REACT_APP_API_URL + "/api/delete";
+  let history = useHistory();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -20,9 +25,17 @@ function AdminCard(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const deleteItem = () => {
+  const deleteItem = async () => {
     //delete item code
-    console.log("delete :", props.name);
+    try {
+      const res = await axios.delete(`${deleteUrl}/${props.id}`);
+      if (res.status === 200) {
+        history.push("/dashboard");
+        console.log("deleted")
+      }
+    } catch (error) {
+      Toast("error", `${error.response}`);
+    }
   };
   return (
     <>
@@ -64,7 +77,11 @@ function AdminCard(props) {
             <Link to={`/editProduct/${props.id}`}>
               <EditIcon style={{ width: "10vh" }} />
             </Link>
-            <DeleteIcon style={{ width: "10vh" }} onClick={handleClickOpen} />
+            <DeleteIcon
+              style={{ width: "10vh", cursor: "pointer" }}
+              onClick={handleClickOpen}
+            />
+
             <Dialog
               open={open}
               onClose={handleClose}
@@ -99,6 +116,7 @@ function AdminCard(props) {
                 </Button>
               </DialogActions>
             </Dialog>
+            {Toasty()}
           </div>
         </div>
       </div>

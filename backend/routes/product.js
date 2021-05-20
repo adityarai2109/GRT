@@ -5,7 +5,12 @@ import shortid from 'shortid'
 import path from "path";
 import { fileURLToPath } from "url";
 
-import  { createProduct, getProducts } from '../controllers/product.js'
+import {
+  createProduct,
+  getProducts,
+  deleteProduct,
+  updateProduct,
+} from "../controllers/product.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,4 +35,9 @@ router.post( "/product/create", upload.single('image'),createProduct);
 //router.post("/product/create",  createProduct);
 
 router.get("/allproducts", getProducts)
+
+router.delete("/delete/:id", deleteProduct);
+
+router.put("/editProduct/:id", upload.single("image"), updateProduct);
+
 export default router
