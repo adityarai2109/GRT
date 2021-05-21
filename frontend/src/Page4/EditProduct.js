@@ -1,7 +1,8 @@
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
 import "./EditProduct.css";
 import "tailwindcss/tailwind.css";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
@@ -10,7 +11,7 @@ import { Toast, Toasty } from "./Toasty";
 import Loader from "../CustomJS/Loader";
 
 const EditProduct = (props) => {
-  const { admin } = (props.location && props.location.authenticate) || {};
+  // const { admin } = (props.location && props.location.authenticate) || {};
   // console.log(props);
   // console.log(props.location.authenticate);
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
@@ -20,7 +21,7 @@ const EditProduct = (props) => {
   const [design, setDesign] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();
-  const [imageTitle, setImageTitle] = useState('');
+  const [imageTitle, setImageTitle] = useState("");
   const [image, setImage] = useState({});
   const [bottomLength, setBottomLength] = useState();
   const [duppataLength, setDuppataLength] = useState();
@@ -31,7 +32,7 @@ const EditProduct = (props) => {
 
   useEffect(() => {
     if (props.products.length !== 0) {
-     const  myProduct = props.products.filter(
+      const myProduct = props.products.filter(
         (i) => i._id === props.match.params.id
       )[0];
       setName(myProduct.name);
@@ -44,7 +45,7 @@ const EditProduct = (props) => {
       setTopLength(myProduct.topLength);
       setImageTitle(myProduct.image);
     }
-  }, [props.products]);
+  }, [props.match.params.id, props.products]);
 
   const handleImage = (e) => {
     console.log(e.target.files[0]);
@@ -102,6 +103,7 @@ const EditProduct = (props) => {
         setSuccess(false);
         window.scrollTo(0, 0);
         Toast("success", "Product updated successfully!! ");
+        <Redirect to="/dashboard" />;
       }
     } catch (error) {
       Toast("error", `${error.response}`);
@@ -374,7 +376,7 @@ const EditProduct = (props) => {
                               />
                             </div>
                             {!imgUpload ? (
-                              imageTitle !== '' ? (
+                              imageTitle !== "" ? (
                                 <img
                                   style={{
                                     minHeight: "40vh",
@@ -390,7 +392,7 @@ const EditProduct = (props) => {
                             {/* {console.log(image)} */}
                             {/* IMAGE NAME */}
                             {!imgUpload ? (
-                              imageTitle !== '' ? (
+                              imageTitle !== "" ? (
                                 <h2 className="block text-s text-white">
                                   {imageTitle}
                                 </h2>

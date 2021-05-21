@@ -19,7 +19,7 @@ const AddProduct = (props) => {
   // const [material, setMaterial] = useState("");
   // const [design, setDesign] = useState("");
   const [description, setDescription] = useState("");
- // const [price, setPrice] = useState();
+  // const [price, setPrice] = useState();
   const [image, setImage] = useState({});
   // const [bottomLength, setDottomLength] = useState();
   // const [duppataLength, setDuppataLength] = useState();
@@ -61,9 +61,7 @@ const AddProduct = (props) => {
     //   }
     // }
 
-   
-
-   // console.log(values);
+    // console.log(values);
     // try {
     //   const res = await axios.post(`${baseUrl}/product/create`, productForm);
     //   if (res.status === 200) {

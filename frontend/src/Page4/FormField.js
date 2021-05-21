@@ -34,7 +34,7 @@ export default function FormField(props) {
     if (props.label === "Top Length") return topLength;
   };
 
-   const values = {
+  const values = {
     name,
     material,
     design,
@@ -43,9 +43,9 @@ export default function FormField(props) {
     duppataLength,
     price,
   };
-  console.log(values)
+  console.log(values);
   return (
-    <div className="grid grid-cols-3 gap-6" >
+    <div className="grid grid-cols-3 gap-6">
       <div className="col-span-3">
         <label htmlFor="product_name" className="block text-lg text-white">
           {props.label}

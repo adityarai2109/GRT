@@ -16,190 +16,178 @@ import DesignerHeading from "../homePage/DesignerHeading";
 import FOF from "../fof/fof";
 
 const MainProduct = (props) => {
-    const Cardarray = props.products;
-    console.log(Cardarray[Cardarray.length - 1]);
-    const imgUrl = process.env.REACT_APP_API_URL;
-    let id = props.match.params.ida; // isko int me convert krna tha
-    // console.log(id);
-    let category = String(props.match.params.category);
-    useEffect(() => {
-        document.documentElement.scrollTo(0, 0);
-    }, []);
+  const Cardarray = props.products;
+  console.log(Cardarray[Cardarray.length - 1]);
+  const imgUrl = process.env.REACT_APP_API_URL;
+  let id = props.match.params.ida; // isko int me convert krna tha
+  // console.log(id);
+  let category = String(props.match.params.category);
+  useEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, []);
 
-    if (
-        Cardarray.filter(
-            (categCard) =>
-                categCard.category.toLowerCase() === category.toLowerCase() &&
-                categCard._id === id
-        ).length === 0 &&
-        Cardarray.length !== 0
-    )
-        return (
-            <div>
-                <FOF />
-            </div>
-        );
-    else
-        return (
-            <div>
-                <Navbar
-                    isDarkMode={props.isDarkMode}
-                    setIsDarkMode={props.setIsDarkMode}
-                    query={props.query}
-                    setQuery={props.setQuery}
+  if (
+    Cardarray.filter(
+      (categCard) =>
+        categCard.category.toLowerCase() === category.toLowerCase() &&
+        categCard._id === id
+    ).length === 0 &&
+    Cardarray.length !== 0
+  )
+    return (
+      <div>
+        <FOF />
+      </div>
+    );
+  else
+    return (
+      <div>
+        <Navbar
+          isDarkMode={props.isDarkMode}
+          setIsDarkMode={props.setIsDarkMode}
+          query={props.query}
+          setQuery={props.setQuery}
+        />
+        <div>
+          {Cardarray.length !== 0 ? (
+            <div className="page3_content">
+              <div className="product_image">
+                <ZoomDecide
+                  image={`${imgUrl}/upload/${
+                    Cardarray.find(
+                      (x) => x._id === id && x.category === category
+                    ).image
+                  }`}
                 />
-                <div>
-                    {Cardarray.length !== 0 ? (
-                        <div className="page3_content">
-                            <div className="product_image">
-                                <ZoomDecide
-                                    image={`${imgUrl}/upload/${
-                                        Cardarray.find(
-                                            (x) =>
-                                                x._id === id &&
-                                                x.category === category
-                                        ).image
-                                    }`}
-                                />
-                            </div>
-                            <div
-                                style={{
-                                    background: props.isDarkMode
-                                        ? "white"
-                                        : "black",
-                                }}
-                                className="partition"
-                            ></div>
-                            <div className="product_desc">
-                                <h1 className="title">
-                                    {Cardarray.find((x) => x._id === id).name}
-                                </h1>
-                                <div className="rate">
-                                    <Rating
-                                        name="size-large"
-                                        defaultValue={2}
-                                        size="large"
-                                        rating={5}
-                                    />
-                                </div>
-                                <p className="desc">
-                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Design : </span>
-                                    {Cardarray.find((x) => x._id === id).design}
-                                </p>
-                                <p className="desc">
-                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Material : </span>
-                                    {
-                                        Cardarray.find((x) => x._id === id)
-                                            .material
-                                    }
-                                </p>
-                                <p className="desc">
-                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Top Length : </span>
-                                    {
-                                        Cardarray.find((x) => x._id === id)
-                                            .topLength
-                                    }
-                                </p>
-                                <p className="desc">
-                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Duppata Length : </span>
-                                    {
-                                        Cardarray.find((x) => x._id === id)
-                                            .duppataLength
-                                    }
-                                </p>
-                                <p className="desc">
-                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Bottom Length : </span>
-                                    {
-                                        Cardarray.find((x) => x._id === id)
-                                            .bottomLength
-                                    }
-                                </p>
-                                <p className="desc">
-                                    <span style={{fontWeight:"800", fontFamily:"Poppins",}}>Description : </span>
-                                    {
-                                        Cardarray.find((x) => x._id === id)
-                                            .description
-                                    }
-                                </p>
-                                <div className="p_price">
-                                    <span className="dis_price">
-                                        {"₹ " +
-                                            Cardarray.find((x) => x._id === id)
-                                                .price}
-                                    </span>
-                                    <span className="org_price">
-                                        {"₹ " +
-                                            (Math.round(
-                                                parseInt(
-                                                    1.2 *
-                                                        Cardarray.find(
-                                                            (x) => x._id === id
-                                                        ).price
-                                                ) / 100
-                                            ) *
-                                                100 -
-                                                1)}
-                                    </span>
-                                </div>
+              </div>
+              <div
+                style={{
+                  background: props.isDarkMode ? "white" : "black",
+                }}
+                className="partition"
+              ></div>
+              <div className="product_desc">
+                <h1 className="title">
+                  {Cardarray.find((x) => x._id === id).name}
+                </h1>
+                <div className="rate">
+                  <Rating
+                    name="size-large"
+                    defaultValue={2}
+                    size="large"
+                    rating={5}
+                  />
+                </div>
+                <p className="desc">
+                  <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
+                    Design :{" "}
+                  </span>
+                  {Cardarray.find((x) => x._id === id).design}
+                </p>
+                <p className="desc">
+                  <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
+                    Material :{" "}
+                  </span>
+                  {Cardarray.find((x) => x._id === id).material}
+                </p>
+                <p className="desc">
+                  <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
+                    Top Length :{" "}
+                  </span>
+                  {Cardarray.find((x) => x._id === id).topLength}
+                </p>
+                <p className="desc">
+                  <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
+                    Duppata Length :{" "}
+                  </span>
+                  {Cardarray.find((x) => x._id === id).duppataLength}
+                </p>
+                <p className="desc">
+                  <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
+                    Bottom Length :{" "}
+                  </span>
+                  {Cardarray.find((x) => x._id === id).bottomLength}
+                </p>
+                <p className="desc">
+                  <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
+                    Description :{" "}
+                  </span>
+                  {Cardarray.find((x) => x._id === id).description}
+                </p>
+                <div className="p_price">
+                  <span className="dis_price">
+                    {"₹ " + Cardarray.find((x) => x._id === id).price}
+                  </span>
+                  <span className="org_price">
+                    {"₹ " +
+                      (Math.round(
+                        parseInt(
+                          1.2 * Cardarray.find((x) => x._id === id).price
+                        ) / 100
+                      ) *
+                        100 -
+                        1)}
+                  </span>
+                </div>
 
-                                <div className="whatsappus">
-                                    <a
-                                        href="https://wa.me/918076609847"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="whatsapp-anchor-tag"
-                                    >
-                                        <img
-                                            className="whatsappicon"
-                                            src={whatsappicon}
-                                            alt=""
-                                        ></img>
-                                        <span className="whatsappnum">
-                                            <p>Whatsapp us </p>
-                                        </span>
-                                    </a>
-                                </div>
+                <div className="whatsappus">
+                  <a
+                    href="https://wa.me/918076609847"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whatsapp-anchor-tag"
+                  >
+                    <img
+                      className="whatsappicon"
+                      src={whatsappicon}
+                      alt=""
+                    ></img>
+                    <span className="whatsappnum">
+                      <p>Whatsapp us </p>
+                    </span>
+                  </a>
+                </div>
 
-                                {/* <div className="buttons1">
+                {/* <div className="buttons1">
                             <PurpleButton line1="Add to Wishlist" />
                         </div>
                         <PurpleButton
                             line1="Whatsapp us on:"
                             line2="+91 9876543210"
                         /> */}
-                            </div>
-                        </div>
-                    ) : (
-                        <Loader isDarkMode={props.isDarkMode} />
-                    )}
-
-                    <Link to="/Suit">
-                        <Button
-                            variant="outlined"
-                            style={{
-                                background: "white",
-                                fontFamily: "Poppins",
-                                fontWeight: "bold",
-                                border: "1px solid #393E46",
-                            }}
-                        >
-                            {/* <SearchIcon /> */}
-                            <img
-                                className="hpvmi"
-                                src={props.isDarkMode ? viewMoreDark : viewMore}
-                                style={{ height: "2rem" }}
-                                alt=""
-                            />
-
-                            <p className="hpvmp">View more products</p>
-                        </Button>
-                    </Link>
-                </div>
-                <DesignerHeading name="Contacts" />
-                <Info />
-                <Footer />
+              </div>
             </div>
-        );
+          ) : (
+            <Loader isDarkMode={props.isDarkMode} />
+          )}
+
+          <Link to="/Suit">
+            <Button
+              variant="outlined"
+              style={{
+                background: "white",
+                fontFamily: "Poppins",
+                fontWeight: "bold",
+                border: "1px solid #393E46",
+              }}
+            >
+              {/* <SearchIcon /> */}
+              <img
+                className="hpvmi"
+                src={props.isDarkMode ? viewMoreDark : viewMore}
+                style={{ height: "2rem" }}
+                alt=""
+              />
+
+              <p className="hpvmp">View more products</p>
+            </Button>
+          </Link>
+        </div>
+        <DesignerHeading name="Contacts" />
+        <Info />
+        <Footer />
+      </div>
+    );
 };
 
 export default MainProduct;

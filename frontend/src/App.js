@@ -27,7 +27,6 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
-  // const imgUrl = "http://localhost:5000";
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -35,34 +34,22 @@ function App() {
       try {
         if (res.status === 200) {
           setProducts(res.data);
-          console.log(res.data);
         }
       } catch (error) {
         console.log("error : ", error);
       }
     };
     fetchProducts();
+  }, [baseUrl]);
+
+  useEffect(() => {
+    document.documentElement.scrollTo(0, 0);
   }, []);
-
-  useEffect(() => {
-    // console.log(query);
-  }, [query]);
-
-  useEffect(() => {
-    console.log("dark");
-    console.log(products);
-  }, [isDarkMode]);
 
   return (
     <div className={`App ${isDarkMode ? `dark` : null}`}>
-      {/* <img src="localhost"></img> */}
       <Router>
         <Switch>
-          <Route exact path="/checkout">
-            <CtaDecide />
-            <h1>Checkout</h1>
-          </Route>
-
           <Route exact path="/dashboard">
             <Navbar
               isDarkMode={isDarkMode}
@@ -123,7 +110,6 @@ function App() {
             )}
           />
 
-          {/* </Route> */}
           {/* Page 2 */}
           <Route
             path="/:category"
@@ -176,25 +162,6 @@ function App() {
               <CtaDecide />
             </div>
             {/* <Header /> */}
-
-            {/* {products.length > 0
-              ? products.map((product) => {
-                return (
-                  <div>
-                  <img
-                  src={`${imgUrl}/upload/${product.image}`}
-                  key={product._id}
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    margin: "auto",
-                  }}
-                  />
-                  <h1>{product.name}</h1>
-                  </div>
-                  );
-                })
-              : null} */}
 
             <DesignerHeading name="Trending" />
             {products.length !== 0 ? (

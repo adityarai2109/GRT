@@ -7,10 +7,7 @@ function Listing(props) {
     <div className="images_row">
       <Link to={`/${props.category}/${props.id}`}>
         <img src={props.image} className="cloth_image" alt="Suit"></img>
-        <PurpleButton
-          line1= {props.title}
-          line2={`₹ ${props.price}`}
-        />
+        <PurpleButton line1={props.title} line2={`₹ ${props.price}`} />
       </Link>
     </div>
   );

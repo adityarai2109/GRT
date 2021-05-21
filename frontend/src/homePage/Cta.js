@@ -42,8 +42,10 @@ function Cta() {
               fontSize="large"
               onClick={() => {
                 document.getElementById("hscroll").scrollIntoView(true);
-                scrollToJustAbove(document.getElementById("hscroll"), document.getElementById("searchbar").offsetHeight)
-                
+                scrollToJustAbove(
+                  document.getElementById("hscroll"),
+                  document.getElementById("searchbar").offsetHeight
+                );
               }}
             />
           </div>

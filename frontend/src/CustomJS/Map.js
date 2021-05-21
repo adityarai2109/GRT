@@ -5,14 +5,14 @@ import "../CustomJS/Map.css";
 function myMap() {
   return (
     <GoogleMap
-      defaultZoom={19}
+      defaultZoom={18.5}
       defaultCenter={{ lat: 28.6582875, lng: 77.1562953 }}
     />
   );
 }
 
 const WrappedMap = withScriptjs(withGoogleMap(myMap));
-
+//
 export default function Map() {
   let apiUrl =
     `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=` +

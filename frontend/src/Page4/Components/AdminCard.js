@@ -31,7 +31,7 @@ function AdminCard(props) {
       const res = await axios.delete(`${deleteUrl}/${props.id}`);
       if (res.status === 200) {
         history.push("/dashboard");
-        console.log("deleted")
+        console.log("deleted");
       }
     } catch (error) {
       Toast("error", `${error.response}`);

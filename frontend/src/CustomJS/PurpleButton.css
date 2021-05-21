@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size:1.1rem;
+  font-size: 1.1rem;
   font-family: Poppins;
   font-weight: 600;
 }
@@ -26,37 +26,37 @@
   justify-content: center;
 }
 
-.image_title{
+.image_title {
   vertical-align: text-top;
-  white-space: nowrap; 
-  width: 200px; 
+  white-space: nowrap;
+  width: 200px;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
-@media (max-width : 540px) {
+@media (max-width: 540px) {
   .price_tag {
     width: 160px;
     height: 50px;
   }
-  .image_title{
+  .image_title {
     width: 150px;
   }
-  .content{
+  .content {
     font-size: 0.8rem;
     /* font-weight: 600; */
   }
 }
 
-@media (max-width : 380px) {
+@media (max-width: 380px) {
   .price_tag {
     width: 150px;
     height: 50px;
   }
-  .image_title{
+  .image_title {
     width: 145px;
   }
-  .content{
+  .content {
     font-size: 0.8rem;
     /* font-weight: 600; */
   }

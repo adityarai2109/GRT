@@ -1,4 +1,4 @@
-import imageArray from "../images/images";
+import imageArray from "../../images/images";
 const img = imageArray[5];
 let Cardarray = [
   {

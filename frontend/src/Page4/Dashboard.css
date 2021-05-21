@@ -1,5 +1,6 @@
 .dashboard {
-    font-family: Poppins;
+  min-height: 80vh;
+  font-family: Poppins;
 }
 .addContainer {
   width: 75vw;

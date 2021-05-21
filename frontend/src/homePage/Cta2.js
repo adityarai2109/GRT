@@ -36,10 +36,12 @@ function Cta2() {
           <ArrowDropDownIcon
             fontSize="large"
             onClick={() => {
-                document.getElementById("hscroll").scrollIntoView(true);
-                scrollToJustAbove(document.getElementById("hscroll"), document.getElementById("searchbar").offsetHeight)
-                
-              }}
+              document.getElementById("hscroll").scrollIntoView(true);
+              scrollToJustAbove(
+                document.getElementById("hscroll"),
+                document.getElementById("searchbar").offsetHeight
+              );
+            }}
           />
         </div>
         <img

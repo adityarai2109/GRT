@@ -8,33 +8,35 @@ import Loader from "../CustomJS/Loader";
 import "./Card.css";
 
 function Card(props) {
-  console.log(props);
   const imgUrl = process.env.REACT_APP_API_URL;
   const Cardarray = props.products;
 
   return (
     <div>
       <div>
-        <div className="product_card"> {/*styles in productList.css*/}
-          {Cardarray !== undefined
-            ? Cardarray.sort(() => 0.5 - Math.random())
-                .slice(0, 4)
-                .sort(() => 0.5 - Math.random())
-                .map((card) => {
-                  return (
-                    <div>
-                      <Listing
-                        id={card._id}
-                        image={`${imgUrl}/upload/${card.image}`}
-                        title={card.name}
-                        price={card.price}
-                        category={card.category}
-                      />
-                      {console.log(card.image)}
-                    </div>
-                  );
-                })
-            : <Loader />}
+        <div className="product_card">
+          {" "}
+          {/*styles in productList.css*/}
+          {Cardarray !== undefined ? (
+            Cardarray.sort(() => 0.5 - Math.random())
+              .slice(0, 4)
+              .sort(() => 0.5 - Math.random())
+              .map((card) => {
+                return (
+                  <div>
+                    <Listing
+                      id={card._id}
+                      image={`${imgUrl}/upload/${card.image}`}
+                      title={card.name}
+                      price={card.price}
+                      category={card.category}
+                    />
+                  </div>
+                );
+              })
+          ) : (
+            <Loader />
+          )}
         </div>
         <Link to="/Suit">
           <Button

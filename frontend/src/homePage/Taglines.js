@@ -17,10 +17,12 @@ export default function Taglines() {
                 Customer satisfaction is our top priority
               </h2>
               <p className="tagline-text leading-relaxed text-justify text-center text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                maxime inventore minima quam officia expedita, tempora non
-                repellendus quod rem aspernatur est deserunt cumque ea ut et
-                itaque quibusdam molestias?
+                We believe in "Make a customer, not a sale!". Satisfied
+                customers are our best source of advertisement. Customers trust
+                a brand that never compromises on the quality of the products
+                they use and the services they provide to fulfil. To move ahead,
+                this is the vital step for us to take in order to build our
+                solid brand name and a loyal client base.
               </p>
             </div>
           </div>
@@ -33,10 +35,9 @@ export default function Taglines() {
                 Fast delivery ensured
               </h2>
               <p className="tagline-text leading-relaxed text-justify text-center text-base pr-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                molestiae expedita ullam iste inventore, placeat, incidunt ea id
-                itaque repudiandae accusantium asperiores molestias aspernatur
-                reprehenderit cupiditate recusandae adipisci ipsum illo?nte
+                We hire professionals for deliveries and try our best to ensure
+                that our high quality products are delivered to your doorstep as
+                soon as possible. We deliver all across INDIA 🇮🇳.
               </p>
             </div>
           </div>
@@ -46,13 +47,14 @@ export default function Taglines() {
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="tagline-heading text-gray-900 text-center text-2xl title-font font-medium mb-2">
-                No compromise with the Quality of our Product
+                No compromise with the quality of our product
               </h2>
               <p className=" tagline-text leading-relaxed text-justify text-center text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat, quidem quo. Odit officia, quae rerum tenetur provident
-                iusto dicta expedita deleniti, tempore atque fugit illo. Saepe
-                ratione numquam magnam commodi?
+                Our Suits at Gangaram Textiles are made with the best quality
+                and highest grade of perfection. They are comfortable as well as
+                soft on the skin. These suits are made keeping our customers
+                comfort and preference in mind. They are fresh, trendy,
+                fashionable and make a great fashion statement.
               </p>
             </div>
           </div>

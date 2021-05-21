@@ -128,5 +128,9 @@
   .f-address,
   .f-contacts {
     width: 100%;
+    padding: 1rem;
+  }
+  .f-feedback {
+    padding: 1rem;
   }
 }
