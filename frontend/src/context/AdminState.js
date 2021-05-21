@@ -4,15 +4,13 @@ import { createContext } from "react";
 
 export const AdminContext = createContext();
 
-   //  const adminData =  false
-  //  localStorage.getItem("isAdmin")
- // ? JSON.parse(localStorage.getItem("isAdmin"))
-// : [];
-  
+const adminStatus = localStorage.getItem("isAdmin")
+  ? JSON.parse(localStorage.getItem("isAdmin"))
+  : false;
+
 const AdminState = (props) => {
- 
   const intialState = {
-     isAdmin: false
+    isAdmin: adminStatus,
   };
 
   const [state, dispatch] = useReducer(adminReducer, intialState);
@@ -33,14 +31,14 @@ const AdminState = (props) => {
     });
   };
 
-  console.log(state)
+  console.log(state);
 
   return (
     <AdminContext.Provider
       value={{
         isAdmin: state.isAdmin,
         signIn,
-        signOut 
+        signOut,
       }}
     >
       {props.children}

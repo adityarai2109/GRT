@@ -1,7 +1,6 @@
 import {User} from '../models/userModel.js'
 import axios from 'axios'
-
-
+import generateToken from "../config/generateToken.js"
 import bcrypt from 'bcryptjs'
 
 
@@ -29,6 +28,7 @@ export const  signup = (req, res) => {
         if (error) {
           return res.status(400).json({
             message: "Something went wrong",
+           
           });
         }
 
@@ -38,6 +38,7 @@ export const  signup = (req, res) => {
         //console.log(data)
           return res.status(201).json({
             message: `${role} created Successfully..!`,
+            token: generateToken(_user._id),
           });
         }
       });

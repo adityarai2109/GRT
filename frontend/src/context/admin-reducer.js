@@ -1,16 +1,14 @@
-
 let newState = {};
 
 const adminReducer = (state, action) => {
-
   switch (action.type) {
     case "ADMIN_SIGN_IN":
       newState = {
         ...state,
-        isAdmin: action.payload
+        isAdmin: action.payload,
       };
-      // localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
-      console.log(newState)
+      localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
+      //console.log(newState)
       return newState;
 
     case "ADMIN_SIGN_OUT":
@@ -18,8 +16,8 @@ const adminReducer = (state, action) => {
         ...state,
         isAdmin: action.payload,
       };
-      // localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
-      console.log(newState);
+      localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
+      // console.log(newState);
       return newState;
 
     default:
