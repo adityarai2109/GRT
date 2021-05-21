@@ -1,18 +1,29 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Route, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
 import AdminCard from "./Components/AdminCard";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import { Link } from "react-router-dom";
-import Loader from "../CustomJS/Loader";
+import { AdminContext } from '../context/AdminState'
 
 function Dashboard(props) {
   const imgUrl = process.env.REACT_APP_API_URL;
-  console.log(props);
+  const {signOut} = useContext(AdminContext)
+  //console.log(imgUrl);
+   let history = useHistory();
+ 
+   const handleSignOut = () => {
+          signOut()
+        history.push(`/login`);
+   }
+
   return (
     <>
       <div className="dashboard">
         <div>
           <div className="addContainer">
+            <button onClick = {handleSignOut} > signOut </button>
             <Link to="/addProduct">
               <button className="add">
                 Add Product <AddCircleOutlineOutlinedIcon fontSize="small" />

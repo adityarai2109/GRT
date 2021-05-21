@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
+import { Redirect } from 'react-router-dom';
 import axios from "axios";
 import { Toast, Toasty } from "./Toasty";
 import { useHistory } from "react-router-dom";
-// import AddProduct from "./AddProduct";
+import { AdminContext } from "../context/AdminState";
 
 function Login(props) {
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
+  const {signIn,isAdmin} = useContext(AdminContext)
   let history = useHistory();
-  console.log(history);
+ // console.log(history);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authenticate, setAuthenticate] = useState({
@@ -22,20 +24,9 @@ function Login(props) {
       const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
       if (res.status === 200) {
         console.log("admin logged in");
+        signIn()
+         history.push(`/dashboard`);
 
-        setAuthenticate((prevState) => ({
-          ...prevState,
-          admin: true,
-        }));
-
-        console.log(authenticate);
-
-        history.push({
-          pathname: "/addProduct",
-          authenticate,
-        });
-
-        // window.scrollTo(0, 0);
       }
     } catch (error) {
       //console.log(error.response);

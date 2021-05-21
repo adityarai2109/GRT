@@ -14,12 +14,13 @@ import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
 import EditProduct from "./Page4/EditProduct";
-// import AddProduct2 from "./Page4/AddProduct2";
+import PrivateRoute from './HOC/PrivateRoute'
 import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
 import Dashboard from "./Page4/Dashboard";
 import FOF from "./fof/fof";
+import AdminState from './context/AdminState'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -48,160 +49,197 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? `dark` : null}`}>
-      <Router>
-        <Switch>
-          <Route exact path="/dashboard">
-            <Navbar
-              isDarkMode={isDarkMode}
-              setIsDarkMode={setIsDarkMode}
-              query={query}
-              setQuery={setQuery}
-            />
-            <Dashboard isDarkMode={isDarkMode} products={products} />
-            <Footer />
-          </Route>
-          {/* page 4 */}
-          <Route exact path="/login">
-            <Navbar
-              isDarkMode={isDarkMode}
-              setIsDarkMode={setIsDarkMode}
-              query={query}
-              setQuery={setQuery}
-            />
-            <Login />
-            <Footer />
-          </Route>
-          <Route
-            exact
-            path="/addProduct"
-            render={(props) => (
-              <>
-                <Navbar
-                  isDarkMode={isDarkMode}
-                  setIsDarkMode={setIsDarkMode}
-                  query={query}
-                  setQuery={setQuery}
-                />
-                <AddProduct {...props} />
-                {/* <AddProduct2 {...props} /> */}
-                <Footer />
-              </>
-            )}
-          />
-          <Route
-            exact
-            path="/editProduct/:id"
-            render={(props) => (
-              <>
-                <Navbar
-                  isDarkMode={isDarkMode}
-                  setIsDarkMode={setIsDarkMode}
-                  query={query}
-                  setQuery={setQuery}
-                />
-                <EditProduct
-                  {...props}
-                  isDarkMode={isDarkMode}
-                  products={products}
-                  setProducts={setProducts}
-                />
-                <Footer />
-              </>
-            )}
-          />
-
-          {/* Page 2 */}
-          <Route
-            path="/:category"
-            exact
-            render={(props) => (
-              <>
-                <ProductList
-                  {...props}
-                  query={query}
-                  setQuery={setQuery}
-                  isDarkMode={isDarkMode}
-                  setIsDarkMode={setIsDarkMode}
-                  products={products}
-                />
-              </>
-            )}
-          />
-          {/* Page 3 */}
-          <Route
-            path="/:category/:ida"
-            exact
-            render={(props) => (
-              <>
-                <MainProduct
-                  {...props}
-                  isDarkMode={isDarkMode}
-                  setIsDarkMode={setIsDarkMode}
-                  products={products}
-                  setProducts={setProducts}
-                  query={query}
-                  setQuery={setQuery}
-                />
-              </>
-            )}
-          />
-          {/* Main Page */}
-          <Route path="/" exact>
-            <Navbar
-              isDarkMode={isDarkMode}
-              setIsDarkMode={setIsDarkMode}
-              query={query}
-              setQuery={setQuery}
-            />
-            <div
-              style={{
-                width: "100%",
-                zIndex: "-1",
-              }}
-            >
+      {/* <img src="localhost"></img> */}
+      <AdminState>
+        <Router>
+          <Switch>
+            <Route exact path="/checkout">
               <CtaDecide />
-            </div>
-            {/* <Header /> */}
+              <h1>Checkout</h1>
+            </Route>
 
-            <DesignerHeading name="Trending" />
-            {products.length !== 0 ? (
-              <Card isDarkMode={isDarkMode} products={products} />
-            ) : (
-              <Loader isDarkMode={isDarkMode} />
-            )}
+            {/* page 4 */}
 
-            <DesignerHeading name="All Collections" />
-            {products.length !== 0 ? (
-              <Card isDarkMode={isDarkMode} products={products} />
-            ) : (
-              <Loader isDarkMode={isDarkMode} />
-            )}
-            <DesignerHeading name="Latest collections" />
-            {products.length !== 0 ? (
-              <Card isDarkMode={isDarkMode} products={products} />
-            ) : (
-              <Loader isDarkMode={isDarkMode} />
-            )}
-            {/* <DesignerHeading name="Featured Category" /> */}
-            {/* <Card /> */}
-            {/* <Grid /> */}
-            {/* <DesignerHeading name="Latest Collection" /> */}
-            {/* <Gallery /> */}
-            <DesignerHeading name="Commitments" />
-            <Taglines />
-            {/* <DesignerHeading name="Testimonials" /> */}
-            {/* <Testimonials /> */}
-            {/* <Contact /> */}
-            <DesignerHeading name="Contacts" />
-            <Zoom>
-              <Info />
-            </Zoom>
-            <Footer />
-            {/* <Loader /> */}
-          </Route>
-          <Route component={FOF} />
-        </Switch>
-      </Router>
+            <PrivateRoute
+              exact
+              path="/dashboard"
+              render = {(props) =>
+                <>
+                  <Navbar
+                    isDarkMode={isDarkMode}
+                    setIsDarkMode={setIsDarkMode}
+                    query={query}
+                    setQuery={setQuery}
+                  />
+                  <Dashboard isDarkMode={isDarkMode} products={products} />
+                  <Footer />
+                </>
+              }
+            />
+
+            <Route exact path="/login">
+              <Navbar
+                isDarkMode={isDarkMode}
+                setIsDarkMode={setIsDarkMode}
+                query={query}
+                setQuery={setQuery}
+              />
+              <Login />
+              <Footer />
+            </Route>
+
+            <PrivateRoute
+              exact
+              path="/addProduct"
+              render = { (props) =>
+                <>
+                  <Navbar
+                    isDarkMode={isDarkMode}
+                    setIsDarkMode={setIsDarkMode}
+                    query={query}
+                    setQuery={setQuery}
+                  />
+                  <AddProduct />
+                  <Footer />
+                </>
+              }
+            />
+
+            <PrivateRoute
+              exact
+              path="/editProduct/:id"
+              render = {(props) =>
+                <>
+                  <Navbar
+                    isDarkMode={isDarkMode}
+                    setIsDarkMode={setIsDarkMode}
+                    query={query}
+                    setQuery={setQuery}
+                  />
+                  <EditProduct
+                    isDarkMode={isDarkMode}
+                    products={products}
+                    setProducts={setProducts}
+                    {...props}
+                  />
+                  <Footer />
+                </>
+              }
+            />
+
+            {/* </Route> */}
+            {/* Page 2 */}
+            <Route
+              path="/:category"
+              exact
+              render={(props) => (
+                <>
+                  <ProductList
+                    {...props}
+                    query={query}
+                    setQuery={setQuery}
+                    isDarkMode={isDarkMode}
+                    setIsDarkMode={setIsDarkMode}
+                    products={products}
+                  />
+                </>
+              )}
+            />
+            {/* Page 3 */}
+            <Route
+              path="/:category/:ida"
+              exact
+              render={(props) => (
+                <>
+                  <MainProduct
+                    {...props}
+                    isDarkMode={isDarkMode}
+                    setIsDarkMode={setIsDarkMode}
+                    products={products}
+                    setProducts={setProducts}
+                    query={query}
+                    setQuery={setQuery}
+                  />
+                </>
+              )}
+            />
+            {/* Main Page */}
+            <Route path="/" exact>
+              <Navbar
+                isDarkMode={isDarkMode}
+                setIsDarkMode={setIsDarkMode}
+                query={query}
+                setQuery={setQuery}
+              />
+              <div
+                style={{
+                  width: "100%",
+                  zIndex: "-1",
+                }}
+              >
+                <CtaDecide />
+              </div>
+              {/* <Header /> */}
+
+              {/* {products.length > 0
+              ? products.map((product) => {
+                return (
+                  <div>
+                  <img
+                  src={`${imgUrl}/upload/${product.image}`}
+                  key={product._id}
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    margin: "auto",
+                  }}
+                  />
+                  <h1>{product.name}</h1>
+                  </div>
+                  );
+                })
+              : null} */}
+
+              <DesignerHeading name="Trending" />
+              {products.length !== 0 ? (
+                <Card isDarkMode={isDarkMode} products={products} />
+              ) : (
+                <Loader isDarkMode={isDarkMode} />
+              )}
+
+              <DesignerHeading name="All Collections" />
+              {products.length !== 0 ? (
+                <Card isDarkMode={isDarkMode} products={products} />
+              ) : (
+                <Loader isDarkMode={isDarkMode} />
+              )}
+              <DesignerHeading name="Latest collections" />
+              {products.length !== 0 ? (
+                <Card isDarkMode={isDarkMode} products={products} />
+              ) : (
+                <Loader isDarkMode={isDarkMode} />
+              )}
+              {/* <DesignerHeading name="Featured Category" /> */}
+              {/* <Card /> */}
+              {/* <Grid /> */}
+              {/* <DesignerHeading name="Latest Collection" /> */}
+              {/* <Gallery /> */}
+              <DesignerHeading name="Commitments" />
+              <Taglines />
+              {/* <DesignerHeading name="Testimonials" /> */}
+              {/* <Testimonials /> */}
+              {/* <Contact /> */}
+              <DesignerHeading name="Contacts" />
+              <Zoom>
+                <Info />
+              </Zoom>
+              <Footer />
+              {/* <Loader /> */}
+            </Route>
+            <Route component={FOF} />
+          </Switch>
+        </Router>
+      </AdminState>
     </div>
   );
 }
