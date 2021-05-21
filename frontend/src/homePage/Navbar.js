@@ -63,7 +63,7 @@ export default function Navbar(props) {
             <Button
               // style={{"height":"5vh"}}
               component={Link}
-              to={`/Suit`}
+              to={props.private === "private" ? `/Dashboard` : `/Suit`}
             >
               <img
                 src={iSearch}

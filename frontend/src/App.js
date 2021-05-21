@@ -25,6 +25,7 @@ import AdminState from './context/AdminState'
 function App() {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
+  const [Privatequery, setPrivatequery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
@@ -68,10 +69,12 @@ function App() {
                   <Navbar
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    query={query}
-                    setQuery={setQuery}
+                    query={Privatequery}
+                    setQuery={setPrivatequery}
+                    private = "private"
                   />
-                  <Dashboard isDarkMode={isDarkMode} products={products} />
+                  <Dashboard isDarkMode={isDarkMode} products={products} query={Privatequery}
+                    setQuery={setPrivatequery} />
                   <Footer />
                 </>
               }
@@ -96,8 +99,9 @@ function App() {
                   <Navbar
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    query={query}
-                    setQuery={setQuery}
+                    query={Privatequery}
+                    setQuery={setPrivatequery}
+                    private = "private"
                   />
                   <AddProduct />
                   <Footer />
@@ -113,8 +117,9 @@ function App() {
                   <Navbar
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    query={query}
-                    setQuery={setQuery}
+                    query={Privatequery}
+                    setQuery={setPrivatequery}
+                    private = "private"
                   />
                   <EditProduct
                     isDarkMode={isDarkMode}
