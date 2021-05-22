@@ -14,6 +14,7 @@ const AdminState = (props) => {
   const intialState = {
     isAdmin: adminStatus,
     token: intialToken,
+    isDeleted : false,
   };
 
   const [state, dispatch] = useReducer(adminReducer, intialState);
@@ -36,6 +37,12 @@ const AdminState = (props) => {
     });
   };
 
+  const handleDelete  = () => {
+      dispatch ({
+         type : "ADMIN_PRODUCT_DELETE_SUCCESS"
+      })
+  }
+
   console.log(state);
 
   return (
@@ -43,6 +50,8 @@ const AdminState = (props) => {
       value={{
         isAdmin: state.isAdmin,
         token: state.token,
+        isDeleted : state.isDeleted,
+        handleDelete,
         signIn,
         signOut,
       }}

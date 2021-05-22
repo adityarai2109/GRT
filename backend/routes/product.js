@@ -42,6 +42,8 @@ router.post(
 
 router.get("/allproducts", getProducts)
 
+router.get("/admin/allproducts", protect, admin,  getProducts);
+
 router.delete("/delete/:id", protect, admin, deleteProduct);
 
 router.put("/editProduct/:id", protect, admin, upload.single("image"), updateProduct);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./AdminCard.css";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -12,11 +12,12 @@ import { Link } from "react-router-dom";
 import { Toast, Toasty } from "../Toasty";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { AdminContext } from '../../context/AdminState'
 
 
 function AdminCard(props) {
 
-   const  token  = window.localStorage.getItem("token")
+   const { signOut, token,handleDelete } = useContext(AdminContext);
 
   const [open, setOpen] = React.useState(false);
   const deleteUrl = process.env.REACT_APP_API_URL + "/api/delete";
@@ -41,17 +42,26 @@ function AdminCard(props) {
     try {
       const res = await axios.delete(`${deleteUrl}/${props.id}`, config);
       if (res.status === 200) {
-        history.push("/dashboard");
+       // history.push("/dashboard");
+        //Toast("success", "product deleted !!");
+        handleDelete()
         console.log("deleted");
       }
-       if (res.status() === 500) {
-         Toast("error", `${res.error}`);
-         history.push("/login");
-       }
+       
     } catch (error) {
-      Toast("error", `${error.response}`);
+    setTimeout(() => {
+      //  history.push("/login");
+      signOut();
+    }, 2500);
+
+    window.scrollTo(0, 0);
+
+    error.response
+      ? Toast("error", `${error.response.data.message}`)
+      : Toast("error", "server timeout");
     }
   };
+
   return (
     <>
       <div

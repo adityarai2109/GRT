@@ -83,17 +83,29 @@ const AddProduct = (props) => {
 
         setSuccess(false);
         window.scrollTo(0, 0);
-        Toast("success", "Product added successfully!! ");
-         history.push("/dashboard");
+          setSuccess(false);
+          
+          setTimeout(() => {
+            history.push("/dashboard");
+          }, 2500);
+          window.scrollTo(0, 0);
+          Toast("success", "Product added successfully!! ");
       }
-       if (res.status() === 500) {
-         Toast("error", `${res.error}`);
-           signOut();
-           history.push("/login");
-       }
+   
     } catch (error) {
-      Toast("error", `${error.response}`);
+      
+     setTimeout(() => {
+        //  history.push("/login");
+        signOut();
+      }, 2000);
+     console.log(error)
+      window.scrollTo(0, 0);
+
+      error.response
+        ? Toast("error", `${error.response.data.message}`)
+        : Toast("error", "server timeout");
     }
+    
   };
 
   return (

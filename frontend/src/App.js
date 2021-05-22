@@ -73,7 +73,7 @@ function App() {
                     setQuery={setPrivatequery}
                     private = "private"
                   />
-                  <Dashboard isDarkMode={isDarkMode} products={products} query={Privatequery}
+                  <Dashboard isDarkMode={isDarkMode}  query={Privatequery}
                     setQuery={setPrivatequery} />
                   <Footer />
                 </>

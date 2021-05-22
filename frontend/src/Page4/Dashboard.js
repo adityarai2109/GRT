@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
@@ -7,18 +7,54 @@ import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOut
 import { Link } from "react-router-dom";
 import { AdminContext } from "../context/AdminState";
 import Loader from "../CustomJS/Loader";
+import axios from 'axios'
+import { Toast, Toasty } from "./Toasty";
 
 function Dashboard(props) {
     const imgUrl = process.env.REACT_APP_API_URL;
-    const { signOut } = useContext(AdminContext);
-    //console.log(imgUrl);
-    let history = useHistory();
 
+     const { signOut, isDeleted } = useContext(AdminContext);
+
+    const [products, setProducts] = useState([]);
+
+   
+    
+  useEffect(() => {
+    const fetchProducts = async () => {
+
+     const baseUrl = process.env.REACT_APP_API_URL + "/api";
+     let token = localStorage.getItem("token")
+
+     console.log(token)
+           const config = {
+             headers: {
+               Authorization: token ? `Bearer ${token}` : "",
+             },
+           };
+
+      const res = await axios.get(`${baseUrl}/admin/allproducts`, config);
+           return res
+    }
+
+    //console.log("dasboard")
+        //   if (res.status === 200) {
+        //     console.log("admin dashboard")
+        //   setProducts(res.data);
+        // }
+        
+    setProducts([])
+    fetchProducts()
+      .then((res) => setProducts(res.data))
+      .catch((e) => signOut());
+
+  }, [isDeleted]);
+     
     const handleSignOut = () => {
-        signOut();
-        history.push(`/login`);
+        signOut()
     };
-    const CardArray = props.products;
+
+
+    const CardArray = products;
     var words = props.query.toLowerCase().split(" ");
     var filteredCardArray = {};
     if (CardArray.length !== 0) {
@@ -45,7 +81,7 @@ function Dashboard(props) {
                             </button>
                         </Link>
                     </div>
-                    {props.products.length !== 0 ? (
+                    {products.length !== 0 ? (
                         filteredCardArray
                             .sort(function (a, b) {
                                 let d1 = new Date(a.createdAt).getTime();
@@ -69,6 +105,7 @@ function Dashboard(props) {
                         <Loader isDarkMode={props.isDarkMode} />
                     )}
                 </div>
+                {Toasty()}
             </div>
         </>
     );

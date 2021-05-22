@@ -44,7 +44,7 @@ export const getProducts = async (req, res) => {
 
 export const deleteProduct = async (req, res) => {
   const product = await Product.findById(req.params.id);
-  console.log(product);
+ // console.log(product);
   if (product) {
     await product.remove();
     res.json({ message: "Product removed" });

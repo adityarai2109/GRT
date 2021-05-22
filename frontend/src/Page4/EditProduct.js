@@ -12,7 +12,7 @@ import Loader from "../CustomJS/Loader";
 import { AdminContext } from "../context/AdminState";
 
 const EditProduct = (props) => {
-  const {signOut , token } = useContext(AdminContext);
+  const { signOut, token } = useContext(AdminContext);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
@@ -96,36 +96,28 @@ const EditProduct = (props) => {
       );
       if (res.status === 200) {
         console.log(" updated via :) frontend ");
-        setPreview(false);
-        setImage({});
-        setName("");
-        setMaterial("");
-        setDescription("");
-        setPrice();
-        setDesign("");
-        setBottomLength();
-        setTopLength();
-        setDuppataLength();
-
+        
         setSuccess(false);
+         setTimeout(() => {
+             history.push("/dashboard");
+         
+         }, 2500);
         window.scrollTo(0, 0);
         Toast("success", "Product updated successfully!! ");
-           history.push("/dashboard");
+        
       }
-     
     } catch (error) {
-      // if (res.status() === 500) {
-         setTimeout(() => {
-          //  history.push("/login");
-          signOut();
-         }, 3000);
-          window.scrollTo(0, 0);
-         Toast("error", `token expired`);
-        // console.log(res);
-        // signOut();
-        // history.push("/login");
-       }
-    
+      setTimeout(() => {
+        //  history.push("/login");
+        signOut();
+      }, 2500);
+
+      window.scrollTo(0, 0);
+
+      error.response
+        ? Toast("error", `${error.response.data.message}`)
+        : Toast("error", "server timeout");
+    }
   };
 
   return (
