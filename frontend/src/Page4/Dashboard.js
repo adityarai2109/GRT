@@ -9,8 +9,12 @@ import { AdminContext } from "../context/AdminState";
 import Loader from "../CustomJS/Loader";
 import axios from 'axios'
 import { Toast, Toasty } from "./Toasty";
+import queryString from "query-string";
+import { useLocation } from "react-router";
 
 function Dashboard(props) {
+    const {search} = useLocation();
+    const {q} = queryString.parse(search)
     const imgUrl = process.env.REACT_APP_API_URL;
 
      const { signOut, isDeleted } = useContext(AdminContext);
@@ -52,10 +56,13 @@ function Dashboard(props) {
     const handleSignOut = () => {
         signOut()
     };
-
-
-    const CardArray = products;
-    var words = props.query.toLowerCase().split(" ");
+    const CardArray = props.products;
+      var words;
+    if(q)
+    words = q.toLowerCase().split(" ");
+    else
+    words = " ".toLowerCase().split(" ");
+    
     var filteredCardArray = {};
     if (CardArray.length !== 0) {
         filteredCardArray = CardArray.filter((i) =>

@@ -45,8 +45,6 @@ const MainProduct = (props) => {
         <Navbar
           isDarkMode={props.isDarkMode}
           setIsDarkMode={props.setIsDarkMode}
-          query={props.query}
-          setQuery={props.setQuery}
         />
         <div>
           {Cardarray.length !== 0 ? (

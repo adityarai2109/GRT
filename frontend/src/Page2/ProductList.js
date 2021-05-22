@@ -14,8 +14,12 @@ import viewMoreDark from "../images/file-search-dark.svg";
 import "../homePage/Card.css";
 import Loader from "../CustomJS/Loader";
 import FOF from "../fof/fof";
+import queryString from "query-string";
+import { useLocation } from "react-router";
 
 const ProductList = (props) => {
+  const {search} = useLocation();
+  const {q} = queryString.parse(search)
   const Cardarray = props.products;
   console.log("main");
   console.log(Cardarray);
@@ -34,7 +38,11 @@ const ProductList = (props) => {
     setSortedCategory(newSortedCategory);
   }
 
-  var words = props.query.toLowerCase().split(" ");
+  var words;
+  if(q)
+  words = q.toLowerCase().split(" ");
+  else
+  words = " ".toLowerCase().split(" ");
 
   const filteredCardArray = Cardarray.filter((i) =>
     words.some(
@@ -155,7 +163,6 @@ const ProductList = (props) => {
         <Navbar
           isDarkMode={props.isDarkMode}
           setIsDarkMode={props.setIsDarkMode}
-          query={props.query}
           setQuery={props.setQuery}
         />
         <DesignerHeading name={category} />

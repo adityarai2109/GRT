@@ -24,8 +24,6 @@ import AdminState from './context/AdminState'
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [query, setQuery] = useState("");
-  const [Privatequery, setPrivatequery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
@@ -69,12 +67,9 @@ function App() {
                   <Navbar
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    query={Privatequery}
-                    setQuery={setPrivatequery}
                     private = "private"
                   />
-                  <Dashboard isDarkMode={isDarkMode}  query={Privatequery}
-                    setQuery={setPrivatequery} />
+                  <Dashboard isDarkMode={isDarkMode} products={products}/>
                   <Footer />
                 </>
               }
@@ -84,8 +79,6 @@ function App() {
               <Navbar
                 isDarkMode={isDarkMode}
                 setIsDarkMode={setIsDarkMode}
-                query={query}
-                setQuery={setQuery}
               />
               <Login />
               <Footer />
@@ -99,8 +92,6 @@ function App() {
                   <Navbar
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    query={Privatequery}
-                    setQuery={setPrivatequery}
                     private = "private"
                   />
                   <AddProduct />
@@ -117,8 +108,6 @@ function App() {
                   <Navbar
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    query={Privatequery}
-                    setQuery={setPrivatequery}
                     private = "private"
                   />
                   <EditProduct
@@ -141,8 +130,6 @@ function App() {
                 <>
                   <ProductList
                     {...props}
-                    query={query}
-                    setQuery={setQuery}
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
                     products={products}
@@ -162,8 +149,6 @@ function App() {
                     setIsDarkMode={setIsDarkMode}
                     products={products}
                     setProducts={setProducts}
-                    query={query}
-                    setQuery={setQuery}
                   />
                 </>
               )}
@@ -173,8 +158,6 @@ function App() {
               <Navbar
                 isDarkMode={isDarkMode}
                 setIsDarkMode={setIsDarkMode}
-                query={query}
-                setQuery={setQuery}
               />
               <div
                 style={{
@@ -185,25 +168,6 @@ function App() {
                 <CtaDecide />
               </div>
               {/* <Header /> */}
-
-              {/* {products.length > 0
-              ? products.map((product) => {
-                return (
-                  <div>
-                  <img
-                  src={`${imgUrl}/upload/${product.image}`}
-                  key={product._id}
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    margin: "auto",
-                  }}
-                  />
-                  <h1>{product.name}</h1>
-                  </div>
-                  );
-                })
-              : null} */}
 
               <DesignerHeading name="Trending" />
               {products.length !== 0 ? (

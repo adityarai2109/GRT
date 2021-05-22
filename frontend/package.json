@@ -15,6 +15,7 @@
     "dotenv": "^8.2.0",
     "google-maps-react": "^2.0.6",
     "lodash": "^4.17.21",
+    "query-string": "^7.0.0",
     "react": "^17.0.1",
     "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^17.0.1",
