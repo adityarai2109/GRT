@@ -8,13 +8,13 @@ const adminStatus = localStorage.getItem("isAdmin")
   ? JSON.parse(localStorage.getItem("isAdmin"))
   : false;
 
-const intialToken = localStorage.getItem("token")
+const intialToken = localStorage.getItem("token");
 
 const AdminState = (props) => {
   const intialState = {
     isAdmin: adminStatus,
     token: intialToken,
-    isDeleted : false,
+    isDeleted: false,
   };
 
   const [state, dispatch] = useReducer(adminReducer, intialState);
@@ -37,11 +37,11 @@ const AdminState = (props) => {
     });
   };
 
-  const handleDelete  = () => {
-      dispatch ({
-         type : "ADMIN_PRODUCT_DELETE_SUCCESS"
-      })
-  }
+  const handleDelete = () => {
+    dispatch({
+      type: "ADMIN_PRODUCT_DELETE_SUCCESS",
+    });
+  };
 
   console.log(state);
 
@@ -50,7 +50,7 @@ const AdminState = (props) => {
       value={{
         isAdmin: state.isAdmin,
         token: state.token,
-        isDeleted : state.isDeleted,
+        isDeleted: state.isDeleted,
         handleDelete,
         signIn,
         signOut,

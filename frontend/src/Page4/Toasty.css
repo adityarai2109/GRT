@@ -8,3 +8,10 @@
 .Toastify__toast--error {
   background-color: rgba(237, 67, 55, 0.904);
 }
+
+@media (max-width: 768px) {
+  .Toastify__toast {
+    font-family: "Poppins";
+    margin-top: 2.5rem;
+  }
+}

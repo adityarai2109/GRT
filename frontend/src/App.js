@@ -14,13 +14,14 @@ import Taglines from "./homePage/Taglines";
 import Zoom from "react-reveal/Zoom";
 import AddProduct from "./Page4/AddProduct";
 import EditProduct from "./Page4/EditProduct";
-import PrivateRoute from './HOC/PrivateRoute'
+import PrivateRoute from "./HOC/PrivateRoute";
 import Login from "./Page4/Login";
 import ProductList from "./Page2/ProductList";
 import MainProduct from "./Page3/MainProduct";
 import Dashboard from "./Page4/Dashboard";
 import FOF from "./fof/fof";
-import AdminState from './context/AdminState'
+import AdminState from "./context/AdminState";
+import AdminNav from "./homePage/AdminNav";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -62,24 +63,21 @@ function App() {
             <PrivateRoute
               exact
               path="/dashboard"
-              render = {(props) =>
+              render={(props) => (
                 <>
-                  <Navbar
+                  <AdminNav
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    private = "private"
                   />
+
                   <Dashboard isDarkMode={isDarkMode} />
                   <Footer />
                 </>
-              }
+              )}
             />
 
             <Route exact path="/login">
-              <Navbar
-                isDarkMode={isDarkMode}
-                setIsDarkMode={setIsDarkMode}
-              />
+              <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
               <Login />
               <Footer />
             </Route>
@@ -87,28 +85,26 @@ function App() {
             <PrivateRoute
               exact
               path="/addProduct"
-              render = { (props) =>
+              render={(props) => (
                 <>
-                  <Navbar
+                  <AdminNav
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    private = "private"
                   />
                   <AddProduct />
                   <Footer />
                 </>
-              }
+              )}
             />
 
             <PrivateRoute
               exact
               path="/editProduct/:id"
-              render = {(props) =>
+              render={(props) => (
                 <>
-                  <Navbar
+                  <AdminNav
                     isDarkMode={isDarkMode}
                     setIsDarkMode={setIsDarkMode}
-                    private = "private"
                   />
                   <EditProduct
                     isDarkMode={isDarkMode}
@@ -118,7 +114,7 @@ function App() {
                   />
                   <Footer />
                 </>
-              }
+              )}
             />
 
             {/* </Route> */}
@@ -155,10 +151,7 @@ function App() {
             />
             {/* Main Page */}
             <Route path="/" exact>
-              <Navbar
-                isDarkMode={isDarkMode}
-                setIsDarkMode={setIsDarkMode}
-              />
+              <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
               <div
                 style={{
                   width: "100%",

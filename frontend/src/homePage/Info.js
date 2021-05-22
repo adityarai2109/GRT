@@ -21,8 +21,9 @@ export default function Info() {
                 />
               </div>
               <p>Gangaram Textiles</p>
-              <p>Bagh Deewar, Mahajani Kucha</p>
-              <p>Katra Neel, Chandni Chowk</p>
+              <p>735/3, Katra Neel,</p>
+              <p>Nayi Basti, Chandni Chowk</p>
+              <p>Near Gali Ghanteshwar</p>
               <p>Delhi - 110006</p>
             </div>
 

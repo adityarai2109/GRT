@@ -21,7 +21,8 @@
 .suitData {
   display: flex;
   flex-direction: column;
-  padding: 0 0rem 0 1rem;
+  padding-left: 0.4rem;
+  width: 30vw;
   /* text-align: left; */
   /* justify-content: space-between; */
   /* width: 35%; */
@@ -43,6 +44,9 @@
   .AdminCard {
     display: flex;
     flex-direction: column;
+  }
+  .suitData {
+    width: 50vw;
   }
   .leftAdminCard,
   .rightAdminCard {

@@ -53,7 +53,12 @@
 .btn-search {
   background-color: #6e10a8;
 }
-
+.nr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
 @media (max-width: 860px) {
   /* .grt {
     display: none;
@@ -79,6 +84,11 @@
     order: 2;
   }
 }
+.nr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media (min-width: 860px) {
   .navbar {
     width: 100%;
@@ -89,6 +99,16 @@
   .main_nav {
     height: 10vh;
   }
+  .nr {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.rightAdminCard {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (max-width: 475px) {

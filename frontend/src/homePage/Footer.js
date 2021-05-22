@@ -46,7 +46,7 @@ function Footer() {
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
               className="ml-5 text-gray-100"
-              href="https://www.whatsapp.com/"
+              href="https://wa.me/919999660329"
               target="_blank"
               rel="noreferrer"
             >

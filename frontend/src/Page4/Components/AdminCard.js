@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./AdminCard.css";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -8,21 +8,30 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Fade from "@material-ui/core/Fade";
 import { Link } from "react-router-dom";
 import { Toast, Toasty } from "../Toasty";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { AdminContext } from '../../context/AdminState'
-
+import { AdminContext } from "../../context/AdminState";
 
 function AdminCard(props) {
-
-   const { signOut, token,handleDelete } = useContext(AdminContext);
+  const { signOut, token, handleDelete } = useContext(AdminContext);
 
   const [open, setOpen] = React.useState(false);
   const deleteUrl = process.env.REACT_APP_API_URL + "/api/delete";
   let history = useHistory();
-
+  const LightTooltip = withStyles((theme) => ({
+    tooltip: {
+      backgroundColor: theme.palette.common.white,
+      color: "rgba(0, 0, 0, 0.87)",
+      boxShadow: theme.shadows[10],
+      fontSize: 14,
+      fontFamily: "Poppins",
+    },
+  }))(Tooltip);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -33,32 +42,31 @@ function AdminCard(props) {
   const deleteItem = async () => {
     //delete item code
 
-        const config = {
-          headers: {
-            Authorization: token ? `Bearer ${token}` : "",
-          },
-        };
+    const config = {
+      headers: {
+        Authorization: token ? `Bearer ${token}` : "",
+      },
+    };
 
     try {
       const res = await axios.delete(`${deleteUrl}/${props.id}`, config);
       if (res.status === 200) {
-       // history.push("/dashboard");
+        // history.push("/dashboard");
         //Toast("success", "product deleted !!");
-        handleDelete()
+        handleDelete();
         console.log("deleted");
       }
-       
     } catch (error) {
-    setTimeout(() => {
-      //  history.push("/login");
-      signOut();
-    }, 2500);
+      setTimeout(() => {
+        //  history.push("/login");
+        signOut();
+      }, 2500);
 
-    window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
 
-    error.response
-      ? Toast("error", `${error.response.data.message}`)
-      : Toast("error", "server timeout");
+      error.response
+        ? Toast("error", `${error.response.data.message}`)
+        : Toast("error", "server timeout");
     }
   };
 
@@ -100,12 +108,26 @@ function AdminCard(props) {
           </div>
           <div className="rightAdminCard">
             <Link to={`/editProduct/${props.id}`}>
-              <EditIcon style={{ width: "10vh" }} />
+              <LightTooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
+                title="Edit Item"
+              >
+                <EditIcon style={{ width: "10vh" }} />
+              </LightTooltip>
             </Link>
-            <DeleteIcon
-              style={{ width: "10vh", cursor: "pointer" }}
-              onClick={handleClickOpen}
-            />
+            <div>
+              <LightTooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
+                title="Delete Item"
+              >
+                <DeleteIcon
+                  style={{ width: "10vh", cursor: "pointer" }}
+                  onClick={handleClickOpen}
+                />
+              </LightTooltip>
+            </div>
 
             <Dialog
               open={open}
@@ -141,10 +163,10 @@ function AdminCard(props) {
                 </Button>
               </DialogActions>
             </Dialog>
-            {Toasty()}
           </div>
         </div>
       </div>
+      {Toasty()}
     </>
   );
 }

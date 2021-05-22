@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "@material-ui/core/Button";
 import iconLogo from "../images/group1.svg";
 import "./Navbar.css";
 import iSearch from "../images/search.svg";
 import Toggle from "../CustomJS/Toggle";
 import { Link } from "react-router-dom";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Fade from "@material-ui/core/Fade";
+import { AdminContext } from "../context/AdminState";
 
-export default function Navbar(props) {
+export default function AdminNav(props) {
   const [searchQuery, setSearchQuery] = useState("");
-
+  const { signOut } = useContext(AdminContext);
+  const LightTooltip = withStyles((theme) => ({
+    tooltip: {
+      backgroundColor: theme.palette.common.white,
+      color: "rgba(0, 0, 0, 0.87)",
+      boxShadow: theme.shadows[10],
+      fontSize: 14,
+      fontFamily: "Poppins",
+    },
+  }))(Tooltip);
   window.onscroll = function () {
     doStick();
   };
@@ -16,11 +30,12 @@ export default function Navbar(props) {
     e.preventDefault();
     setSearchQuery(e.target.value);
   }
-
+  const handleSignOut = () => {
+    signOut();
+  };
   function doStick() {
     const searchbar = document.getElementById("searchbar");
     const navbar = document.getElementById("navbar").offsetHeight;
-    // console.log(stick)
     if (window.pageYOffset >= navbar) searchbar.classList.add("sticky");
     else searchbar.classList.remove("sticky");
   }
@@ -32,7 +47,7 @@ export default function Navbar(props) {
           <Link to="/">
             <div className="logo">
               <img style={{ height: "8vh" }} src={iconLogo} alt="GRT" />
-              <h4 className="grt">Ganga Ram Textiles</h4>
+              <h4 className="grt">Dashboard</h4>
             </div>
           </Link>
         </div>
@@ -49,12 +64,11 @@ export default function Navbar(props) {
             }
             onChange={saveSearch}
           />
-
           <div
             className="btn-search"
             style={{ borderRadius: "0px 3px 3px 0px" }}
           >
-            <Button component={Link} to={`/Suit?q=${searchQuery}`}>
+            <Button component={Link} to={`/Dashboard?q=${searchQuery}`}>
               <img
                 src={iSearch}
                 className="search"
@@ -64,12 +78,30 @@ export default function Navbar(props) {
             </Button>
           </div>
         </div>
-
-        <Toggle
-          className="nav_toggle"
-          isDarkMode={props.isDarkMode}
-          setIsDarkMode={props.setIsDarkMode}
-        />
+        <div
+          className="nr"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+          }}
+        >
+          <LightTooltip
+            TransitionComponent={Fade}
+            TransitionProps={{ timeout: 600 }}
+            title="Sign Out"
+            color="secondary"
+          >
+            <Button onClick={handleSignOut}>
+              <ExitToAppIcon fontSize="large" style={{ color: "white" }} />
+            </Button>
+          </LightTooltip>
+          <Toggle
+            className="nav_toggle"
+            isDarkMode={props.isDarkMode}
+            setIsDarkMode={props.setIsDarkMode}
+          />
+        </div>
       </div>
     </div>
   );
