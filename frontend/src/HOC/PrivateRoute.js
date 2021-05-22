@@ -2,30 +2,11 @@ import React, {useContext} from 'react';
 import { Route,  useHistory,Redirect } from "react-router-dom";
 import {AdminContext} from  '../context/AdminState'
 
-
-
-// const PrivateRoute = ({ component: Component, ...rest }) => {
-
-//   const { isAdmin } = useContext(AdminContext);
-//    return (
-//      <Route
-//        {...rest}
-//        component = {(props) => {
-         
-//          if (isAdmin) {
-//            return <Component {...props} />;
-//          } else {
-//            return <Redirect to={`/login`} />;
-//          }
-//        }}
-//      />
-//    );
-//   }
-
 const PrivateRoute = (props) => {
 
   const { isAdmin } = useContext(AdminContext);
-       if(!isAdmin)
+   const token = window.localStorage.getItem("token");
+       if(!token)
            return <Redirect to={`/login`} />;
       else{
           console.log(props)

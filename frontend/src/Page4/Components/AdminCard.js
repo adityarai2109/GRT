@@ -13,7 +13,11 @@ import { Toast, Toasty } from "../Toasty";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
+
 function AdminCard(props) {
+
+   const  token  = window.localStorage.getItem("token")
+
   const [open, setOpen] = React.useState(false);
   const deleteUrl = process.env.REACT_APP_API_URL + "/api/delete";
   let history = useHistory();
@@ -27,12 +31,23 @@ function AdminCard(props) {
   };
   const deleteItem = async () => {
     //delete item code
+
+        const config = {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : "",
+          },
+        };
+
     try {
-      const res = await axios.delete(`${deleteUrl}/${props.id}`);
+      const res = await axios.delete(`${deleteUrl}/${props.id}`, config);
       if (res.status === 200) {
         history.push("/dashboard");
         console.log("deleted");
       }
+       if (res.status() === 500) {
+         Toast("error", `${res.error}`);
+         history.push("/login");
+       }
     } catch (error) {
       Toast("error", `${error.response}`);
     }

@@ -38,7 +38,7 @@ export const  signup = (req, res) => {
         //console.log(data)
           return res.status(201).json({
             message: `${role} created Successfully..!`,
-            token: generateToken(_user._id),
+           
           });
         }
       });
@@ -57,9 +57,10 @@ export const  signin = (req, res) => {
        var role = ""
          user.isAdmin ? role = "admin" : role = "user"
       return res.status(200).json({
-        message: `${role } signin success`,
+        message: `${role} signin success`,
+        token: generateToken(user._id),
       });
-
+                                                                 
       }
       else{
         return res.status(400).json({ message: " Password not correct " });

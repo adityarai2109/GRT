@@ -1,24 +1,27 @@
 let newState = {};
 
+  const initialState = {
+    isAdmin: false,
+    token: null,
+  };
+
 const adminReducer = (state, action) => {
   switch (action.type) {
     case "ADMIN_SIGN_IN":
       newState = {
         ...state,
-        isAdmin: action.payload,
+        isAdmin: true,
+        token: action.payload.token,
       };
       localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
-      //console.log(newState)
+      localStorage.setItem("token", newState.token );
+      console.log(newState)
       return newState;
 
     case "ADMIN_SIGN_OUT":
-      newState = {
-        ...state,
-        isAdmin: action.payload,
-      };
-      localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
+          localStorage.clear();
       // console.log(newState);
-      return newState;
+      return initialState;
 
     default:
       return state;

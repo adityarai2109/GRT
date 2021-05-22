@@ -7,7 +7,7 @@ import { AdminContext } from "../context/AdminState";
 
 function Login(props) {
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
-  const {signIn,isAdmin} = useContext(AdminContext)
+  const {signIn, isAdmin, token } = useContext(AdminContext)
   let history = useHistory();
  // console.log(history);
   const [email, setEmail] = useState("");
@@ -24,10 +24,15 @@ function Login(props) {
       const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
       if (res.status === 200) {
         console.log("admin logged in");
-        signIn()
-         history.push(`/dashboard`);
+         signIn(res.data.token)
 
-      }
+          if(isAdmin){
+           console.log(isAdmin)
+          //  <Redirect to={`/dashboard`} />
+           history.push('/dashboard')
+        }
+
+      } 
     } catch (error) {
       //console.log(error.response);
       if (typeof error.response != "undefined")
@@ -37,6 +42,9 @@ function Login(props) {
   };
 
   return (
+    <>
+       { token ? history.push('/dashboard')
+       : 
     <div>
       {/* component */}
       <div className="h-screen w-screen">
@@ -111,6 +119,8 @@ function Login(props) {
         </div>
       </div>
     </div>
+    }
+    </>
   );
 }
 

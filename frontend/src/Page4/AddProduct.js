@@ -1,17 +1,18 @@
 import "./AddProduct.css";
 import "tailwindcss/tailwind.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { useHistory } from "react-router-dom";
 import { Toast, Toasty } from "./Toasty";
+import { AdminContext } from "../context/AdminState";
 
 const AddProduct = (props) => {
-  // const { admin } = (props.location && props.location.authenticate) || {};
-  // console.log(props);
-  // console.log(props.location.authenticate);
+
+ const {signOut, token } = useContext(AdminContext);
+
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
 
@@ -59,8 +60,14 @@ const AddProduct = (props) => {
     productForm.append("bottomLength", bottomLength);
     productForm.append("duppataLength", duppataLength);
 
+       const config = {
+         headers: {
+           Authorization: token ? `Bearer ${token}` : "",
+         },
+       };
+
     try {
-      const res = await axios.post(`${baseUrl}/product/create`, productForm);
+      const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
       if (res.status === 200) {
         console.log("added via :) frontend ");
         setPreview(false);
@@ -77,7 +84,13 @@ const AddProduct = (props) => {
         setSuccess(false);
         window.scrollTo(0, 0);
         Toast("success", "Product added successfully!! ");
+         history.push("/dashboard");
       }
+       if (res.status() === 500) {
+         Toast("error", `${res.error}`);
+           signOut();
+           history.push("/login");
+       }
     } catch (error) {
       Toast("error", `${error.response}`);
     }

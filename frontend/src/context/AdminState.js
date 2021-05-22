@@ -8,18 +8,23 @@ const adminStatus = localStorage.getItem("isAdmin")
   ? JSON.parse(localStorage.getItem("isAdmin"))
   : false;
 
+const intialToken = localStorage.getItem("token")
+
 const AdminState = (props) => {
   const intialState = {
     isAdmin: adminStatus,
+    token: intialToken,
   };
 
   const [state, dispatch] = useReducer(adminReducer, intialState);
 
   // SignIn admin
-  const signIn = () => {
+  const signIn = (token) => {
     dispatch({
       type: "ADMIN_SIGN_IN",
-      payload: true,
+      payload: {
+        token,
+      },
     });
   };
 
@@ -37,6 +42,7 @@ const AdminState = (props) => {
     <AdminContext.Provider
       value={{
         isAdmin: state.isAdmin,
+        token: state.token,
         signIn,
         signOut,
       }}

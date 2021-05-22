@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "./EditProduct.css";
@@ -9,11 +9,10 @@ import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { useHistory } from "react-router-dom";
 import { Toast, Toasty } from "./Toasty";
 import Loader from "../CustomJS/Loader";
+import { AdminContext } from "../context/AdminState";
 
 const EditProduct = (props) => {
-  // const { admin } = (props.location && props.location.authenticate) || {};
-  // console.log(props);
-  // console.log(props.location.authenticate);
+  const {signOut , token } = useContext(AdminContext);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
@@ -83,10 +82,17 @@ const EditProduct = (props) => {
     productForm.append("bottomLength", bottomLength);
     productForm.append("duppataLength", duppataLength);
 
+    const config = {
+      headers: {
+        Authorization: token ? `Bearer ${token}` : "",
+      },
+    };
+
     try {
       const res = await axios.put(
         `${baseUrl}/editProduct/${props.match.params.id}`,
-        productForm
+        productForm,
+        config
       );
       if (res.status === 200) {
         console.log(" updated via :) frontend ");
@@ -104,11 +110,22 @@ const EditProduct = (props) => {
         setSuccess(false);
         window.scrollTo(0, 0);
         Toast("success", "Product updated successfully!! ");
-        <Redirect to="/dashboard" />;
+           history.push("/dashboard");
       }
+     
     } catch (error) {
-      Toast("error", `${error.response}`);
-    }
+      // if (res.status() === 500) {
+         setTimeout(() => {
+          //  history.push("/login");
+          signOut();
+         }, 3000);
+          window.scrollTo(0, 0);
+         Toast("error", `token expired`);
+        // console.log(res);
+        // signOut();
+        // history.push("/login");
+       }
+    
   };
 
   return (
