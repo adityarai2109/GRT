@@ -56,7 +56,7 @@ function Dashboard(props) {
     const handleSignOut = () => {
         signOut()
     };
-    const CardArray = props.products;
+    const CardArray = products;
       var words;
     if(q)
     words = q.toLowerCase().split(" ");

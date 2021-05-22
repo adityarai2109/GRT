@@ -69,7 +69,7 @@ function App() {
                     setIsDarkMode={setIsDarkMode}
                     private = "private"
                   />
-                  <Dashboard isDarkMode={isDarkMode} products={products}/>
+                  <Dashboard isDarkMode={isDarkMode} />
                   <Footer />
                 </>
               }
