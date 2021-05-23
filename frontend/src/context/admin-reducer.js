@@ -15,7 +15,7 @@ const adminReducer = (state, action) => {
       };
       localStorage.setItem("isAdmin", JSON.stringify(newState.isAdmin));
       localStorage.setItem("token", newState.token);
-      console.log(newState);
+      // console.log(newState);
       return newState;
 
     case "ADMIN_PRODUCT_DELETE_SUCCESS":

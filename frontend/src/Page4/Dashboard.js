@@ -26,7 +26,7 @@ function Dashboard(props) {
       const baseUrl = process.env.REACT_APP_API_URL + "/api";
       let token = localStorage.getItem("token");
 
-      console.log(token);
+      // console.log(token);
       const config = {
         headers: {
           Authorization: token ? `Bearer ${token}` : "",

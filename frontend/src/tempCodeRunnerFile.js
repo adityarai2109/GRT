@@ -1,0 +1,1 @@
+ res = await axios.get(`/api/allproducts`);
