@@ -65,7 +65,7 @@ export default function Info() {
 
             <form
               target="_blank"
-              action="mailto:keshav2682@gmail.com"
+              action="mailto:gangaramtextilesofficial@gmail.com"
               method="post"
             >
               <b className="text-white">
