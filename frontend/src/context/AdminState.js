@@ -43,7 +43,7 @@ const AdminState = (props) => {
     });
   };
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <AdminContext.Provider

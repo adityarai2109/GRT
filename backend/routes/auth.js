@@ -10,7 +10,7 @@ import {
 } from "../validators/auth.js";
 
 const router = express.Router();
-  console.log(name)
+  // console.log(name)
 router.post("/admin/signup", validateSignupRequest, isRequestValidated, signup);
 router.post("/admin/signin", validateSigninRequest, isRequestValidated, signin);  
 router.post("/admin/signout", signout);

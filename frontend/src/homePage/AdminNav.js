@@ -7,7 +7,7 @@ import Toggle from "../CustomJS/Toggle";
 import { Link } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Tooltip from "@material-ui/core/Tooltip";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Fade from "@material-ui/core/Fade";
 import { AdminContext } from "../context/AdminState";
 

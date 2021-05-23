@@ -24,7 +24,7 @@ export const validateFile = (file) => {
 export const fileDrop = (e) => {
   e.preventDefault();
   const file = e.dataTransfer.files[0];
-  console.log(file);
+  // console.log(file);
   if (validateFile(file)) return file;
   else return null;
 };
