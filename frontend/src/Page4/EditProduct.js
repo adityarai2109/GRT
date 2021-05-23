@@ -15,6 +15,8 @@ const EditProduct = (props) => {
   const { signOut, token } = useContext(AdminContext);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
+  const imgUrl = process.env.REACT_APP_API_URL;
+
   let history = useHistory();
   const [name, setName] = useState("");
   const [material, setMaterial] = useState("");
@@ -96,15 +98,13 @@ const EditProduct = (props) => {
       );
       if (res.status === 200) {
         console.log(" updated via :) frontend ");
-        
+
         setSuccess(false);
-         setTimeout(() => {
-             history.push("/dashboard");
-         
-         }, 2500);
+        setTimeout(() => {
+          history.push("/dashboard");
+        }, 2500);
         window.scrollTo(0, 0);
         Toast("success", "Product updated successfully!! ");
-        
       }
     } catch (error) {
       setTimeout(() => {
@@ -379,7 +379,7 @@ const EditProduct = (props) => {
                                 minHeight: "40vh",
                                 minWidth: "auto",
                               }}
-                              src={`http://localhost:5000/upload/${imageTitle}`}
+                              src={`${imgUrl}/upload/${imageTitle}`}
                               alt=""
                             />
                           ) : null

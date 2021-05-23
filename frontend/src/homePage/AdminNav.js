@@ -90,7 +90,6 @@ export default function AdminNav(props) {
             TransitionComponent={Fade}
             TransitionProps={{ timeout: 600 }}
             title="Sign Out"
-            color="secondary"
           >
             <Button onClick={handleSignOut}>
               <ExitToAppIcon fontSize="large" style={{ color: "white" }} />
