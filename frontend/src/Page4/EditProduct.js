@@ -92,7 +92,7 @@ const EditProduct = (props) => {
 
     try {
       const res = await axios.put(
-        `${baseUrl}/editProduct/${props.match.params.id}`,
+        `/api/editProduct/${props.match.params.id}`,
         productForm,
         config
       );

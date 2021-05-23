@@ -49,7 +49,7 @@ function AdminCard(props) {
     };
 
     try {
-      const res = await axios.delete(`${deleteUrl}/${props.id}`, config);
+      const res = await axios.delete(`/api/${props.id}`, config);
       if (res.status === 200) {
         // history.push("/dashboard");
         //Toast("success", "product deleted !!");

@@ -21,7 +21,7 @@ function Login(props) {
     const loginData = { email, password };
     // console.log(loginData);
     try {
-      const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
+      const res = await axios.post(`/api/admin/signin`, loginData);
       if (res.status === 200) {
         // console.log("admin logged in");
          signIn(res.data.token)

@@ -67,7 +67,7 @@ const AddProduct = (props) => {
        };
 
     try {
-      const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
+      const res = await axios.post(`/api/product/create`, productForm, config);
       if (res.status === 200) {
         // console.log("added via :) frontend ");
         setPreview(false);
