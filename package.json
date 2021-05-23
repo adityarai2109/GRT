@@ -37,5 +37,6 @@
   "bugs": {
     "url": "https://github.com/adityarai2109/GRT/issues"
   },
-  "homepage": "https://github.com/adityarai2109/GRT#readme"
+  "homepage": "https://github.com/adityarai2109/GRT#readme",
+  "heroku-run-build-script": true
 }
