@@ -199,7 +199,7 @@ const ProductList = (props) => {
             )}
           </p>
         </div>
-        {/* <h1 className="results">Showing results for : {props.query}</h1> */}
+
         {Cardarray.length !== 0 ? (
           <div className="product_card">{Sortby(filteredCardArray)}</div>
         ) : (

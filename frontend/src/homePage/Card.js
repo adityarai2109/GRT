@@ -14,8 +14,8 @@ function Card(props) {
   return (
     <div>
       <div>
-        <div className="product_card">
-          {" "}
+        <div className="product_card" style={{minHeight:"0",}}>{/*Ipad pro style*/}
+        
           {/*styles in productList.css*/}
           {Cardarray !== undefined ? (
             Cardarray.sort(() => 0.5 - Math.random())
@@ -23,7 +23,6 @@ function Card(props) {
               .sort(() => 0.5 - Math.random())
               .map((card) => {
                 return (
-                  <div>
                     <Listing
                       id={card._id}
                       image={`${imgUrl}/upload/${card.image}`}
@@ -31,7 +30,6 @@ function Card(props) {
                       price={card.price}
                       category={card.category}
                     />
-                  </div>
                 );
               })
           ) : (

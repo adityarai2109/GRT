@@ -40,6 +40,7 @@
 }
 .f-address {
   width: 60%;
+  margin-right: 1rem;
 }
 .f-contacts {
   width: 40%;
@@ -117,7 +118,7 @@
     border-radius: 15px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 630px) {
   .f-flex {
     display: block;
   }

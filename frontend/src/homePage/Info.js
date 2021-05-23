@@ -31,7 +31,7 @@ export default function Info() {
               <div className="DetailsHeading">
                 <p className="contacts">Contacts</p>
                 <img
-                  style={{ height: "2rem", marginLeft: "5px" }}
+                  style={{ height: "2rem", marginLeft: "5px", marginRight: "5px",}}
                   src={iconPhone}
                   alt="Contacts"
                 />
