@@ -50,7 +50,7 @@ const EditProduct = (props) => {
   }, [props.match.params.id, props.products]);
 
   const handleImage = (e) => {
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setPreview(true);
     setImgUpload(true);
@@ -60,7 +60,7 @@ const EditProduct = (props) => {
     var dropImg = fileDrop(e);
     if (dropImg != null) {
       setImage(dropImg);
-      console.log(URL.createObjectURL(dropImg));
+      // console.log(URL.createObjectURL(dropImg));
       setPreview(true);
       setImgUpload(true);
     }

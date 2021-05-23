@@ -19,15 +19,15 @@ function Login(props) {
   const submitLoginForm = async (e) => {
     e.preventDefault();
     const loginData = { email, password };
-    console.log(loginData);
+    // console.log(loginData);
     try {
       const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
       if (res.status === 200) {
-        console.log("admin logged in");
+        // console.log("admin logged in");
          signIn(res.data.token)
 
           if(isAdmin){
-           console.log(isAdmin)
+          //  console.log(isAdmin)
           //  <Redirect to={`/dashboard`} />
            history.push('/dashboard')
         }

@@ -29,7 +29,7 @@ const AddProduct = (props) => {
   const [success, setSuccess] = useState(false);
 
   const handleImage = (e) => {
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setPreview(true);
   };
@@ -69,7 +69,7 @@ const AddProduct = (props) => {
     try {
       const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
       if (res.status === 200) {
-        console.log("added via :) frontend ");
+        // console.log("added via :) frontend ");
         setPreview(false);
         setImage({});
         setName("");

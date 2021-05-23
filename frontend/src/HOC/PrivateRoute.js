@@ -9,7 +9,7 @@ const PrivateRoute = (props) => {
        if(!token)
            return <Redirect to={`/login`} />;
       else{
-          console.log(props)
+          // console.log(props)
              return (
                <Route
                  path={props.path}

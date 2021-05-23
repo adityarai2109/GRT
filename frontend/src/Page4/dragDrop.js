@@ -17,14 +17,14 @@ export const validateFile = (file) => {
     alert("File type not permitted");
     return false;
   }
-  console.log("validated");
+  // console.log("validated");
   return true;
 };
 
 export const fileDrop = (e) => {
   e.preventDefault();
   const file = e.dataTransfer.files[0];
-  console.log(file);
+  // console.log(file);
   if (validateFile(file)) return file;
   else return null;
 };

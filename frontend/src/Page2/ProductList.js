@@ -21,8 +21,8 @@ const ProductList = (props) => {
   const {search} = useLocation();
   const {q} = queryString.parse(search)
   const Cardarray = props.products;
-  console.log("main");
-  console.log(Cardarray);
+  // console.log("main");
+  // console.log(Cardarray);
   const imgUrl = process.env.REACT_APP_API_URL;
 
   const [rangeToggle, setRangeToggle] = useState(true);
@@ -30,7 +30,7 @@ const ProductList = (props) => {
   const [sortedCategory, setSortedCategory] = useState("Latest");
 
   const [pageArray, setPageArray] = useState(8);
-  console.log(pageArray);
+  // console.log(pageArray);
 
   function newstate(newState) {
     let newSortedCategory = [...sortedCategory];
@@ -52,10 +52,6 @@ const ProductList = (props) => {
     )
   );
 
-  function resetSearch() {
-    props.setQuery("");
-    document.getElementById("inputnavid").value = "";
-  }
 
   const [value, setValue] = useState([0, 100]);
   function getCardlen() {
@@ -98,7 +94,7 @@ const ProductList = (props) => {
         .slice(0, pageArray)
         .map((card) => {
           return (
-            <div onClick={() => resetSearch()}>
+            <div>
               <Listing
                 id={card._id}
                 image={`${imgUrl}/upload/${card.image}`}
@@ -133,7 +129,7 @@ const ProductList = (props) => {
         .slice(0, pageArray)
         .map((card) => {
           return (
-            <div onClick={() => resetSearch()}>
+            <div>
               <Listing
                 id={card._id}
                 image={`${imgUrl}/upload/${card.image}`}
@@ -163,7 +159,6 @@ const ProductList = (props) => {
         <Navbar
           isDarkMode={props.isDarkMode}
           setIsDarkMode={props.setIsDarkMode}
-          setQuery={props.setQuery}
         />
         <DesignerHeading name={category} />
         <div className="orderby">
@@ -205,7 +200,7 @@ const ProductList = (props) => {
         ) : (
           <Loader isDarkMode={props.isDarkMode} />
         )}
-        {console.log(Sortby(filteredCardArray).length)}
+        {/* {console.log(Sortby(filteredCardArray).length)} */}
         {pageArray < getCardlen(filteredCardArray) ? (
           <Button
             variant="outlined"
