@@ -4,6 +4,12 @@ import connectDB from "./config/db.js";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
+
+
+const MODE = process.env.NODE_ENV;
+const PORT = process.env.PORT || 5000;
+
+
 const app = express();
 
 // config
@@ -56,8 +62,7 @@ app.get("/", homepage, (req, res) => {
     res.status(200).json({ message: "homepage" });
 });
 
-const MODE = process.env.NODE_ENV;
-const PORT = process.env.PORT || 5000;
+
 
 app.listen(PORT, console.log(`Server running in ${MODE} mode on ${PORT}`));
 
