@@ -33,7 +33,7 @@ app.use("/api", authRoutes);
 app.use("/api", productRoutes);
 // console.log(path.dirname(__dirname))
 
-if (process.env.NODE_ENV === "production") {
+if (true) {
     app.use(express.static(path.join(__dirname2, "/frontend/build")));
 
     app.get("*", (req, res) =>
