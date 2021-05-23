@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await axios.get(`/allproducts`);
+      const res = await axios.get(`/api/allproducts`);
       try {
         if (res.status === 200) {
           setProducts(res.data);
