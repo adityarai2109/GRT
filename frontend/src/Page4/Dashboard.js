@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Route, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
 import AdminCard from "./Components/AdminCard";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
@@ -6,7 +8,7 @@ import { Link } from "react-router-dom";
 import { AdminContext } from "../context/AdminState";
 import Loader from "../CustomJS/Loader";
 import axios from "axios";
-import { Toasty } from "./Toasty";
+import { Toast, Toasty } from "./Toasty";
 import queryString from "query-string";
 import { useLocation } from "react-router";
 
@@ -24,7 +26,7 @@ function Dashboard(props) {
       const baseUrl = process.env.REACT_APP_API_URL + "/api";
       let token = localStorage.getItem("token");
 
-      // console.log(token);
+      console.log(token);
       const config = {
         headers: {
           Authorization: token ? `Bearer ${token}` : "",
@@ -35,11 +37,17 @@ function Dashboard(props) {
       return res;
     };
 
+    //console.log("dasboard")
+    //   if (res.status === 200) {
+    //     console.log("admin dashboard")
+    //   setProducts(res.data);
+    // }
+
     setProducts([]);
     fetchProducts()
       .then((res) => setProducts(res.data))
       .catch((e) => signOut());
-  }, [isDeleted, signOut]);
+  }, [isDeleted]);
 
   const CardArray = products;
   var words;

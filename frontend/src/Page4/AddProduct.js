@@ -2,6 +2,7 @@ import "./AddProduct.css";
 import "tailwindcss/tailwind.css";
 import React, { useState, useContext } from "react";
 import axios from "axios";
+import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { useHistory } from "react-router-dom";
@@ -9,7 +10,8 @@ import { Toast, Toasty } from "./Toasty";
 import { AdminContext } from "../context/AdminState";
 
 const AddProduct = (props) => {
-  const { signOut, token } = useContext(AdminContext);
+
+ const {signOut, token } = useContext(AdminContext);
 
   const baseUrl = process.env.REACT_APP_API_URL + "/api";
   let history = useHistory();
@@ -24,9 +26,10 @@ const AddProduct = (props) => {
   const [duppataLength, setDuppataLength] = useState();
   const [topLength, setTopLength] = useState();
   const [preview, setPreview] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleImage = (e) => {
-    // console.log(e.target.files[0]);
+    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setPreview(true);
   };
@@ -57,18 +60,14 @@ const AddProduct = (props) => {
     productForm.append("bottomLength", bottomLength);
     productForm.append("duppataLength", duppataLength);
 
-    const config = {
-      headers: {
-        Authorization: token ? `Bearer ${token}` : "",
-      },
-    };
+       const config = {
+         headers: {
+           Authorization: token ? `Bearer ${token}` : "",
+         },
+       };
 
     try {
-      const res = await axios.post(
-        `${baseUrl}/product/create`,
-        productForm,
-        config
-      );
+      const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
       if (res.status === 200) {
         console.log("added via :) frontend ");
         setPreview(false);
@@ -82,26 +81,31 @@ const AddProduct = (props) => {
         setTopLength();
         setDuppataLength();
 
+        setSuccess(false);
         window.scrollTo(0, 0);
-
-        setTimeout(() => {
-          history.push("/dashboard");
-        }, 2500);
-        window.scrollTo(0, 0);
-        Toast("success", "Product added successfully!! ");
+          setSuccess(false);
+          
+          setTimeout(() => {
+            history.push("/dashboard");
+          }, 2500);
+          window.scrollTo(0, 0);
+          Toast("success", "Product added successfully!! ");
       }
+   
     } catch (error) {
-      setTimeout(() => {
+      
+     setTimeout(() => {
         //  history.push("/login");
         signOut();
       }, 2000);
-      console.log(error);
+     console.log(error)
       window.scrollTo(0, 0);
 
       error.response
         ? Toast("error", `${error.response.data.message}`)
         : Toast("error", "server timeout");
     }
+    
   };
 
   return (

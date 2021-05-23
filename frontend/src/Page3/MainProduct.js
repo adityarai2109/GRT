@@ -17,6 +17,7 @@ import FOF from "../fof/fof";
 
 const MainProduct = (props) => {
   const Cardarray = props.products;
+  console.log(Cardarray[Cardarray.length - 1]);
   const imgUrl = process.env.REACT_APP_API_URL;
   let id = props.match.params.ida; // isko int me convert krna tha
   // console.log(id);

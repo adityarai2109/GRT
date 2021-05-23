@@ -18,11 +18,11 @@ import queryString from "query-string";
 import { useLocation } from "react-router";
 
 const ProductList = (props) => {
-  const { search } = useLocation();
-  const { q } = queryString.parse(search);
+  const {search} = useLocation();
+  const {q} = queryString.parse(search)
   const Cardarray = props.products;
-  // console.log("main");
-  // console.log(Cardarray);
+  console.log("main");
+  console.log(Cardarray);
   const imgUrl = process.env.REACT_APP_API_URL;
 
   const [rangeToggle, setRangeToggle] = useState(true);
@@ -30,7 +30,7 @@ const ProductList = (props) => {
   const [sortedCategory, setSortedCategory] = useState("Latest");
 
   const [pageArray, setPageArray] = useState(8);
-  // console.log(pageArray);
+  console.log(pageArray);
 
   function newstate(newState) {
     let newSortedCategory = [...sortedCategory];
@@ -39,8 +39,10 @@ const ProductList = (props) => {
   }
 
   var words;
-  if (q) words = q.toLowerCase().split(" ");
-  else words = " ".toLowerCase().split(" ");
+  if(q)
+  words = q.toLowerCase().split(" ");
+  else
+  words = " ".toLowerCase().split(" ");
 
   const filteredCardArray = Cardarray.filter((i) =>
     words.some(
@@ -49,6 +51,11 @@ const ProductList = (props) => {
         i.description.toLowerCase().includes(word)
     )
   );
+
+  function resetSearch() {
+    props.setQuery("");
+    document.getElementById("inputnavid").value = "";
+  }
 
   const [value, setValue] = useState([0, 100]);
   function getCardlen() {
@@ -91,7 +98,7 @@ const ProductList = (props) => {
         .slice(0, pageArray)
         .map((card) => {
           return (
-            <div>
+            <div onClick={() => resetSearch()}>
               <Listing
                 id={card._id}
                 image={`${imgUrl}/upload/${card.image}`}
@@ -126,7 +133,7 @@ const ProductList = (props) => {
         .slice(0, pageArray)
         .map((card) => {
           return (
-            <div>
+            <div onClick={() => resetSearch()}>
               <Listing
                 id={card._id}
                 image={`${imgUrl}/upload/${card.image}`}
@@ -198,6 +205,7 @@ const ProductList = (props) => {
         ) : (
           <Loader isDarkMode={props.isDarkMode} />
         )}
+        {console.log(Sortby(filteredCardArray).length)}
         {pageArray < getCardlen(filteredCardArray) ? (
           <Button
             variant="outlined"

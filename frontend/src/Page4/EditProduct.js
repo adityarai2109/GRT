@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "./EditProduct.css";
 import "tailwindcss/tailwind.css";
+import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { useHistory } from "react-router-dom";
@@ -25,6 +27,7 @@ const EditProduct = (props) => {
   const [duppataLength, setDuppataLength] = useState();
   const [topLength, setTopLength] = useState();
   const [preview, setPreview] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [imgUpload, setImgUpload] = useState(false);
 
   useEffect(() => {
@@ -45,7 +48,7 @@ const EditProduct = (props) => {
   }, [props.match.params.id, props.products]);
 
   const handleImage = (e) => {
-    // console.log(e.target.files[0]);
+    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
     setPreview(true);
     setImgUpload(true);
@@ -55,7 +58,7 @@ const EditProduct = (props) => {
     var dropImg = fileDrop(e);
     if (dropImg != null) {
       setImage(dropImg);
-      // console.log(URL.createObjectURL(dropImg));
+      console.log(URL.createObjectURL(dropImg));
       setPreview(true);
       setImgUpload(true);
     }
@@ -93,12 +96,15 @@ const EditProduct = (props) => {
       );
       if (res.status === 200) {
         console.log(" updated via :) frontend ");
-
-        setTimeout(() => {
-          history.push("/dashboard");
-        }, 2500);
+        
+        setSuccess(false);
+         setTimeout(() => {
+             history.push("/dashboard");
+         
+         }, 2500);
         window.scrollTo(0, 0);
         Toast("success", "Product updated successfully!! ");
+        
       }
     } catch (error) {
       setTimeout(() => {
@@ -380,6 +386,7 @@ const EditProduct = (props) => {
                         ) : (
                           <img src={URL.createObjectURL(image)} alt="" />
                         )}
+                        {/* {console.log(image)} */}
                         {/* IMAGE NAME */}
                         {!imgUpload ? (
                           imageTitle !== "" ? (
