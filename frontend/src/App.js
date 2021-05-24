@@ -27,11 +27,16 @@ function App() {
   const [products, setProducts] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const baseUrl = process.env.REACT_APP_API_URL + "/api";
+  const baseUrl = process.env.REACT_APP_API_URL;
+  console.log(baseUrl, process.env.NODE_ENV);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await axios.get(`/api/allproducts`);
+      const res = await axios.get(
+        `${
+          process.env.NODE_ENV === "development" ? baseUrl : ""
+        }/api/allproducts`
+      );
       try {
         if (res.status === 200) {
           setProducts(res.data);
