@@ -22,6 +22,7 @@ const AddProduct = (props) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();
   const [image, setImage] = useState({});
+  const [url, setUrl] = useState('');
   const [bottomLength, setBottomLength] = useState();
   const [duppataLength, setDuppataLength] = useState();
   const [topLength, setTopLength] = useState();
@@ -47,8 +48,30 @@ const AddProduct = (props) => {
     setImage({});
   };
 
+
+     const postDetails = () => {
+       const data = new FormData();
+       data.append("file", image);
+       data.append("upload_preset", "GRT-gallery");
+       data.append("cloud_name", "duscqn7ju");
+       fetch("https://api.cloudinary.com/v1_1/duscqn7ju/image/upload", {
+         method: "post",
+         body: data,
+       })
+         .then((res) => res.json())
+         .then((data) => {
+           setUrl(data.url);
+         })
+         .catch((err) => {
+           console.log(err);
+         });
+     };
+ 
+
   const submitProductForm = async (e) => {
+    
     e.preventDefault();
+    postDetails();
     const productForm = new FormData();
     productForm.append("name", name);
     productForm.append("material", material);
@@ -67,7 +90,7 @@ const AddProduct = (props) => {
        };
 
     try {
-      const res = await axios.post(`/api/product/create`, productForm, config);
+      const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
       if (res.status === 200) {
         // console.log("added via :) frontend ");
         setPreview(false);
@@ -80,7 +103,7 @@ const AddProduct = (props) => {
         setBottomLength();
         setTopLength();
         setDuppataLength();
-
+        setUrl('')
         setSuccess(false);
         window.scrollTo(0, 0);
           setSuccess(false);

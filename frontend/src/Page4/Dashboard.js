@@ -33,7 +33,7 @@ function Dashboard(props) {
         },
       };
 
-      const res = await axios.get(`/api/admin/allproducts`, config);
+      const res = await axios.get(`${baseUrl}/admin/allproducts`, config);
       return res;
     };
 
