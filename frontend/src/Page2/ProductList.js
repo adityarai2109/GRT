@@ -21,9 +21,9 @@ const ProductList = (props) => {
   const {search} = useLocation();
   const {q} = queryString.parse(search)
   const Cardarray = props.products;
-  // console.log("main");
-  // console.log(Cardarray);
-  const imgUrl = process.env.REACT_APP_API_URL;
+ 
+ // const imgUrl = process.env.REACT_APP_API_URL;
+   const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
 
   const [rangeToggle, setRangeToggle] = useState(true);
   let category = String(props.match.params.category);
@@ -97,7 +97,7 @@ const ProductList = (props) => {
             <div>
               <Listing
                 id={card._id}
-                image={`${imgUrl}/upload/${card.image}`}
+                image={`${imgUrl}${card.image}`}
                 title={card.name}
                 price={card.price}
                 category={card.category}
@@ -132,7 +132,7 @@ const ProductList = (props) => {
             <div>
               <Listing
                 id={card._id}
-                image={`${imgUrl}/upload/${card.image}`}
+                image={`${imgUrl}${card.image}`}
                 title={card.name}
                 price={card.price}
                 category={card.category}

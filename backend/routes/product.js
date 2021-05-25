@@ -9,6 +9,8 @@ import {
   getProducts,
   deleteProduct,
   updateProduct,
+  cloudinaryProduct,
+  cloudinaryProductUpdate,
 } from "../controllers/product.js";
 import { protect, admin } from "../validators/authMiddleware.js";
  
@@ -31,14 +33,16 @@ const storage = multer.diskStorage({
 
 export const upload = multer({ storage });
 
-router.post(
-  "/product/create",
-  protect,
-  admin,
-  upload.single("image"),
-  createProduct
-);
-//router.post("/product/create",  createProduct);
+// router.post(
+//   "/product/create",
+//   protect,
+//   admin,
+//   upload.single("image"),
+//   createProduct
+// );
+
+
+router.post("/product/create", protect, admin, cloudinaryProduct);
 
 router.get("/allproducts", getProducts)
 
@@ -46,6 +50,9 @@ router.get("/admin/allproducts", protect, admin,  getProducts);
 
 router.delete("/delete/:id", protect, admin, deleteProduct);
 
-router.put("/editProduct/:id", protect, admin, upload.single("image"), updateProduct);
+// router.put("/editProduct/:id", protect, admin, upload.single("image"), updateProduct);
 
-export default router
+router.put("/editProduct/:id", protect, admin, cloudinaryProductUpdate);
+
+
+export default router      

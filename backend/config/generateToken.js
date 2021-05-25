@@ -9,3 +9,4 @@ const generateToken = (id) => {
 export default generateToken;
 /// can I delete a token
 /// can i make multiple token
+  

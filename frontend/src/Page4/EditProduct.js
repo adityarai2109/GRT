@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect } from "react-router-dom";
-import axios from "axios";
+import axios from "../axios";
 import "./EditProduct.css";
 import "tailwindcss/tailwind.css";
 import Alert from "@material-ui/lab/Alert";
@@ -8,14 +8,16 @@ import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { useHistory } from "react-router-dom";
 import { Toast, Toasty } from "./Toasty";
+import { toast } from "react-toastify";
 import Loader from "../CustomJS/Loader";
 import { AdminContext } from "../context/AdminState";
 
 const EditProduct = (props) => {
-  const { signOut, token } = useContext(AdminContext);
+  const { signOut, token, handleModify } = useContext(AdminContext);
 
-  const baseUrl = process.env.REACT_APP_API_URL + "/api";
-  const imgUrl = process.env.REACT_APP_API_URL;
+  const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
+  const img_Upload_Url = process.env.REACT_APP_CLOUD_UPLOAD_API;
+   const preset_name = process.env.REACT_APP_CLOUD_PRESET; 
 
   let history = useHistory();
   const [name, setName] = useState("");
@@ -24,6 +26,7 @@ const EditProduct = (props) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();
   const [imageTitle, setImageTitle] = useState("");
+  const [imgName, setImgName] = useState("");
   const [image, setImage] = useState({});
   const [bottomLength, setBottomLength] = useState();
   const [duppataLength, setDuppataLength] = useState();
@@ -34,6 +37,7 @@ const EditProduct = (props) => {
 
   useEffect(() => {
     if (props.products.length !== 0) {
+      console.log(props.products);
       const myProduct = props.products.filter(
         (i) => i._id === props.match.params.id
       )[0];
@@ -45,9 +49,10 @@ const EditProduct = (props) => {
       setBottomLength(myProduct.bottomLength);
       setDuppataLength(myProduct.duppataLength);
       setTopLength(myProduct.topLength);
-      setImageTitle(myProduct.image);
+      setImgName(myProduct.image);
+      console.log(`${imgUrl}${myProduct.image}`);
     }
-  }, [props.match.params.id, props.products]);
+  }, [props.products.length]);
 
   const handleImage = (e) => {
     // console.log(e.target.files[0]);
@@ -71,18 +76,20 @@ const EditProduct = (props) => {
     setImage({});
   };
 
-  const submitProductForm = async (e) => {
-    e.preventDefault();
-    const productForm = new FormData();
-    productForm.append("name", name);
-    productForm.append("material", material);
-    productForm.append("design", design);
-    productForm.append("description", description);
-    productForm.append("price", price);
-    productForm.append("image", image);
-    productForm.append("topLength", topLength);
-    productForm.append("bottomLength", bottomLength);
-    productForm.append("duppataLength", duppataLength);
+  const submitProductForm = async (dp_name) => {
+    console.log(dp_name);
+     
+    let productData = {
+      name,
+      material,
+      design,
+      bottomLength,
+      duppataLength,
+      topLength,
+      description,
+      price,
+      image: typeof dp_name != "undefined" ? dp_name : imgName,
+    };
 
     const config = {
       headers: {
@@ -92,18 +99,22 @@ const EditProduct = (props) => {
 
     try {
       const res = await axios.put(
-        `${baseUrl}/editProduct/${props.match.params.id}`,
-        productForm,
+        `/editProduct/${props.match.params.id}`,
+        productData,
         config
       );
       if (res.status === 200) {
         console.log(" updated via :) frontend ");
 
         setSuccess(false);
+        toast.dismiss();
+         handleModify();
+
         setTimeout(() => {
           history.push("/dashboard");
         }, 2500);
-        window.scrollTo(0, 0);
+       
+         
         Toast("success", "Product updated successfully!! ");
       }
     } catch (error) {
@@ -112,11 +123,48 @@ const EditProduct = (props) => {
         signOut();
       }, 2500);
 
-      window.scrollTo(0, 0);
-
       error.response
         ? Toast("error", `${error.response.data.message}`)
         : Toast("error", "server timeout");
+    }
+  };
+
+  const postDetails = async () => {
+    const imgData = new FormData();
+    imgData.append("file", image);
+    imgData.append("upload_preset", preset_name);
+    imgData.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
+
+    try {
+      const res = await axios.post(`${img_Upload_Url}`, imgData);
+
+      if (res.status === 200) {
+        const img_name = res.data.public_id + "." + res.data.format;
+        setImgName(img_name);
+        console.log(imgName);
+        console.log(img_name);
+        return img_name;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const submitEditedForm = (e) => {
+    e.preventDefault();
+     window.scrollTo(0, 0);
+     Toast("info", "uploading");
+    console.log(image);
+    if (image  && Object.keys(image).length === 0 && image.constructor === Object) {
+       console.log("empty");
+      submitProductForm();
+    } else {
+      console.log("cloud");
+      postDetails()
+        .then((img_name) => {
+          submitProductForm(img_name);
+        })
+        .catch((e) => signOut());
     }
   };
 
@@ -128,7 +176,7 @@ const EditProduct = (props) => {
               backend se photo finally aa gyi 😄{" "}
             </h1>
           </div> */}
-      {image === {} ? (
+      {imgName === "" ? (
         <div style={{ minHeight: "60vh", marginTop: "20vh" }}>
           <Loader isDarkMode={props.isDarkMode} />
         </div>
@@ -146,7 +194,7 @@ const EditProduct = (props) => {
             className="grid bg-white rounded grid-cols-1 gap-5 back"
           >
             <div className="mt-5 col-span-2">
-              <form onSubmit={submitProductForm}>
+              <form onSubmit={submitEditedForm}>
                 <div className=" rounded overflow-hidden ">
                   <div className="px-2 py-2 space-y-6 sm:p-6">
                     <div className="grid grid-cols-3 gap-6">
@@ -373,13 +421,13 @@ const EditProduct = (props) => {
                           />
                         </div>
                         {!imgUpload ? (
-                          imageTitle !== "" ? (
+                          imgName !== "" ? (
                             <img
                               style={{
                                 minHeight: "40vh",
                                 minWidth: "auto",
                               }}
-                              src={`${imgUrl}/upload/${imageTitle}`}
+                              src={`${imgUrl}${imgName}`}
                               alt=""
                             />
                           ) : null

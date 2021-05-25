@@ -8,7 +8,8 @@ import Loader from "../CustomJS/Loader";
 import "./Card.css";
 
 function Card(props) {
-  const imgUrl = process.env.REACT_APP_API_URL;
+  // const imgUrl = process.env.REACT_APP_API_URL;
+    const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
   const Cardarray = props.products;
 
   return (
@@ -25,7 +26,7 @@ function Card(props) {
                 return (
                     <Listing
                       id={card._id}
-                      image={`${imgUrl}/upload/${card.image}`}
+                      image={`${imgUrl}${card.image}`}
                       title={card.name}
                       price={card.price}
                       category={card.category}

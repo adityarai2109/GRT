@@ -1,33 +1,135 @@
 import "./AddProduct.css";
 import "tailwindcss/tailwind.css";
-import React, { useState, useContext } from "react";
-import axios from "axios";
+import React, { useState, useContext, useEffect } from "react";
+import axios from "../axios";
 import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import { dragOver, dragEnter, dragLeave, fileDrop } from "./dragDrop";
 import { useHistory } from "react-router-dom";
 import { Toast, Toasty } from "./Toasty";
+import { toast } from "react-toastify";
 import { AdminContext } from "../context/AdminState";
 
 const AddProduct = (props) => {
+  const { signOut, token, handleModify } = useContext(AdminContext);
 
- const {signOut, token } = useContext(AdminContext);
-
-  const baseUrl = process.env.REACT_APP_API_URL + "/api";
+  const img_Upload_Url = process.env.REACT_APP_CLOUD_UPLOAD_API;
+  const preset_name = process.env.REACT_APP_CLOUD_PRESET; 
+  let img_name = "";
   let history = useHistory();
 
   const [name, setName] = useState("");
   const [material, setMaterial] = useState("");
   const [design, setDesign] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState(0);
   const [image, setImage] = useState({});
-  const [url, setUrl] = useState('');
-  const [bottomLength, setBottomLength] = useState();
-  const [duppataLength, setDuppataLength] = useState();
-  const [topLength, setTopLength] = useState();
+  const [imgName, setImgName] = useState("");
+  const [bottomLength, setBottomLength] = useState(0);
+  const [duppataLength, setDuppataLength] = useState(0);
+  const [topLength, setTopLength] = useState(0);
   const [preview, setPreview] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    const submitProductForm = async () => {
+      console.log(imgName);
+
+      let productData = {
+        name,
+        material,
+        design,
+        bottomLength,
+        duppataLength,
+        topLength,
+        description,
+        price,
+        image : imgName,
+      };
+
+      const config = {
+        headers: {   
+          Authorization: token ? `Bearer ${token}` : "",
+        },
+      };
+
+      try {
+        const res = await axios.post(`/product/create`,
+          productData,
+          config
+        );
+        if (res.status === 200) {
+          // console.log("added via :) frontend ");
+          setPreview(false);
+          setImage({});
+          setName("");
+          setMaterial("");
+          setDescription("");
+          setPrice();
+          setDesign("");
+          setBottomLength();
+          setTopLength();
+          setDuppataLength();
+          setImgName("");
+
+          setSuccess(false);
+          window.scrollTo(0, 0);
+          setSuccess(false);
+            toast.dismiss();
+            handleModify();
+
+
+          setTimeout(() => {
+            history.push("/dashboard");
+          }, 2500);
+        
+           
+          Toast("success", "Product added successfully!! ");
+        }
+      } catch (error) {
+        setTimeout(() => {
+          //  history.push("/login");
+          signOut();
+        }, 2000);
+        //console.log(error);
+        window.scrollTo(0, 0);
+
+        error.response
+          ? Toast("error", `${error.response.data.message}`)
+          : Toast("error", "server timeout");
+      }
+    };
+
+    if (imgName !== "") submitProductForm();
+  }, [imgName]);
+
+  const postDetails = async (e) => {
+    e.preventDefault();
+      window.scrollTo(0, 0);
+      Toast("info", "uploading");
+
+    const imgData = new FormData();
+    imgData.append("file", image);
+    imgData.append("upload_preset", preset_name);
+    imgData.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
+
+    try {
+      const res = await axios.post(`${img_Upload_Url}`, imgData);
+
+      if (res.status === 200) {
+        img_name = res.data.public_id + "." + res.data.format;
+        setImgName(img_name);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const clearImage = () => {
+    setPreview(false);
+    setImage({});
+  };
+
 
   const handleImage = (e) => {
     // console.log(e.target.files[0]);
@@ -43,94 +145,7 @@ const AddProduct = (props) => {
     }
   };
 
-  const clearImage = () => {
-    setPreview(false);
-    setImage({});
-  };
-
-
-     const postDetails = () => {
-       const data = new FormData();
-       data.append("file", image);
-       data.append("upload_preset", "GRT-gallery");
-       data.append("cloud_name", "duscqn7ju");
-       fetch("https://api.cloudinary.com/v1_1/duscqn7ju/image/upload", {
-         method: "post",
-         body: data,
-       })
-         .then((res) => res.json())
-         .then((data) => {
-           setUrl(data.url);
-         })
-         .catch((err) => {
-           console.log(err);
-         });
-     };
- 
-
-  const submitProductForm = async (e) => {
-    
-    e.preventDefault();
-    postDetails();
-    const productForm = new FormData();
-    productForm.append("name", name);
-    productForm.append("material", material);
-    productForm.append("design", design);
-    productForm.append("description", description);
-    productForm.append("price", price);
-    productForm.append("image", image);
-    productForm.append("topLength", topLength);
-    productForm.append("bottomLength", bottomLength);
-    productForm.append("duppataLength", duppataLength);
-
-       const config = {
-         headers: {
-           Authorization: token ? `Bearer ${token}` : "",
-         },
-       };
-
-    try {
-      const res = await axios.post(`${baseUrl}/product/create`, productForm, config);
-      if (res.status === 200) {
-        // console.log("added via :) frontend ");
-        setPreview(false);
-        setImage({});
-        setName("");
-        setMaterial("");
-        setDescription("");
-        setPrice();
-        setDesign("");
-        setBottomLength();
-        setTopLength();
-        setDuppataLength();
-        setUrl('')
-        setSuccess(false);
-        window.scrollTo(0, 0);
-          setSuccess(false);
-          
-          setTimeout(() => {
-            history.push("/dashboard");
-          }, 2500);
-          window.scrollTo(0, 0);
-          Toast("success", "Product added successfully!! ");
-      }
-   
-    } catch (error) {
-      
-     setTimeout(() => {
-        //  history.push("/login");
-        signOut();
-      }, 2000);
-     console.log(error)
-      window.scrollTo(0, 0);
-
-      error.response
-        ? Toast("error", `${error.response.data.message}`)
-        : Toast("error", "server timeout");
-    }
-    
-  };
-
+  
   return (
     <>
       {/* <div className="img">
@@ -152,7 +167,7 @@ const AddProduct = (props) => {
           className="grid bg-white rounded grid-cols-1 gap-5 back"
         >
           <div className="mt-5 col-span-2">
-            <form onSubmit={submitProductForm}>
+            <form onSubmit={postDetails}>
               <div className=" rounded overflow-hidden ">
                 <div className="px-2 py-2 space-y-6 sm:p-6">
                   <div className="grid grid-cols-3 gap-6">

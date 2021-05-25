@@ -17,7 +17,8 @@ import FOF from "../fof/fof";
 
 const MainProduct = (props) => {
   const Cardarray = props.products;
-  const imgUrl = process.env.REACT_APP_API_URL;
+  // const imgUrl = process.env.REACT_APP_API_URL;
+    const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
   let id = props.match.params.ida; // isko int me convert krna tha
   // console.log(id);
   let category = String(props.match.params.category);
@@ -50,7 +51,7 @@ const MainProduct = (props) => {
             <div className="page3_content">
               <div className="product_image">
                 <ZoomDecide
-                  image={`${imgUrl}/upload/${
+                  image={`${imgUrl}${
                     Cardarray.find(
                       (x) => x._id === id && x.category === category
                     ).image

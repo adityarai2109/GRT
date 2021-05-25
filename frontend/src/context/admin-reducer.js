@@ -21,7 +21,7 @@ const adminReducer = (state, action) => {
     case "ADMIN_PRODUCT_DELETE_SUCCESS":
       newState = {
         ...state,
-        isDeleted: !state.isDeleted,
+        isModified: !state.isModified,
       };
       return newState;
 

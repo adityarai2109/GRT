@@ -13,15 +13,15 @@ import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Fade from "@material-ui/core/Fade";
 import { Link } from "react-router-dom";
 import { Toast, Toasty } from "../Toasty";
-import axios from "axios";
+import axios from "../../axios";
 import { useHistory } from "react-router-dom";
 import { AdminContext } from "../../context/AdminState";
 
 function AdminCard(props) {
-  const { signOut, token, handleDelete } = useContext(AdminContext);
+  const { signOut, token, handleModify } = useContext(AdminContext);
 
   const [open, setOpen] = React.useState(false);
-  const deleteUrl = process.env.REACT_APP_API_URL + "/api/delete";
+
   let history = useHistory();
   const LightTooltip = withStyles((theme) => ({
     tooltip: {
@@ -49,11 +49,11 @@ function AdminCard(props) {
     };
 
     try {
-      const res = await axios.delete(`${deleteUrl}/${props.id}`, config);
+      const res = await axios.delete(`/delete/${props.id}`, config);
       if (res.status === 200) {
         // history.push("/dashboard");
         //Toast("success", "product deleted !!");
-        handleDelete();
+        handleModify();
         console.log("deleted");
       }
     } catch (error) {

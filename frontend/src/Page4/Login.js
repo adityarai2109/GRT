@@ -1,20 +1,21 @@
 import React, { useState, useContext} from "react";
 import { Redirect } from 'react-router-dom';
-import axios from "axios";
+import axios from "../axios";
 import { Toast, Toasty } from "./Toasty";
 import { useHistory } from "react-router-dom";
 import { AdminContext } from "../context/AdminState";
 
 function Login(props) {
-  const baseUrl = process.env.REACT_APP_API_URL + "/api";
-  const imgUrl = "https://res.cloudinary.com/duscqn7ju/image/upload/"
+ 
+  const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
+ 
   const {signIn, isAdmin, token } = useContext(AdminContext)
   let history = useHistory();
  // console.log(history);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authenticate, setAuthenticate] = useState({
-    admin: true,
+    admin: true,   
   });
 
   const submitLoginForm = async (e) => {
@@ -22,7 +23,7 @@ function Login(props) {
     const loginData = { email, password };
     // console.log(loginData);
     try {
-      const res = await axios.post(`${baseUrl}/admin/signin`, loginData);
+      const res = await axios.post(`/admin/signin`, loginData);
       if (res.status === 200) {
         // console.log("admin logged in");
          signIn(res.data.token)
@@ -49,7 +50,6 @@ function Login(props) {
       ) : (
         <div>
           {/* component */}
-          <img src={`${imgUrl}qtegxv7nnrktoln0umqm.png`}></img>
           <div className="h-screen w-screen">
             <div className="flex flex-col items-center flex-1 h-full justify-center">
               <div

@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import AdminState from "./context/AdminState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AdminState>
+      <App />
+    </AdminState>
   </React.StrictMode>,
   document.getElementById("root")
 );

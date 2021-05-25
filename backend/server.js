@@ -31,7 +31,7 @@ app.use(cors());
 app.use("/upload", express.static(path.join(__dirname, "uploads")));
 app.use("/api", authRoutes);
 app.use("/api", productRoutes);
-// console.log(path.dirname(__dirname))
+ console.log(path.dirname(__dirname))
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname2, "/frontend/build")));

@@ -1,5 +1,46 @@
 import Product from "../models/productModel.js";
 
+export const cloudinaryProduct = (req, res) => {
+  const {
+    name,
+    material,
+    design,
+    bottomLength,
+    duppataLength,
+    topLength,
+    description,
+    price,
+    image,
+  } = req.body;
+
+  const product = new Product({
+    name,
+    category: "Suit",
+    material,
+    design,
+    bottomLength,
+    duppataLength,
+    topLength,
+    description,
+    price,
+    image,
+  });
+     
+  product.save((error, product) => {
+    if (error){
+      console.log(error)
+      return res.status(400).json({ error });
+  }
+    if (product) {
+      res.status(200).json({ product, files: req.files });
+      console.log("new product added !!!");
+    }
+  });
+
+};
+
+
+
 export const createProduct = (req, res) => {
   const {
     name,
@@ -10,8 +51,9 @@ export const createProduct = (req, res) => {
     topLength,
     description,
     price,
+   
   } = req.body;
-
+//console.log(req);
   const image = req.file.filename;
   //console.log(req.file)
   const product = new Product({
@@ -30,7 +72,7 @@ export const createProduct = (req, res) => {
   product.save((error, product) => {
     if (error) return res.status(400).json({ error });
     if (product) {
-      res.status(200).json({ product, files: req.files });
+      res.status(200).json({ product, files: req.file });
       console.log("new product added !!!");
     }
   });
@@ -80,6 +122,41 @@ export const updateProduct = async (req, res) => {
     product.image = image;
 
     if (typeof req.file != "undefined") product.image = req.file.filename;
+
+    const updatedProduct = await product.save();
+    res.json(updatedProduct);
+  } else {
+    res.status(404);
+    throw new Error("Product not found");
+  }
+};
+
+
+export const cloudinaryProductUpdate = async (req, res) => {
+  const {
+    name,
+    material,
+    design,
+    bottomLength,
+    duppataLength,
+    topLength,
+    description,
+    price,
+    image,
+  } = req.body;
+   // console.log(req.body)
+  const product = await Product.findById(req.params.id);
+ 
+  if (product) {
+    product.name = name;
+    product.material = material;
+    product.design = design;
+    product.bottomLength = bottomLength;
+    product.duppataLength = duppataLength;
+    product.topLength = topLength;
+    product.description = description;
+    product.price = price;
+    product.image = image;
 
     const updatedProduct = await product.save();
     res.json(updatedProduct);

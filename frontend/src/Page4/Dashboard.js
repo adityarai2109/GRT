@@ -7,7 +7,7 @@ import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOut
 import { Link } from "react-router-dom";
 import { AdminContext } from "../context/AdminState";
 import Loader from "../CustomJS/Loader";
-import axios from "axios";
+import axios from "../axios";
 import { Toast, Toasty } from "./Toasty";
 import queryString from "query-string";
 import { useLocation } from "react-router";
@@ -15,9 +15,10 @@ import { useLocation } from "react-router";
 function Dashboard(props) {
   const { search } = useLocation();
   const { q } = queryString.parse(search);
-  const imgUrl = process.env.REACT_APP_API_URL;
+  // const imgUrl = process.env.REACT_APP_API_URL;
+  const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
 
-  const { signOut, isDeleted } = useContext(AdminContext);
+  const { signOut, isModified } = useContext(AdminContext);
 
   const [products, setProducts] = useState([]);
 
@@ -33,7 +34,7 @@ function Dashboard(props) {
         },
       };
 
-      const res = await axios.get(`${baseUrl}/admin/allproducts`, config);
+      const res = await axios.get(`/admin/allproducts`, config);
       return res;
     };
 
@@ -47,7 +48,7 @@ function Dashboard(props) {
     fetchProducts()
       .then((res) => setProducts(res.data))
       .catch((e) => signOut());
-  }, [isDeleted]);
+  }, [isModified]);
 
   const CardArray = products;
   var words;
@@ -89,7 +90,7 @@ function Dashboard(props) {
                   isDarkMode={props.isDarkMode}
                   bg={index}
                   id={i._id}
-                  image={`${imgUrl}/upload/${i.image}`}
+                  image={`${imgUrl}${i.image}`}
                   name={i.name}
                   price={i.price}
                   category={i.category}
