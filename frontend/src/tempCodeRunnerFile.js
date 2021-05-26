@@ -1,1 +1,1 @@
- res = await axios.get(`/api/allproducts`);
+og(process.env.NODE_ENV);

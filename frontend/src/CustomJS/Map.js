@@ -13,7 +13,7 @@ import React, { useEffect, useState } from "react";
   }, []);
     return (
         <div className="mapContainer">
-          <iframe src="https://maps.google.com/maps?q=Bagh%20Deewar,%20Mahajani%20Kucha,%20Katra%20Neel,%20Chandni%20Chowk&t=&z=18&ie=UTF8&iwloc=&output=embed" frameborder="0" style={{border:0, width:"100%", height:"38rem", borderRadius:(width < 930) ? ("15px") :("0 15px 15px 0")}} allowfullscreen="" aria-hidden="false" tabindex="0" title="map"></iframe>
+          <iframe src={`https://www.google.com/maps/embed/v1/place?q=Bagh%20Deewar%2C%20Mahajani%20Kucha%2C%20Katra%20Neel%2C%20Chandni%20Chowk&key=${process.env.REACT_APP_MAP_API}`} frameborder="0" style={{border:0, width:"100%", height:"38rem", borderRadius:(width < 930) ? ("15px") :("0 15px 15px 0")}} allowfullscreen="" zoom={20} aria-hidden="false" tabindex="0" title="map"></iframe>
         </div>
     );
  }

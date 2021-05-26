@@ -63,7 +63,7 @@ function Footer() {
 
             <a
               className="ml-5 text-gray-100"
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/_ganga.ram.textile_/"
               target="_blank"
               rel="noreferrer"
             >
@@ -71,20 +71,20 @@ function Footer() {
             </a>
             <a
               className="ml-5 text-gray-100"
-              href="https://www.youtube.com/"
+              href="https://www.youtube.com/watch?v=1RVdFaySaA0"
               target="_blank"
               rel="noreferrer"
             >
               <img className="icons" src={iYoutube} alt="Youtube" />
             </a>
-            <a
+            {/* <a
               className="ml-5 text-gray-100"
               href="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
             >
               <img className="icons" src={iTwitter} alt="Twitter" />
-            </a>
+            </a> */}
           </span>
         </div>
       </footer>

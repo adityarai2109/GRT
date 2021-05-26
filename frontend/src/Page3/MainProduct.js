@@ -130,7 +130,7 @@ const MainProduct = (props) => {
 
                 <div className="whatsappus">
                   <a
-                    href="https://wa.me/918076609847"
+                    href="https://wa.me/919999660329"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="whatsapp-anchor-tag"
