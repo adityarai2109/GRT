@@ -12,7 +12,6 @@ import Fade from "@material-ui/core/Fade";
 import { AdminContext } from "../context/AdminState";
 
 export default function AdminNav(props) {
-  const [searchQuery, setSearchQuery] = useState("");
   const { signOut } = useContext(AdminContext);
   const LightTooltip = withStyles((theme) => ({
     tooltip: {
@@ -26,10 +25,7 @@ export default function AdminNav(props) {
   window.onscroll = function () {
     doStick();
   };
-  function saveSearch(e) {
-    e.preventDefault();
-    setSearchQuery(e.target.value);
-  }
+
   const handleSignOut = () => {
     signOut();
   };
@@ -52,6 +48,7 @@ export default function AdminNav(props) {
           </Link>
         </div>
 
+        <form action={`/Dashboard`} method="GET">
         <div id="searchbar" className="searchbar">
           <input
             className="inputnav"
@@ -62,13 +59,13 @@ export default function AdminNav(props) {
                 ? `Search for clothes, brands and more ...`
                 : `Search for products ...`
             }
-            onChange={saveSearch}
+            name="q"
           />
           <div
             className="btn-search"
             style={{ borderRadius: "0px 3px 3px 0px" }}
           >
-            <Button component={Link} to={`/Dashboard?q=${searchQuery}`}>
+            <Button type="submit">
               <img
                 src={iSearch}
                 className="search"
@@ -78,6 +75,7 @@ export default function AdminNav(props) {
             </Button>
           </div>
         </div>
+        </form>
         <div
           className="nr"
           style={{

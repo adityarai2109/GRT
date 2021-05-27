@@ -7,15 +7,10 @@ import Toggle from "../CustomJS/Toggle";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
-  const [searchQuery, setSearchQuery] = useState("");
 
   window.onscroll = function () {
     doStick();
   };
-  function saveSearch(e) {
-    e.preventDefault();
-    setSearchQuery(e.target.value);
-  }
 
   function doStick() {
     const searchbar = document.getElementById("searchbar");
@@ -36,7 +31,7 @@ export default function Navbar(props) {
             </div>
           </Link>
         </div>
-
+        <form action={`/Suit`} method="GET">
         <div id="searchbar" className="searchbar">
           <input
             className="inputnav"
@@ -47,14 +42,14 @@ export default function Navbar(props) {
                 ? `Search for clothes, brands and more ...`
                 : `Search for products ...`
             }
-            onChange={saveSearch}
+            name="q"
           />
 
           <div
             className="btn-search"
             style={{ borderRadius: "0px 3px 3px 0px" }}
           >
-            <Button component={Link} to={`/Suit?q=${searchQuery}`}>
+            <Button type="submit">
               <img
                 src={iSearch}
                 className="search"
@@ -64,6 +59,8 @@ export default function Navbar(props) {
             </Button>
           </div>
         </div>
+        </form>
+        
 
         <Toggle
           className="nav_toggle"
