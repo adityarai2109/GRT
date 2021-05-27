@@ -57,15 +57,15 @@ const ProductList = (props) => {
       return filteredCardArray.filter(
         (categCard) =>
           categCard.category.toLowerCase() === category.toLowerCase() &&
-          categCard.price >= value[0] * 100 &&
-          categCard.price <= value[1] * 100
+          categCard.price >= value[0] * 10 &&
+          categCard.price <= value[1] * 10
       ).length;
     } else {
       return filteredCardArray.filter(
         (categCard) =>
           categCard.category.toLowerCase() === category.toLowerCase() &&
-          categCard.price >= value[0] * 100 &&
-          categCard.price <= value[1] * 100
+          categCard.price >= value[0] * 10 &&
+          categCard.price <= value[1] * 10
       ).length;
     }
   }
@@ -82,8 +82,8 @@ const ProductList = (props) => {
         .filter(
           (categCard) =>
             categCard.category.toLowerCase() === category.toLowerCase() &&
-            categCard.price >= value[0] * 100 &&
-            categCard.price <= value[1] * 100
+            categCard.price >= value[0] * 10 &&
+            categCard.price <= value[1] * 10
         )
         .sort(function (a, b) {
           return a.price - b.price;
@@ -107,8 +107,8 @@ const ProductList = (props) => {
         .filter(
           (categCard) =>
             categCard.category.toLowerCase() === category.toLowerCase() &&
-            categCard.price >= value[0] * 100 &&
-            categCard.price <= value[1] * 100
+            categCard.price >= value[0] * 10 &&
+            categCard.price <= value[1] * 10
         )
         .sort(function (a, b) {
           if (sortedCategory === "Latest") {

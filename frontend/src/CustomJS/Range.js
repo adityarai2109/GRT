@@ -18,23 +18,23 @@ const marks = [
   },
   {
     value: 20,
-    label: 2000,
+    label: 200,
   },
   {
     value: 40,
-    label: 4000,
+    label: 400,
   },
   {
     value: 60,
-    label: 6000,
+    label: 600,
   },
   {
     value: 80,
-    label: 8000,
+    label: 800,
   },
   {
     value: 100,
-    label: 10000,
+    label: 1000,
   },
 ];
 
