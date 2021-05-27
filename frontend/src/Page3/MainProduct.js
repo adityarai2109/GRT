@@ -18,7 +18,7 @@ import FOF from "../fof/fof";
 const MainProduct = (props) => {
   const Cardarray = props.products;
   // const imgUrl = process.env.REACT_APP_API_URL;
-    const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
+  const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
   let id = props.match.params.ida; // isko int me convert krna tha
   // console.log(id);
   let category = String(props.match.params.category);
@@ -92,19 +92,19 @@ const MainProduct = (props) => {
                   <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
                     Top Length :{" "}
                   </span>
-                  {Cardarray.find((x) => x._id === id).topLength}
+                  {Cardarray.find((x) => x._id === id).topLength} m
                 </p>
                 <p className="desc">
                   <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
                     Duppata Length :{" "}
                   </span>
-                  {Cardarray.find((x) => x._id === id).duppataLength}
+                  {Cardarray.find((x) => x._id === id).duppataLength} m
                 </p>
                 <p className="desc">
                   <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>
                     Bottom Length :{" "}
                   </span>
-                  {Cardarray.find((x) => x._id === id).bottomLength}
+                  {Cardarray.find((x) => x._id === id).bottomLength} m
                 </p>
                 <p className="desc">
                   <span style={{ fontWeight: "800", fontFamily: "Poppins" }}>

@@ -18,12 +18,12 @@ import queryString from "query-string";
 import { useLocation } from "react-router";
 
 const ProductList = (props) => {
-  const {search} = useLocation();
-  const {q} = queryString.parse(search)
+  const { search } = useLocation();
+  const { q } = queryString.parse(search);
   const Cardarray = props.products;
- 
- // const imgUrl = process.env.REACT_APP_API_URL;
-   const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
+
+  // const imgUrl = process.env.REACT_APP_API_URL;
+  const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
 
   const [rangeToggle, setRangeToggle] = useState(true);
   let category = String(props.match.params.category);
@@ -33,16 +33,14 @@ const ProductList = (props) => {
   // console.log(pageArray);
 
   function newstate(newState) {
-    let newSortedCategory = [...sortedCategory];
-    newSortedCategory = newState;
+    // let newSortedCategory = [...sortedCategory];
+    let newSortedCategory = newState;
     setSortedCategory(newSortedCategory);
   }
 
   var words;
-  if(q)
-  words = q.toLowerCase().split(" ");
-  else
-  words = " ".toLowerCase().split(" ");
+  if (q) words = q.toLowerCase().split(" ");
+  else words = " ".toLowerCase().split(" ");
 
   const filteredCardArray = Cardarray.filter((i) =>
     words.some(
@@ -51,7 +49,6 @@ const ProductList = (props) => {
         i.description.toLowerCase().includes(word)
     )
   );
-
 
   const [value, setValue] = useState([0, 100]);
   function getCardlen() {
@@ -162,16 +159,32 @@ const ProductList = (props) => {
         />
         <DesignerHeading name={category} />
         <div className="orderby">
-          <p className="price_htl" onClick={() => newstate("htl")}>
+          <p
+            className="price_htl"
+            className={sortedCategory === "htl" ? "selectedFilter" : null}
+            onClick={() => newstate("htl")}
+          >
             Price - high to low
           </p>
-          <p className="price_lth" onClick={() => newstate("lth")}>
+          <p
+            className="price_lth"
+            className={sortedCategory === "lth" ? "selectedFilter" : null}
+            onClick={() => newstate("lth")}
+          >
             Price - low to high
           </p>
-          <p className="latest" onClick={() => newstate("Latest")}>
+          <p
+            className="latest"
+            className={sortedCategory === "Latest" ? "selectedFilter" : null}
+            onClick={() => newstate("Latest")}
+          >
             Latest
           </p>
-          <p className="range" onClick={() => newstate("range")}>
+          <p
+            className="range"
+            className={sortedCategory === "range" ? "selectedFilter" : null}
+            onClick={() => newstate("range")}
+          >
             {rangeToggle ? (
               <div
                 id="input-slider"
@@ -211,7 +224,7 @@ const ProductList = (props) => {
               fontWeight: "bold",
               border: "1px solid #393E46",
             }}
-            onClick={() => setPageArray(pageArray + 4)}
+            onClick={() => setPageArray(pageArray + 8)}
           >
             <img
               className="hpvmi"

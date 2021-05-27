@@ -9,14 +9,15 @@ import "./Card.css";
 
 function Card(props) {
   // const imgUrl = process.env.REACT_APP_API_URL;
-    const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
+  const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
   const Cardarray = props.products;
 
   return (
     <div>
       <div>
-        <div className="product_card" style={{minHeight:"0",}}>{/*Ipad pro style*/}
-        
+        <div className="product_card" style={{ minHeight: "0" }}>
+          {/*Ipad pro style*/}
+
           {/*styles in productList.css*/}
           {Cardarray !== undefined ? (
             Cardarray.sort(() => 0.5 - Math.random())
@@ -24,13 +25,13 @@ function Card(props) {
               .sort(() => 0.5 - Math.random())
               .map((card) => {
                 return (
-                    <Listing
-                      id={card._id}
-                      image={`${imgUrl}${card.image}`}
-                      title={card.name}
-                      price={card.price}
-                      category={card.category}
-                    />
+                  <Listing
+                    id={card._id}
+                    image={`${imgUrl}${card.image}`}
+                    title={card.name}
+                    price={card.price}
+                    category={card.category}
+                  />
                 );
               })
           ) : (

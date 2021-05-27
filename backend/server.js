@@ -5,10 +5,8 @@ import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 
-
 const MODE = process.env.NODE_ENV;
 const PORT = process.env.PORT || 5000;
-
 
 const app = express();
 
@@ -31,38 +29,34 @@ app.use(cors());
 app.use("/upload", express.static(path.join(__dirname, "uploads")));
 app.use("/api", authRoutes);
 app.use("/api", productRoutes);
- console.log(path.dirname(__dirname))
+console.log(path.dirname(__dirname));
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname2, "/frontend/build")));
+  app.use(express.static(path.join(__dirname2, "/frontend/build")));
 
-    app.get("*", (req, res) =>
-        res.sendFile(
-            path.resolve(__dirname2, "frontend", "build", "index.html")
-        )
-    );
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname2, "frontend", "build", "index.html"))
+  );
 } else {
-    app.get("/", (req, res) => {
-        res.send("API is running....");
-    });
+  app.get("/", (req, res) => {
+    res.send("API is running....");
+  });
 }
 
 const homepage =
-    ("/",
-    (req, res, next) => {
-        console.log("homepage middleware working ");
-        next();
-    });
+  ("/",
+  (req, res, next) => {
+    console.log("homepage middleware working ");
+    next();
+  });
 
 // middleware
 app.use(homepage);
 
 app.get("/", homepage, (req, res) => {
-    //   res.send("hello")
-    res.status(200).json({ message: "homepage" });
+  //   res.send("hello")
+  res.status(200).json({ message: "homepage" });
 });
-
-
 
 app.listen(PORT, console.log(`Server running in ${MODE} mode on ${PORT}`));
 

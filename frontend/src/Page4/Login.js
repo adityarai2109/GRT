@@ -1,21 +1,20 @@
-import React, { useState, useContext} from "react";
-import { Redirect } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "../axios";
 import { Toast, Toasty } from "./Toasty";
 import { useHistory } from "react-router-dom";
 import { AdminContext } from "../context/AdminState";
 
 function Login(props) {
- 
   const imgUrl = process.env.REACT_APP_IMAGE_FETCH_API;
- 
-  const {signIn, isAdmin, token } = useContext(AdminContext)
+
+  const { signIn, isAdmin, token } = useContext(AdminContext);
   let history = useHistory();
- // console.log(history);
+  // console.log(history);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authenticate, setAuthenticate] = useState({
-    admin: true,   
+    admin: true,
   });
 
   const submitLoginForm = async (e) => {
@@ -26,15 +25,14 @@ function Login(props) {
       const res = await axios.post(`/admin/signin`, loginData);
       if (res.status === 200) {
         // console.log("admin logged in");
-         signIn(res.data.token)
+        signIn(res.data.token);
 
-          if(isAdmin){
+        if (isAdmin) {
           //  console.log(isAdmin)
           //  <Redirect to={`/dashboard`} />
-           history.push('/dashboard')
+          history.push("/dashboard");
         }
-
-      } 
+      }
     } catch (error) {
       //console.log(error.response);
       if (typeof error.response != "undefined")
