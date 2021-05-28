@@ -34,28 +34,30 @@ export default function Navbar(props) {
                         </div>
                     </Link>
                 </div>
-                <form
-                    id="searchbar"
-                    className="searchbar"
-                    action={`/Suit`}
-                    method="GET"
-                >
-                    <input
-                        className="inputnav"
-                        id="inputnavid"
-                        type="text"
-                        placeholder={
-                            window.innerWidth > 768
-                                ? `Search for clothes, brands and more ...`
-                                : `Search for products ...`
-                        }
-                    />
-
+                <div id="searchbar" className="searchbar">
+                    <form id="searchbarform" action={`/Suit`} method="GET">
+                        <input
+                            className="inputnav"
+                            id="inputnavid"
+                            type="text"
+                            placeholder={
+                                window.innerWidth > 768
+                                    ? `Search for clothes, brands and more ...`
+                                    : `Search for products ...`
+                            }
+                            name="q"
+                        />
+                    </form>
                     <div
                         className="btn-search"
                         style={{ borderRadius: "0px 3px 3px 0px" }}
                     >
-                        <Button>
+                        <Button
+                            value="submit"
+                            form="searchbarform"
+                            type="submit"
+                        >
+                            {/* <input value="submit" type="submit" /> */}
                             <img
                                 src={iSearch}
                                 className="search"
@@ -64,7 +66,7 @@ export default function Navbar(props) {
                             />
                         </Button>
                     </div>
-                </form>
+                </div>
 
                 <Toggle
                     className="nav_toggle"

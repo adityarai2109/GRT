@@ -47,33 +47,34 @@ export default function AdminNav(props) {
                                 src={iconLogo}
                                 alt="GRT"
                             />
-                            <h4 className="grt">Dashboard</h4>
+                            <h4 className="grt">Ganga Ram Textiles</h4>
                         </div>
                     </Link>
                 </div>
-
-                <form
-                    id="searchbar"
-                    className="searchbar"
-                    action={`/Dashboard`}
-                    method="GET"
-                >
-                    <input
-                        className="inputnav"
-                        id="inputnavid"
-                        type="text"
-                        placeholder={
-                            window.innerWidth > 768
-                                ? `Search for clothes, brands and more ...`
-                                : `Search for products ...`
-                        }
-                        name="q"
-                    />
+                <div id="searchbar" className="searchbar">
+                    <form id="searchbarform" action={`/Dashboard`} method="GET">
+                        <input
+                            className="inputnav"
+                            id="inputnavid"
+                            type="text"
+                            placeholder={
+                                window.innerWidth > 768
+                                    ? `Search for clothes, brands and more ...`
+                                    : `Search for products ...`
+                            }
+                            name="q"
+                        />
+                    </form>
                     <div
                         className="btn-search"
                         style={{ borderRadius: "0px 3px 3px 0px" }}
                     >
-                        <Button component={Link} type="submit">
+                        <Button
+                            value="submit"
+                            form="searchbarform"
+                            type="submit"
+                        >
+                            {/* <input value="submit" type="submit" /> */}
                             <img
                                 src={iSearch}
                                 className="search"
@@ -82,34 +83,13 @@ export default function AdminNav(props) {
                             />
                         </Button>
                     </div>
-                </form>
-
-                <div
-                    className="nr"
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-around",
-                    }}
-                >
-                    <LightTooltip
-                        TransitionComponent={Fade}
-                        TransitionProps={{ timeout: 600 }}
-                        title="Sign Out"
-                    >
-                        <Button onClick={handleSignOut}>
-                            <ExitToAppIcon
-                                fontSize="large"
-                                style={{ color: "white" }}
-                            />
-                        </Button>
-                    </LightTooltip>
-                    <Toggle
-                        className="nav_toggle"
-                        isDarkMode={props.isDarkMode}
-                        setIsDarkMode={props.setIsDarkMode}
-                    />
                 </div>
+
+                <Toggle
+                    className="nav_toggle"
+                    isDarkMode={props.isDarkMode}
+                    setIsDarkMode={props.setIsDarkMode}
+                />
             </div>
         </div>
     );
