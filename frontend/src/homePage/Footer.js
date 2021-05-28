@@ -54,7 +54,7 @@ function Footer() {
             </a>
             <a
               className="ml-5 text-gray-100"
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/profile.php?id=100068717855004"
               target="_blank"
               rel="noreferrer"
             >
