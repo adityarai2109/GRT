@@ -25,7 +25,7 @@ import AdminNav from "./homePage/AdminNav";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const { isModified } = useContext(AdminContext);
 
