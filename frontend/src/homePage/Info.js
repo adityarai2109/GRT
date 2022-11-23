@@ -31,23 +31,23 @@ export default function Info() {
               <div className="DetailsHeading">
                 <p className="contacts">Contacts</p>
                 <img
-                  style={{ height: "2rem", marginLeft: "5px", marginRight: "5px",}}
+                  style={{ height: "2rem", marginLeft: "5px", marginRight: "5px", }}
                   src={iconPhone}
                   alt="Contacts"
                 />
               </div>
-              <p>Mr. Sanjay Aggarwal</p>
+              <p>Mr. Sanjay Agarwal</p>
               <p>
                 M :{" "}
-                <a style={{ fontWeight: "bold" }} href="Tel:9811612899">
-                  9811612899
+                <a style={{ fontWeight: "bold" }} href="Tel:85621475966">
+                  85621475966
                 </a>
               </p>
-              <p>Mrs. Neelam Aggarwal</p>
+              <p>Mrs. Neelam Agarwal</p>
               <p>
                 M :{" "}
-                <a style={{ fontWeight: "bold" }} href="Tel:9999660329">
-                  9999660329
+                <a style={{ fontWeight: "bold" }} href="Tel:96584235787">
+                  96584235787
                 </a>
               </p>
             </div>
